@@ -1,12 +1,22 @@
 package com.example.easyneedsaoop;
 
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 public class Controller {
     @FXML
@@ -50,6 +60,93 @@ public class Controller {
 
     @FXML
     private TextField usernameFiled;
+
+
+    private Connection connect;
+    private PreparedStatement prepare;
+    private ResultSet result;
+    private String[] userType = {"Consumer", "Doctor", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
+
+    private Alert alert;
+
+    public void regBtn() {
+        if (suUsername.getText().isEmpty() ||
+                suPassword.getText().isEmpty() ||
+                suQuestion.getSelectionModel().getSelectedItem() == null) {
+//        alert.show("error",,);
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Massage");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all the blank");
+            alert.showAndWait();
+        } else {
+            String regData = "INSERT INTO user (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
+            connect = database.connectDB();
+            try {
+                String checkUsername = ("SELECT username FROM user WHERE username = '" + suUsername.getText() + "'");
+                prepare = connect.prepareStatement(checkUsername);
+                result = prepare.executeQuery();
+                if (result.next()) {
+                    String checkUserType = ("SELECT username FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
+                    prepare = connect.prepareStatement(checkUserType);
+                    result = prepare.executeQuery();
+                    if (result.next()) {
+                        alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Already registered");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
+                        alert.showAndWait();
+                    }
+                }
+            prepare = connect.prepareStatement(regData);
+            prepare.setString(1, suName.getText());
+            prepare.setString(2, suUsername.getText());
+            prepare.setString(3, suPassword.getText());
+            prepare.setString(4, (String) suQuestion.getSelectionModel().getSelectedItem());
+            Date date = new Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            prepare.setString(5, String.valueOf(sqlDate));
+            prepare.executeUpdate();
+//                alert.show("information",,);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Massage");
+            alert.setHeaderText(null);
+            alert.setContentText("Successfully Registered Account");
+            alert.showAndWait();
+
+            suName.setText("");
+            suUsername.setText("");
+            suPassword.setText("");
+            suQuestion.getSelectionModel().clearSelection();
+
+            TranslateTransition slider = new TranslateTransition();
+            slider.setNode(sidePanel);
+            slider.setToX(0);
+            slider.setDuration(Duration.seconds(.5));
+
+            slider.setOnFinished((ActionEvent e) -> {
+                sideAlreadyHave.setVisible(false);
+                sideCreateButton.setVisible(true);
+            });
+            slider.play();
+        }
+     catch(Exception e){
+        e.printStackTrace();
+    }
+}
+
+}
+
+    private void slider(TranslateTransition slider) {
+
+    }
+
+    public void regQuesList(){
+        List<String> listQ=new ArrayList<>();
+        Collections.addAll(listQ, userType);
+        ObservableList listData = FXCollections.observableArrayList(listQ);
+        suQuestion.setItems(listData);
+    }
     public void switchForm(ActionEvent event){
         TranslateTransition slider=new TranslateTransition();
 
@@ -60,6 +157,7 @@ public class Controller {
             slider.setOnFinished((ActionEvent e)->{
                 sideAlreadyHave.setVisible(true);
                 sideCreateButton.setVisible(false);
+                regQuesList();
             });
             slider.play();
         } else if (event.getSource()==sideAlreadyHave) {

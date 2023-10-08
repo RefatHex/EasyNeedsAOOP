@@ -35,7 +35,7 @@
             </Label>
             <TextField fx:id="suName" layoutX="42.0" layoutY="127.0" prefHeight="40.0" prefWidth="220.0" promptText="Name" styleClass="textfield" stylesheets="@loginsignup.css" />
             <TextField fx:id="suPassword" layoutX="42.0" layoutY="225.0" prefHeight="40.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
-            <Button fx:id="suButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
+            <Button fx:id="suButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
             <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="277.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a " styleClass="white-form" stylesheets="@loginsignup.css" />
             <TextField fx:id="suUsername" layoutX="42.0" layoutY="175.0" prefHeight="40.0" prefWidth="220.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
         </AnchorPane>
