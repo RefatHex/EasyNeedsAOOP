@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
@@ -21,11 +20,11 @@
                     <Font size="27.0" />
                 </font>
             </Label>
-            <TextField fx:id="usernameFiled" layoutX="42.0" layoutY="167.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
-            <Button fx:id="loginButton" layoutX="42.0" layoutY="302.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Login" />
+            <TextField fx:id="passwordField" layoutX="42.0" layoutY="213.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
+            <Button fx:id="loginButton" layoutX="42.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Login" />
             <Hyperlink fx:id="forgotButton" layoutX="42.0" layoutY="269.0" onAction="#forgotPasswordAction" text="Forgot Password" />
          <Button fx:id="exitButton" layoutX="42.0" layoutY="368.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" />
-         <PasswordField layoutX="42.0" layoutY="231.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" />
+         <TextField fx:id="usernameField" layoutX="42.0" layoutY="156.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
         </AnchorPane>
         <AnchorPane fx:id="signUpForm" layoutY="5.0" prefHeight="462.0" prefWidth="304.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="39.0" prefWidth="220.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Register Account">

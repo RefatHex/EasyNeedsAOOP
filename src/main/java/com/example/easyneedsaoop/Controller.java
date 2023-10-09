@@ -13,6 +13,7 @@ import javafx.util.Duration;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -59,7 +60,7 @@ public class Controller {
     private TextField suUsername;
 
     @FXML
-    private TextField usernameFiled;
+    private TextField usernameField;
 
 
     private Connection connect;
@@ -69,6 +70,45 @@ public class Controller {
 
     private Alert alert;
 
+    public void loginBtn(){
+        if(usernameField.getText().isEmpty()||passwordField.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Fill all the blank");
+            alert.showAndWait();
+        }else{
+            String selectData="SELECT username, password FROM user WHERE username=? and password=?";
+
+            connect =database.connectDB();
+
+            try {
+                prepare=connect.prepareStatement(selectData);
+                prepare.setString(1, usernameField.getText().trim());
+                prepare.setString(2, passwordField.getText().trim());
+
+                result=prepare.executeQuery();
+
+                if(result.next()){
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Congratulation");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully login");
+                    alert.showAndWait();
+                }else{
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Incorrect Username/Password");
+                    alert.showAndWait();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
     public void regBtn() {
         if (suUsername.getText().isEmpty() ||
                 suPassword.getText().isEmpty() ||
