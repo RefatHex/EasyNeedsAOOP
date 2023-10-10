@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="642.0" prefWidth="867.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ConsumerController">
+   <children>
+      <AnchorPane prefHeight="69.0" prefWidth="867.0" styleClass="upper-anchore" stylesheets="@styles.css">
+         <children>
+            <Hyperlink fx:id="myAccountButton" layoutX="602.0" layoutY="22.0" text="Your Account" textFill="WHITE" />
+            <Hyperlink fx:id="rewardsLink" layoutX="704.0" layoutY="21.0" text="Rewards" textFill="WHITE" />
+            <ImageView fx:id="shoppingIcon" fitHeight="26.0" fitWidth="30.0" layoutX="796.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@shoppingcart.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="196.0" layoutY="552.0" prefHeight="50.0" prefWidth="475.0" styleClass="down-box" stylesheets="@styles.css">
+         <children>
+            <ImageView fx:id="homeImage" fitHeight="37.0" fitWidth="36.0" layoutX="40.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="foodIcon" fitHeight="37.0" fitWidth="36.0" layoutX="110.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@ricebowl.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="clothingIcon" fitHeight="37.0" fitWidth="36.0" layoutX="173.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@clothing.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="eduationIcon" fitHeight="37.0" fitWidth="36.0" layoutX="238.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@education.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="HospitalIcon" fitHeight="37.0" fitWidth="36.0" layoutX="316.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@hospital.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="DoctorIcon" fitHeight="37.0" fitWidth="36.0" layoutX="386.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@img.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
