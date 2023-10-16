@@ -78,7 +78,7 @@ public class Controller {
             alert.setContentText("Fill all the blank");
             alert.showAndWait();
         }else{
-            String selectData="SELECT username, password FROM user WHERE username=? and password=?";
+            String selectData="SELECT username, password FROM user_data WHERE username=? and password=?";
 
             connect =database.connectDB();
 
@@ -120,14 +120,14 @@ public class Controller {
             alert.setContentText("Please fill all the blank");
             alert.showAndWait();
         } else {
-            String regData = "INSERT INTO user (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
+            String regData = "INSERT INTO user_data (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
             connect = database.connectDB();
             try {
-                String checkUsername = ("SELECT username FROM user WHERE username = '" + suUsername.getText() + "'");
+                String checkUsername = ("SELECT username FROM user_data WHERE username = '" + suUsername.getText() + "'");
                 prepare = connect.prepareStatement(checkUsername);
                 result = prepare.executeQuery();
                 if (result.next()) {
-                    String checkUserType = ("SELECT username FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
+                    String checkUserType = ("SELECT username FROM user_data WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
                     prepare = connect.prepareStatement(checkUserType);
                     result = prepare.executeQuery();
                     if (result.next()) {
