@@ -177,10 +177,6 @@ public class Controller {
 
 }
 
-    private void slider(TranslateTransition slider) {
-
-    }
-
     public void regQuesList(){
         List<String> listQ=new ArrayList<>();
         Collections.addAll(listQ, userType);
