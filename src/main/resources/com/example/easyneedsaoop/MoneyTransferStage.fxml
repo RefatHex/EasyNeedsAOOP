@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -34,20 +35,20 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <FontAwesomeIconView glyphName="LOCK" layoutX="444.0" layoutY="426.0" size="44.0" text="" />
-      <FontAwesomeIconView glyphName="MONEY" layoutX="440.0" layoutY="299.0" size="34.0" />
       <TextField fx:id="receiverMobileTxt" layoutX="145.0" layoutY="326.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter mobile number of recepient" />
-      <FontAwesomeIconView glyphName="PHONE" layoutX="442.0" layoutY="361.0" size="32.0" text="" wrappingWidth="1.0" />
       <Label layoutX="50.0" layoutY="335.0" prefHeight="27.0" prefWidth="80.0" text="Recipient">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <FontAwesomeIconView glyphName="PHONE" layoutX="445.0" layoutY="240.0" size="32.0" />
       <ImageView fitHeight="150.0" fitWidth="198.0" layoutX="187.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@rsz_easypay.png" />
          </image>
       </ImageView>
+      <FontAwesomeIconView glyphName="PHONE" layoutX="434.0" layoutY="241.0" size="34.0" />
+      <FontAwesomeIconView glyphName="MONEY" layoutX="432.0" layoutY="299.0" size="34.0" />
+      <FontAwesomeIconView glyphName="USER" layoutX="435.0" layoutY="360.0" size="42.0" />
+      <FontAwesomeIconView glyphName="LOCK" layoutX="436.0" layoutY="423.0" size="42.0" />
    </children>
 </AnchorPane>
