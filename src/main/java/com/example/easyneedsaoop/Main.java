@@ -14,7 +14,7 @@ public class Main extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         Image image = new Image("C:\\Users\\Administrator\\Desktop\\EasyNeedsAOOP\\EasyNeedsAOOP\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");
         ImageView imageView = new ImageView(image);
-        Scene scene = new Scene(fxmlLoader.load(),600,470);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("EasyNeeds");
         stage.setScene(scene);
         stage.show();

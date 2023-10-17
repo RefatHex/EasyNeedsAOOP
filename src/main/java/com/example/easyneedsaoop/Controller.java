@@ -5,9 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.sql.Connection;
@@ -66,7 +71,7 @@ public class Controller {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private String[] userType = {"Consumer", "Doctor", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
+    private String[] userType = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
 
     private Alert alert;
 
@@ -95,6 +100,13 @@ public class Controller {
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully login");
                     alert.showAndWait();
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AdminControlPage.fxml"));
+                    Stage stage=new Stage();
+                    stage.initStyle(StageStyle.UNDECORATED);
+                    Scene scene = new Scene(fxmlLoader.load());
+                    stage.setTitle("EasyNeeds");
+                    stage.setScene(scene);
+                    stage.show();
                 }else{
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
