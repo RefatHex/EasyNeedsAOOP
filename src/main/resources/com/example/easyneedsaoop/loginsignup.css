@@ -1,44 +1,33 @@
-.gradient{
-    -fx-background-color: linear-gradient(to bottom right,#0f6789,#286155);
+/* Background Gradient - Different Gradient */
+.gradient {
+    -fx-background-color: linear-gradient(to bottom right, #3399FF, #CC66CC); /* Gradient with different colors */
+    -fx-background-size: 200% 200%;
+    -fx-animation: gradientAnimation 4s infinite alternate; /* Animation */
 }
 
-.white-form{
-    -fx-background-color: #fff;
-}
-
-.head-label{
-    -fx-border-color: #286155;
-    -fx-border-width: 0 0 0 3px;
-    -fx-padding: 0 0 0 5px;
-}
-
-.login-button{
-    -fx-background-color: linear-gradient(to bottom right,#09Bc53,#246861);
-    -fx-background-radius: 5px;
-    -fx-cursor: hand;
-    -fx-text-fill: #fff;
-    -fx-font-size:14px;
-}
-.login-button:hover {
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a0f);
-}
-
-.textfield{
+/* Head Label - Add a blue border on the left */
+.head-label {
     -fx-background-color: transparent;
-    -fx-padding: 0 0 0 6px;
-    -fx-border-color: linear-gradient(to bottom right,#0f6789,#286155);
-    -fx-border-width: .5px;
+    -fx-padding: 0 0 0 5px;
+    -fx-border-color: linear-gradient(to bottom, #3399FF, #0066CC); /* Gradient from blue to dark blue border */
+    -fx-border-width: 0 5px 0 0;
+    -fx-font-size: 20px; /* Slightly smaller font size */
+    -fx-font-weight: normal; /* Remove bold style */
 }
 
-.create-btn{
-    -fx-background-color:transparent ;
-    -fx-cursor: hand;
+/* Login Button (with a different gradient background) */
+.login-button {
+    -fx-background-color: linear-gradient(to bottom right, #3399FF, #0066CC); /* Gradient from blue to dark blue */
+    -fx-background-radius: 5px;
+    -fx-cursor: pointer;
     -fx-text-fill: #fff;
-    -fx-border-color:#fff;
-    -fx-border-width: 1px;
+    -fx-font-size: 16px; /* Smaller font size */
+    -fx-font-weight: normal; /* Remove bold style */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1); /* Darker shadow */
 }
 
-.create-btn:hover{
-    -fx-background-color: #fff;
-    -fx-text-fill: #000;
+.login-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #0066CC, #3399FF); /* Slightly lighter gradient from dark blue to blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 2); /* Darker shadow */
 }
+
