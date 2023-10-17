@@ -272,9 +272,9 @@
                                           </Label>
                                           <TextField layoutX="611.0" layoutY="103.0" prefHeight="26.0" prefWidth="184.0" />
                                           <ComboBox layoutX="356.0" layoutY="143.0" prefHeight="28.0" prefWidth="87.0" />
-                                          <Label layoutX="286.0" layoutY="147.0" text="for Bachelor" />
+                                          <Label layoutX="271.0" layoutY="148.0" text="For Bachelor" />
                                           <ComboBox layoutX="511.0" layoutY="143.0" prefHeight="28.0" prefWidth="83.0" />
-                                          <Label layoutX="455.0" layoutY="147.0" text="is Sublet" />
+                                          <Label layoutX="455.0" layoutY="147.0" text="Is Sublet" />
                                           <ComboBox layoutX="748.0" layoutY="145.0" prefHeight="28.0" prefWidth="81.0" />
                                           <Label layoutX="604.0" layoutY="150.0" text="Has Dinning/drwawing" />
                                           <Button layoutX="146.0" layoutY="183.0" mnemonicParsing="false" text="Import" />

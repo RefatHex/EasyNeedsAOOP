@@ -26,7 +26,7 @@
       <TextField fx:id="sendAmountTxt" layoutX="145.0" layoutY="265.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter advance payment in Taka" styleClass="text-field" stylesheets="@loginsignup.css" />
       <Label layoutX="49.0" layoutY="274.0" prefHeight="27.0" prefWidth="115.0" text="Amount :" textFill="WHITE">
          <font>
-            <Font name="Segoe UI Semibold Italic" size="16.0" />
+            <Font size="16.0" />
          </font>
       </Label>
       <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="181.0" layoutY="468.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Confirm Payment" textAlignment="CENTER">

@@ -6,74 +6,73 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="600.0" styleClass="gradient" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.OwnerTenantAgreementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="600.0" styleClass="down-box" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.OwnerTenantAgreementController">
    <children>
       <Label alignment="CENTER" layoutX="99.0" layoutY="14.0" prefHeight="53.0" prefWidth="402.0" styleClass="btn" stylesheets="@adminPageStyle.css" text="Home Owner-Tenant Agreement">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <CheckBox layoutX="36.0" layoutY="127.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="417.0" text="Must give fare within first 10 days of the month">
+      <CheckBox layoutX="36.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give fare within first 10 days of the month" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp">
+      <CheckBox layoutX="36.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="189.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="417.0" text="Bills other than the rent is tenants' concern">
+      <CheckBox layoutX="36.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Bills other than the rent is tenants' concern" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="218.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="In case of leaving home, must inform 2 months earlier">
+      <CheckBox layoutX="36.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="In case of leaving home, must inform 2 months earlier" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="246.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="If rent is delayed, 1000 BDT will be charged extra">
+      <CheckBox layoutX="36.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="If rent is delayed, 1000 BDT will be charged extra" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="277.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="To book the home, tenant must advance 5000 BDT">
+      <CheckBox layoutX="36.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="To book the home, tenant must advance 5000 BDT" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="308.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="Must give 2000 BDT for security money">
+      <CheckBox layoutX="36.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give 2000 BDT for security money" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="338.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="Gas/Water/Electricity Bill is included in the rent">
+      <CheckBox layoutX="36.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Gas/Water/Electricity Bill is included in the rent" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="367.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="No Pet Allowed">
+      <CheckBox layoutX="36.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="No Pet Allowed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="97.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" stylesheets="@adminPageStyle.css" text="Rent amount is fixed">
+      <CheckBox layoutX="36.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" stylesheets="@adminPageStyle.css" text="Rent amount is fixed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="397.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="Rent amount is negotiable">
+      <CheckBox layoutX="36.0" layoutY="397.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is negotiable" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="431.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="425.0" text="Must maintain cleanliness">
+      <CheckBox layoutX="36.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must maintain cleanliness" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <Button fx:id="completeButton" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="100.0" styleClass="btn" stylesheets="@adminPageStyle.css" text="Complete" />
+      <Button fx:id="completeButton" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" onAction="#completeButtonAction" prefHeight="46.0" prefWidth="100.0" styleClass="btn" stylesheets="@adminPageStyle.css" text="Complete" />
    </children>
 </AnchorPane>
