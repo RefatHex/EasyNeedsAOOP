@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Controller">
     <AnchorPane prefHeight="462.0" prefWidth="301.0">
         <AnchorPane layoutX="287.0" layoutY="-1.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.19999999999998863" AnchorPane.leftAnchor="287.0" AnchorPane.rightAnchor="3.3999999999999773" AnchorPane.topAnchor="0.6000000000000227">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="26.0" prefWidth="202.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Login Account">

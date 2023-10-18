@@ -71,7 +71,7 @@ public class Controller {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private String[] userType = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
+    private String[] userType = {"Consumer", "Health Assistant", "Home Owner", "Catering Owner", "Instructor", "Cloth Seller"};
 
     private Alert alert;
 
