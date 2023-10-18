@@ -7,7 +7,7 @@
     -fx-font-weight: normal;
 }
 .login-button {
-    -fx-background-color: linear-gradient(to bottom right, #27BD60, #42BD27);
+    -fx-background-color: linear-gradient(to bottom right,#5b85b0,#f27552);
     -fx-background-radius: 5px;
     -fx-cursor: pointer;
     -fx-text-fill: #fff;

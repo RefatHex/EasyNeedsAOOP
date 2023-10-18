@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -13,6 +14,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -26,35 +29,39 @@
                <left>
                   <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="-10.0" layoutY="83.0" prefHeight="600.0" prefWidth="243.0" styleClass="nav-form" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="-10.0" layoutY="83.0" prefHeight="600.0" prefWidth="243.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="header" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="35.0" layoutY="32.0" text="Easyneeds Admin page" textFill="WHITE">
+                                    <Label layoutX="37.0" layoutY="31.0" text="Easyneeds Admin page" textFill="WHITE">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font size="18.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <Label layoutX="14.0" layoutY="90.0" text="Welcome," textFill="#e1e1e1">
+                              <Label layoutX="53.0" layoutY="90.0" text="Welcome,">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="88.0" layoutY="90.0" text="Admin" textFill="#e1e1e1">
+                              <Label layoutX="132.0" layoutY="90.0" text="Admin">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="signoutButton" layoutX="53.0" layoutY="542.0" minWidth="29.0" mnemonicParsing="false" onAction="#signoutButtonAction" prefHeight="28.0" prefWidth="114.0" stylesheets="@adminPageStyle.css" text="Sign Out" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="53.0">
+                              <Button fx:id="signoutButton" layoutX="57.0" layoutY="524.0" minWidth="29.0" mnemonicParsing="false" onAction="#signoutButtonAction" prefHeight="53.0" prefWidth="129.0" text="Sign Out" textFill="#ffffffed" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="57.0">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <stylesheets>
+                                    <URL value="@UserTypeBtn.css" />
+                                    <URL value="@styles.css" />
+                                 </stylesheets>
                                  <styleClass>
-                                    <String fx:value="logout" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font></Button>
+                                    <String fx:value="User-button" />
+                                    <String fx:value="upper-anchore" />
+                                 </styleClass></Button>
                            </children>
                         </AnchorPane>
                      </children>
@@ -192,7 +199,7 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <TableView layoutX="4.0" prefHeight="290.0" prefWidth="847.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="302.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                    <TableView layoutX="4.0" prefHeight="290.0" prefWidth="851.0" styleClass="transparent" stylesheets="@loginsignup.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="302.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                       <columns>
                                         <TableColumn prefWidth="32.79997253417969" text="ID" />
                                         <TableColumn prefWidth="91.20001983642578" text="Owner Name" />
@@ -211,10 +218,10 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="275.0" prefWidth="843.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="307.0">
+                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="275.0" prefWidth="843.0" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="307.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
-                                          <String fx:value="shadow" />
+                                          <String fx:value="gradient" />
                                        </styleClass>
                                        <children>
                                           <Label layoutX="90.0" layoutY="15.0" text="ID:">
@@ -222,72 +229,89 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="122.0" layoutY="8.0" prefHeight="26.0" prefWidth="78.0" />
+                                          <TextField layoutX="122.0" layoutY="8.0" prefHeight="26.0" prefWidth="144.0" promptText="Enter yout ID" />
                                           <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="122.0" layoutY="43.0" prefHeight="26.0" prefWidth="143.0" />
-                                          <Label layoutX="19.0" layoutY="94.0" text="House Name:">
+                                          <TextField layoutX="122.0" layoutY="43.0" prefHeight="26.0" prefWidth="143.0" promptText="Enter your full name" />
+                                          <Label layoutX="19.0" layoutY="84.0" text="House Name:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="117.0" layoutY="88.0" prefHeight="26.0" prefWidth="140.0" />
-                                          <Label layoutX="298.0" layoutY="24.0" text="Room No.:">
+                                          <TextField layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="144.0" promptText="Enter house name" />
+                                          <Label layoutX="292.0" layoutY="15.0" text="Room No:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="377.0" layoutY="21.0" prefHeight="26.0" prefWidth="46.0" />
-                                          <Label layoutX="298.0" layoutY="64.0" text="Person:">
+                                          <TextField layoutX="377.0" layoutY="13.0" prefHeight="26.0" prefWidth="160.0" promptText="Enter number of rooms " />
+                                          <Label layoutX="292.0" layoutY="51.0" text="Person :">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="367.0" layoutY="62.0" prefHeight="26.0" prefWidth="50.0" />
-                                          <Label layoutX="298.0" layoutY="106.0" text="Contact No:">
+                                          <TextField layoutX="377.0" layoutY="48.0" prefHeight="26.0" prefWidth="159.0" promptText="Enter number of member" />
+                                          <Label layoutX="292.0" layoutY="86.0" text="Contact No:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="377.0" layoutY="102.0" prefHeight="26.0" prefWidth="130.0" />
-                                          <Label layoutX="553.0" layoutY="31.0" text="Rent:">
+                                          <TextField layoutX="378.0" layoutY="83.0" prefHeight="26.0" prefWidth="159.0" promptText="Enter your contact number" />
+                                          <Label layoutX="588.0" layoutY="15.0" text="Rent:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="598.0" layoutY="28.0" prefHeight="26.0" prefWidth="78.0" />
-                                          <Label layoutX="533.0" layoutY="67.0" text="Address:">
+                                          <TextField layoutX="658.0" layoutY="13.0" prefHeight="26.0" prefWidth="149.0" promptText="Fare in BDT" />
+                                          <Label layoutX="588.0" layoutY="50.0" text="Address:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="598.0" layoutY="65.0" prefHeight="26.0" prefWidth="192.0" />
-                                          <Label layoutX="528.0" layoutY="106.0" text="Extra info:">
+                                          <TextField layoutX="657.0" layoutY="48.0" prefHeight="26.0" prefWidth="151.0" promptText="Enter your full address" />
+                                          <Label layoutX="584.0" layoutY="86.0" text="Extra info:">
                                              <font>
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="611.0" layoutY="103.0" prefHeight="26.0" prefWidth="184.0" />
-                                          <ComboBox layoutX="356.0" layoutY="143.0" prefHeight="28.0" prefWidth="87.0" />
-                                          <Label layoutX="271.0" layoutY="148.0" text="For Bachelor" />
-                                          <ComboBox layoutX="511.0" layoutY="143.0" prefHeight="28.0" prefWidth="83.0" />
-                                          <Label layoutX="455.0" layoutY="147.0" text="Is Sublet" />
-                                          <ComboBox layoutX="748.0" layoutY="145.0" prefHeight="28.0" prefWidth="81.0" />
-                                          <Label layoutX="604.0" layoutY="150.0" text="Has Dinning/drwawing" />
-                                          <Button layoutX="146.0" layoutY="183.0" mnemonicParsing="false" text="Import" />
-                                          <AnchorPane layoutX="19.0" layoutY="145.0" prefHeight="107.0" prefWidth="108.0" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="19.0">
+                                          <TextField layoutX="658.0" layoutY="84.0" prefHeight="26.0" prefWidth="150.0" promptText="Optional" />
+                                          <ComboBox layoutX="258.0" layoutY="128.0" prefHeight="28.0" prefWidth="87.0" />
+                                          <Label layoutX="175.0" layoutY="134.0" text="For Bachelor">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <ComboBox layoutX="437.0" layoutY="130.0" prefHeight="28.0" prefWidth="83.0" />
+                                          <Label layoutX="377.0" layoutY="134.0" text="Is Sublet">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <ComboBox layoutX="707.0" layoutY="131.0" prefHeight="28.0" prefWidth="81.0" />
+                                          <Label layoutX="552.0" layoutY="134.0" text="Has Dinning/drwawing">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <Button layoutX="149.0" layoutY="197.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="74.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Import" />
+                                          <AnchorPane layoutX="18.0" layoutY="154.0" prefHeight="114.0" prefWidth="113.0" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="18.0">
                                              <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="shadow" />
                                              </styleClass>
+                                             <children>
+                                                <Label layoutX="12.0" layoutY="30.0" text="Add your photo" />
+                                                <ImageView fitHeight="72.0" fitWidth="70.0" layoutX="20.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@AddPhotoSymbol.png.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
                                           </AnchorPane>
-                                          <Button layoutX="356.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" text="Add" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" text="Update" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button layoutX="577.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" text="Clear" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" text="Delete" AnchorPane.bottomAnchor="27.399999999999977" />
+                                          <Button layoutX="377.0" layoutY="212.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Add" AnchorPane.bottomAnchor="27.0" />
+                                          <Button layoutX="494.0" layoutY="212.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Update" AnchorPane.bottomAnchor="27.0" />
+                                          <Button layoutX="600.0" layoutY="212.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Clear" AnchorPane.bottomAnchor="27.0" />
+                                          <Button layoutX="715.0" layoutY="212.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Delete" AnchorPane.bottomAnchor="27.0" />
                                        </children>
                                     </AnchorPane>
                                     <Separator layoutX="6.0" layoutY="295.0" prefHeight="0.0" prefWidth="842.0" AnchorPane.bottomAnchor="293.8" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.2000000000000455" AnchorPane.topAnchor="295.0" />

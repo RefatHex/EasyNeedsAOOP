@@ -29,7 +29,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="181.0" layoutY="468.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Confirm Payment" textAlignment="CENTER">
+      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="190.0" layoutY="469.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Confirm Payment" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -40,9 +40,29 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="343.0" fitWidth="335.0" layoutX="87.0" layoutY="-54.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="343.0" fitWidth="335.0" layoutX="87.0" layoutY="-53.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MoneyTransferLogo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@PhoneLogo.png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@DollarLogo.png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@RecipientLogo.png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LockLogo.png.png" />
          </image>
       </ImageView>
    </children>

@@ -1,0 +1,6 @@
+
+
+
+.User-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+}
