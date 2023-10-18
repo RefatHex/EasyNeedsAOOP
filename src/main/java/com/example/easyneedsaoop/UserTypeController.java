@@ -2,6 +2,7 @@ package com.example.easyneedsaoop;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class UserTypeController {
 
@@ -17,6 +18,8 @@ public class UserTypeController {
     private Button fifthBtn;
     @FXML
     private Button sixthBtn;
+    @FXML
+    private Label welcomeLbl;
 
     @FXML
     public void firstBtnAction(){

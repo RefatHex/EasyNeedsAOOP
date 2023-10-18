@@ -14,7 +14,7 @@
             <Image url="@EasyNeed.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="112.0" layoutY="182.0" prefHeight="54.0" prefWidth="410.0" styleClass="btn" stylesheets="@adminPageStyle.css" text="Welcome Sir, How Do You Wish To Continue?">
+      <Label fx:id="welcomeLbl" alignment="CENTER" layoutX="112.0" layoutY="182.0" prefHeight="54.0" prefWidth="410.0" styleClass="btn" stylesheets="@adminPageStyle.css" text="Welcome Sir, How Do You Wish To Continue?">
          <font>
             <Font size="20.0" />
          </font>
