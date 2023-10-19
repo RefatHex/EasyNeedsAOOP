@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Controller">
     <AnchorPane prefHeight="462.0" prefWidth="301.0">
         <AnchorPane layoutX="287.0" layoutY="-1.0" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.19999999999998863" AnchorPane.leftAnchor="287.0" AnchorPane.rightAnchor="3.3999999999999773" AnchorPane.topAnchor="0.6000000000000227">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="26.0" prefWidth="202.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Login Account">
@@ -20,11 +21,11 @@
                     <Font size="27.0" />
                 </font>
             </Label>
-            <TextField fx:id="passwordField" layoutX="42.0" layoutY="213.0" onAction="#loginBtn" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
             <Button fx:id="loginButton" layoutX="42.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Login" />
             <Hyperlink fx:id="forgotButton" layoutX="42.0" layoutY="269.0" onAction="#forgotPasswordAction" text="Forgot Password" />
          <Button fx:id="exitButton" layoutX="42.0" layoutY="368.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" />
          <TextField fx:id="usernameField" layoutX="42.0" layoutY="156.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
+         <PasswordField fx:id="passwordField" layoutX="42.0" layoutY="218.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
         </AnchorPane>
         <AnchorPane fx:id="signUpForm" layoutY="5.0" prefHeight="462.0" prefWidth="304.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="39.0" prefWidth="220.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Register Account">
@@ -35,7 +36,7 @@
             <TextField fx:id="suName" layoutX="42.0" layoutY="127.0" prefHeight="40.0" prefWidth="220.0" promptText="Name" styleClass="textfield" stylesheets="@loginsignup.css" />
             <TextField fx:id="suPassword" layoutX="42.0" layoutY="225.0" prefHeight="40.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
             <Button fx:id="suButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
-            <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="277.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a " styleClass="white-form" stylesheets="@loginsignup.css" />
+            <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="277.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a/an" styleClass="white-form" stylesheets="@loginsignup.css" />
             <TextField fx:id="suUsername" layoutX="42.0" layoutY="175.0" prefHeight="40.0" prefWidth="220.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
         </AnchorPane>
         <AnchorPane fx:id="sidePanel" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
