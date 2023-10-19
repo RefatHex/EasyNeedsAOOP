@@ -62,7 +62,7 @@ public class Controller {
     private ComboBox<?> suQuestion;
 
     @FXML
-    private TextField suUsername;
+    private TextField suname;
 
     @FXML
     private TextField usernameField;
@@ -71,7 +71,7 @@ public class Controller {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private String[] userType = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
+    private String[] Type = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
 
     private Alert alert;
 
@@ -83,7 +83,7 @@ public class Controller {
             alert.setContentText("Fill all the blank");
             alert.showAndWait();
         }else{
-            String selectData="SELECT username, password FROM user_data WHERE username=? and password=?";
+            String selectData="SELECT name, password FROM user WHERE name=? and password=?";
 
             connect =database.connectDB();
 
@@ -100,18 +100,18 @@ public class Controller {
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully login");
                     alert.showAndWait();
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AdminControlPage.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminControlPage.fxml"));
                     Stage stage=new Stage();
-                    stage.initStyle(StageStyle.UNDECORATED);
                     Scene scene = new Scene(fxmlLoader.load());
                     stage.setTitle("EasyNeeds");
                     stage.setScene(scene);
                     stage.show();
+                    loginButton.getScene().getWindow().hide();
                 }else{
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
                     alert.setHeaderText(null);
-                    alert.setContentText("Incorrect Username/Password");
+                    alert.setContentText("Incorrect name/Password");
                     alert.showAndWait();
                 }
 
@@ -122,7 +122,7 @@ public class Controller {
         }
     }
     public void regBtn() {
-        if (suUsername.getText().isEmpty() ||
+        if (suname.getText().isEmpty() ||
                 suPassword.getText().isEmpty() ||
                 suQuestion.getSelectionModel().getSelectedItem() == null) {
 //        alert.show("error",,);
@@ -132,15 +132,15 @@ public class Controller {
             alert.setContentText("Please fill all the blank");
             alert.showAndWait();
         } else {
-            String regData = "INSERT INTO user_data (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
+            String regData = "INSERT INTO user (name,name,password,occupation,date)" + "VALUES(?,?,?,?,?)";
             connect = database.connectDB();
             try {
-                String checkUsername = ("SELECT username FROM user_data WHERE username = '" + suUsername.getText() + "'");
-                prepare = connect.prepareStatement(checkUsername);
+                String checkname = ("SELECT name FROM user WHERE name = '" + suname.getText() + "'");
+                prepare = connect.prepareStatement(checkname);
                 result = prepare.executeQuery();
                 if (result.next()) {
-                    String checkUserType = ("SELECT username FROM user_data WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
-                    prepare = connect.prepareStatement(checkUserType);
+                    String checkType = ("SELECT name FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
+                    prepare = connect.prepareStatement(checkType);
                     result = prepare.executeQuery();
                     if (result.next()) {
                         alert = new Alert(Alert.AlertType.ERROR);
@@ -152,7 +152,7 @@ public class Controller {
                 }
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suName.getText());
-            prepare.setString(2, suUsername.getText());
+            prepare.setString(2, suname.getText());
             prepare.setString(3, suPassword.getText());
             prepare.setString(4, (String) suQuestion.getSelectionModel().getSelectedItem());
             Date date = new Date();
@@ -167,7 +167,7 @@ public class Controller {
             alert.showAndWait();
 
             suName.setText("");
-            suUsername.setText("");
+            suname.setText("");
             suPassword.setText("");
             suQuestion.getSelectionModel().clearSelection();
 
@@ -191,7 +191,7 @@ public class Controller {
 
     public void regQuesList(){
         List<String> listQ=new ArrayList<>();
-        Collections.addAll(listQ, userType);
+        Collections.addAll(listQ, Type);
         ObservableList listData = FXCollections.observableArrayList(listQ);
         suQuestion.setItems(listData);
     }
