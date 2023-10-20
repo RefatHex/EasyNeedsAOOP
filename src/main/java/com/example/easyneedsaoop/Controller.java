@@ -8,17 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -62,7 +58,7 @@ public class Controller {
     private ComboBox<?> suQuestion;
 
     @FXML
-    private TextField suname;
+    private TextField suUsername;
 
     @FXML
     private TextField usernameField;
@@ -83,7 +79,7 @@ public class Controller {
             alert.setContentText("Fill all the blank");
             alert.showAndWait();
         }else{
-            String selectData="SELECT name, password FROM user WHERE name=? and password=?";
+            String selectData="SELECT username, password FROM user WHERE username=? and password=?";
 
             connect =database.connectDB();
 
@@ -95,6 +91,7 @@ public class Controller {
                 result=prepare.executeQuery();
 
                 if(result.next()){
+                    data.username=usernameField.getText().trim();
                     alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Congratulation");
                     alert.setHeaderText(null);
@@ -111,7 +108,7 @@ public class Controller {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
                     alert.setHeaderText(null);
-                    alert.setContentText("Incorrect name/Password");
+                    alert.setContentText("Incorrect username/Password");
                     alert.showAndWait();
                 }
 
@@ -122,7 +119,7 @@ public class Controller {
         }
     }
     public void regBtn() {
-        if (suname.getText().isEmpty() ||
+        if (suUsername.getText().isEmpty() ||
                 suPassword.getText().isEmpty() ||
                 suQuestion.getSelectionModel().getSelectedItem() == null) {
 //        alert.show("error",,);
@@ -132,14 +129,14 @@ public class Controller {
             alert.setContentText("Please fill all the blank");
             alert.showAndWait();
         } else {
-            String regData = "INSERT INTO user (name,name,password,occupation,date)" + "VALUES(?,?,?,?,?)";
+            String regData = "INSERT INTO user (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
             connect = database.connectDB();
             try {
-                String checkname = ("SELECT name FROM user WHERE name = '" + suname.getText() + "'");
-                prepare = connect.prepareStatement(checkname);
+                String checkUsername = ("SELECT username FROM user WHERE username = '" + suUsername.getText() + "'");
+                prepare = connect.prepareStatement(checkUsername);
                 result = prepare.executeQuery();
                 if (result.next()) {
-                    String checkType = ("SELECT name FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
+                    String checkType = ("SELECT occupation  FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
                     prepare = connect.prepareStatement(checkType);
                     result = prepare.executeQuery();
                     if (result.next()) {
@@ -149,10 +146,10 @@ public class Controller {
                         alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
                         alert.showAndWait();
                     }
-                }
+                }else{
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suName.getText());
-            prepare.setString(2, suname.getText());
+            prepare.setString(2, suUsername.getText());
             prepare.setString(3, suPassword.getText());
             prepare.setString(4, (String) suQuestion.getSelectionModel().getSelectedItem());
             Date date = new Date();
@@ -167,7 +164,7 @@ public class Controller {
             alert.showAndWait();
 
             suName.setText("");
-            suname.setText("");
+            suUsername.setText("");
             suPassword.setText("");
             suQuestion.getSelectionModel().clearSelection();
 
@@ -180,7 +177,7 @@ public class Controller {
                 sideAlreadyHave.setVisible(false);
                 sideCreateButton.setVisible(true);
             });
-            slider.play();
+            slider.play();}
         }
      catch(Exception e){
         e.printStackTrace();
