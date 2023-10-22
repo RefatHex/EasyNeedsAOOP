@@ -277,7 +277,7 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="658.0" layoutY="84.0" prefHeight="26.0" prefWidth="150.0" promptText="Optional" />
+                                          <TextField layoutX="658.0" layoutY="84.0" prefHeight="26.0" prefWidth="150.0" promptText="Info" />
                                           <ComboBox layoutX="258.0" layoutY="128.0" prefHeight="28.0" prefWidth="87.0" />
                                           <Label layoutX="175.0" layoutY="134.0" text="For Bachelor">
                                              <font>
