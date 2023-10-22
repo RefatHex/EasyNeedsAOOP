@@ -303,7 +303,7 @@
                                                 <Label layoutX="12.0" layoutY="30.0" text="Add your photo" />
                                                 <ImageView fitHeight="72.0" fitWidth="70.0" layoutX="20.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@AddPhotoSymbol.png.png" />
+                                                      <Image url="@AddPhotoSymbol.png" />
                                                    </image>
                                                 </ImageView>
                                              </children>
