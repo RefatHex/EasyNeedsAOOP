@@ -8,17 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -71,7 +67,7 @@ public class Controller {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private String[] userType = {"Consumer", "Health Assistant", "Home Owner", "Catering Owner", "Instructor", "Cloth Seller"};
+    private String[] Type = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
 
     private Alert alert;
 
@@ -95,23 +91,24 @@ public class Controller {
                 result=prepare.executeQuery();
 
                 if(result.next()){
+                    data.username=usernameField.getText().trim();
                     alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Congratulation");
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully login");
                     alert.showAndWait();
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AdminControlPage.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminControlPage.fxml"));
                     Stage stage=new Stage();
-                    stage.initStyle(StageStyle.UNDECORATED);
                     Scene scene = new Scene(fxmlLoader.load());
                     stage.setTitle("EasyNeeds");
                     stage.setScene(scene);
                     stage.show();
+                    loginButton.getScene().getWindow().hide();
                 }else{
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error Message");
                     alert.setHeaderText(null);
-                    alert.setContentText("Incorrect Username/Password");
+                    alert.setContentText("Incorrect username/Password");
                     alert.showAndWait();
                 }
 
@@ -139,8 +136,8 @@ public class Controller {
                 prepare = connect.prepareStatement(checkUsername);
                 result = prepare.executeQuery();
                 if (result.next()) {
-                    String checkUserType = ("SELECT username FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
-                    prepare = connect.prepareStatement(checkUserType);
+                    String checkType = ("SELECT occupation  FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
+                    prepare = connect.prepareStatement(checkType);
                     result = prepare.executeQuery();
                     if (result.next()) {
                         alert = new Alert(Alert.AlertType.ERROR);
@@ -149,7 +146,7 @@ public class Controller {
                         alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
                         alert.showAndWait();
                     }
-                }
+                }else{
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suName.getText());
             prepare.setString(2, suUsername.getText());
@@ -180,7 +177,7 @@ public class Controller {
                 sideAlreadyHave.setVisible(false);
                 sideCreateButton.setVisible(true);
             });
-            slider.play();
+            slider.play();}
         }
      catch(Exception e){
         e.printStackTrace();
@@ -191,7 +188,7 @@ public class Controller {
 
     public void regQuesList(){
         List<String> listQ=new ArrayList<>();
-        Collections.addAll(listQ, userType);
+        Collections.addAll(listQ, Type);
         ObservableList listData = FXCollections.observableArrayList(listQ);
         suQuestion.setItems(listData);
     }

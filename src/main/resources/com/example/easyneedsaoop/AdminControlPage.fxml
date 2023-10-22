@@ -33,9 +33,9 @@
                            <children>
                               <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="37.0" layoutY="31.0" text="Easyneeds Admin page" textFill="WHITE">
+                                    <Label layoutX="37.0" layoutY="31.0" styleClass="head-label" stylesheets="@styles.css" text="Easyneeds Admin page">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font name="Bookshelf Symbol 7" size="18.0" />
                                        </font>
                                     </Label>
                                  </children>
