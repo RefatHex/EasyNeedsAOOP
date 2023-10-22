@@ -68,7 +68,7 @@
 }
 
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
+    -fx-background-color: linear-gradient(to bottom right, #098c52, #246861);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
