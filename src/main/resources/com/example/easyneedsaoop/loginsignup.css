@@ -1,35 +1,34 @@
-/* Background Gradient */
 .gradient {
     -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
 }
 
-/* White Form */
+
 .white-form {
     -fx-background-color: #fff;
 }
 
-/* Head Label */
+
 .head-label {
     -fx-border-color: #FF7272;
     -fx-border-width: 0 0 0 3px;
     -fx-padding: 0 0 0 5px;
 }
 
-/* Login Button (with sky blue and light red) */
+
 .login-button {
-    -fx-background-color: linear-gradient(to bottom right, #87CEEB, #FF7272); /* Sky blue and light red combination */
+    -fx-background-color: linear-gradient(to bottom right, #87CEEB, #FF7272);
     -fx-background-radius: 5px;
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
 }
 
-/* Adjusted hover color for the button */
+
 .login-button:hover {
-    -fx-background-color: linear-gradient(to bottom right, #4E8CFB, #F94646); /* Light blue and slightly darker red combination */
+    -fx-background-color: linear-gradient(to bottom right, #4E8CFB, #F94646 );
 }
 
-/* Textfield */
+
 .textfield {
     -fx-background-color: transparent;
     -fx-padding: 0 0 0 6px;
@@ -37,7 +36,7 @@
     -fx-border-width: .5px;
 }
 
-/* Create Button */
+
 .create-btn {
     -fx-background-color: transparent;
     -fx-cursor: hand;
