@@ -163,6 +163,46 @@ public class AdminControlPage implements Initializable {
     private Alert alert;
     private Image image;
     private boolean[] opinionList={true,false};
+    @FXML
+    private TextField cateringOwnerID;
+
+    @FXML
+    private TextField cateringOwnerName;
+
+    @FXML
+    private TextField cateringOwnerPhone;
+
+    @FXML
+    private TextField cateringShopAddress;
+
+    @FXML
+    private TextField cateringShopBranch;
+
+    @FXML
+    private TextField cateringShopName;
+
+    @FXML
+    private TextField cateringShopPhone;
+
+    @FXML
+    private Button catering_ImportBtn1;
+
+    @FXML
+    private Button catering_UpdateBtn1;
+
+    @FXML
+    private Button catering_addBtn1;
+
+    @FXML
+    private Button catering_clearBtn1;
+
+    @FXML
+    private Button catering_deleteBtn1;
+
+    @FXML
+    private ImageView catering_imageView1;
+    @FXML
+    private ComboBox<?> mealType;
     public void rentInventoryAddBtn(){
         if(rentIn_id.getText().isEmpty()||
            rentIn_owner.getText().isEmpty()||
