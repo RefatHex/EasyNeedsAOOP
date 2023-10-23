@@ -67,7 +67,7 @@ public class Controller {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    private String[] Type = {"Consumer", "Hospital", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
+    private String[] Type = {"Consumer", "Health Assistant", "Home owner", "Catering owner", "Instructor", "Clothing Shops"};
 
     private Alert alert;
 

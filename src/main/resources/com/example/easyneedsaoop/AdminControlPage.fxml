@@ -330,10 +330,24 @@
                                                 <String fx:value="User-button" />
                                                 <String fx:value="radius" />
                                              </styleClass></Button>
-                                          <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0">
+                                          <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                              <children>
-                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                                <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Photo">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="14.0" />
+                                                   </font>
+                                                </Label>
                                              </children>
+                                             <styleClass>
+                                                <String fx:value="Lightwhite-bg" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
                                           </AnchorPane>
                                        </children>
                                     </AnchorPane>

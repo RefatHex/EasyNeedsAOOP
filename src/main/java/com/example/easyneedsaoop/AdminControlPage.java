@@ -162,6 +162,12 @@ public class AdminControlPage implements Initializable {
 
     private Alert alert;
     private Image image;
+
+    @FXML
+    private Label imgLbl1;
+
+    @FXML
+    private Label imgLbl2;
     private boolean[] opinionList={true,false};
     public void rentInventoryAddBtn(){
         if(rentIn_id.getText().isEmpty()||
@@ -246,6 +252,8 @@ public class AdminControlPage implements Initializable {
             image = new Image(file.toURI().toString(), 117, 114, false, true);
 
             rentIn_imageView.setImage(image);
+            imgLbl1.setVisible(false);
+            imgLbl2.setVisible(false);
         }    }
 //Merge data on table
     public ObservableList<rentData> getListData() {
@@ -345,4 +353,6 @@ public class AdminControlPage implements Initializable {
         getListData();
         rentInventoryShowData();
     }
+
+
 }
