@@ -26,42 +26,40 @@
                <left>
                   <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="-10.0" layoutY="83.0" prefHeight="600.0" prefWidth="243.0" styleClass="nav-form" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="-10.0" layoutY="83.0" prefHeight="600.0" prefWidth="243.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="header" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="35.0" layoutY="32.0" text="Easyneeds Admin page" textFill="WHITE">
+                                    <Label layoutX="33.0" layoutY="32.0" prefHeight="37.0" prefWidth="194.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Easyneeds Admin page" textFill="WHITE">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="Century Schoolbook" size="16.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <Label layoutX="14.0" layoutY="90.0" text="Wellcome," textFill="#e1e1e1">
+                              <Label layoutX="55.0" layoutY="90.0" text="Welcome," textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="userName" layoutX="88.0" layoutY="87.0" text="Admin" textFill="#e1e1e1">
+                              <Label fx:id="userName" layoutX="129.0" layoutY="87.0" text="Admin" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="logoutBtn" layoutX="13.0" layoutY="548.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="114.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="13.0">
+                              <Button fx:id="logoutBtn" layoutX="55.0" layoutY="525.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="55.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="55.0">
                                  <styleClass>
-                                    <String fx:value="logout" />
-                                    <String fx:value="shadow" />
-                                 </styleClass></Button>
-                              <Label layoutX="56.0" layoutY="549.0" text="Sign out" AnchorPane.bottomAnchor="24.6" AnchorPane.leftAnchor="56.0">
+                                    <String fx:value="upper-anchore" />
+                                    <String fx:value="User-button" />
+                                 </styleClass>
                                  <font>
-                                    <Font size="17.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="22.0" />
-                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="19.0" />
-                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="18.0" />
-                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothihg Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="18.0" />
-                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="19.0" />
+                                    <Font name="System Bold" size="20.0" />
+                                 </font></Button>
+                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                               <Button fx:id="hospital_btn" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                               <Button fx:id="customer_btn" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
                            </children>
@@ -192,7 +190,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form" layoutX="-1.0" layoutY="7.0" prefHeight="600.0" prefWidth="897.6" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
+                        <AnchorPane fx:id="rentIn_form" layoutX="23.0" layoutY="7.0" prefHeight="600.0" prefWidth="874.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
                            <children>
                               <AnchorPane layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                                  <styleClass>
@@ -221,86 +219,122 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
-                                       <styleClass>
-                                          <String fx:value="white-bg" />
-                                          <String fx:value="shadow" />
-                                       </styleClass>
+                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                        <children>
                                           <Label layoutX="90.0" layoutY="15.0" text="ID:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_id" layoutX="122.0" layoutY="8.0" prefHeight="26.0" prefWidth="78.0" />
+                                          <TextField fx:id="rentIn_id" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter yout ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_owner" layoutX="122.0" layoutY="43.0" prefHeight="26.0" prefWidth="143.0" />
-                                          <Label layoutX="19.0" layoutY="94.0" text="House Name:">
+                                          <TextField fx:id="rentIn_owner" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="19.0" layoutY="84.0" text="House Name:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_houseName" layoutX="117.0" layoutY="88.0" prefHeight="26.0" prefWidth="140.0" />
-                                          <Label layoutX="298.0" layoutY="24.0" text="Room No.:">
+                                          <TextField fx:id="rentIn_houseName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter house name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="330.0" layoutY="12.0" text="Person:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_rooms" layoutX="377.0" layoutY="21.0" prefHeight="26.0" prefWidth="46.0" />
-                                          <Label layoutX="298.0" layoutY="64.0" text="Person:">
+                                          <TextField fx:id="rentIn_rooms" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter number of member" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="309.0" layoutY="46.0" text="Room No:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_flatNo" layoutX="367.0" layoutY="62.0" prefHeight="26.0" prefWidth="50.0" />
-                                          <Label layoutX="298.0" layoutY="106.0" text="Contact No:">
+                                          <TextField fx:id="rentIn_flatNo" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter number of rooms " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="303.0" layoutY="84.0" text="Contact No:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_contact" layoutX="377.0" layoutY="102.0" prefHeight="26.0" prefWidth="130.0" />
-                                          <Label layoutX="553.0" layoutY="31.0" text="Rent:">
+                                          <TextField fx:id="rentIn_contact" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Enter contact number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="595.0" layoutY="12.0" text="Rent:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_Rent" layoutX="598.0" layoutY="28.0" prefHeight="26.0" prefWidth="78.0" />
-                                          <Label layoutX="533.0" layoutY="67.0" text="Address:">
+                                          <TextField fx:id="rentIn_Rent" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Fare in BDT" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="571.0" layoutY="46.0" text="Address:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_address" layoutX="598.0" layoutY="65.0" prefHeight="26.0" prefWidth="192.0" />
-                                          <Label layoutX="528.0" layoutY="106.0" text="Extra info:">
+                                          <TextField fx:id="rentIn_address" layoutX="650.0" layoutY="43.0" prefHeight="28.0" prefWidth="151.0" promptText="Enter your full address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="564.0" layoutY="85.0" text="Extra info:">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_einfo" layoutX="611.0" layoutY="103.0" prefHeight="26.0" prefWidth="184.0" />
-                                          <ComboBox fx:id="rentIn_bachelorBox" layoutX="356.0" layoutY="143.0" prefHeight="28.0" prefWidth="87.0" />
-                                          <Label layoutX="286.0" layoutY="147.0" text="for Bachelor" />
-                                          <ComboBox fx:id="rentIn_subletOption" layoutX="511.0" layoutY="143.0" prefHeight="28.0" prefWidth="83.0" />
-                                          <Label layoutX="455.0" layoutY="147.0" text="is Sublet" />
-                                          <ComboBox fx:id="rentIn_dinning" layoutX="748.0" layoutY="145.0" prefHeight="28.0" prefWidth="81.0" />
-                                          <Label layoutX="604.0" layoutY="150.0" text="Has Dinning/drwawing" />
-                                          <Button fx:id="rentIn_ImportBtn" layoutX="146.0" layoutY="184.0" mnemonicParsing="false" onAction="#InventoryImportBtn" styleClass="btn" text="Import" />
-                                          <AnchorPane layoutX="19.0" layoutY="145.0" prefHeight="107.0" prefWidth="108.0" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="19.0">
+                                          <TextField fx:id="rentIn_einfo" layoutX="650.0" layoutY="81.0" prefHeight="28.0" prefWidth="151.0" promptText="Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <ComboBox fx:id="rentIn_bachelorBox" layoutX="301.0" layoutY="136.0" prefHeight="28.0" prefWidth="87.0" styleClass="table-view" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="212.0" layoutY="142.0" text="for Bachelor">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <ComboBox fx:id="rentIn_subletOption" layoutX="472.0" layoutY="138.0" prefHeight="28.0" prefWidth="83.0" styleClass="table-view" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="410.0" layoutY="142.0" text="is Sublet">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <ComboBox fx:id="rentIn_dinning" layoutX="724.0" layoutY="136.0" prefHeight="28.0" prefWidth="81.0" styleClass="table-view" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="577.0" layoutY="140.0" text="Has Dinning/Drawing">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Label>
+                                          <Button fx:id="rentIn_ImportBtn" layoutX="151.0" layoutY="188.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
                                              <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="shadow" />
-                                             </styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass></Button>
+                                          <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass></Button>
+                                          <Button fx:id="rentIn_UpdateBtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass></Button>
+                                          <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass></Button>
+                                          <Button fx:id="rentIn_deleteBtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass></Button>
+                                          <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0">
                                              <children>
-                                                <ImageView fx:id="rentIn_imageView" fitHeight="119.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
                                              </children>
                                           </AnchorPane>
-                                          <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Add" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button fx:id="rentIn_UpdateBtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Update" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Clear" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button fx:id="rentIn_deleteBtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Delete" AnchorPane.bottomAnchor="27.399999999999977" />
                                        </children>
                                     </AnchorPane>
                                  </children>

@@ -243,7 +243,7 @@ public class AdminControlPage implements Initializable {
         if (file != null) {
 
             data.path = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 116, 119, false, true);
+            image = new Image(file.toURI().toString(), 117, 114, false, true);
 
             rentIn_imageView.setImage(image);
         }    }
@@ -344,8 +344,5 @@ public class AdminControlPage implements Initializable {
         yesOrNo();
         getListData();
         rentInventoryShowData();
-    }
-
-    public void signoutButtonAction(ActionEvent actionEvent) {
     }
 }

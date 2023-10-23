@@ -26,6 +26,7 @@
          <Button fx:id="exitButton" layoutX="42.0" layoutY="368.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" />
          <TextField fx:id="usernameField" layoutX="42.0" layoutY="156.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
          <PasswordField fx:id="passwordField" layoutX="42.0" layoutY="218.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
+         <Label layoutX="100.0" layoutY="442.0" text="© 2023 EasyNeeds" />
         </AnchorPane>
         <AnchorPane fx:id="signUpForm" layoutY="5.0" prefHeight="462.0" prefWidth="304.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="39.0" prefWidth="220.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Register Account">
@@ -38,6 +39,7 @@
             <Button fx:id="suButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
             <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="277.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a/an" styleClass="white-form" stylesheets="@loginsignup.css" />
             <TextField fx:id="suUsername" layoutX="42.0" layoutY="175.0" prefHeight="40.0" prefWidth="220.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
+         <Label layoutX="102.0" layoutY="440.0" text="© 2023 EasyNeeds" />
         </AnchorPane>
         <AnchorPane fx:id="sidePanel" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="55.0" layoutY="329.0" prefHeight="23.0" prefWidth="194.0" text="Create Account" textFill="WHITE">
