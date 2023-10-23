@@ -18,7 +18,6 @@
     -fx-prompt-text-fill: #645555;
 }
 
-//style.css
 .upper-anchore{
     -fx-background-radius: 0 0 10px 10px;
     -fx-background-color:#66666E;
@@ -41,11 +40,21 @@
 
 }
 
-
-
-//userTypeBtn
-
 .User-button:hover {
     -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
 }
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
 
+.white-bg{
+    -fx-background-color: #fff;
+}
+
+.radius{
+    -fx-background-radius: 8px;
+}
+
+.transparent{
+    -fx-background-color: transparent;
+}
