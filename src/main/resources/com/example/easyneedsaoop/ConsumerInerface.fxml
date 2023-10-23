@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="642.0" prefWidth="867.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ConsumerController">
    <children>
-      <AnchorPane prefHeight="69.0" prefWidth="867.0" styleClass="upper-anchore" stylesheets="@styles.css">
+      <AnchorPane fx:id="slider" layoutX="-39.0" layoutY="69.0" prefHeight="574.0" prefWidth="208.0" styleClass="login-button">
+         <children>
+            <ImageView fx:id="homeImage1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="foodIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@ricebowl.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="clothingIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@clothing.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="eduationIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@education.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="HospitalIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@hospital.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="DoctorIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="50.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+               <image>
+                  <Image url="@img.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="102.0" layoutY="40.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Home" />
+            <Button layoutX="102.0" layoutY="110.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Food" />
+            <Button layoutX="102.0" layoutY="183.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Clothes" />
+            <Button layoutX="102.0" layoutY="252.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Education" />
+            <Button layoutX="102.0" layoutY="325.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Health Asset." />
+            <Button layoutX="102.0" layoutY="399.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Doctor" />
+            <ImageView fitHeight="177.0" fitWidth="229.0" layoutX="27.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@AppTitleLog.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="58.0" layoutY="538.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+         </children>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@styles.css" />
+            <URL value="@HeadLabel.css" />
+         </stylesheets>
+      </AnchorPane>
+      <AnchorPane layoutX="-26.0" prefHeight="69.0" prefWidth="893.0" styleClass="upper-anchore" stylesheets="@styles.css">
          <children>
             <Hyperlink fx:id="myAccountButton" layoutX="602.0" layoutY="22.0" text="Your Account" textFill="WHITE" />
             <Hyperlink fx:id="rewardsLink" layoutX="704.0" layoutY="21.0" text="Rewards" textFill="WHITE" />
@@ -16,9 +72,20 @@
                   <Image url="@shoppingcart.png" />
                </image>
             </ImageView>
+            <Button fx:id="menu" layoutX="75.0" layoutY="17.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="53.0" />
+            <ImageView fx:id="menuback" fitHeight="36.0" fitWidth="53.0" layoutX="84.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MenuIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="139.0" layoutY="19.0" prefHeight="35.0" prefWidth="63.0" text="MENU" textFill="#24bdff">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="196.0" layoutY="552.0" prefHeight="50.0" prefWidth="475.0" styleClass="down-box" stylesheets="@styles.css">
+      <AnchorPane layoutX="196.0" layoutY="552.0" prefHeight="50.0" prefWidth="475.0" style="-fx-background-color: #79747A;" stylesheets="@styles.css">
          <children>
             <ImageView fx:id="homeImage" fitHeight="37.0" fitWidth="36.0" layoutX="40.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
                <image>
@@ -51,6 +118,10 @@
                </image>
             </ImageView>
          </children>
+         <styleClass>
+            <String fx:value="icon-color" />
+            <String fx:value="upper-anchore" />
+         </styleClass>
       </AnchorPane>
    </children>
 </AnchorPane>
