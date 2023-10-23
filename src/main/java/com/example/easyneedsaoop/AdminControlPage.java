@@ -244,9 +244,9 @@ public class AdminControlPage implements Initializable {
 
             data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 116, 119, false, true);
-
             rentIn_imageView.setImage(image);
-        }    }
+        }
+    }
 //Merge data on table
     public ObservableList<rentData> getListData() {
         ObservableList<rentData> listData= FXCollections.observableArrayList();

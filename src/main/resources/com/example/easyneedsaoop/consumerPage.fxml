@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ConsumerPage">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="33.0" layoutY="147.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="76.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="1100.0" styleClass="upper-anchore" stylesheets="@styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="menuBtn" layoutX="23.0" layoutY="13.0" mnemonicParsing="false" onAction="#menuBtn" prefHeight="30.0" prefWidth="34.0" styleClass="transparent" stylesheets="@consumerCss.css">
+                                 <graphic>
+                                    <ImageView fx:id="menuback" fitHeight="27.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@MenuIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Hyperlink fx:id="myAccountButton" layoutX="834.0" layoutY="22.0" text="Your Account" textFill="WHITE" />
+                              <Hyperlink fx:id="rewardsLink" layoutX="936.0" layoutY="21.0" text="Rewards" textFill="WHITE" />
+                              <Label layoutX="68.0" layoutY="21.0" prefHeight="20.0" prefWidth="46.0" text="MENU" textFill="#24bdff">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="cartButton" layoutX="1011.0" layoutY="15.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="50.0" styleClass="transparent" stylesheets="@consumerCss.css">
+                                 <graphic>
+                                    <ImageView fx:id="shoppingIcon" fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@shoppingcart.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="26.0" prefHeight="524.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="351.0" layoutY="447.0" prefHeight="51.0" prefWidth="419.0">
+                                 <children>
+                                    <AnchorPane layoutX="-58.0" layoutY="-2.0" prefHeight="54.0" prefWidth="422.0" style="-fx-background-color: #79747A;" stylesheets="@styles.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-58.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="-2.0">
+                                       <children>
+                                          <ImageView fx:id="foodIcon" fitHeight="37.0" fitWidth="36.0" layoutX="93.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@ricebowl.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="clothingIcon" fitHeight="37.0" fitWidth="36.0" layoutX="157.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@clothing.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="eduationIcon" fitHeight="37.0" fitWidth="36.0" layoutX="226.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@education.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="DoctorIcon" fitHeight="37.0" fitWidth="36.0" layoutX="364.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@img.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@consumerCss.css">
+                                             <graphic>
+                                                <ImageView fx:id="homeImage" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@home.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="Button" />
+                                          <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                          <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="icon-color" />
+                                          <String fx:value="upper-anchore" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="524.0" prefWidth="202.0">
+                           <children>
+                              <AnchorPane fx:id="sidePanel" prefHeight="499.0" prefWidth="200.0">
+                                 <stylesheets>
+                                    <URL value="@HeadLabel.css" />
+                                    <URL value="@styles.css" />
+                                 </stylesheets>
+                                 <styleClass>
+                                    <String fx:value="login-button" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <ImageView fx:id="homeImage1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@home.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="foodIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@ricebowl.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="clothingIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@clothing.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="eduationIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@education.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="HospitalIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@hospital.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="DoctorIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                       <image>
+                                          <Image url="@img.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="89.0" layoutY="18.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Home" />
+                                    <Button layoutX="89.0" layoutY="88.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Food" />
+                                    <Button layoutX="89.0" layoutY="161.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Clothes" />
+                                    <Button layoutX="89.0" layoutY="230.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Education" />
+                                    <Button layoutX="89.0" layoutY="303.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Health Asset." />
+                                    <Button layoutX="89.0" layoutY="377.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Doctor" />
+                                    <ImageView fitHeight="97.0" fitWidth="103.0" layoutX="41.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@AppTitleLog.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="29.0" layoutY="461.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
