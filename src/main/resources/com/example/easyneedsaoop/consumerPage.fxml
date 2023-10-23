@@ -20,7 +20,7 @@
                <top>
                   <AnchorPane prefHeight="76.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="70.0" prefWidth="1100.0" styleClass="upper-anchore" stylesheets="@styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane prefHeight="70.0" prefWidth="1100.0" styleClass="upper-anchore" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Button fx:id="menuBtn" layoutX="23.0" layoutY="13.0" mnemonicParsing="false" onAction="#menuBtn" prefHeight="30.0" prefWidth="34.0" styleClass="transparent" stylesheets="@consumerCss.css">
                                  <graphic>

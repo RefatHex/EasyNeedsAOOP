@@ -10,7 +10,7 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("consumerPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginSignup.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
         Image image = new Image("C:\\Users\\Administrator\\Desktop\\BaseCalc\\EasyNeedsAOOP\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");
         ImageView imageView = new ImageView(image);
