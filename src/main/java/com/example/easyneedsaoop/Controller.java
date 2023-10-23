@@ -111,7 +111,6 @@ public class Controller {
                     alert.setContentText("Incorrect username/Password");
                     alert.showAndWait();
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

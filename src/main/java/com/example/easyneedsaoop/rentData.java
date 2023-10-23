@@ -43,12 +43,12 @@ public class rentData {
         this.room = room;
     }
 
-    public int getPerson() {
-        return person;
+    public int getFlatNo() {
+        return flatNo;
     }
 
-    public void setPerson(int person) {
-        this.person = person;
+    public void setFlatNo(int flatNo) {
+        this.flatNo = flatNo;
     }
 
     public String getContact() {
@@ -107,12 +107,12 @@ public class rentData {
         this.sublet = sublet;
     }
 
-    public boolean isDn_Draw() {
-        return dn_Draw;
+    public boolean isDn_draw() {
+        return dn_draw;
     }
 
-    public void setDn_Draw(boolean dn_Draw) {
-        this.dn_Draw = dn_Draw;
+    public void setDn_draw(boolean dn_draw) {
+        this.dn_draw = dn_draw;
     }
 
     public Date getDate() {
@@ -128,7 +128,7 @@ public class rentData {
     private String houseName;
     private String userName;
     private int room;
-    private int person;
+    private int flatNo;
     private String contact;
     private double rent;
     private String address;
@@ -136,31 +136,31 @@ public class rentData {
     private String image;
     private boolean bachelor;
     private boolean sublet;
-    private boolean dn_Draw;
+    private boolean dn_draw;
     private Date date;
 
 
     public rentData(int id, String ownerName,
-                    String houseName, int roomNo,
-                    int person, String contactNo,
+                    String houseName, int room,
+                    int flatNo, String contact,
                     double rent, String address,
                     String einfo, String image,
                     boolean bachelor, boolean sublet,
-                    boolean dn_Draw,Date date) {
+                    boolean dn_draw, Date date) {
         this.id = id;
         this.ownerName = ownerName;
         this.houseName = houseName;
         this.userName = data.username;
-        this.room = roomNo;
-        this.person = person;
-        this.contact = contactNo;
+        this.room = room;
+        this.flatNo = flatNo;
+        this.contact = contact;
         this.rent = rent;
         this.address = address;
         this.einfo = einfo;
         this.image = image;
         this.bachelor = bachelor;
         this.sublet = sublet;
-        this.dn_Draw = dn_Draw;
+        this.dn_draw = dn_draw;
         this.date=date;
     }
 

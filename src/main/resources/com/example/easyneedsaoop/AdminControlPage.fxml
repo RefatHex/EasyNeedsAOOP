@@ -209,13 +209,13 @@
                                           <TableColumn fx:id="rentIn_col_bachelor" prefWidth="70.4000244140625" text="is Bachelor" />
                                           <TableColumn fx:id="rentIn_col_sublet" prefWidth="66.4000244140625" text="is Sublet" />
                                           <TableColumn fx:id="rentIn_col_roomNo" prefWidth="56.79998779296875" text="Room No." />
-                                          <TableColumn fx:id="rentIn_col_person" prefWidth="61.60003662109375" text="Person" />
+                                          <TableColumn fx:id="rentIn_col_flatNo" prefWidth="61.60003662109375" text="flat" />
                                           <TableColumn fx:id="rentIn_col_contact" prefWidth="60.799957275390625" text="Contact No." />
                                           <TableColumn fx:id="rentIn_col_rent" prefWidth="39.20001220703125" text="Rent" />
                                           <TableColumn fx:id="rentIn_col_dinning" prefWidth="82.4000244140625" text="has Dining/dining" />
                                           <TableColumn fx:id="rentIn_col_address" prefWidth="64.80010986328125" text="Address" />
-                                          <TableColumn fx:id="rentIn_col_eInfo" prefWidth="112.00006103515625" text="Extra info" />
-                                          <TableColumn fx:id="rentIn_col_date" prefWidth="72.00006103515625" text="date" />
+                                          <TableColumn fx:id="rentIn_col_eInfo" prefWidth="77.5999755859375" text="Extra info" />
+                                          <TableColumn fx:id="rentIn_col_date" prefWidth="98.40008544921875" text="date" />
                                       </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -256,7 +256,7 @@
                                                 <Font size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_person" layoutX="367.0" layoutY="62.0" prefHeight="26.0" prefWidth="50.0" />
+                                          <TextField fx:id="rentIn_flatNo" layoutX="367.0" layoutY="62.0" prefHeight="26.0" prefWidth="50.0" />
                                           <Label layoutX="298.0" layoutY="106.0" text="Contact No:">
                                              <font>
                                                 <Font size="15.0" />
@@ -287,7 +287,7 @@
                                           <Label layoutX="455.0" layoutY="147.0" text="is Sublet" />
                                           <ComboBox fx:id="rentIn_dinning" layoutX="748.0" layoutY="145.0" prefHeight="28.0" prefWidth="81.0" />
                                           <Label layoutX="604.0" layoutY="150.0" text="Has Dinning/drwawing" />
-                                          <Button fx:id="rentIn_ImportBtn" layoutX="146.0" layoutY="184.0" mnemonicParsing="false" styleClass="btn" text="Import" />
+                                          <Button fx:id="rentIn_ImportBtn" layoutX="146.0" layoutY="184.0" mnemonicParsing="false" onAction="#InventoryImportBtn" styleClass="btn" text="Import" />
                                           <AnchorPane layoutX="19.0" layoutY="145.0" prefHeight="107.0" prefWidth="108.0" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="19.0">
                                              <styleClass>
                                                 <String fx:value="white-bg" />
@@ -297,9 +297,9 @@
                                                 <ImageView fx:id="rentIn_imageView" fitHeight="119.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" />
                                              </children>
                                           </AnchorPane>
-                                          <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Add" AnchorPane.bottomAnchor="27.399999999999977" />
+                                          <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Add" AnchorPane.bottomAnchor="27.399999999999977" />
                                           <Button fx:id="rentIn_UpdateBtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Update" AnchorPane.bottomAnchor="27.399999999999977" />
-                                          <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Clear" AnchorPane.bottomAnchor="27.399999999999977" />
+                                          <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Clear" AnchorPane.bottomAnchor="27.399999999999977" />
                                           <Button fx:id="rentIn_deleteBtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" styleClass="btn" text="Delete" AnchorPane.bottomAnchor="27.399999999999977" />
                                        </children>
                                     </AnchorPane>

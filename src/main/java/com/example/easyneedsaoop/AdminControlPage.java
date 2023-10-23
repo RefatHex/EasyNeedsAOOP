@@ -8,15 +8,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -99,7 +99,7 @@ public class AdminControlPage implements Initializable {
     private TableColumn<rentData, String> rentIn_col_owner;
 
     @FXML
-    private TableColumn<rentData, String> rentIn_col_person;
+    private TableColumn<rentData, String> rentIn_col_flatNo;
 
     @FXML
     private TableColumn<rentData, String> rentIn_col_rent;
@@ -138,7 +138,7 @@ public class AdminControlPage implements Initializable {
     private TextField rentIn_owner;
 
     @FXML
-    private TextField rentIn_person;
+    private TextField rentIn_flatNo;
 
     @FXML
     private TextField rentIn_rooms;
@@ -153,15 +153,100 @@ public class AdminControlPage implements Initializable {
     private Label userName;
 
     @FXML
-    private TableColumn<?, ?> rentIn_col_date;
+    private TableColumn<rentData, String> rentIn_col_date;
     private Connection connect;
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
 
     private Alert alert;
+    private Image image;
     private boolean[] opinionList={true,false};
+    public void rentInventoryAddBtn(){
+        if(rentIn_id.getText().isEmpty()||
+           rentIn_owner.getText().isEmpty()||
+           rentIn_houseName.getText().isEmpty()||
+           rentIn_rooms.getText().isEmpty()||
+           rentIn_flatNo.getText().isEmpty()||
+           rentIn_subletOption.getSelectionModel().getSelectedItem()==null||
+           rentIn_bachelorBox.getSelectionModel().getSelectedItem()==null||
+          rentIn_dinning.getSelectionModel().getSelectedItem()==null||
+          data.path == null){
 
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+        }else{
+            String insertData="INSERT INTO rentinfo "+
+                    "(ownerName,houseName,userName,room,flatNo,contact,rent,address,einfo,image,bachelor,sublet,dn_draw,date)" +
+                    "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            try {
+                prepare=connect.prepareStatement(insertData);
+                prepare.setString(1,rentIn_owner.getText());
+                prepare.setString(2,rentIn_houseName.getText());
+                prepare.setString(3,data.username);
+                prepare.setString(4,rentIn_rooms.getText());
+                prepare.setString(5,rentIn_flatNo.getText());
+                prepare.setString(6,rentIn_contact.getText());
+                prepare.setString(7,rentIn_Rent.getText());
+                prepare.setString(8,rentIn_address.getText());
+                prepare.setString(9,rentIn_einfo.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(10,path);
+                prepare.setString(11, String.valueOf(rentIn_bachelorBox.getSelectionModel().getSelectedItem()));
+                prepare.setString(12,String.valueOf( rentIn_subletOption.getSelectionModel().getSelectedItem()));
+                prepare.setString(13,String.valueOf( rentIn_dinning.getSelectionModel().getSelectedItem()));
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+
+                prepare.setString(14, String.valueOf(sqlDate));
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Added!");
+                alert.showAndWait();
+
+                rentInventoryShowData();
+                rentInventoryClearBtn();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void rentInventoryClearBtn(){
+        rentIn_id.setText("");
+        rentIn_owner.setText("");
+        rentIn_houseName.setText("");
+        rentIn_rooms.setText("");
+        rentIn_flatNo.setText("");
+        rentIn_contact.setText("");
+        rentIn_Rent.setText("");
+        rentIn_address.setText("");
+        rentIn_einfo.setText("");
+        data.path = "";
+        data.id = 0;
+        rentIn_imageView.setImage(null);
+
+    }
+    public void InventoryImportBtn(){
+        FileChooser openFile = new FileChooser();
+        openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
+
+        File file = openFile.showOpenDialog(mainForm.getScene().getWindow());
+
+        if (file != null) {
+
+            data.path = file.getAbsolutePath();
+            image = new Image(file.toURI().toString(), 116, 119, false, true);
+
+            rentIn_imageView.setImage(image);
+        }    }
+//Merge data on table
     public ObservableList<rentData> getListData() {
         ObservableList<rentData> listData= FXCollections.observableArrayList();
       String sql="SELECT * FROM rentinfo";
@@ -176,7 +261,7 @@ public class AdminControlPage implements Initializable {
                       result.getString("ownerName"),
                       result.getString("houseName"),
                       result.getInt("room"),
-                      result.getInt("person"),
+                      result.getInt("flatNo"),
                       result.getString("contact"),
                       result.getDouble("rent"),
                       result.getString("address"),
@@ -194,6 +279,7 @@ public class AdminControlPage implements Initializable {
       }
       return  listData;
     }
+    //show Data on table
     private ObservableList<rentData> rentInventoryList;
     public void rentInventoryShowData(){
         rentInventoryList=getListData();
@@ -201,9 +287,10 @@ public class AdminControlPage implements Initializable {
         rentIn_col_owner.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
         rentIn_col_houseName.setCellValueFactory(new PropertyValueFactory<>("houseName"));
         rentIn_col_roomNo.setCellValueFactory(new PropertyValueFactory<>("room"));
-        rentIn_col_person.setCellValueFactory(new PropertyValueFactory<>("person"));
+        rentIn_col_flatNo.setCellValueFactory(new PropertyValueFactory<>("flatNo"));
         rentIn_col_contact.setCellValueFactory(new PropertyValueFactory<>("contact"));
         rentIn_col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        rentIn_col_rent.setCellValueFactory(new PropertyValueFactory<>("rent"));
         rentIn_col_eInfo.setCellValueFactory(new PropertyValueFactory<>("einfo"));
         rentIn_col_bachelor.setCellValueFactory(new PropertyValueFactory<>("bachelor"));
         rentIn_col_sublet.setCellValueFactory(new PropertyValueFactory<>("sublet"));
@@ -224,9 +311,7 @@ public class AdminControlPage implements Initializable {
         rentIn_dinning.setItems(listData);
     }
     public void logout() {
-
         try {
-
             alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Error Message");
             alert.setHeaderText(null);
@@ -234,8 +319,6 @@ public class AdminControlPage implements Initializable {
             Optional<ButtonType> option = alert.showAndWait();
 
             if (option.get().equals(ButtonType.OK)) {
-
-
                 logoutBtn.getScene().getWindow().hide();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
                 Stage stage=new Stage();
