@@ -98,7 +98,7 @@ public class Controller {
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully login");
                     alert.showAndWait();
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserType.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminControlPage.fxml"));
                     Stage stage=new Stage();
                     Scene scene = new Scene(fxmlLoader.load());
                     stage.setTitle("EasyNeeds");
