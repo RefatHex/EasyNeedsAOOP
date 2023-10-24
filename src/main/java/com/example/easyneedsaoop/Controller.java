@@ -15,6 +15,7 @@ import javafx.util.Duration;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -121,39 +122,54 @@ public class Controller {
         if (suUsername.getText().isEmpty() ||
                 suPassword.getText().isEmpty() ||
                 suQuestion.getSelectionModel().getSelectedItem() == null) {
-//        alert.show("error",,);
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Massage");
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Already registered");
             alert.setHeaderText(null);
-            alert.setContentText("Please fill all the blank");
+            alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
             alert.showAndWait();
-        } else {
-            String regData = "INSERT INTO user (name,username,password,occupation,date)" + "VALUES(?,?,?,?,?)";
+            return;
+        }
+        String regData = "INSERT INTO user (name, username, password, occupation, date) VALUES(?, ?, ?, ?, ?)";
+        String checkUsername = "SELECT name, occupation FROM user WHERE username = ?";
+
+        try {
             connect = database.connectDB();
-            try {
-                String checkUsername = ("SELECT username FROM user WHERE username = '" + suUsername.getText() + "'");
-                prepare = connect.prepareStatement(checkUsername);
-                result = prepare.executeQuery();
-                if (result.next()) {
-                    String checkType = ("SELECT occupation  FROM user WHERE occupation = '" + (String) suQuestion.getSelectionModel().getSelectedItem() + "'");
-                    prepare = connect.prepareStatement(checkType);
-                    result = prepare.executeQuery();
-                    if (result.next()) {
-                        alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Already registered");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
-                        alert.showAndWait();
-                    }
-                }else{
+            prepare = connect.prepareStatement(checkUsername);
+            prepare.setString(1, suUsername.getText());
+
+            result = prepare.executeQuery();
+
+            if (result.next()) {
+                String existingName = result.getString("name");
+                String existingOccupation = result.getString("occupation");
+
+                if (!existingName.equals(suName.getText())) {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Username Taken");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Username already exists");
+                    alert.showAndWait();
+                    return;
+                }
+                if (existingOccupation.equals(suQuestion.getSelectionModel().getSelectedItem().toString())) {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Already registered");
+                    alert.setHeaderText(null);
+                    alert.setContentText( "Already registered as a " + existingOccupation);
+                    alert.showAndWait();
+                    return;
+                }
+            }
+
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suName.getText());
             prepare.setString(2, suUsername.getText());
             prepare.setString(3, suPassword.getText());
-            prepare.setString(4, (String) suQuestion.getSelectionModel().getSelectedItem());
-            Date date = new Date();
-            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-            prepare.setString(5, String.valueOf(sqlDate));
+            prepare.setString(4, suQuestion.getSelectionModel().getSelectedItem().toString());
+
+            java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
+            prepare.setDate(5, sqlDate);
+
             prepare.executeUpdate();
 //                alert.show("information",,);
             alert = new Alert(Alert.AlertType.INFORMATION);
@@ -177,13 +193,10 @@ public class Controller {
                 sideCreateButton.setVisible(true);
             });
             slider.play();}
+        catch (Exception e) {
+            e.printStackTrace();
         }
-     catch(Exception e){
-        e.printStackTrace();
     }
-}
-
-}
 
     public void regQuesList(){
         List<String> listQ=new ArrayList<>();
