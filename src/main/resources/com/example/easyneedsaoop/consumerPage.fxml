@@ -54,33 +54,17 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutY="26.0" prefHeight="524.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane prefHeight="524.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="351.0" layoutY="447.0" prefHeight="51.0" prefWidth="419.0">
                                  <children>
-                                    <AnchorPane layoutX="-58.0" layoutY="-2.0" prefHeight="54.0" prefWidth="422.0" style="-fx-background-color: #79747A;" stylesheets="@styles.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-58.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="-2.0">
+                                    <AnchorPane layoutX="1.0" layoutY="-1.0" prefHeight="54.0" prefWidth="422.0" style="-fx-background-color: #79747A;" stylesheets="@HeadLabel.css" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                       <styleClass>
+                                          <String fx:value="icon-color" />
+                                          <String fx:value="upper-anchore" />
+                                       </styleClass>
                                        <children>
-                                          <ImageView fx:id="foodIcon" fitHeight="37.0" fitWidth="36.0" layoutX="93.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                             <image>
-                                                <Image url="@ricebowl.png" />
-                                             </image>
-                                          </ImageView>
-                                          <ImageView fx:id="clothingIcon" fitHeight="37.0" fitWidth="36.0" layoutX="157.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                             <image>
-                                                <Image url="@clothing.png" />
-                                             </image>
-                                          </ImageView>
-                                          <ImageView fx:id="eduationIcon" fitHeight="37.0" fitWidth="36.0" layoutX="226.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                             <image>
-                                                <Image url="@education.png" />
-                                             </image>
-                                          </ImageView>
-                                          <ImageView fx:id="DoctorIcon" fitHeight="37.0" fitWidth="36.0" layoutX="364.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                             <image>
-                                                <Image url="@img.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@consumerCss.css">
+                                          <Button layoutX="25.0" layoutY="2.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="51.0">
                                              <graphic>
                                                 <ImageView fx:id="homeImage" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -88,73 +72,210 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic>
+                                             <stylesheets>
+                                                <URL value="@consumerCss.css" />
+                                                <URL value="@HeadLabel.css" />
+                                             </stylesheets>
+                                             <styleClass>
+                                                <String fx:value="transparent" />
+                                                <String fx:value="icons" />
+                                             </styleClass>
                                           </Button>
-                                          <Button mnemonicParsing="false" text="Button" />
-                                          <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
-                                          <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                          <Button layoutX="98.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="55.0">
+                                             <graphic>
+                                                <ImageView fx:id="foodIcon" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                                   <image>
+                                                      <Image url="@ricebowl.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <stylesheets>
+                                                <URL value="@consumerCss.css" />
+                                                <URL value="@HeadLabel.css" />
+                                             </stylesheets>
+                                             <styleClass>
+                                                <String fx:value="transparent" />
+                                                <String fx:value="icons" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button layoutX="185.0" layoutY="7.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="49.0">
+                                             <graphic>
+                                                <ImageView fx:id="clothingIcon" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                                   <image>
+                                                      <Image url="@clothing.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <stylesheets>
+                                                <URL value="@consumerCss.css" />
+                                                <URL value="@HeadLabel.css" />
+                                             </stylesheets>
+                                             <styleClass>
+                                                <String fx:value="transparent" />
+                                                <String fx:value="icons" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button layoutX="264.0" layoutY="1.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="56.0">
+                                             <graphic>
+                                                <ImageView fx:id="eduationIcon" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                                   <image>
+                                                      <Image url="@education.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <stylesheets>
+                                                <URL value="@consumerCss.css" />
+                                                <URL value="@HeadLabel.css" />
+                                             </stylesheets>
+                                             <styleClass>
+                                                <String fx:value="transparent" />
+                                                <String fx:value="icons" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button layoutX="347.0" layoutY="2.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="55.0">
+                                             <graphic>
+                                                <ImageView fx:id="DoctorIcon" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                                   <image>
+                                                      <Image url="@img.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <stylesheets>
+                                                <URL value="@consumerCss.css" />
+                                                <URL value="@HeadLabel.css" />
+                                             </stylesheets>
+                                             <styleClass>
+                                                <String fx:value="transparent" />
+                                                <String fx:value="icons" />
+                                             </styleClass>
+                                          </Button>
                                        </children>
-                                       <styleClass>
-                                          <String fx:value="icon-color" />
-                                          <String fx:value="upper-anchore" />
-                                       </styleClass>
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
                            </children></AnchorPane>
                         <AnchorPane prefHeight="524.0" prefWidth="202.0">
                            <children>
-                              <AnchorPane fx:id="sidePanel" prefHeight="499.0" prefWidth="200.0">
-                                 <stylesheets>
-                                    <URL value="@HeadLabel.css" />
-                                    <URL value="@styles.css" />
-                                 </stylesheets>
+                              <AnchorPane fx:id="sidePanel" layoutX="-20.0" layoutY="-6.0" prefHeight="530.0" prefWidth="200.0" stylesheets="@HeadLabel.css">
                                  <styleClass>
                                     <String fx:value="login-button" />
                                     <String fx:value="radius" />
                                  </styleClass>
                                  <children>
-                                    <ImageView fx:id="homeImage1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@home.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="foodIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@ricebowl.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="clothingIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@clothing.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="eduationIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@education.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="HospitalIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@hospital.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="DoctorIcon1" fitHeight="37.0" fitWidth="36.0" layoutX="37.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
-                                       <image>
-                                          <Image url="@img.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Button layoutX="89.0" layoutY="18.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Home" />
-                                    <Button layoutX="89.0" layoutY="88.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Food" />
-                                    <Button layoutX="89.0" layoutY="161.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Clothes" />
-                                    <Button layoutX="89.0" layoutY="230.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Education" />
-                                    <Button layoutX="89.0" layoutY="303.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Health Asset." />
-                                    <Button layoutX="89.0" layoutY="377.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" styleClass="User-button" stylesheets="@UserTypeBtn.css" text="Doctor" />
-                                    <ImageView fitHeight="97.0" fitWidth="103.0" layoutX="41.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+                                    <Button layoutX="39.0" layoutY="14.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="138.0" text="Home">
+                                       <graphic>
+                                          <ImageView fx:id="homeImage1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@home.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@consumerCss.css" />
+                                          <URL value="@adminPageStyle.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="table-view" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></Button>
+                                    <Button layoutX="39.0" layoutY="88.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="138.0" text="Food">
+                                       <graphic>
+                                          <ImageView fx:id="foodIcon1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@ricebowl.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@adminPageStyle.css" />
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@consumerCss.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="table-view" />
+                                       </styleClass></Button>
+                                    <Button layoutX="39.0" layoutY="161.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="136.0" text="Clothes">
+                                       <graphic>
+                                          <ImageView fx:id="clothingIcon1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@clothing.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@consumerCss.css" />
+                                          <URL value="@adminPageStyle.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="table-view" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></Button>
+                                    <Button layoutX="42.0" layoutY="233.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" text="Education">
+                                       <graphic>
+                                          <ImageView fx:id="eduationIcon1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@education.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@adminPageStyle.css" />
+                                          <URL value="@consumerCss.css" />
+                                          <URL value="@loginsignup.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="transparent" />
+                                          <String fx:value="table-view" />
+                                       </styleClass></Button>
+                                    <Button layoutX="43.0" layoutY="303.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="133.0" text="Health Asset.">
+                                       <graphic>
+                                          <ImageView fx:id="HospitalIcon1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@hospital.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@consumerCss.css" />
+                                          <URL value="@adminPageStyle.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="table-view" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></Button>
+                                    <Button layoutX="44.0" layoutY="371.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" text="Doctor">
+                                       <graphic>
+                                          <ImageView fx:id="DoctorIcon1" fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="icons">
+                                             <image>
+                                                <Image url="@img.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <stylesheets>
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@consumerCss.css" />
+                                          <URL value="@adminPageStyle.css" />
+                                       </stylesheets>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="table-view" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></Button>
+                                    <ImageView fitHeight="105.0" fitWidth="117.0" layoutX="48.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@AppTitleLog.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="29.0" layoutY="461.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Label layoutX="39.0" layoutY="489.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                  </children>
                               </AnchorPane>
                            </children>
