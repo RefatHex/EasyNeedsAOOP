@@ -55,13 +55,13 @@
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font></Button>
-                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" onAction="#dashBoardAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" onAction="#rentBtnAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" onAction="#foodBtnAction" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" onAction="#clothingBtnAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#educationBtnAction" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                              <Button fx:id="hospital_btn" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" onAction="#hospitalBtnAction" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" onAction="#customerBtnAction" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
+                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                              <Button fx:id="hospital_btn" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -70,7 +70,7 @@
                <center>
                   <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="dashboardForm" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
+                        <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
                            <children>
                               <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="153.0" prefWidth="851.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -81,7 +81,7 @@
                                  <children>
                                     <ScrollPane layoutX="14.0" layoutY="-17.0" prefHeight="183.2" prefWidth="849.6" styleClass="transparent" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <content>
-                                          <AnchorPane prefHeight="130.0" prefWidth="1015.0">
+                                          <AnchorPane prefHeight="165.0" prefWidth="1079.0">
                                              <children>
                                                 <AnchorPane layoutX="12.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                    <children>
@@ -145,7 +145,7 @@
                                     </ScrollPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="44.0" layoutY="180.0" prefHeight="411.0" prefWidth="850.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="180.0">
+                              <AnchorPane layoutX="41.0" layoutY="193.0" prefHeight="430.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="193.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -190,358 +190,361 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form" layoutX="23.0" layoutY="7.0" prefHeight="600.0" prefWidth="874.0" visible="false" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
+                        <AnchorPane fx:id="rentIn_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass>
                            <children>
-                              <AnchorPane fx:id="rentInventoryAnchorPane" layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
-                                 <styleClass>
-                                    <String fx:value="white-bg" />
-                                    <String fx:value="radius" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
+                              <TableView fx:id="rentInTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="rentIn_col_Id" prefWidth="32.79997253417969" text="ID" />
+                                  <TableColumn fx:id="rentIn_col_owner" prefWidth="91.20001983642578" text="Owner Name" />
+                                    <TableColumn fx:id="rentIn_col_houseName" prefWidth="74.39996337890625" text="House Name" />
+                                    <TableColumn fx:id="rentIn_col_bachelor" prefWidth="70.4000244140625" text="is Bachelor" />
+                                    <TableColumn fx:id="rentIn_col_sublet" prefWidth="66.4000244140625" text="is Sublet" />
+                                    <TableColumn fx:id="rentIn_col_roomNo" prefWidth="56.79998779296875" text="Room No." />
+                                    <TableColumn fx:id="rentIn_col_flatNo" prefWidth="61.60003662109375" text="flat" />
+                                    <TableColumn fx:id="rentIn_col_contact" prefWidth="60.799957275390625" text="Contact No." />
+                                    <TableColumn fx:id="rentIn_col_rent" prefWidth="39.20001220703125" text="Rent" />
+                                    <TableColumn fx:id="rentIn_col_dinning" prefWidth="82.4000244140625" text="has Dining/dining" />
+                                    <TableColumn fx:id="rentIn_col_address" prefWidth="64.80010986328125" text="Address" />
+                                    <TableColumn fx:id="rentIn_col_eInfo" prefWidth="77.5999755859375" text="Extra info" />
+                                    <TableColumn fx:id="rentIn_col_date" prefWidth="98.40008544921875" text="date" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <AnchorPane fx:id="rentAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                  <children>
-                                    <TableView fx:id="rentInTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
-                                      <columns>
-                                        <TableColumn fx:id="rentIn_col_Id" prefWidth="32.79997253417969" text="ID" />
-                                        <TableColumn fx:id="rentIn_col_owner" prefWidth="91.20001983642578" text="Owner Name" />
-                                          <TableColumn fx:id="rentIn_col_houseName" prefWidth="74.39996337890625" text="House Name" />
-                                          <TableColumn fx:id="rentIn_col_bachelor" prefWidth="70.4000244140625" text="is Bachelor" />
-                                          <TableColumn fx:id="rentIn_col_sublet" prefWidth="66.4000244140625" text="is Sublet" />
-                                          <TableColumn fx:id="rentIn_col_roomNo" prefWidth="56.79998779296875" text="Room No." />
-                                          <TableColumn fx:id="rentIn_col_flatNo" prefWidth="61.60003662109375" text="flat" />
-                                          <TableColumn fx:id="rentIn_col_contact" prefWidth="60.799957275390625" text="Contact No." />
-                                          <TableColumn fx:id="rentIn_col_rent" prefWidth="39.20001220703125" text="Rent" />
-                                          <TableColumn fx:id="rentIn_col_dinning" prefWidth="82.4000244140625" text="has Dining/dining" />
-                                          <TableColumn fx:id="rentIn_col_address" prefWidth="64.80010986328125" text="Address" />
-                                          <TableColumn fx:id="rentIn_col_eInfo" prefWidth="77.5999755859375" text="Extra info" />
-                                          <TableColumn fx:id="rentIn_col_date" prefWidth="98.40008544921875" text="date" />
-                                      </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
-                                    </TableView>
-                                    <AnchorPane fx:id="rentAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
+                                    <Label layoutX="90.0" layoutY="15.0" text="ID:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_id" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText=" update and delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_owner" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="19.0" layoutY="84.0" text="House Name:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_houseName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter house name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="330.0" layoutY="12.0" text="Person:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_rooms" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter number of member" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="309.0" layoutY="46.0" text="Room No:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_flatNo" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter number of rooms " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="303.0" layoutY="84.0" text="Contact No:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_contact" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Enter contact number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="595.0" layoutY="12.0" text="Rent:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_Rent" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Fare in BDT" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="571.0" layoutY="46.0" text="Address:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_address" layoutX="650.0" layoutY="43.0" prefHeight="28.0" prefWidth="151.0" promptText="Enter your full address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="564.0" layoutY="85.0" text="Extra info:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="rentIn_einfo" layoutX="650.0" layoutY="81.0" prefHeight="28.0" prefWidth="151.0" promptText="Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <ComboBox fx:id="rentIn_bachelorBox" layoutX="301.0" layoutY="136.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Label layoutX="212.0" layoutY="142.0" text="for Bachelor">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="rentIn_subletOption" layoutX="472.0" layoutY="138.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Label layoutX="410.0" layoutY="142.0" text="is Sublet">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="rentIn_dinning" layoutX="724.0" layoutY="136.0" prefHeight="28.0" prefWidth="81.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Label layoutX="577.0" layoutY="140.0" text="Has Dinning/Drawing">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="rentIn_ImportBtn" layoutX="151.0" layoutY="188.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="rentIn_UpdateBtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="rentIn_deleteBtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                        <children>
-                                          <Label layoutX="90.0" layoutY="15.0" text="ID:">
+                                          <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                          <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font name="System Bold Italic" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_id" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter yout ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
+                                          <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Photo">
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font name="System Bold Italic" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="rentIn_owner" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="19.0" layoutY="84.0" text="House Name:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_houseName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter house name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="330.0" layoutY="12.0" text="Person:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_rooms" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter number of member" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="309.0" layoutY="46.0" text="Room No:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_flatNo" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter number of rooms " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="303.0" layoutY="84.0" text="Contact No:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_contact" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Enter contact number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="595.0" layoutY="12.0" text="Rent:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_Rent" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Fare in BDT" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="571.0" layoutY="46.0" text="Address:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_address" layoutX="650.0" layoutY="43.0" prefHeight="28.0" prefWidth="151.0" promptText="Enter your full address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="564.0" layoutY="85.0" text="Extra info:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="rentIn_einfo" layoutX="650.0" layoutY="81.0" prefHeight="28.0" prefWidth="151.0" promptText="Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <ComboBox fx:id="rentIn_bachelorBox" layoutX="301.0" layoutY="136.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass></ComboBox>
-                                          <Label layoutX="212.0" layoutY="142.0" text="for Bachelor">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <ComboBox fx:id="rentIn_subletOption" layoutX="472.0" layoutY="138.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass></ComboBox>
-                                          <Label layoutX="410.0" layoutY="142.0" text="is Sublet">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <ComboBox fx:id="rentIn_dinning" layoutX="724.0" layoutY="136.0" prefHeight="28.0" prefWidth="81.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass></ComboBox>
-                                          <Label layoutX="577.0" layoutY="140.0" text="Has Dinning/Drawing">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font></Label>
-                                          <Button fx:id="rentIn_ImportBtn" layoutX="151.0" layoutY="188.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass></Button>
-                                          <Button fx:id="rentIn_addBtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass></Button>
-                                          <Button fx:id="rentIn_UpdateBtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass></Button>
-                                          <Button fx:id="rentIn_clearBtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass></Button>
-                                          <Button fx:id="rentIn_deleteBtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass></Button>
-                                          <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
-                                             <children>
-                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
-                                                <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Photo">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <styleClass>
-                                                <String fx:value="Lightwhite-bg" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </AnchorPane>
                                        </children>
+                                       <styleClass>
+                                          <String fx:value="Lightwhite-bg" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form1" layoutX="10.0" layoutY="17.0" prefHeight="600.0" prefWidth="892.0" stylesheets="@loginsignup.css" visible="false">
+                        <AnchorPane fx:id="catering_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass>
                            <children>
-                              <AnchorPane fx:id="catering_form" layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
-                                 <styleClass>
-                                    <String fx:value="white-bg" />
-                                    <String fx:value="radius" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
+                              <TableView fx:id="rentInTable1" layoutX="4.0" prefHeight="279.0" prefWidth="846.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="catering_col_Id1" prefWidth="32.79997253417969" text="ID" />
+                                    <TableColumn fx:id="catering_col_owner1" prefWidth="71.20001983642578" text="Owner Name" />
+                                    <TableColumn fx:id="catering_col_shopName1" prefWidth="65.39996337890625" text="Shop Name" />
+                                    <TableColumn fx:id="catering_col_Branch1" prefWidth="50.79998779296875" text="Branch" />
+                                    <TableColumn fx:id="catering_col_contact1" prefWidth="70.79995727539062" text="Owner's No." />
+                                    <TableColumn fx:id="catering_col_mealType1" prefWidth="58.4000244140625" text="Meal Type" />
+                                    <TableColumn fx:id="catering_col_address1" prefWidth="64.80010986328125" text="Shop Address" />
+                                    <TableColumn fx:id="catering_col_eInfo1" prefWidth="47.5999755859375" text="Extra info" />
+                                    <TableColumn fx:id="catering_col_contact11" prefWidth="70.79995727539062" text="Shop's Contact No." />
+                                    <TableColumn fx:id="catering_col_date1" prefWidth="60.40008544921875" text="date" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="841.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="3.0">
                                  <children>
-                                    <TableView fx:id="rentInTable1" layoutX="4.0" prefHeight="279.0" prefWidth="846.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
-                                       <columns>
-                                          <TableColumn fx:id="catering_col_Id1" prefWidth="32.79997253417969" text="ID" />
-                                          <TableColumn fx:id="catering_col_owner1" prefWidth="71.20001983642578" text="Owner Name" />
-                                          <TableColumn fx:id="catering_col_shopName1" prefWidth="65.39996337890625" text="Shop Name" />
-                                          <TableColumn fx:id="catering_col_Branch1" prefWidth="50.79998779296875" text="Branch" />
-                                          <TableColumn fx:id="catering_col_contact1" prefWidth="70.79995727539062" text="Owner's No." />
-                                          <TableColumn fx:id="catering_col_mealType1" prefWidth="58.4000244140625" text="Meal Type" />
-                                          <TableColumn fx:id="catering_col_address1" prefWidth="64.80010986328125" text="Shop Address" />
-                                          <TableColumn fx:id="catering_col_eInfo1" prefWidth="47.5999755859375" text="Extra info" />
-                                          <TableColumn fx:id="catering_col_contact11" prefWidth="70.79995727539062" text="Shop's Contact No." />
-                                          <TableColumn fx:id="catering_col_date1" prefWidth="60.40008544921875" text="date" />
-                                       </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
-                                    </TableView>
-                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="841.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="3.0">
+                                    <Label layoutX="90.0" layoutY="15.0" text="ID:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringOwnerID" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter yout ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringOwnerName" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="19.0" layoutY="84.0" text="Shop Name:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringShopName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter shop name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="300.0" layoutY="15.0" text="Shop Branch:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringShopBranch" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter branch name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="295.0" layoutY="50.0" text="Shop Address:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringShopAddress" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter shop address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="296.0" layoutY="85.0" text="Owner Phone:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringOwnerPhone" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Owner Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="555.0" layoutY="15.0" text="Shop Phone: ">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cateringShopPhone" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Shop Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="565.0" layoutY="50.0" text="Extra info:">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="extraInfoText" layoutX="649.0" layoutY="47.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <ComboBox fx:id="mealType" layoutX="652.0" layoutY="81.0" prefHeight="30.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Label layoutX="569.0" layoutY="86.0" text="Meal Type">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="catering_ImportBtn1" layoutX="151.0" layoutY="188.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="catering_addBtn1" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="catering_UpdateBtn1" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="catering_clearBtn1" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button fx:id="catering_deleteBtn1" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="User-button" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Button>
+                                    <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                        <children>
-                                          <Label layoutX="90.0" layoutY="15.0" text="ID:">
+                                          <ImageView fx:id="catering_imageView1" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                          <Label fx:id="imgLbl11" layoutX="27.0" layoutY="32.0" text="Add  Brand">
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font name="System Bold Italic" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringOwnerID" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter yout ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
+                                          <Label fx:id="imgLbl21" layoutX="44.0" layoutY="60.0" text="Logo">
                                              <font>
-                                                <Font name="System Bold" size="15.0" />
+                                                <Font name="System Bold Italic" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringOwnerName" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="19.0" layoutY="84.0" text="Shop Name:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cateringShopName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter shop name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="300.0" layoutY="15.0" text="Shop Branch:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cateringShopBranch" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter branch name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="295.0" layoutY="50.0" text="Shop Address:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cateringShopAddress" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter shop address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="296.0" layoutY="85.0" text="Owner Phone:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cateringOwnerPhone" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Owner Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="555.0" layoutY="15.0" text="Shop Phone: ">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cateringShopPhone" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Shop Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="565.0" layoutY="50.0" text="Extra info:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="extraInfoText" layoutX="649.0" layoutY="47.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <ComboBox fx:id="mealType" layoutX="652.0" layoutY="81.0" prefHeight="30.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
-                                          <Label layoutX="569.0" layoutY="86.0" text="Meal Type">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="catering_ImportBtn1" layoutX="151.0" layoutY="188.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="catering_addBtn1" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="catering_UpdateBtn1" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="catering_clearBtn1" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="catering_deleteBtn1" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
-                                             <children>
-                                                <ImageView fx:id="catering_imageView1" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
-                                                <Label fx:id="imgLbl11" layoutX="27.0" layoutY="32.0" text="Add  Brand">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="imgLbl21" layoutX="44.0" layoutY="60.0" text="Logo">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <styleClass>
-                                                <String fx:value="Lightwhite-bg" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </AnchorPane>
-                                          <Label layoutX="241.0" layoutY="156.0" prefHeight="20.0" prefWidth="134.0" text="Can provide meal on">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <ComboBox fx:id="rentIn_dinning11" layoutX="380.0" layoutY="151.0" prefHeight="30.0" prefWidth="115.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
-                                          <Label layoutX="509.0" layoutY="156.0" prefHeight="20.0" prefWidth="157.0" text="Bill Collecting Procedure">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <ComboBox fx:id="rentIn_dinning12" layoutX="670.0" layoutY="151.0" prefHeight="30.0" prefWidth="108.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
                                        </children>
+                                       <styleClass>
+                                          <String fx:value="Lightwhite-bg" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
                                     </AnchorPane>
+                                    <Label layoutX="241.0" layoutY="156.0" prefHeight="20.0" prefWidth="134.0" text="Can provide meal on">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="rentIn_dinning11" layoutX="380.0" layoutY="151.0" prefHeight="30.0" prefWidth="115.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
+                                    <Label layoutX="509.0" layoutY="156.0" prefHeight="20.0" prefWidth="157.0" text="Bill Collecting Procedure">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="rentIn_dinning12" layoutX="670.0" layoutY="151.0" prefHeight="30.0" prefWidth="108.0" stylesheets="@HeadLabel.css">
+                                       <styleClass>
+                                          <String fx:value="table-view" />
+                                          <String fx:value="User-button" />
+                                       </styleClass>
+                                    </ComboBox>
                                  </children>
                               </AnchorPane>
                            </children>

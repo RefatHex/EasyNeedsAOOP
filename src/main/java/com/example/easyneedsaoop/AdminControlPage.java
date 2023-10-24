@@ -31,7 +31,10 @@ public class AdminControlPage implements Initializable {
     private Button customer_btn;
 
     @FXML
-    private AnchorPane dashboardForm;
+    private AnchorPane dashboard_form;
+
+    @FXML
+    private AnchorPane catering_form;
 
     @FXML
     private Button dashboard_btn;
@@ -125,18 +128,6 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private AnchorPane rentIn_form;
-    @FXML
-    private AnchorPane catering_form;
-    @FXML
-    private AnchorPane menuAnchorPane;
-    @FXML
-    private AnchorPane adminAnchorPane;
-    @FXML
-    private AnchorPane rentInventoryAnchorPane;
-    @FXML
-    private AnchorPane rentIn_form1;
-    @FXML
-    private AnchorPane rentAnchor ;
 
     @FXML
     private TextField rentIn_houseName;
@@ -208,11 +199,7 @@ public class AdminControlPage implements Initializable {
     @FXML
     private Button catering_clearBtn1;
 
-    @FXML
-    private Button catering_deleteBtn1;
 
-    @FXML
-    private ImageView catering_imageView1;
     @FXML
     private ComboBox<?> mealType;
 
@@ -272,6 +259,76 @@ public class AdminControlPage implements Initializable {
             }
         }
     }
+    public void rentInventoryUpdateBtn(){
+        if(rentIn_id.getText().isEmpty()||
+                rentIn_owner.getText().isEmpty()||
+                rentIn_houseName.getText().isEmpty()||
+                rentIn_rooms.getText().isEmpty()||
+                rentIn_flatNo.getText().isEmpty()||
+                rentIn_subletOption.getSelectionModel().getSelectedItem()==null||
+                rentIn_bachelorBox.getSelectionModel().getSelectedItem()==null||
+                rentIn_dinning.getSelectionModel().getSelectedItem()==null||
+                data.path == null){
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+            return;
+        }
+
+        String updateData = "UPDATE rentinfo SET " +
+                "ownerName=?, houseName=?, userName=?, room=?, flatNo=?, contact=?, " +
+                "rent=?, address=?, einfo=?, image=?, bachelor=?, sublet=?, dn_draw=?, date=? " +
+                "WHERE id=?";
+
+        try {
+            prepare = connect.prepareStatement(updateData);
+            prepare.setString(1,rentIn_owner.getText());
+            prepare.setString(2,rentIn_houseName.getText());
+            prepare.setString(3,data.username);
+            prepare.setString(4,rentIn_rooms.getText());
+            prepare.setString(5,rentIn_flatNo.getText());
+            prepare.setString(6,rentIn_contact.getText());
+            prepare.setString(7,rentIn_Rent.getText());
+            prepare.setString(8,rentIn_address.getText());
+            prepare.setString(9,rentIn_einfo.getText());
+            String path = data.path;
+            path = path.replace("\\", "\\\\");
+            prepare.setString(10,path);
+            prepare.setString(11, String.valueOf(rentIn_bachelorBox.getSelectionModel().getSelectedItem()));
+            prepare.setString(12,String.valueOf( rentIn_subletOption.getSelectionModel().getSelectedItem()));
+            prepare.setString(13,String.valueOf( rentIn_dinning.getSelectionModel().getSelectedItem()));
+            java.util.Date date = new java.util.Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            prepare.setString(14, String.valueOf(sqlDate));
+            prepare.setString(15, rentIn_id.getText());
+
+
+            int affectedRows = prepare.executeUpdate();
+
+            if (affectedRows > 0) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Update Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Updated!");
+                alert.showAndWait();
+
+                rentInventoryShowData();
+                rentInventoryClearBtn();
+            } else {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("No records updated. Please check the ID.");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void rentInventoryClearBtn(){
         rentIn_id.setText("");
         rentIn_owner.setText("");
@@ -287,6 +344,53 @@ public class AdminControlPage implements Initializable {
         rentIn_imageView.setImage(null);
 
     }
+    public void rentInventoryDeleteBtn() {
+        if (rentIn_id.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please provide the ID of the record to be deleted.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this record?", ButtonType.YES, ButtonType.NO);
+        confirmationAlert.setTitle("Delete Confirmation");
+        confirmationAlert.setHeaderText(null);
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            String deleteQuery = "DELETE FROM rentinfo WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(deleteQuery);
+                prepare.setString(1, rentIn_id.getText());
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Delete Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Deleted!");
+                    alert.showAndWait();
+
+                    rentInventoryShowData();
+                    rentInventoryClearBtn();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records deleted. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+        }
+    }
+
     public void InventoryImportBtn(){
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
@@ -393,60 +497,28 @@ public class AdminControlPage implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        menuAnchorPane.setVisible(true);
-        dashboardForm.setVisible(false);
-        rentIn_form.setVisible(false);
-        rentInventoryAnchorPane.setVisible(false);
-        rentAnchor.setVisible(false);
-        rentIn_form1.setVisible(false);
         displayUsername();
         yesOrNo();
         getListData();
         rentInventoryShowData();
 
     }
+    public void handleEvent(ActionEvent event) {
+        if (event.getSource() == food_btn) {
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            catering_form.setVisible(true);
+        } else if (event.getSource() == dashboard_btn) {
+            dashboard_form.setVisible(true);
+            rentIn_form.setVisible(false);
+            catering_form.setVisible(false);
 
-    @FXML
-    public void foodBtnAction(){
-        adminAnchorPane.setVisible(true);
-        dashboardForm.setVisible(false);
-        rentIn_form.setVisible(false);
-        rentInventoryAnchorPane.setVisible(false);
-        rentIn_form1.setVisible(true);
-        catering_form.setVisible(true);
-    }
-    @FXML
-    public void dashBoardAction(){
-        adminAnchorPane.setVisible(true);
-        dashboardForm.setVisible(true);
-        rentIn_form.setVisible(false);
-        catering_form.setVisible(false);
-    }
-    @FXML
-    public void rentBtnAction(){
-        adminAnchorPane.setVisible(true);
-        dashboardForm.setVisible(false);
-        rentIn_form.setVisible(true);
-        rentInventoryAnchorPane.setVisible(true);
-        rentAnchor.setVisible(true);
-        rentIn_form1.setVisible(true);
-        catering_form.setVisible(false);
+        } else if (event.getSource() == rent_btn) {
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(true);
+            catering_form.setVisible(false);
 
+        }
     }
-    @FXML
-    public void clothingBtnAction(){
 
-    }
-    @FXML
-    public void educationBtnAction(){
-
-    }
-    @FXML
-    public void hospitalBtnAction(){
-
-    }
-    @FXML
-    public void customerBtnAction(){
-
-    }
 }
