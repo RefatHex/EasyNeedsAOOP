@@ -125,6 +125,18 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private AnchorPane rentIn_form;
+    @FXML
+    private AnchorPane catering_form;
+    @FXML
+    private AnchorPane menuAnchorPane;
+    @FXML
+    private AnchorPane adminAnchorPane;
+    @FXML
+    private AnchorPane rentInventoryAnchorPane;
+    @FXML
+    private AnchorPane rentIn_form1;
+    @FXML
+    private AnchorPane rentAnchor ;
 
     @FXML
     private TextField rentIn_houseName;
@@ -203,6 +215,7 @@ public class AdminControlPage implements Initializable {
     private ImageView catering_imageView1;
     @FXML
     private ComboBox<?> mealType;
+
     public void rentInventoryAddBtn(){
         if(rentIn_id.getText().isEmpty()||
            rentIn_owner.getText().isEmpty()||
@@ -380,12 +393,60 @@ public class AdminControlPage implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        menuAnchorPane.setVisible(true);
+        dashboardForm.setVisible(false);
+        rentIn_form.setVisible(false);
+        rentInventoryAnchorPane.setVisible(false);
+        rentAnchor.setVisible(false);
+        rentIn_form1.setVisible(false);
         displayUsername();
         yesOrNo();
         getListData();
         rentInventoryShowData();
+
     }
 
-    public void signoutButtonAction(ActionEvent actionEvent) {
+    @FXML
+    public void foodBtnAction(){
+        adminAnchorPane.setVisible(true);
+        dashboardForm.setVisible(false);
+        rentIn_form.setVisible(false);
+        rentInventoryAnchorPane.setVisible(false);
+        rentIn_form1.setVisible(true);
+        catering_form.setVisible(true);
+    }
+    @FXML
+    public void dashBoardAction(){
+        adminAnchorPane.setVisible(true);
+        dashboardForm.setVisible(true);
+        rentIn_form.setVisible(false);
+        catering_form.setVisible(false);
+    }
+    @FXML
+    public void rentBtnAction(){
+        adminAnchorPane.setVisible(true);
+        dashboardForm.setVisible(false);
+        rentIn_form.setVisible(true);
+        rentInventoryAnchorPane.setVisible(true);
+        rentAnchor.setVisible(true);
+        rentIn_form1.setVisible(true);
+        catering_form.setVisible(false);
+
+    }
+    @FXML
+    public void clothingBtnAction(){
+
+    }
+    @FXML
+    public void educationBtnAction(){
+
+    }
+    @FXML
+    public void hospitalBtnAction(){
+
+    }
+    @FXML
+    public void customerBtnAction(){
+
     }
 }

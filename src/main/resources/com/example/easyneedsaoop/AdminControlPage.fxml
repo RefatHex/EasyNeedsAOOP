@@ -26,7 +26,7 @@
                <left>
                   <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="-10.0" layoutY="83.0" prefHeight="600.0" prefWidth="243.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="menuAnchorPane" layoutX="-10.0" layoutY="83.0" prefHeight="608.0" prefWidth="243.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
@@ -55,22 +55,22 @@
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font></Button>
-                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                              <Button fx:id="hospital_btn" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
+                              <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="158.0" mnemonicParsing="false" onAction="#dashBoardAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="rent_btn" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" onAction="#rentBtnAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="food_btn" layoutX="15.0" layoutY="260.0" mnemonicParsing="false" onAction="#foodBtnAction" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="clothing_btn" layoutX="15.0" layoutY="313.0" mnemonicParsing="false" onAction="#clothingBtnAction" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                              <Button fx:id="edu_btn" layoutX="15.0" layoutY="360.0" mnemonicParsing="false" onAction="#educationBtnAction" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                              <Button fx:id="hospital_btn" layoutX="15.0" layoutY="407.0" mnemonicParsing="false" onAction="#hospitalBtnAction" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" onAction="#customerBtnAction" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
+                  <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="dashboardForm" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
+                        <AnchorPane fx:id="dashboardForm" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
                            <children>
                               <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="153.0" prefWidth="851.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -83,7 +83,7 @@
                                        <content>
                                           <AnchorPane prefHeight="130.0" prefWidth="1015.0">
                                              <children>
-                                                <AnchorPane layoutX="12.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="nav-form" stylesheets="@adminPageStyle.css">
+                                                <AnchorPane layoutX="12.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                    <children>
                                                       <Label layoutX="91.0" layoutY="97.0" text="Number of Customer" textFill="WHITE">
                                                          <font>
@@ -97,7 +97,7 @@
                                                       </Label>
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane layoutX="546.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="nav-form" stylesheets="@adminPageStyle.css">
+                                                <AnchorPane layoutX="546.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                    <children>
                                                       <Label layoutX="91.0" layoutY="97.0" text="Total Income" textFill="WHITE">
                                                          <font>
@@ -111,7 +111,7 @@
                                                       </Label>
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane layoutX="278.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="nav-form" stylesheets="@adminPageStyle.css">
+                                                <AnchorPane layoutX="278.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                    <children>
                                                       <Label layoutX="91.0" layoutY="97.0" text="Today's Income" textFill="WHITE">
                                                          <font>
@@ -125,7 +125,7 @@
                                                       </Label>
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane layoutX="824.0" layoutY="5.0" prefHeight="134.0" prefWidth="255.0" styleClass="nav-form" stylesheets="@adminPageStyle.css">
+                                                <AnchorPane layoutX="824.0" layoutY="5.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                    <children>
                                                       <Label layoutX="91.0" layoutY="97.0" text="Given Rewards" textFill="WHITE">
                                                          <font>
@@ -152,31 +152,31 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <AnchorPane layoutX="508.0" layoutY="23.0" prefHeight="368.0" prefWidth="356.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="23.0">
+                                    <AnchorPane layoutX="466.0" layoutY="8.0" prefHeight="417.0" prefWidth="390.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="8.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <BarChart layoutX="-86.0" layoutY="-131.0" prefHeight="368.0" prefWidth="414.4" title="Customer's Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <BarChart layoutX="-37.0" layoutY="10.0" prefHeight="398.0" prefWidth="415.0" title="Customer's Chart" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-37.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="10.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
                                              <yAxis>
-                                                <NumberAxis side="LEFT" />
+                                                <NumberAxis prefHeight="346.0" prefWidth="29.0" side="LEFT" />
                                              </yAxis>
                                           </BarChart>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="17.0" layoutY="24.0" prefHeight="368.0" prefWidth="449.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="384.0" AnchorPane.topAnchor="24.0">
+                                    <AnchorPane layoutX="17.0" layoutY="9.0" prefHeight="411.0" prefWidth="415.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="429.0" AnchorPane.topAnchor="9.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <AreaChart layoutX="-25.0" layoutY="-16.0" prefHeight="384.0" prefWidth="475.4" title="income Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <AreaChart layoutX="14.0" layoutY="14.0" prefHeight="396.0" prefWidth="385.0" title="Income Chart" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="14.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
@@ -190,9 +190,9 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form" layoutX="23.0" layoutY="7.0" prefHeight="600.0" prefWidth="874.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
+                        <AnchorPane fx:id="rentIn_form" layoutX="23.0" layoutY="7.0" prefHeight="600.0" prefWidth="874.0" visible="false" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
                            <children>
-                              <AnchorPane layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane fx:id="rentInventoryAnchorPane" layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -219,7 +219,7 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
+                                    <AnchorPane fx:id="rentAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                        <children>
                                           <Label layoutX="90.0" layoutY="15.0" text="ID:">
                                              <font>
@@ -367,9 +367,9 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form1" layoutX="10.0" layoutY="17.0" prefHeight="600.0" prefWidth="892.0">
+                        <AnchorPane fx:id="rentIn_form1" layoutX="10.0" layoutY="17.0" prefHeight="600.0" prefWidth="892.0" stylesheets="@loginsignup.css" visible="false">
                            <children>
-                              <AnchorPane layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                              <AnchorPane fx:id="catering_form" layoutX="33.0" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
