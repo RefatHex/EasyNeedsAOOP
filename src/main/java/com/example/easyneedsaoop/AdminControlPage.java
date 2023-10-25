@@ -406,9 +406,10 @@ public class AdminControlPage implements Initializable {
             data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 126, 120, false, true);
             rentIn_imageView.setImage(image);
+            imgLbl1.setVisible(false);
+            imgLbl2.setVisible(false);
+
         }
-        imgLbl1.setVisible(false);
-        imgLbl2.setVisible(false);
     }
 //Merge data on table
     public ObservableList<rentData> getListData() {
