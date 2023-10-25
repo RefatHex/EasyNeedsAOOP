@@ -353,7 +353,7 @@
                                     </Button>
                                     <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                        <children>
-                                          <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                          <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
                                           <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
                                              <font>
                                                 <Font name="System Bold Italic" size="14.0" />

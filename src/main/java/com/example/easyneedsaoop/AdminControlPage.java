@@ -198,6 +198,10 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private Button catering_clearBtn1;
+    @FXML
+    private Label imgLbl1;
+    @FXML
+    private Label imgLbl2;
 
 
     @FXML
@@ -400,9 +404,11 @@ public class AdminControlPage implements Initializable {
         if (file != null) {
 
             data.path = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 116, 119, false, true);
+            image = new Image(file.toURI().toString(), 126, 120, false, true);
             rentIn_imageView.setImage(image);
         }
+        imgLbl1.setVisible(false);
+        imgLbl2.setVisible(false);
     }
 //Merge data on table
     public ObservableList<rentData> getListData() {
