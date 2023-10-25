@@ -25,5 +25,6 @@
             <Image url="@EasyNeed.png" />
          </image>
       </ImageView>
+      <Label layoutX="516.0" layoutY="553.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
 </AnchorPane>

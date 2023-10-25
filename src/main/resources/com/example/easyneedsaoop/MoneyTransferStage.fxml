@@ -65,5 +65,6 @@
             <Image url="@LockLogo.png" />
          </image>
       </ImageView>
+      <Label layoutX="14.0" layoutY="547.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
 </AnchorPane>

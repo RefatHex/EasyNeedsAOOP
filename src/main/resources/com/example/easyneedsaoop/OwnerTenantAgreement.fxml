@@ -74,5 +74,6 @@
          </font>
       </CheckBox>
       <Button fx:id="completeButton" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" onAction="#completeButtonAction" prefHeight="46.0" prefWidth="100.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Complete" />
+      <Label layoutX="487.0" layoutY="523.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
 </AnchorPane>
