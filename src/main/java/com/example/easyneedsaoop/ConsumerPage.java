@@ -45,10 +45,16 @@ public class ConsumerPage {
     private ImageView shoppingIcon;
 
     @FXML
+    private Button exitBtn;
+
+    @FXML
     private AnchorPane sidePanel;
     private boolean slided = false;
-
+    public void initialize() {
+        sidePanel.setVisible(false);
+    }
     public void menuBtn(){
+
          TranslateTransition slider = new TranslateTransition();
             if (slided) {
                 slider.setToX(-100);
@@ -65,5 +71,11 @@ public class ConsumerPage {
             slider.play();
 
             slided = !slided;
+    }
+
+
+    @FXML
+    void exitHandleEvent(ActionEvent event) {
+    System.exit(0);
     }
 }
