@@ -8,6 +8,12 @@
     -fx-font-weight: normal;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
 }
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+.radius{
+    -fx-background-radius: 8px;
+}
 .textfield-design{
 -fx-background-color:transparent;
 -fx-border-color:#000000;

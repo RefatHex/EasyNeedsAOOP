@@ -164,4 +164,12 @@ public class rentData {
         this.date=date;
     }
 
+    public rentData(int id, String houseName, int flatNo, double rent, String address, String image) {
+        this.id = id;
+        this.houseName = houseName;
+        this.flatNo = flatNo;
+        this.rent = rent;
+        this.address = address;
+        this.image = image;
+    }
 }

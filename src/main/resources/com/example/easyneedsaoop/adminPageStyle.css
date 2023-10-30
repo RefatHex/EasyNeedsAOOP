@@ -72,11 +72,12 @@
 }
 
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c52, #246861);
+    -fx-background-color:linear-gradient(to bottom right, #8DC6FF, #FF7272);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
 }
 .btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);
+    -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
 }
