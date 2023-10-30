@@ -191,7 +191,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="rentIn_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
@@ -375,7 +375,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="catering_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="catering_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
