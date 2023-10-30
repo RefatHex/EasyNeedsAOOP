@@ -124,7 +124,7 @@ public class ConsumerPage {
         for(int i=0;i<cardDetails.size();i++){
             try {
                 FXMLLoader loader=new FXMLLoader();
-                loader.setLocation(getClass().getResource("cardDesign.fxml"));
+                loader.setLocation(getClass().getResource("RentCardDesign.fxml"));
                 AnchorPane pane=loader.load();
                 RentCardDesign cardR= loader.getController();
                 cardR.setData(cardDetails.get(i));
@@ -145,27 +145,27 @@ public class ConsumerPage {
     }
     public void menuBtn(){
 
-         TranslateTransition slider = new TranslateTransition();
-            if (slided) {
-                slider.setToX(-100);
-                slider.setOnFinished((ActionEvent e) -> {
-                    sidePanel.setVisible(false);
-                });
-            } else {
-                sidePanel.setVisible(true);
-                slider.setToX(214);
-            }
+        TranslateTransition slider = new TranslateTransition();
+        if (slided) {
+            slider.setToX(-100);
+            slider.setOnFinished((ActionEvent e) -> {
+                sidePanel.setVisible(false);
+            });
+        } else {
+            sidePanel.setVisible(true);
+            slider.setToX(214);
+        }
 
-            slider.setNode(sidePanel);
-            slider.setDuration(Duration.seconds(.5));
-            slider.play();
+        slider.setNode(sidePanel);
+        slider.setDuration(Duration.seconds(.5));
+        slider.play();
 
-            slided = !slided;
+        slided = !slided;
     }
 
 
     @FXML
     void exitHandleEvent(ActionEvent event) {
-    System.exit(0);
+        System.exit(0);
     }
 }
