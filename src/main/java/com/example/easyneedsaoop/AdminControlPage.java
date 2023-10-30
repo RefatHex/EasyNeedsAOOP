@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
@@ -485,8 +486,9 @@ public class AdminControlPage implements Initializable {
 
             if (option.get().equals(ButtonType.OK)) {
                 logoutBtn.getScene().getWindow().hide();
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
                 Stage stage=new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
+                stage.initStyle(StageStyle.UNDECORATED);
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);

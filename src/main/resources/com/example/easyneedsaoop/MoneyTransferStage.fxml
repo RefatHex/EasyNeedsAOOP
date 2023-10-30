@@ -9,62 +9,62 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="580.0" prefWidth="509.0" styleClass="gradient" stylesheets="@loginsignup.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.MoneyTransferStage">
+<AnchorPane prefHeight="630.0" prefWidth="544.0" styleClass="gradient" stylesheets="@loginsignup.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.MoneyTransferStage">
    <children>
-      <Label layoutX="49.0" layoutY="216.0" prefHeight="27.0" prefWidth="115.0" text="Mobile No :" textFill="WHITE">
+      <Label layoutX="60.0" layoutY="268.0" prefHeight="27.0" prefWidth="115.0" text="Mobile No :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="398.0" prefHeight="27.0" prefWidth="65.0" text="Pin:" textFill="WHITE">
+      <Label layoutX="60.0" layoutY="447.0" prefHeight="27.0" prefWidth="65.0" text="Pin:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="userMobileTxt" layoutX="145.0" layoutY="207.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your mobile number" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <PasswordField fx:id="userPasswordTxt" layoutX="145.0" layoutY="389.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your password here" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <TextField fx:id="sendAmountTxt" layoutX="145.0" layoutY="265.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter advance payment in Taka" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <Label layoutX="49.0" layoutY="274.0" prefHeight="27.0" prefWidth="115.0" text="Amount :" textFill="WHITE">
+      <TextField fx:id="userMobileTxt" layoutX="148.0" layoutY="259.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your mobile number" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <PasswordField fx:id="userPasswordTxt" layoutX="148.0" layoutY="438.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your password here" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <TextField fx:id="sendAmountTxt" layoutX="148.0" layoutY="319.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter advance payment in Taka" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <Label layoutX="60.0" layoutY="328.0" prefHeight="27.0" prefWidth="115.0" text="Amount :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="190.0" layoutY="469.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Confirm Payment" textAlignment="CENTER">
+      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="188.0" layoutY="516.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Confirm Payment" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="receiverMobileTxt" layoutX="145.0" layoutY="326.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter mobile number of recepient" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <Label layoutX="50.0" layoutY="335.0" prefHeight="27.0" prefWidth="80.0" text="Recipient :" textFill="WHITE">
+      <TextField fx:id="receiverMobileTxt" layoutX="148.0" layoutY="380.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter mobile number of recepient" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <Label layoutX="60.0" layoutY="389.0" prefHeight="27.0" prefWidth="80.0" text="Recipient :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="343.0" fitWidth="335.0" layoutX="87.0" layoutY="-53.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="288.0" fitWidth="280.0" layoutX="133.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MoneyTransferLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@PhoneLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="438.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@DollarLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@RecipientLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="431.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="437.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@LockLogo.png" />
          </image>
       </ImageView>
-      <Label layoutX="14.0" layoutY="547.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+      <Label layoutX="14.0" layoutY="598.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
 </AnchorPane>
