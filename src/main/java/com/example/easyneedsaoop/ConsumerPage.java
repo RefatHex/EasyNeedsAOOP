@@ -129,7 +129,7 @@ public class ConsumerPage {
                 RentCardDesign cardR= loader.getController();
                 cardR.setData(cardDetails.get(i));
 
-                if(column==3){
+                if(column==4){
                     column=0;
                     row+=1;
                 }

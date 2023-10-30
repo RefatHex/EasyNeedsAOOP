@@ -6,8 +6,6 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -195,7 +193,7 @@
                               </AnchorPane>
                               <AnchorPane layoutX="-213.0" layoutY="88.0" prefHeight="530.0" prefWidth="1313.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-213.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <AnchorPane layoutX="-143.0" layoutY="-3.0" prefHeight="520.0" prefWidth="936.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="-143.0" AnchorPane.rightAnchor="290.0" AnchorPane.topAnchor="-3.0">
+                                    <AnchorPane layoutX="-143.0" layoutY="-3.0" prefHeight="542.0" prefWidth="1474.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="-143.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="-3.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="radius" />
@@ -342,49 +340,6 @@
                                              </image>
                                           </ImageView>
                                           <Label layoutX="39.0" layoutY="489.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="843.0" layoutY="4.0" prefHeight="514.0" prefWidth="242.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="6.399999999999977" AnchorPane.rightAnchor="41.80000000000004" AnchorPane.topAnchor="4.0">
-                                       <styleClass>
-                                          <String fx:value="white-bg" />
-                                          <String fx:value="radius" />
-                                       </styleClass>
-                                       <children>
-                                          <TableView layoutX="10.0" layoutY="5.0" prefHeight="268.0" prefWidth="222.0" AnchorPane.bottomAnchor="241.39999999999998" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
-                                            <columns>
-                                              <TableColumn prefWidth="85.59991455078125" text="House Name" />
-                                              <TableColumn prefWidth="70.39990234375" text="Flat No" />
-                                                <TableColumn prefWidth="70.39990234375" text="Price($)" />
-                                            </columns>
-                                          </TableView>
-                                          <Label layoutX="51.0" layoutY="284.0" text="Total:" AnchorPane.bottomAnchor="208.79999999999998" AnchorPane.rightAnchor="154.60000000000002">
-                                             <font>
-                                                <Font size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="284.0" prefHeight="22.0" prefWidth="141.0" text="\$0.0" AnchorPane.bottomAnchor="208.79999999999998" AnchorPane.rightAnchor="6.800000000000011">
-                                             <font>
-                                                <Font size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="33.0" layoutY="309.0" text="Amount:" AnchorPane.bottomAnchor="183.79999999999998" AnchorPane.rightAnchor="152.60000000000002">
-                                             <font>
-                                                <Font size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="27.0" layoutY="336.0" text="Changes:" AnchorPane.bottomAnchor="156.79999999999998" AnchorPane.rightAnchor="154.60000000000002">
-                                             <font>
-                                                <Font size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="96.0" layoutY="340.0" prefHeight="22.0" prefWidth="141.0" text="\$0.0" AnchorPane.bottomAnchor="151.99999999999997" AnchorPane.rightAnchor="4.800000000000011">
-                                             <font>
-                                                <Font size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Button layoutX="8.0" layoutY="389.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="222.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Pay" AnchorPane.bottomAnchor="81.39999999999998" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="12.0" />
-                                          <Button layoutX="8.0" layoutY="445.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="106.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Remove" AnchorPane.bottomAnchor="25.399999999999977" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="128.0" />
-                                          <Button layoutX="121.0" layoutY="445.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="106.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" AnchorPane.bottomAnchor="25.399999999999977" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="15.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>
