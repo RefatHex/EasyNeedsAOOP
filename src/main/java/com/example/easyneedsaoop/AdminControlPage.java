@@ -19,10 +19,8 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.net.URL;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.sql.Date;
+import java.util.*;
 
 public class AdminControlPage implements Initializable {
     @FXML
@@ -168,26 +166,27 @@ public class AdminControlPage implements Initializable {
     private Image image;
     private boolean[] opinionList={true,false};
     @FXML
+    private ComboBox<String> billPay;
+
+    @FXML
+    private TextField cateringContact;
+
+    @FXML
     private TextField cateringOwnerID;
 
     @FXML
     private TextField cateringOwnerName;
 
     @FXML
-    private TextField cateringOwnerPhone;
-
-    @FXML
-    private TextField cateringShopAddress;
-
-    @FXML
     private TextField cateringShopBranch;
 
     @FXML
     private TextField cateringShopName;
+    @FXML
+    private TextField mealPrice;
 
     @FXML
-    private TextField cateringShopPhone;
-
+    private TextField extraInfoText;
     @FXML
     private Button catering_ImportBtn1;
 
@@ -199,14 +198,55 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private Button catering_clearBtn1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_Branch1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_Id1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_address1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_contact1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_date;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_eInfo1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_mealPrice;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_mealType1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_owner1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_shopName1;
+
+    @FXML
+    private Button catering_deleteBtn1;
+    @FXML
+    private ImageView catering_imageView1;
+
     @FXML
     private Label imgLbl1;
     @FXML
     private Label imgLbl2;
-
+    public String[] mealTypeOption={"Daily","Weekly","Monthly"};
+    public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
+    public String[] billOption={"Daily","Weekly","Monthly"};
 
     @FXML
-    private ComboBox<?> mealType;
+    private ComboBox<String> mealType;
+
+    @FXML
+    private ComboBox<String> mealDelivery;
 
     public void rentInventoryAddBtn(){
         if(rentIn_id.getText().isEmpty()||
@@ -413,7 +453,7 @@ public class AdminControlPage implements Initializable {
         }
     }
 //Merge data on table
-    public ObservableList<rentData> getListData() {
+    public ObservableList<rentData> getRentListData() {
         ObservableList<rentData> listData= FXCollections.observableArrayList();
       String sql="SELECT * FROM rentinfo";
       connect =database.connectDB();
@@ -448,7 +488,7 @@ public class AdminControlPage implements Initializable {
     //show Data on table
     private ObservableList<rentData> rentInventoryList;
     public void rentInventoryShowData(){
-        rentInventoryList=getListData();
+        rentInventoryList= getRentListData();
         rentIn_col_Id.setCellValueFactory(new PropertyValueFactory<>("id"));
         rentIn_col_owner.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
         rentIn_col_houseName.setCellValueFactory(new PropertyValueFactory<>("houseName"));
@@ -465,6 +505,172 @@ public class AdminControlPage implements Initializable {
         rentInTable.setItems(rentInventoryList);
     }
 
+    //Catering options
+    public void addCateringData() {
+        if (cateringOwnerID.getText().isEmpty() ||
+                cateringOwnerName.getText().isEmpty() ||
+                cateringShopName.getText().isEmpty() ||
+                cateringShopBranch.getText().isEmpty() ||
+                mealType.getSelectionModel().getSelectedItem() == null ||
+                billPay.getSelectionModel().getSelectedItem() == null) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all required fields.");
+            alert.showAndWait();
+        } else {
+            String insertData = "INSERT INTO cateringinfo " +
+                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, mealType, billPay,mealDelivery,date)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+
+            try {
+                prepare = connect.prepareStatement(insertData);
+                prepare.setString(1, cateringOwnerName.getText());
+                prepare.setString(2, cateringShopName.getText());
+                prepare.setString(3, cateringShopBranch.getText());
+                prepare.setString(4, data.username);
+                prepare.setString(5, mealPrice.getText());
+                prepare.setString(6, cateringShopBranch.getText());
+                prepare.setString(7, cateringContact.getText());
+                prepare.setString(8, extraInfoText.getText());
+                prepare.setString(9, (String) mealType.getSelectionModel().getSelectedItem());
+                prepare.setString(10, (String) billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(11, (String) billPay.getSelectionModel().getSelectedItem());
+
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(12, String.valueOf(sqlDate));
+
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Data added successfully!");
+                alert.showAndWait();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void updateCateringData() {
+        if (cateringOwnerID.getText().isEmpty() ||
+                cateringOwnerName.getText().isEmpty() ||
+                cateringShopName.getText().isEmpty() ||
+                cateringShopBranch.getText().isEmpty() ||
+                mealType.getSelectionModel().getSelectedItem() == null ||
+                billPay.getSelectionModel().getSelectedItem() == null) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all required fields.");
+            alert.showAndWait();
+        } else {
+            String updateData = "UPDATE cateringinfo SET " +
+                    "ownerName=?, shopName=?, branchName=?, userName=?, " +
+                    "address=?, contact=?, extraInfo=?, mealType=?, billPay=?, " +
+                    "mealDelivery=?, date=? " +
+                    "WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(updateData);
+                prepare.setString(1, cateringOwnerName.getText());
+                prepare.setString(2, cateringShopName.getText());
+                prepare.setString(3, cateringShopBranch.getText());
+                prepare.setString(4, data.username);
+                prepare.setString(5, cateringShopBranch.getText());
+                prepare.setString(6, cateringContact.getText());
+                prepare.setString(7, extraInfoText.getText());
+                prepare.setString(8, mealType.getSelectionModel().getSelectedItem());
+                prepare.setString(9, billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(10, mealDelivery.getSelectionModel().getSelectedItem());
+
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(11, String.valueOf(sqlDate));
+                prepare.setString(12,cateringOwnerID.getText());
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Update Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Updated!");
+                    alert.showAndWait();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Update Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records updated. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void clearCateringData() {
+        cateringOwnerID.setText("");
+        cateringOwnerName.setText("");
+        cateringShopName.setText("");
+        cateringShopBranch.setText("");
+        mealPrice.setText("");
+        cateringContact.setText("");
+        mealDelivery.setValue(null);
+        extraInfoText.setText("");
+    }
+    public void deleteCateringData() {
+        if (cateringOwnerID.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please provide the ID of the record to be deleted.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this record?", ButtonType.YES, ButtonType.NO);
+        confirmationAlert.setTitle("Delete Confirmation");
+        confirmationAlert.setHeaderText(null);
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            String deleteQuery = "DELETE FROM cateringinfo WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(deleteQuery);
+                prepare.setString(1, cateringOwnerID.getText());
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Delete Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Deleted!");
+                    alert.showAndWait();
+
+                    clearCateringData();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records deleted. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+//Static options
 
     public void yesOrNo(){
         List<Boolean> typeL=new ArrayList<Boolean>();
@@ -504,12 +710,26 @@ public class AdminControlPage implements Initializable {
 
         userName.setText(user);
     }
+    public void optionAdder(){
+        List<String> mtype = new ArrayList<>(Arrays.asList(mealTypeOption));
+        List<String> delType = new ArrayList<>(Arrays.asList(mealDeliveryOption));
+        List<String> billType = new ArrayList<>(Arrays.asList(billOption));
+        ObservableList mealData= FXCollections.observableArrayList(mtype);
+        ObservableList deliveryData= FXCollections.observableArrayList(delType);
+        ObservableList billData= FXCollections.observableArrayList(billType);
+
+        mealType.setItems(mealData);
+        mealDelivery.setItems(deliveryData);
+        billPay.setItems(billData);
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
         yesOrNo();
-        getListData();
+        getRentListData();
         rentInventoryShowData();
+        optionAdder();
 
     }
     public void handleEvent(ActionEvent event) {

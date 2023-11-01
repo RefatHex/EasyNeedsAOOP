@@ -388,18 +388,18 @@
                                     <TableColumn fx:id="catering_col_owner1" prefWidth="71.20001983642578" text="Owner Name" />
                                     <TableColumn fx:id="catering_col_shopName1" prefWidth="65.39996337890625" text="Shop Name" />
                                     <TableColumn fx:id="catering_col_Branch1" prefWidth="50.79998779296875" text="Branch" />
-                                    <TableColumn fx:id="catering_col_contact1" prefWidth="70.79995727539062" text="Owner's No." />
+                                    <TableColumn fx:id="catering_col_contact1" prefWidth="70.79995727539062" text="Contact" />
                                     <TableColumn fx:id="catering_col_mealType1" prefWidth="58.4000244140625" text="Meal Type" />
                                     <TableColumn fx:id="catering_col_address1" prefWidth="64.80010986328125" text="Shop Address" />
                                     <TableColumn fx:id="catering_col_eInfo1" prefWidth="47.5999755859375" text="Extra info" />
-                                    <TableColumn fx:id="catering_col_contact11" prefWidth="70.79995727539062" text="Shop's Contact No." />
-                                    <TableColumn fx:id="catering_col_date1" prefWidth="60.40008544921875" text="date" />
+                                    <TableColumn fx:id="catering_col_mealPrice" prefWidth="60.40008544921875" text="Price" />
+                                    <TableColumn fx:id="catering_col_date" prefWidth="70.79995727539062" text="date" />
                                  </columns>
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <AnchorPane layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="841.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="3.0">
+                              <AnchorPane layoutX="4.0" layoutY="296.0" prefHeight="288.0" prefWidth="841.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0">
                                  <children>
                                     <Label layoutX="90.0" layoutY="15.0" text="ID:">
                                        <font>
@@ -425,37 +425,25 @@
                                        </font>
                                     </Label>
                                     <TextField fx:id="cateringShopBranch" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter branch name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutX="295.0" layoutY="50.0" text="Shop Address:">
+                                    <Label layoutX="330.0" layoutY="50.0" prefHeight="22.0" prefWidth="64.0" text="Contact:">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="cateringShopAddress" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter shop address" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutX="296.0" layoutY="85.0" text="Owner Phone:">
+                                    <TextField fx:id="cateringContact" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="enter contact no" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="320.0" layoutY="85.0" text="Extra info:">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="cateringOwnerPhone" layoutX="396.0" layoutY="81.0" prefHeight="28.0" prefWidth="155.0" promptText="Owner Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutX="555.0" layoutY="15.0" text="Shop Phone: ">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="cateringShopPhone" layoutX="649.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Shop Phone Number" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutX="565.0" layoutY="50.0" text="Extra info:">
-                                       <font>
-                                          <Font name="System Bold" size="15.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="extraInfoText" layoutX="649.0" layoutY="47.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <ComboBox fx:id="mealType" layoutX="652.0" layoutY="81.0" prefHeight="30.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
+                                    <TextField fx:id="extraInfoText" layoutX="405.0" layoutY="82.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <ComboBox fx:id="mealType" layoutX="407.0" layoutY="117.0" prefHeight="30.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
                                        <styleClass>
                                           <String fx:value="table-view" />
                                           <String fx:value="User-button" />
                                        </styleClass>
                                     </ComboBox>
-                                    <Label layoutX="569.0" layoutY="86.0" text="Meal Type">
+                                    <Label layoutX="330.0" layoutY="123.0" text="Meal Type">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -469,7 +457,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="catering_addBtn1" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button fx:id="catering_addBtn1" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#addCateringData" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -478,7 +466,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="catering_UpdateBtn1" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button fx:id="catering_UpdateBtn1" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#updateCateringData" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -496,7 +484,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="catering_deleteBtn1" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button fx:id="catering_deleteBtn1" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteCateringData" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -507,7 +495,7 @@
                                     </Button>
                                     <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                        <children>
-                                          <ImageView fx:id="catering_imageView1" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                          <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
                                           <Label fx:id="imgLbl11" layoutX="27.0" layoutY="32.0" text="Add  Brand">
                                              <font>
                                                 <Font name="System Bold Italic" size="14.0" />
@@ -524,28 +512,34 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </AnchorPane>
-                                    <Label layoutX="241.0" layoutY="156.0" prefHeight="20.0" prefWidth="134.0" text="Can provide meal on">
+                                    <Label layoutX="569.0" layoutY="97.0" prefHeight="20.0" prefWidth="70.0" text="Delivery:">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="rentIn_dinning11" layoutX="380.0" layoutY="151.0" prefHeight="30.0" prefWidth="115.0" stylesheets="@HeadLabel.css">
+                                    <ComboBox fx:id="mealDelivery" layoutX="647.0" layoutY="94.0" prefHeight="30.0" prefWidth="115.0" stylesheets="@HeadLabel.css">
                                        <styleClass>
                                           <String fx:value="table-view" />
                                           <String fx:value="User-button" />
                                        </styleClass>
                                     </ComboBox>
-                                    <Label layoutX="509.0" layoutY="156.0" prefHeight="20.0" prefWidth="157.0" text="Bill Collecting Procedure">
+                                    <Label layoutX="606.0" layoutY="62.0" prefHeight="20.0" prefWidth="32.0" text="Bill :">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="rentIn_dinning12" layoutX="670.0" layoutY="151.0" prefHeight="30.0" prefWidth="108.0" stylesheets="@HeadLabel.css">
+                                    <ComboBox fx:id="billPay" layoutX="647.0" layoutY="55.0" prefHeight="30.0" prefWidth="108.0" stylesheets="@HeadLabel.css">
                                        <styleClass>
                                           <String fx:value="table-view" />
                                           <String fx:value="User-button" />
                                        </styleClass>
                                     </ComboBox>
+                                    <Label layoutX="561.0" layoutY="15.0" text="Price">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="mealPrice" layoutX="646.0" layoutY="12.0" prefHeight="28.0" prefWidth="151.0" promptText="price" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                  </children>
                               </AnchorPane>
                            </children>
