@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -16,15 +17,21 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.*;
 
 public class cateringPageController implements Initializable {
-
     @FXML
     private AnchorPane adminAnchorPane;
 
     @FXML
-    private ComboBox<?> billPay;
+    private ComboBox<String> billPay;
+
+    @FXML
+    private TextField cateringContact;
 
     @FXML
     private TextField cateringOwnerID;
@@ -33,22 +40,13 @@ public class cateringPageController implements Initializable {
     private TextField cateringOwnerName;
 
     @FXML
-    private TextField cateringOwnerPhone;
-
-    @FXML
     private Button cateringPaymentBtn;
-
-    @FXML
-    private TextField cateringShopAddress;
 
     @FXML
     private TextField cateringShopBranch;
 
     @FXML
     private TextField cateringShopName;
-
-    @FXML
-    private TextField cateringShopPhone;
 
     @FXML
     private Button catering_ImportBtn1;
@@ -78,13 +76,13 @@ public class cateringPageController implements Initializable {
     private TableColumn<?, ?> catering_col_contact1;
 
     @FXML
-    private TableColumn<?, ?> catering_col_contact11;
-
-    @FXML
-    private TableColumn<?, ?> catering_col_date1;
+    private TableColumn<?, ?> catering_col_date;
 
     @FXML
     private TableColumn<?, ?> catering_col_eInfo1;
+
+    @FXML
+    private TableColumn<?, ?> catering_col_mealPrice;
 
     @FXML
     private TableColumn<?, ?> catering_col_mealType1;
@@ -95,14 +93,9 @@ public class cateringPageController implements Initializable {
     @FXML
     private TableColumn<?, ?> catering_col_shopName1;
 
-    @FXML
-    private Button catering_deleteBtn1;
 
     @FXML
     private AnchorPane catering_form;
-
-    @FXML
-    private ImageView catering_imageView1;
 
     @FXML
     private Button dashboard_btn;
@@ -114,10 +107,10 @@ public class cateringPageController implements Initializable {
     private TextField extraInfoText;
 
     @FXML
-    private Label imgLbl11;
+    private Label imgLbl1;
 
     @FXML
-    private Label imgLbl21;
+    private Label imgLbl2;
 
     @FXML
     private Button logoutBtn;
@@ -126,30 +119,205 @@ public class cateringPageController implements Initializable {
     private AnchorPane mainForm;
 
     @FXML
-    private ComboBox<?> mealDelivery;
+    private ComboBox<String> mealDelivery;
 
     @FXML
-    private ComboBox<?> mealType;
+    private TextField mealPrice;
+
+    @FXML
+    private ComboBox<String> mealType;
 
     @FXML
     private AnchorPane menuAnchorPane;
 
     @FXML
-    private TableView<?> rentInTable1;
+    private TableView<CateringData> cateringTable;
+
+    @FXML
+    private ImageView imageView;
 
     @FXML
     private Label userName;
 
-    private Alert alert ;
-    @FXML
-    private Label imgLbl1;
-    @FXML
-    private Label imgLbl2;
-
     private Image image;
+    private Alert alert;
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
     public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
     public String[] billOption={"Daily","Weekly","Monthly"};
+    private Connection connect;
+    private PreparedStatement prepare;
+    private Statement statement;
+    private ResultSet result;
+    public void addCateringData() {
+        if (cateringOwnerID.getText().isEmpty() ||
+                cateringOwnerName.getText().isEmpty() ||
+                cateringShopName.getText().isEmpty() ||
+                cateringShopBranch.getText().isEmpty() ||
+                mealType.getSelectionModel().getSelectedItem() == null ||
+                billPay.getSelectionModel().getSelectedItem() == null) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all required fields.");
+            alert.showAndWait();
+        } else {
+            String insertData = "INSERT INTO cateringinfo " +
+                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, mealType, billPay,mealDelivery,date)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+
+            try {
+                prepare = connect.prepareStatement(insertData);
+                prepare.setString(1, cateringOwnerName.getText());
+                prepare.setString(2, cateringShopName.getText());
+                prepare.setString(3, cateringShopBranch.getText());
+                prepare.setString(4, data.username);
+                prepare.setString(5, mealPrice.getText());
+                prepare.setString(6, cateringShopBranch.getText());
+                prepare.setString(7, cateringContact.getText());
+                prepare.setString(8, extraInfoText.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(9,path);
+                prepare.setString(10, (String) mealType.getSelectionModel().getSelectedItem());
+                prepare.setString(11, (String) billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(12, (String) billPay.getSelectionModel().getSelectedItem());
+
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(13, String.valueOf(sqlDate));
+
+                prepare.executeUpdate();
+
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Data added successfully!");
+                alert.showAndWait();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void updateCateringData() {
+        if (cateringOwnerID.getText().isEmpty() ||
+                cateringOwnerName.getText().isEmpty() ||
+                cateringShopName.getText().isEmpty() ||
+                cateringShopBranch.getText().isEmpty() ||
+                mealType.getSelectionModel().getSelectedItem() == null ||
+                billPay.getSelectionModel().getSelectedItem() == null) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all required fields.");
+            alert.showAndWait();
+        } else {
+            String updateData = "UPDATE cateringinfo SET " +
+                    "ownerName=?, shopName=?, branchName=?, userName=?, " +
+                    "address=?, contact=?, extraInfo=?,image=?, mealType=?, billPay=?, " +
+                    "mealDelivery=?, date=? " +
+                    "WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(updateData);
+                prepare.setString(1, cateringOwnerName.getText());
+                prepare.setString(2, cateringShopName.getText());
+                prepare.setString(3, cateringShopBranch.getText());
+                prepare.setString(4, data.username);
+                prepare.setString(5, mealPrice.getText());
+                prepare.setString(6, cateringShopBranch.getText());
+                prepare.setString(7, cateringContact.getText());
+                prepare.setString(8, extraInfoText.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(9,path);
+                prepare.setString(10, (String) mealType.getSelectionModel().getSelectedItem());
+                prepare.setString(11, (String) billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(12, (String) billPay.getSelectionModel().getSelectedItem());
+
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(13, String.valueOf(sqlDate));
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Update Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Updated!");
+                    alert.showAndWait();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Update Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records updated. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void clearCateringData() {
+        cateringOwnerID.setText("");
+        cateringOwnerName.setText("");
+        cateringShopName.setText("");
+        cateringShopBranch.setText("");
+        mealPrice.setText("");
+        cateringContact.setText("");
+        mealDelivery.setValue(null);
+        extraInfoText.setText("");
+    }
+    public void deleteCateringData() {
+        if (cateringOwnerID.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please provide the ID of the record to be deleted.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this record?", ButtonType.YES, ButtonType.NO);
+        confirmationAlert.setTitle("Delete Confirmation");
+        confirmationAlert.setHeaderText(null);
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            String deleteQuery = "DELETE FROM cateringinfo WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(deleteQuery);
+                prepare.setString(1, cateringOwnerID.getText());
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Delete Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Deleted!");
+                    alert.showAndWait();
+
+                    clearCateringData();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records deleted. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
@@ -178,7 +346,7 @@ public class cateringPageController implements Initializable {
 
             data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 126, 120, false, true);
-            catering_imageView1.setImage(image);
+            imageView.setImage(image);
             imgLbl1.setVisible(false);
             imgLbl2.setVisible(false);
 
@@ -232,5 +400,54 @@ public class cateringPageController implements Initializable {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    //Merge data on table
+    public ObservableList<CateringData> getRentListData() {
+        ObservableList<CateringData> listData= FXCollections.observableArrayList();
+        String sql="SELECT * FROM cateringInfo";
+        connect =database.connectDB();
+        try{
+            prepare=connect.prepareStatement(sql);
+            result=prepare.executeQuery();
+            CateringData data;
+            while(result.next()){
+                data=new CateringData(
+                        result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("shopName"),
+                        result.getString("branchName"),
+                        result.getString("userName"),
+                        result.getString("address"),
+                        result.getString("contact"),
+                        result.getString("extraInfo"),
+                        result.getString("image"),
+                        result.getDouble("price"),
+                        result.getString("mealType"),
+                        result.getString("billPay"),
+                        result.getString("mealDelivery"),
+                        result.getDate("date")
+                );
+                listData.add(data);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return  listData;
+    }
+    //show Data on table
+    private ObservableList<CateringData> CateringInventoryList;
+    public void cateringInventoryShowData(){
+        CateringInventoryList= getRentListData();
+        catering_col_Id1.setCellValueFactory(new PropertyValueFactory<>("id"));
+        catering_col_owner1.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
+        catering_col_shopName1.setCellValueFactory(new PropertyValueFactory<>("shopName"));
+        catering_col_Branch1.setCellValueFactory(new PropertyValueFactory<>("branchName"));
+        catering_col_contact1.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        catering_col_mealType1.setCellValueFactory(new PropertyValueFactory<>("mealType"));
+        catering_col_address1.setCellValueFactory(new PropertyValueFactory<>("address"));
+        catering_col_eInfo1.setCellValueFactory(new PropertyValueFactory<>("extraInfo"));
+        catering_col_mealPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        catering_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        cateringTable.setItems(CateringInventoryList);
     }
 }

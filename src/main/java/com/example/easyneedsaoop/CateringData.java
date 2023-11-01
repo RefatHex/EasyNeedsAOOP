@@ -11,13 +11,14 @@ public class CateringData {
    String address;
    String contact;
    String  extraInfo;
-   String price;
+   String image;
+   double price;
    String mealType;
    String billPay;
    String mealDelivery;
    Date date;
 
-   public CateringData(int id, String ownerName, String shopName, String branchName, String userName, String address, String contact, String extraInfo, String price, String mealType, String billPay, String mealDelivery, Date date) {
+   public CateringData(int id, String ownerName, String shopName, String branchName, String userName, String address, String contact, String extraInfo,String image, double price, String mealType, String billPay, String mealDelivery, Date date) {
       this.id = id;
       this.ownerName = ownerName;
       this.shopName = shopName;
@@ -26,6 +27,7 @@ public class CateringData {
       this.address = address;
       this.contact = contact;
       this.extraInfo = extraInfo;
+      this.image=image;
       this.price = price;
       this.mealType = mealType;
       this.billPay = billPay;
@@ -35,6 +37,22 @@ public class CateringData {
 
    public int getId() {
       return id;
+   }
+
+   public String getImage() {
+      return image;
+   }
+
+   public void setImage(String image) {
+      this.image = image;
+   }
+
+   public double getPrice() {
+      return price;
+   }
+
+   public void setPrice(double price) {
+      this.price = price;
    }
 
    public void setId(int id) {
@@ -97,13 +115,6 @@ public class CateringData {
       this.extraInfo = extraInfo;
    }
 
-   public String getPrice() {
-      return price;
-   }
-
-   public void setPrice(String price) {
-      this.price = price;
-   }
 
    public String getMealType() {
       return mealType;

@@ -19,7 +19,6 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.net.URL;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class AdminControlPage implements Initializable {
@@ -55,6 +54,8 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private TableView<rentData> rentInTable;
+    @FXML
+    private TableView<CateringData> cateringTable;
 
     @FXML
     private Button rentIn_ImportBtn;
@@ -187,17 +188,6 @@ public class AdminControlPage implements Initializable {
 
     @FXML
     private TextField extraInfoText;
-    @FXML
-    private Button catering_ImportBtn1;
-
-    @FXML
-    private Button catering_UpdateBtn1;
-
-    @FXML
-    private Button catering_addBtn1;
-
-    @FXML
-    private Button catering_clearBtn1;
 
     @FXML
     private TableColumn<?, ?> catering_col_Branch1;
@@ -521,8 +511,8 @@ public class AdminControlPage implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO cateringinfo " +
-                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, mealType, billPay,mealDelivery,date)" +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo,image, mealType, billPay,mealDelivery,date)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
             try {
                 prepare = connect.prepareStatement(insertData);
@@ -534,13 +524,16 @@ public class AdminControlPage implements Initializable {
                 prepare.setString(6, cateringShopBranch.getText());
                 prepare.setString(7, cateringContact.getText());
                 prepare.setString(8, extraInfoText.getText());
-                prepare.setString(9, (String) mealType.getSelectionModel().getSelectedItem());
-                prepare.setString(10, (String) billPay.getSelectionModel().getSelectedItem());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(9,path);
+                prepare.setString(10, (String) mealType.getSelectionModel().getSelectedItem());
                 prepare.setString(11, (String) billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(12, (String) billPay.getSelectionModel().getSelectedItem());
 
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                prepare.setString(12, String.valueOf(sqlDate));
+                prepare.setString(13, String.valueOf(sqlDate));
 
                 prepare.executeUpdate();
 
@@ -548,6 +541,7 @@ public class AdminControlPage implements Initializable {
                 alert.setTitle("Success Message");
                 alert.setHeaderText(null);
                 alert.setContentText("Data added successfully!");
+                cateringInventoryShowData();
                 alert.showAndWait();
 
             } catch (Exception e) {
@@ -572,7 +566,7 @@ public class AdminControlPage implements Initializable {
         } else {
             String updateData = "UPDATE cateringinfo SET " +
                     "ownerName=?, shopName=?, branchName=?, userName=?, " +
-                    "address=?, contact=?, extraInfo=?, mealType=?, billPay=?, " +
+                    "address=?, contact=?, extraInfo=?,image=?, mealType=?, billPay=?, " +
                     "mealDelivery=?, date=? " +
                     "WHERE id=?";
 
@@ -582,17 +576,21 @@ public class AdminControlPage implements Initializable {
                 prepare.setString(2, cateringShopName.getText());
                 prepare.setString(3, cateringShopBranch.getText());
                 prepare.setString(4, data.username);
-                prepare.setString(5, cateringShopBranch.getText());
-                prepare.setString(6, cateringContact.getText());
-                prepare.setString(7, extraInfoText.getText());
-                prepare.setString(8, mealType.getSelectionModel().getSelectedItem());
-                prepare.setString(9, billPay.getSelectionModel().getSelectedItem());
-                prepare.setString(10, mealDelivery.getSelectionModel().getSelectedItem());
+                prepare.setString(5, mealPrice.getText());
+                prepare.setString(6, cateringShopBranch.getText());
+                prepare.setString(7, cateringContact.getText());
+                prepare.setString(8, extraInfoText.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(9,path);
+                prepare.setString(10, (String) mealType.getSelectionModel().getSelectedItem());
+                prepare.setString(11, (String) billPay.getSelectionModel().getSelectedItem());
+                prepare.setString(12, (String) billPay.getSelectionModel().getSelectedItem());
 
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                prepare.setString(11, String.valueOf(sqlDate));
-                prepare.setString(12,cateringOwnerID.getText());
+                prepare.setString(13, String.valueOf(sqlDate));
+
                 int affectedRows = prepare.executeUpdate();
 
                 if (affectedRows > 0) {
@@ -668,6 +666,55 @@ public class AdminControlPage implements Initializable {
             }
         }
     }
+    //Merge data on table
+    public ObservableList<CateringData> getMealListData() {
+        ObservableList<CateringData> listData= FXCollections.observableArrayList();
+        String sql="SELECT * FROM cateringInfo";
+        connect =database.connectDB();
+        try{
+            prepare=connect.prepareStatement(sql);
+            result=prepare.executeQuery();
+            CateringData data;
+            while(result.next()){
+                data=new CateringData(
+                        result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("shopName"),
+                        result.getString("branchName"),
+                        result.getString("userName"),
+                        result.getString("address"),
+                        result.getString("contact"),
+                        result.getString("extraInfo"),
+                        result.getString("image"),
+                        result.getDouble("price"),
+                        result.getString("mealType"),
+                        result.getString("billPay"),
+                        result.getString("mealDelivery"),
+                        result.getDate("date")
+                );
+                listData.add(data);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return  listData;
+    }
+    //show Data on table
+    private ObservableList<CateringData> CateringInventoryList;
+    public void cateringInventoryShowData(){
+        CateringInventoryList= getMealListData();
+        catering_col_Id1.setCellValueFactory(new PropertyValueFactory<>("id"));
+        catering_col_owner1.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
+        catering_col_shopName1.setCellValueFactory(new PropertyValueFactory<>("shopName"));
+        catering_col_Branch1.setCellValueFactory(new PropertyValueFactory<>("branchName"));
+        catering_col_contact1.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        catering_col_mealType1.setCellValueFactory(new PropertyValueFactory<>("mealType"));
+        catering_col_address1.setCellValueFactory(new PropertyValueFactory<>("address"));
+        catering_col_eInfo1.setCellValueFactory(new PropertyValueFactory<>("extraInfo"));
+        catering_col_mealPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        catering_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        cateringTable.setItems(CateringInventoryList);
+    }
 
 
 //Static options
@@ -729,6 +776,7 @@ public class AdminControlPage implements Initializable {
         yesOrNo();
         getRentListData();
         rentInventoryShowData();
+        cateringInventoryShowData();
         optionAdder();
 
     }

@@ -382,7 +382,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                            <children>
-                              <TableView fx:id="rentInTable1" layoutX="4.0" prefHeight="279.0" prefWidth="846.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="cateringTable" layoutX="4.0" prefHeight="279.0" prefWidth="846.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
                                  <columns>
                                     <TableColumn fx:id="catering_col_Id1" prefWidth="32.79997253417969" text="ID" />
                                     <TableColumn fx:id="catering_col_owner1" prefWidth="71.20001983642578" text="Owner Name" />
@@ -475,7 +475,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="catering_clearBtn1" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button fx:id="catering_clearBtn1" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#clearCateringData" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
