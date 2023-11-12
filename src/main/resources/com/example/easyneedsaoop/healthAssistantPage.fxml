@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothShopPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.HealthAssistantPageController">
    <children>
       <StackPane layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0">
          <children>
@@ -32,7 +32,7 @@
                                  <children>
                                     <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Label layoutX="14.0" layoutY="32.0" prefHeight="37.0" prefWidth="222.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Easyneeds Cloth Shop Page" textFill="WHITE">
+                                          <Label alignment="CENTER" layoutX="16.0" layoutY="26.0" prefHeight="37.0" prefWidth="222.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Health Assistant Page" textFill="WHITE">
                                              <font>
                                                 <Font name="Century Schoolbook" size="16.0" />
                                              </font>
@@ -85,7 +85,7 @@
                                                    <children>
                                                       <AnchorPane layoutX="12.0" layoutY="3.0" prefHeight="134.0" prefWidth="255.0" styleClass="gradient" stylesheets="@loginsignup.css">
                                                          <children>
-                                                            <Label layoutX="91.0" layoutY="97.0" text="Number of Customer" textFill="WHITE">
+                                                            <Label layoutX="91.0" layoutY="97.0" text="Number of Patients" textFill="WHITE">
                                                                <font>
                                                                   <Font size="16.0" />
                                                                </font>
@@ -159,7 +159,7 @@
                                                 <String fx:value="shadow" />
                                              </styleClass>
                                              <children>
-                                                <BarChart layoutY="-2.0" prefHeight="391.0" prefWidth="408.0" title="Customer's Chart" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-2.0">
+                                                <BarChart layoutY="-2.0" prefHeight="391.0" prefWidth="408.0" title="Patient's Chart" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-2.0">
                                                    <xAxis>
                                                       <CategoryAxis side="BOTTOM" />
                                                    </xAxis>
@@ -190,7 +190,7 @@
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="Clothing_Form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
+                              <AnchorPane fx:id="health_Form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -199,58 +199,49 @@
                                  <children>
                                     <TableView fx:id="clothingTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <columns>
-                                          <TableColumn fx:id="clothIn_col_ProdID" prefWidth="32.79997253417969" text="Prod Id" />
-                                          <TableColumn fx:id="clothIn_col_ProdName" prefWidth="91.20001983642578" text="Prod Name" />
-                                          <TableColumn fx:id="clothIn_col_ProdPrice" prefWidth="74.39996337890625" text="Price" />
-                                          <TableColumn fx:id="clothIn_col_category" prefWidth="70.4000244140625" text="Category" />
-                                          <TableColumn fx:id="clothIn_col_ProdType" prefWidth="66.4000244140625" text="Prod Type" />
-                                          <TableColumn fx:id="clothIn_col_ProdInfo" prefWidth="77.5999755859375" text="Extra info" />
-                                          <TableColumn fx:id="clothIn_col_date" prefWidth="98.40008544921875" text="date" />
+                                          <TableColumn fx:id="health_col_ID" prefWidth="39.0" text="ID" />
+                                          <TableColumn fx:id="health_col_name" prefWidth="82.0" text="Name" />
+                                          <TableColumn fx:id="health_col_service" prefWidth="81.0" text="Service Type" />
+                                          <TableColumn fx:id="health_col_specialist" prefWidth="89.0" text="Specialist" />
+                                          <TableColumn fx:id="health_col_starting" prefWidth="151.0" text="Visiting Hours Starting" />
+                                          <TableColumn fx:id="health_col_ending" prefWidth="138.0" text="Visiting Hours Ending" />
+                                          <TableColumn fx:id="health_col_fee" prefWidth="77.0" text="Visiting Fee" />
+                                          <TableColumn fx:id="health_col_availability" prefWidth="97.0" text="Available on" />
+                                          <TableColumn fx:id="health_col_date" prefWidth="89.0" text="Date" />
                                        </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <AnchorPane fx:id="rentAnchor1" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
+                                    <AnchorPane fx:id="healthAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                        <children>
-                                          <Label layoutX="48.0" layoutY="15.0" text="Product ID:">
+                                          <Label layoutX="112.0" layoutY="15.0" text="ID:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="prodID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText=" update and delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="25.0" layoutY="50.0" text="Product Name:">
+                                          <TextField fx:id="doctorID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText=" update and delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="25.0" layoutY="50.0" text="Doctor's Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="prodName" layoutX="151.0" layoutY="47.0" prefHeight="27.0" prefWidth="150.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="92.0" layoutY="85.0" text="Price:">
+                                          <TextField fx:id="doctorName" layoutX="151.0" layoutY="47.0" prefHeight="27.0" prefWidth="150.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="44.0" layoutY="85.0" text="Specialist in:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="prodPrice" layoutX="150.0" layoutY="83.0" prefHeight="26.0" prefWidth="153.0" promptText="Enter house name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <ComboBox fx:id="prodCat" layoutX="448.0" layoutY="144.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
+                                          <TextField fx:id="specialtyIn" layoutX="150.0" layoutY="83.0" prefHeight="26.0" prefWidth="153.0" promptText="Enter area of expertise" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <ComboBox fx:id="serviceType" layoutX="696.0" layoutY="72.0" prefHeight="29.0" prefWidth="125.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
                                                 <String fx:value="User-button" />
                                              </styleClass>
                                           </ComboBox>
-                                          <Label layoutX="373.0" layoutY="149.0" text="Category">
+                                          <Label layoutX="599.0" layoutY="73.0" text="Service Type">
                                              <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <ComboBox fx:id="prodType" layoutX="666.0" layoutY="144.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
-                                          <Label layoutX="590.0" layoutY="149.0" text="Prod Type">
-                                             <font>
-                                                <Font size="14.0" />
+                                                <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
                                           <Button fx:id="health_import_btn" layoutX="173.0" layoutY="206.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
@@ -262,7 +253,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -271,7 +262,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -280,7 +271,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_clearbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_clearbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -289,7 +280,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_deletebtn" layoutX="689.0" layoutY="225.0" mnemonicParsing="false" onAction="#clothShopInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.0">
+                                          <Button fx:id="health_deletebtn" layoutX="689.0" layoutY="225.0" mnemonicParsing="false" onAction="#healthInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.0">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -317,12 +308,41 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </AnchorPane>
-                                          <Label layoutX="395.0" layoutY="85.0" text="Extra info">
+                                          <Label layoutX="356.0" layoutY="86.0" text="Extra info:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="prodInfo" layoutX="471.0" layoutY="83.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter house name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="extraInfo" layoutX="445.0" layoutY="83.0" prefHeight="26.0" prefWidth="134.0" promptText="Extra info if any" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="startingHour" layoutX="445.0" layoutY="13.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter starting hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="335.0" layoutY="15.0" text="Starting hour:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="339.0" layoutY="50.0" text="Ending hour:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="endingHour" layoutX="445.0" layoutY="48.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter ending hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="595.0" layoutY="16.0" text="Available Day">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="availableOn" layoutX="696.0" layoutY="12.0" prefHeight="29.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
+                                             <styleClass>
+                                                <String fx:value="table-view" />
+                                                <String fx:value="User-button" />
+                                             </styleClass>
+                                          </ComboBox>
+                                          <Label layoutX="348.0" layoutY="145.0" text="Visiting Fee:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Extra info if any" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>
