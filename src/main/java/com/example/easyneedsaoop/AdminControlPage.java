@@ -228,6 +228,51 @@ public class AdminControlPage implements Initializable {
     private Label imgLbl1;
     @FXML
     private Label imgLbl2;
+
+    //Clothing veriables
+    @FXML
+    private AnchorPane Clothing_Form;
+    @FXML
+    private TableColumn<?, ?> clothIn_col_ProdID;
+
+    @FXML
+    private TableColumn<?, ?> clothIn_col_ProdInfo;
+
+    @FXML
+    private TableColumn<?, ?> clothIn_col_ProdName;
+
+    @FXML
+    private TableColumn<?, ?> clothIn_col_ProdPrice;
+
+    @FXML
+    private TableColumn<?, ?> clothIn_col_ProdType;
+
+    @FXML
+    private ImageView clothinIn_imageView;
+
+    @FXML
+    private TableView<?> clothingTable;
+    @FXML
+    private ComboBox<?> prodCat;
+
+    @FXML
+    private TextField prodID;
+
+    @FXML
+    private TextField prodInfo;
+
+    @FXML
+    private TextField prodName;
+
+    @FXML
+    private TextField prodPrice;
+
+    @FXML
+    private ComboBox<?> prodType;
+
+    private String[] categoryOption={"kids","Man","Women"};
+    private String[] prodTypeOption={"T-Shirt","Shirt","Panjabi","Shari","Skirt"};
+
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
     public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
     public String[] billOption={"Daily","Weekly","Monthly"};
@@ -716,6 +761,67 @@ public class AdminControlPage implements Initializable {
         cateringTable.setItems(CateringInventoryList);
     }
 
+    //Clothing Data
+
+    public void clothShopInventoryAddBtn(){
+        if(prodID.getText().isEmpty() ||
+                prodName.getText().isEmpty() ||
+                prodPrice.getText().isEmpty() ||
+                prodCat.getSelectionModel().getSelectedItem() == null ||
+                prodType.getSelectionModel().getSelectedItem() == null ||
+                prodInfo.getText().isEmpty()) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+        } else {
+            String insertData = "INSERT INTO clothinginfo " +
+                    "(prodID, username, shopName, prodName, price, category, type, einfo, date)" +
+                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                prepare = connect.prepareStatement(insertData);
+                prepare.setString(1, prodID.getText());
+                prepare.setString(2, data.username);
+                prepare.setString(3, data.name);
+                prepare.setString(4, prodName.getText());
+                prepare.setString(5, prodPrice.getText());
+                prepare.setString(6, String.valueOf(prodCat.getSelectionModel().getSelectedItem()));
+                prepare.setString(7, String.valueOf(prodType.getSelectionModel().getSelectedItem()));
+                prepare.setString(8, prodInfo.getText());
+
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(9, String.valueOf(sqlDate));
+
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Added!");
+                alert.showAndWait();
+
+//                clothShopInventoryShowData();
+                clothShopInventoryClearBtn();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+    public void clothShopInventoryClearBtn() {
+        prodID.clear();
+        prodName.clear();
+        prodPrice.clear();
+        prodCat.getSelectionModel().clearSelection();
+        prodType.getSelectionModel().clearSelection();
+        prodInfo.clear();
+    }
+
 
 //Static options
 
@@ -761,14 +867,18 @@ public class AdminControlPage implements Initializable {
         List<String> mtype = new ArrayList<>(Arrays.asList(mealTypeOption));
         List<String> delType = new ArrayList<>(Arrays.asList(mealDeliveryOption));
         List<String> billType = new ArrayList<>(Arrays.asList(billOption));
+        List<String> catgoryType=new ArrayList<>(Arrays.asList(categoryOption));
+        List<String> prodTyp=new ArrayList<>(Arrays.asList(prodTypeOption));
         ObservableList mealData= FXCollections.observableArrayList(mtype);
         ObservableList deliveryData= FXCollections.observableArrayList(delType);
         ObservableList billData= FXCollections.observableArrayList(billType);
-
+        ObservableList categoryData=FXCollections.observableArrayList(catgoryType);
+        ObservableList prodTypeData=FXCollections.observableArrayList(prodTyp);
         mealType.setItems(mealData);
         mealDelivery.setItems(deliveryData);
         billPay.setItems(billData);
-
+        prodType.setItems(prodTypeData);
+        prodCat.setItems(categoryData);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

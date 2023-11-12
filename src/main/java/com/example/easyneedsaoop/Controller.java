@@ -15,7 +15,6 @@ import javafx.util.Duration;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -163,6 +162,7 @@ public class Controller {
 
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suName.getText());
+            data.name =suName.getText().trim();
             prepare.setString(2, suUsername.getText());
             prepare.setString(3, suPassword.getText());
             prepare.setString(4, suQuestion.getSelectionModel().getSelectedItem().toString());
