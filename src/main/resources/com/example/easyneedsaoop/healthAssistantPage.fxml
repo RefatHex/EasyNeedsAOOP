@@ -220,7 +220,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="doctorID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText=" update and delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="doctorID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText=" update or delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="25.0" layoutY="50.0" text="Doctor's Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -342,7 +342,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Extra info if any" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter amount" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>
