@@ -556,10 +556,10 @@
                                     <TableColumn fx:id="clothIn_col_ProdID" prefWidth="32.79997253417969" text="Prod Id" />
                                     <TableColumn fx:id="clothIn_col_ProdName" prefWidth="91.20001983642578" text="Prod Name" />
                                     <TableColumn fx:id="clothIn_col_ProdPrice" prefWidth="74.39996337890625" text="Price" />
-                                    <TableColumn fx:id="lothIn_col_category" prefWidth="70.4000244140625" text="Category" />
+                                    <TableColumn fx:id="clothIn_col_category" prefWidth="70.4000244140625" text="Category" />
                                     <TableColumn fx:id="clothIn_col_ProdType" prefWidth="66.4000244140625" text="Prod Type" />
                                     <TableColumn fx:id="clothIn_col_ProdInfo" prefWidth="77.5999755859375" text="Extra info" />
-                                    <TableColumn fx:id="rentIn_col_date1" prefWidth="98.40008544921875" text="date" />
+                                    <TableColumn fx:id="clothIn_col_date" prefWidth="98.40008544921875" text="date" />
                                  </columns>
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -625,7 +625,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -634,7 +634,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -643,7 +643,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
