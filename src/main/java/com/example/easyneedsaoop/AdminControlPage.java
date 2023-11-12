@@ -228,30 +228,43 @@ public class AdminControlPage implements Initializable {
     private Label imgLbl1;
     @FXML
     private Label imgLbl2;
+    public String[] mealTypeOption={"Daily","Weekly","Monthly"};
+    public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
+    public String[] billOption={"Daily","Weekly","Monthly"};
 
+    @FXML
+    private ComboBox<String> mealType;
+
+    @FXML
+    private ComboBox<String> mealDelivery;
     //Clothing veriables
     @FXML
     private AnchorPane Clothing_Form;
     @FXML
-    private TableColumn<?, ?> clothIn_col_ProdID;
+    private TableColumn<String, String> clothIn_col_ProdID;
 
     @FXML
-    private TableColumn<?, ?> clothIn_col_ProdInfo;
+    private TableColumn<String, String> clothIn_col_ProdInfo;
 
     @FXML
-    private TableColumn<?, ?> clothIn_col_ProdName;
+    private TableColumn<String, String> clothIn_col_ProdName;
 
     @FXML
-    private TableColumn<?, ?> clothIn_col_ProdPrice;
+    private TableColumn<String, String> clothIn_col_ProdPrice;
 
     @FXML
-    private TableColumn<?, ?> clothIn_col_ProdType;
+    private TableColumn<String, String> clothIn_col_ProdType;
 
+    @FXML
+    private TableColumn<String, String> clothIn_col_category;
+
+    @FXML
+    private TableColumn<String, String> clothIn_col_date;
     @FXML
     private ImageView clothinIn_imageView;
 
     @FXML
-    private TableView<?> clothingTable;
+    private TableView<ClothShopData> clothingTable;
     @FXML
     private ComboBox<?> prodCat;
 
@@ -273,15 +286,7 @@ public class AdminControlPage implements Initializable {
     private String[] categoryOption={"kids","Man","Women"};
     private String[] prodTypeOption={"T-Shirt","Shirt","Panjabi","Shari","Skirt"};
 
-    public String[] mealTypeOption={"Daily","Weekly","Monthly"};
-    public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
-    public String[] billOption={"Daily","Weekly","Monthly"};
 
-    @FXML
-    private ComboBox<String> mealType;
-
-    @FXML
-    private ComboBox<String> mealDelivery;
 
     public void rentInventoryAddBtn(){
         if(rentIn_id.getText().isEmpty()||
@@ -778,8 +783,8 @@ public class AdminControlPage implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO clothinginfo " +
-                    "(prodID, username, shopName, prodName, price, category, type, einfo, date)" +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "(prodID, username, shopName, prodName, price,image, category, type, einfo, date)" +
+                    "VALUES(?, ?,?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 prepare = connect.prepareStatement(insertData);
                 prepare.setString(1, prodID.getText());
@@ -787,13 +792,16 @@ public class AdminControlPage implements Initializable {
                 prepare.setString(3, data.name);
                 prepare.setString(4, prodName.getText());
                 prepare.setString(5, prodPrice.getText());
-                prepare.setString(6, String.valueOf(prodCat.getSelectionModel().getSelectedItem()));
-                prepare.setString(7, String.valueOf(prodType.getSelectionModel().getSelectedItem()));
-                prepare.setString(8, prodInfo.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(6,path);
+                prepare.setString(7, String.valueOf(prodCat.getSelectionModel().getSelectedItem()));
+                prepare.setString(8, String.valueOf(prodType.getSelectionModel().getSelectedItem()));
+                prepare.setString(9, prodInfo.getText());
 
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                prepare.setString(9, String.valueOf(sqlDate));
+                prepare.setString(10, String.valueOf(sqlDate));
 
                 prepare.executeUpdate();
 
@@ -803,7 +811,7 @@ public class AdminControlPage implements Initializable {
                 alert.setContentText("Successfully Added!");
                 alert.showAndWait();
 
-//                clothShopInventoryShowData();
+                clothShopInventoryShowData();
                 clothShopInventoryClearBtn();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -821,6 +829,160 @@ public class AdminControlPage implements Initializable {
         prodType.getSelectionModel().clearSelection();
         prodInfo.clear();
     }
+
+    public void clothShopInventoryUpdateBtn(){
+        if(prodID.getText().isEmpty() ||
+                prodName.getText().isEmpty() ||
+                prodPrice.getText().isEmpty() ||
+                prodCat.getSelectionModel().getSelectedItem() == null ||
+                prodType.getSelectionModel().getSelectedItem() == null ||
+                prodInfo.getText().isEmpty()) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+            return;
+        }
+
+        String updateData = "UPDATE clothinginfo SET " +
+                "username=?, shopName=?, prodName=?, price=?,image=?, category=?, " +
+                "type=?, einfo=?, date=? " +
+                "WHERE prodID=?";
+
+        try {
+            prepare = connect.prepareStatement(updateData);
+            prepare.setString(1, data.username);
+            prepare.setString(2, data.name);
+            prepare.setString(3, prodName.getText());
+            prepare.setString(4, prodPrice.getText());
+            String path = data.path;
+            path = path.replace("\\", "\\\\");
+            prepare.setString(5,path);
+            prepare.setString(6, String.valueOf(prodCat.getSelectionModel().getSelectedItem()));
+            prepare.setString(7, String.valueOf(prodType.getSelectionModel().getSelectedItem()));
+            prepare.setString(8, prodInfo.getText());
+
+
+            java.util.Date date = new java.util.Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            prepare.setString(9, String.valueOf(sqlDate));
+
+            prepare.setString(10, prodID.getText());
+
+            int affectedRows = prepare.executeUpdate();
+
+            if (affectedRows > 0) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Update Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Updated!");
+                alert.showAndWait();
+
+                clothShopInventoryShowData();
+                clothShopInventoryClearBtn();
+            } else {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("No records updated. Please check the product ID.");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void clothShopInventoryDeleteBtn() {
+        if (prodID.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please provide both the Product ID and Username to delete a product.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this product?", ButtonType.YES, ButtonType.NO);
+        confirmationAlert.setTitle("Delete Confirmation");
+        confirmationAlert.setHeaderText(null);
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            String deleteQuery = "DELETE FROM clothinginfo WHERE prodID=? AND username=?";
+
+            try {
+                prepare = connect.prepareStatement(deleteQuery);
+                prepare.setString(1, prodID.getText());
+                prepare.setString(2, data.username);
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Delete Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Deleted!");
+                    alert.showAndWait();
+
+                    clothShopInventoryShowData();
+                    clothShopInventoryClearBtn();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records deleted. Please check the Product ID and Username.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public ObservableList<ClothShopData> getClothShopListData() {
+        ObservableList<ClothShopData> listData = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM clothinginfo";
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+            ClothShopData data;
+            while (result.next()) {
+                data = new ClothShopData(
+                        result.getInt("prodID"),
+                        result.getString("username"),
+                        result.getString("shopName"),
+                        result.getString("prodName"),
+                        result.getDouble("price"),
+                        result.getString("image"),
+                        result.getString("category"),
+                        result.getString("type"),
+                        result.getString("einfo"),
+                        result.getDate("date")
+                );
+                listData.add(data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listData;
+    }
+
+    // Show Data on table
+    private ObservableList<ClothShopData> clothShopInventoryList;
+    public void clothShopInventoryShowData() {
+        clothShopInventoryList = getClothShopListData();
+        clothIn_col_ProdID.setCellValueFactory(new PropertyValueFactory<>("prodID"));
+        clothIn_col_ProdInfo.setCellValueFactory(new PropertyValueFactory<>("einfo"));
+        clothIn_col_ProdName.setCellValueFactory(new PropertyValueFactory<>("prodName"));
+        clothIn_col_ProdPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        clothIn_col_ProdType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        clothIn_col_category.setCellValueFactory(new PropertyValueFactory<>("category"));
+        clothIn_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+        clothingTable.setItems(clothShopInventoryList);
+    }
+
+
 
 
 //Static options
@@ -887,6 +1049,7 @@ public class AdminControlPage implements Initializable {
         getRentListData();
         rentInventoryShowData();
         cateringInventoryShowData();
+        clothShopInventoryShowData();
         optionAdder();
 
     }
@@ -904,7 +1067,6 @@ public class AdminControlPage implements Initializable {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
             catering_form.setVisible(false);
-
         }
     }
 

@@ -71,7 +71,7 @@
                <center>
                   <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
+                        <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
                            <children>
                               <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="153.0" prefWidth="851.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -160,7 +160,7 @@
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <BarChart layoutX="-19.0" layoutY="10.0" prefHeight="371.0" prefWidth="406.0" title="Customer's Chart" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-19.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="10.0">
+                                          <BarChart layoutX="-37.0" layoutY="10.0" prefHeight="398.0" prefWidth="415.0" title="Customer's Chart" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-37.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="10.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
@@ -177,7 +177,7 @@
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <AreaChart layoutX="14.0" layoutY="14.0" prefHeight="384.0" prefWidth="378.0" title="Income Chart" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
+                                          <AreaChart layoutX="14.0" layoutY="14.0" prefHeight="396.0" prefWidth="385.0" title="Income Chart" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="14.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
@@ -191,7 +191,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="rentIn_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="rentIn_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
@@ -375,7 +375,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="catering_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="catering_form" prefHeight="592.0" prefWidth="856.0" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
@@ -616,7 +616,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="Instruct_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -625,7 +625,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button fx:id="update" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
