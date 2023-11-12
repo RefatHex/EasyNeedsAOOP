@@ -285,6 +285,62 @@ public class AdminControlPage implements Initializable {
 
     private String[] categoryOption={"kids","Man","Women"};
     private String[] prodTypeOption={"T-Shirt","Shirt","Panjabi","Shari","Skirt"};
+    //Instructor Page
+    private String[] courseCategoryOption ={"Education","Tech","Programming","Study Material","Motivational"};
+    private String[] courseTypeOption ={"Weekly","Yearly","Semester","Trimester"};
+    @FXML
+    private AnchorPane instructor_form;
+
+    @FXML
+    private AnchorPane adminAnchorPane;
+
+    @FXML
+    private ComboBox<?> courseCategory;
+
+    @FXML
+    private TextField courseDescription;
+
+    @FXML
+    private TextField courseExtraInfo;
+
+    @FXML
+    private TextField courseID;
+
+    @FXML
+    private TextField courseName;
+
+    @FXML
+    private TextField coursePrice;
+
+    @FXML
+    private ComboBox<?> course_type;
+
+    @FXML
+    private TextField instructName;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_courseCategory;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_courseEInfo;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_courseID;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_courseName;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_coursePrice;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_courseType;
+
+    @FXML
+    private TableColumn<?, ?> instructorIn_col_date;
+
+    @FXML
+    private TableView<CourseData> instructorTable;
 
 
 
@@ -982,7 +1038,219 @@ public class AdminControlPage implements Initializable {
         clothingTable.setItems(clothShopInventoryList);
     }
 
+//Instructor page
+public void courseInventoryAddBtn() {
+    if (courseID.getText().isEmpty() ||
+            courseName.getText().isEmpty() ||
+            coursePrice.getText().isEmpty() ||
+            instructName.getText().isEmpty() ||
+            courseCategory.getSelectionModel().getSelectedItem() == null ||
+            course_type.getSelectionModel().getSelectedItem() == null) {
 
+        alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error Message");
+        alert.setHeaderText(null);
+        alert.setContentText("Please fill all blank fields");
+        alert.showAndWait();
+    } else {
+        String insertData = "INSERT INTO courseInfo " +
+                "(courseID, courseName, price, instructorName, userName, description, image, info, category, type, date)" +
+                "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            prepare = connect.prepareStatement(insertData);
+            prepare.setString(1, courseID.getText());
+            prepare.setString(2, courseName.getText());
+            prepare.setString(3, coursePrice.getText());
+            prepare.setString(4, instructName.getText());
+            prepare.setString(5, data.username);
+            prepare.setString(6, courseDescription.getText());
+            prepare.setString(7, data.path.replace("\\", "\\\\"));
+            prepare.setString(8, courseExtraInfo.getText());
+            prepare.setString(9, String.valueOf(courseCategory.getSelectionModel().getSelectedItem()));
+            prepare.setString(10, String.valueOf(course_type.getSelectionModel().getSelectedItem()));
+
+            java.util.Date date = new java.util.Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            prepare.setString(11, String.valueOf(sqlDate));
+
+            prepare.executeUpdate();
+
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Successfully Added!");
+            alert.showAndWait();
+
+
+             courseInventoryShowData();
+            courseInventoryClearBtn();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+    public void courseInventoryUpdateBtn() {
+        if (courseID.getText().isEmpty() ||
+                courseName.getText().isEmpty() ||
+                coursePrice.getText().isEmpty() ||
+                instructName.getText().isEmpty() ||
+                courseCategory.getSelectionModel().getSelectedItem() == null ||
+                course_type.getSelectionModel().getSelectedItem() == null) {
+
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+            return;
+        }
+
+        String updateData = "UPDATE courseInfo SET " +
+                "courseName=?, price=?, instructorName=?, userName=?, description=?, image=?, info=?, category=?, type=?, date=? " +
+                "WHERE courseID=?";
+
+        try {
+            prepare = connect.prepareStatement(updateData);
+            prepare.setString(1, courseName.getText());
+            prepare.setDouble(2, Double.parseDouble(coursePrice.getText()));
+            prepare.setString(3, instructName.getText());
+            prepare.setString(4, data.username);
+            prepare.setString(5, courseDescription.getText());
+            prepare.setString(6, data.path.replace("\\", "\\\\"));
+            prepare.setString(7, courseExtraInfo.getText());
+            prepare.setString(8, String.valueOf(courseCategory.getSelectionModel().getSelectedItem()));
+            prepare.setString(9, String.valueOf(course_type.getSelectionModel().getSelectedItem()));
+
+            java.util.Date date = new java.util.Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            prepare.setDate(10, sqlDate);
+
+            prepare.setString(11, courseID.getText());
+
+            int affectedRows = prepare.executeUpdate();
+
+            if (affectedRows > 0) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Update Message");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Updated!");
+                alert.showAndWait();
+
+                courseInventoryShowData();
+                courseInventoryClearBtn();
+            } else {
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Update Error");
+                alert.setHeaderText(null);
+                alert.setContentText("No records updated. Please check the ID.");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void courseInventoryClearBtn() {
+        courseID.clear();
+        courseName.clear();
+        coursePrice.clear();
+        instructName.clear();
+        courseDescription.clear();
+        courseExtraInfo.clear();
+        courseCategory.getSelectionModel().clearSelection();
+        course_type.getSelectionModel().clearSelection();
+    }
+    public void courseInventoryDeleteBtn() {
+        if (courseID.getText().isEmpty()) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please provide the ID of the record to be deleted.");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this record?", ButtonType.YES, ButtonType.NO);
+        confirmationAlert.setTitle("Delete Confirmation");
+        confirmationAlert.setHeaderText(null);
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.YES) {
+            String deleteQuery = "DELETE FROM courseInfo WHERE courseID=?";
+
+            try {
+                prepare = connect.prepareStatement(deleteQuery);
+                prepare.setString(1, courseID.getText());
+
+                int affectedRows = prepare.executeUpdate();
+
+                if (affectedRows > 0) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Delete Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Deleted!");
+                    alert.showAndWait();
+
+                    courseInventoryShowData();
+                    courseInventoryClearBtn();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Delete Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("No records deleted. Please check the ID.");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //MERGE DATA ON TABLE
+    public ObservableList<CourseData> getCourseListData() {
+        ObservableList<CourseData> listData = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM courseInfo";
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+            CourseData data;
+            while (result.next()) {
+                data = new CourseData(
+                        result.getInt("courseID"),
+                        result.getString("courseName"),
+                        result.getDouble("price"),
+                        result.getString("instructorName"),
+                        result.getString("userName"),
+                        result.getString("description"),
+                        result.getString("image"),
+                        result.getString("info"),
+                        result.getString("category"),
+                        result.getString("type"),
+                        result.getDate("date")
+                );
+                listData.add(data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listData;
+    }
+
+    // Show Data on table
+    private ObservableList<CourseData> courseInventoryList;
+    public void courseInventoryShowData() {
+        courseInventoryList = getCourseListData();
+
+        instructorIn_col_courseID.setCellValueFactory(new PropertyValueFactory<>("courseID"));
+        instructorIn_col_courseName.setCellValueFactory(new PropertyValueFactory<>("courseName"));
+        instructorIn_col_coursePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        instructorIn_col_courseType.setCellValueFactory(new PropertyValueFactory<>("type"));
+        instructorIn_col_courseCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        instructorIn_col_courseEInfo.setCellValueFactory(new PropertyValueFactory<>("info"));
+        instructorIn_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        instructorTable.setItems(courseInventoryList);
+    }
 
 
 //Static options
@@ -1041,11 +1309,19 @@ public class AdminControlPage implements Initializable {
         billPay.setItems(billData);
         prodType.setItems(prodTypeData);
         prodCat.setItems(categoryData);
+        List<String> courseCatgoryType=new ArrayList<>(Arrays.asList(courseCategoryOption));
+        List<String> CourseType=new ArrayList<>(Arrays.asList(courseTypeOption));
+        ObservableList courseCategoryData= FXCollections.observableArrayList(courseCatgoryType);
+        ObservableList courseTypeData=FXCollections.observableArrayList(CourseType);
+        courseCategory.setItems(courseTypeData);
+        course_type.setItems(courseCategoryData);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
         yesOrNo();
+        connect = database.connectDB();
+        courseInventoryShowData();
         getRentListData();
         rentInventoryShowData();
         cateringInventoryShowData();

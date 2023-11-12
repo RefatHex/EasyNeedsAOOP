@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothShopPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorPageController">
    <children>
       <StackPane layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0">
          <children>
@@ -70,6 +70,155 @@
                      <center>
                         <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                            <children>
+                              <AnchorPane fx:id="instructor_form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="instructorTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="instructorIn_col_courseID" prefWidth="32.79997253417969" text="Prod Id" />
+                                          <TableColumn fx:id="instructorIn_col_courseName" prefWidth="91.20001983642578" text="Prod Name" />
+                                          <TableColumn fx:id="instructorIn_col_coursePrice" prefWidth="74.39996337890625" text="Price" />
+                                          <TableColumn fx:id="instructorIn_col_courseCategory" prefWidth="70.4000244140625" text="Category" />
+                                          <TableColumn fx:id="instructorIn_col_courseType" prefWidth="66.4000244140625" text="Prod Type" />
+                                          <TableColumn fx:id="instructorIn_col_courseEInfo" prefWidth="77.5999755859375" text="Extra info" />
+                                          <TableColumn fx:id="instructorIn_col_date" prefWidth="98.40008544921875" text="date" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <AnchorPane fx:id="rentAnchor1" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
+                                       <children>
+                                          <Label layoutX="50.0" layoutY="15.0" text="Course ID:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="courseID" layoutX="162.0" layoutY="12.0" prefHeight="27.0" prefWidth="146.0" promptText="Your course name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="54.0" layoutY="57.0" text="Course Name:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="courseName" layoutX="162.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="11.0" layoutY="96.0" text="Course Price:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="coursePrice" layoutX="162.0" layoutY="94.0" prefHeight="26.0" prefWidth="227.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <ComboBox fx:id="courseCategory" layoutX="402.0" layoutY="147.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
+                                             <styleClass>
+                                                <String fx:value="table-view" />
+                                                <String fx:value="User-button" />
+                                             </styleClass>
+                                          </ComboBox>
+                                          <Label layoutX="333.0" layoutY="151.0" text="Category">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="course_type" layoutX="615.0" layoutY="147.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
+                                             <styleClass>
+                                                <String fx:value="table-view" />
+                                                <String fx:value="User-button" />
+                                             </styleClass>
+                                          </ComboBox>
+                                          <Label layoutX="529.0" layoutY="151.0" text="Cource Type">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="instructor_importbtn" layoutX="171.0" layoutY="193.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="instructor_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#courseInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="instructor_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#courseInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="instructor_cleatbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#courseInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="instructor_deletebtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#courseInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="User-button" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </Button>
+                                          <AnchorPane layoutX="17.0" layoutY="145.0" prefHeight="119.0" prefWidth="126.0" stylesheets="@adminPageStyle.css">
+                                             <children>
+                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                                <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Photo">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <styleClass>
+                                                <String fx:value="Lightwhite-bg" />
+                                                <String fx:value="radius" />
+                                             </styleClass>
+                                          </AnchorPane>
+                                          <Label layoutX="519.0" layoutY="96.0" text="Extra info:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="courseExtraInfo" layoutX="601.0" layoutY="94.0" prefHeight="26.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="459.0" layoutY="15.0" text="Instructor Name:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="instructName" layoutX="597.0" layoutY="12.0" prefHeight="27.0" prefWidth="149.0" promptText="Your Instructor name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="450.0" layoutY="57.0" text="Course Description:">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="courseDescription" layoutX="598.0" layoutY="54.0" prefHeight="27.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
                               <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-20.0" prefHeight="620.0" prefWidth="902.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-20.0">
                                  <children>
                                     <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="153.0" prefWidth="851.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="14.0">
@@ -186,155 +335,6 @@
                                                 </AreaChart>
                                              </children>
                                           </AnchorPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="Clothing_Form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
-                                 <styleClass>
-                                    <String fx:value="white-bg" />
-                                    <String fx:value="radius" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
-                                 <children>
-                                    <TableView fx:id="clothingTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
-                                       <columns>
-                                          <TableColumn fx:id="clothIn_col_ProdID" prefWidth="32.79997253417969" text="Prod Id" />
-                                          <TableColumn fx:id="clothIn_col_ProdName" prefWidth="91.20001983642578" text="Prod Name" />
-                                          <TableColumn fx:id="clothIn_col_ProdPrice" prefWidth="74.39996337890625" text="Price" />
-                                          <TableColumn fx:id="clothIn_col_category" prefWidth="70.4000244140625" text="Category" />
-                                          <TableColumn fx:id="clothIn_col_ProdType" prefWidth="66.4000244140625" text="Prod Type" />
-                                          <TableColumn fx:id="clothIn_col_ProdInfo" prefWidth="77.5999755859375" text="Extra info" />
-                                          <TableColumn fx:id="clothIn_col_date" prefWidth="98.40008544921875" text="date" />
-                                       </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
-                                    </TableView>
-                                    <AnchorPane fx:id="rentAnchor1" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
-                                       <children>
-                                          <Label layoutX="50.0" layoutY="15.0" text="Course Name:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="courseName" layoutX="162.0" layoutY="12.0" prefHeight="27.0" prefWidth="146.0" promptText="Your course name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="54.0" layoutY="57.0" text="Course Price:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="coursePrice" layoutX="162.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="11.0" layoutY="96.0" text="Course Description:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="courseDescription" layoutX="162.0" layoutY="94.0" prefHeight="26.0" prefWidth="227.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <ComboBox fx:id="category" layoutX="402.0" layoutY="147.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
-                                          <Label layoutX="333.0" layoutY="151.0" text="Category">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <ComboBox fx:id="course_type" layoutX="615.0" layoutY="147.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
-                                             <styleClass>
-                                                <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
-                                             </styleClass>
-                                          </ComboBox>
-                                          <Label layoutX="529.0" layoutY="151.0" text="Cource Type">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Button fx:id="instructor_importbtn" layoutX="171.0" layoutY="193.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="instructor_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="instructor_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="instructor_cleatbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <Button fx:id="instructor_deletebtn" layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                             <styleClass>
-                                                <String fx:value="User-button" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </Button>
-                                          <AnchorPane layoutX="17.0" layoutY="145.0" prefHeight="119.0" prefWidth="126.0" stylesheets="@adminPageStyle.css">
-                                             <children>
-                                                <ImageView fx:id="instructor_imageView" fitHeight="120.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
-                                                <Label fx:id="imgLbl12" layoutX="32.0" layoutY="31.0" text="Add  your">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="imgLbl22" layoutX="44.0" layoutY="60.0" text="Photo">
-                                                   <font>
-                                                      <Font name="System Bold Italic" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                             <styleClass>
-                                                <String fx:value="Lightwhite-bg" />
-                                                <String fx:value="radius" />
-                                             </styleClass>
-                                          </AnchorPane>
-                                          <Label layoutX="519.0" layoutY="96.0" text="Extra info:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="extraInfo" layoutX="601.0" layoutY="94.0" prefHeight="26.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="459.0" layoutY="15.0" text="Instructor Nmae:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="instructName" layoutX="597.0" layoutY="12.0" prefHeight="27.0" prefWidth="149.0" promptText="Your Instructor name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="503.0" layoutY="57.0" text="Offer Price:">
-                                             <font>
-                                                <Font name="System Bold" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="offerPrice" layoutX="598.0" layoutY="54.0" prefHeight="27.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>
