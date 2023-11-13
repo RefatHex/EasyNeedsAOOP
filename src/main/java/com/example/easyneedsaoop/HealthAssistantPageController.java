@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -33,7 +34,7 @@ public class HealthAssistantPageController implements Initializable {
     private ComboBox<?> availableOn;
 
     @FXML
-    private TableView<?> clothingTable;
+    private TableView<HealthData> healthAssistantTable;
 
     @FXML
     private Button dashboard_btn;
@@ -131,71 +132,87 @@ public class HealthAssistantPageController implements Initializable {
     private TextField startingHour;
     @FXML
     private Label userName;
-    private Image image;
-    private Alert alert;
+
     public String[] daysInWeeks = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
     public String[] service ={"Paid","Free"};
+    private Image image;
+    private Alert alert;
     private Connection connect;
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        displayUsername();
-        setAvailabilty();
-        setServiceType();
 
-    }
-    @FXML
-    void InventoryImportBtn(ActionEvent event) {
-        FileChooser openFile = new FileChooser();
-        openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
 
-        File file = openFile.showOpenDialog(mainForm.getScene().getWindow());
+    public void healthAssistanceAddBtn(){
+        if (doctorID.getText().isEmpty() ||
+                doctorName.getText().isEmpty() ||
+                startingHour.getText().isEmpty() ||
+                extraInfo.getText().isEmpty() ||
+                serviceType.getSelectionModel().getSelectedItem() == null ||
+                availableOn.getSelectionModel().getSelectedItem() == null) {
 
-        if (file != null) {
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all blank fields");
+            alert.showAndWait();
+        } else {
+            String insertData = "INSERT INTO hassisanceinfo " +
+                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, extraInfo, date)" +
+                    "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+            try {
+                prepare = connect.prepareStatement(insertData);
+                prepare.setString(1, doctorID.getText());
+                prepare.setString(2, doctorName.getText());
+                prepare.setString(3, data.username);
+                prepare.setString(4, specialtyIn.getText());
+                prepare.setString(5, startingHour.getText());
+                prepare.setString(6, endingHour.getText());
+                prepare.setString(7, visitingFee.getText());
+                prepare.setString(8, availableOn.getSelectionModel().getSelectedItem().toString());
+                prepare.setString(9,serviceType.getSelectionModel().getSelectedItem().toString());
+                prepare.setString(10, extraInfo.getText());
 
-            data.path = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 126, 120, false, true);
-            health_imageView.setImage(image);
-            imgLbl12.setVisible(false);
-            imgLbl22.setVisible(false);
 
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(11, sqlDate.toString());
+
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Added!");
+                alert.showAndWait();
+
+                 healthAssistanceShowData();
+                 healthAssistanceClearBtn();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    @FXML
-    void healthInventoryAddBtn(ActionEvent event) {
 
+      public void healthAssistanceClearBtn() {
+          doctorID.clear();
+          doctorName.clear();
+          startingHour.clear();
+          endingHour.clear();
+          extraInfo.clear();
+          serviceType.getSelectionModel().clearSelection();
+          specialtyIn.clear();
+          visitingFee.clear();
+          availableOn.getSelectionModel().clearSelection();
     }
 
-    @FXML
-    void healthInventoryClearBtn(ActionEvent event) {
-        doctorID.setText("");
-        doctorName.setText("");
-        specialtyIn.setText("");
-        startingHour.setText("");
-        endingHour.setText("");
-        extraInfo.setText("");
-        visitingFee.setText("");
-        availableOn.setValue(null);
-        serviceType.setValue(null);
-    }
 
-    @FXML
-    void healthInventoryDeleteBtn(ActionEvent event) {
 
-    }
 
-    @FXML
-    void healthInventoryUpdateBtn(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleEvent(ActionEvent event) throws IOException {
+    public void handleEvent(ActionEvent event) throws IOException {
         if (event.getSource() == inventory_btn) {
             dashboard_form.setVisible(false);
             health_Form.setVisible(true);
@@ -215,9 +232,171 @@ public class HealthAssistantPageController implements Initializable {
 
         }
     }
+    public void healthAssistanceDeleteBtn() {
+        if (doctorID.getText().isEmpty()) {
+            return;
+        }
 
-    @FXML
-    void logout(ActionEvent event) {
+        String checkExistingData = "SELECT * FROM hassisanceinfo WHERE cardID=? AND userName=?";
+        String deleteData = "DELETE FROM hassisanceinfo WHERE cardID=? AND userName=?";
+
+        try {
+            prepare = connect.prepareStatement(checkExistingData);
+            prepare.setString(1, doctorID.getText());
+            prepare.setString(2, data.username);
+            ResultSet resultSet = prepare.executeQuery();
+
+            if (!resultSet.next()) {
+                alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("No record found with the provided ID and userName");
+                alert.showAndWait();
+                return;
+            }
+
+            prepare = connect.prepareStatement(deleteData);
+            prepare.setString(1, doctorID.getText());
+            prepare.setString(2, data.username);
+
+            int rowsDeleted = prepare.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Record deleted successfully!");
+                alert.showAndWait();
+
+                 healthAssistanceShowData();
+                 healthAssistanceClearBtn();
+            } else {
+                alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("No record found with the provided ID and userName");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void healthAssistanceUpdateBtn() {
+        if (doctorID.getText().isEmpty() || doctorName.getText().isEmpty()) {
+            return;
+        }
+
+        String checkExistingData = "SELECT * FROM hassisanceinfo WHERE id=? AND userName=?";
+        String updateData = "UPDATE hassisanceinfo " +
+                "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, extraInfo=? " +
+                "WHERE cardID=? AND userName=?";
+
+        try {
+            prepare = connect.prepareStatement(checkExistingData);
+            prepare.setString(1, doctorID.getText());
+            prepare.setString(2, data.username);
+            ResultSet resultSet = prepare.executeQuery();
+
+            if (!resultSet.next()) {
+                alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("No record found with the provided ID and userName");
+                alert.showAndWait();
+                return;
+            }
+
+            prepare = connect.prepareStatement(updateData);
+            prepare.setString(1, data.username);
+            prepare.setString(2, doctorName.getText());
+            prepare.setString(3, specialtyIn.getText());
+            prepare.setString(4, startingHour.getText());
+            prepare.setString(5, endingHour.getText());
+            prepare.setString(6, visitingFee.getText());
+            prepare.setString(7, availableOn.getSelectionModel().getSelectedItem().toString());
+            prepare.setString(8, serviceType.getSelectionModel().getSelectedItem().toString());
+            prepare.setString(9, extraInfo.getText());
+            prepare.setString(10, doctorID.getText());
+            prepare.setString(11, data.username);
+
+            int rowsUpdated = prepare.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Record updated successfully!");
+                alert.showAndWait();
+
+                 healthAssistanceShowData();
+                 healthAssistanceClearBtn();
+            } else {
+                alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText(null);
+                alert.setContentText("No record found with the provided ID and userName");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // Method to fetch health data from the database
+    public ObservableList<HealthData> getHealthListData() {
+        ObservableList<HealthData> listData = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM hassisanceinfo";
+
+        try {
+            connect = database.connectDB();
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+            HealthData data;
+
+            while (result.next()) {
+                data = new HealthData(
+                        result.getInt("cardID"),
+                        result.getString("docName"),
+                        result.getString("userName"),
+                        result.getString("docMajor"),
+                        result.getInt("start"),
+                        result.getInt("end"),
+                        result.getDouble("fee"),
+                        result.getString("day"),
+                        result.getString("service"),
+                        result.getString("extraInfo"),
+                        result.getDate("date")
+                );
+                listData.add(data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return listData;
+    }
+
+    // Method to display health data on the table
+    private ObservableList<HealthData> healthInventoryList;
+
+    public void healthAssistanceShowData() {
+        healthInventoryList = getHealthListData();
+
+        health_col_ID.setCellValueFactory(new PropertyValueFactory<>("cardID"));
+        health_col_name.setCellValueFactory(new PropertyValueFactory<>("docName"));
+        health_col_availability.setCellValueFactory(new PropertyValueFactory<>("day"));
+        health_col_ending.setCellValueFactory(new PropertyValueFactory<>("end"));
+        health_col_fee.setCellValueFactory(new PropertyValueFactory<>("fee"));
+        health_col_service.setCellValueFactory(new PropertyValueFactory<>("service"));
+        health_col_specialist.setCellValueFactory(new PropertyValueFactory<>("docMajor"));
+        health_col_starting.setCellValueFactory(new PropertyValueFactory<>("start"));
+        health_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        healthAssistantTable.setItems(healthInventoryList);
+    }
+
+
+    public void logout(ActionEvent event) {
         try {
             alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Error Message");
@@ -253,6 +432,29 @@ public class HealthAssistantPageController implements Initializable {
     void setServiceType(){
         ObservableList listData= FXCollections.observableArrayList(service);
         serviceType.setItems(listData);
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        displayUsername();
+        setAvailabilty();
+        setServiceType();
+        healthAssistanceShowData();
+        connect=database.connectDB();
+
+    }
+    public void InventoryImportBtn(ActionEvent event) {
+        FileChooser openFile = new FileChooser();
+        openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
+        File file = openFile.showOpenDialog(mainForm.getScene().getWindow());
+        if (file != null) {
+            data.path = file.getAbsolutePath();
+            image = new Image(file.toURI().toString(), 126, 120, false, true);
+            health_imageView.setImage(image);
+            imgLbl12.setVisible(false);
+            imgLbl22.setVisible(false);
+
+        }
     }
 
 }

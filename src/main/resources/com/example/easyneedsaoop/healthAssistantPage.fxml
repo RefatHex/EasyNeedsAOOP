@@ -197,7 +197,7 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <TableView fx:id="clothingTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                    <TableView fx:id="healthAssistantTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <columns>
                                           <TableColumn fx:id="health_col_ID" prefWidth="39.0" text="ID" />
                                           <TableColumn fx:id="health_col_name" prefWidth="82.0" text="Name" />
@@ -253,7 +253,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthAssistanceAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -262,7 +262,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_updatebtn" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthAssistanceUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -271,7 +271,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_clearbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_clearbtn" layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthAssistanceClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -280,7 +280,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_deletebtn" layoutX="689.0" layoutY="225.0" mnemonicParsing="false" onAction="#healthInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.0">
+                                          <Button fx:id="health_deletebtn" layoutX="689.0" layoutY="225.0" mnemonicParsing="false" onAction="#healthAssistanceUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.0">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
