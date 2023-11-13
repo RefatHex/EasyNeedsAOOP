@@ -64,3 +64,17 @@
 .transparent{
     -fx-background-color: transparent;
 }
+
+.dark-background{
+    -fx-background-color:#222222;
+}
+
+.primary-colour{
+-Fx-background-color:#383838;
+}
+.secondary-colour{
+-Fx-background-color:#282828;
+}
+.round.border{
+Fx-background-radius:100;
+}

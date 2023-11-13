@@ -124,7 +124,7 @@ public class ConsumerPage {
         for(int i=0;i<cardDetails.size();i++){
             try {
                 FXMLLoader loader=new FXMLLoader();
-                loader.setLocation(getClass().getResource("RentCardDesign.fxml"));
+                loader.setLocation(getClass().getResource("CateringCard.fxml"));
                 AnchorPane pane=loader.load();
                 RentCardDesign cardR= loader.getController();
                 cardR.setData(cardDetails.get(i));

@@ -13,10 +13,10 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("consumerPage.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
 
-//        Image image = new Image("D:\\Study Materials\\Trimester-4\\AOOP\\EasyNeedsAOOP\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");
-//
-//
-//        ImageView imageView = new ImageView(image);
+  Image image = new Image("F:\\AOOP Project\\EasyNeedsUpdate\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");
+
+
+     ImageView imageView = new ImageView(image);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("EasyNeeds");
         stage.setScene(scene);
