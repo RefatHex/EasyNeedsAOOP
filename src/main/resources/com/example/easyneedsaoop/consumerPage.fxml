@@ -345,7 +345,7 @@
                                     </ScrollPane>
                                     <ImageView fitHeight="158.0" fitWidth="307.0" layoutX="40.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@Offersale%20logo.png" />
+                                          <Image url="@Offersalelogo.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="195.0" layoutY="17.0" prefHeight="116.0" prefWidth="633.0" text="Big Sale Super Sunday!!!">
