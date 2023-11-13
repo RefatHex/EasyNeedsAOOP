@@ -25,6 +25,10 @@ import java.util.*;
 public class AdminControlPage implements Initializable {
     @FXML
     private Button clothing_btn;
+    @FXML
+    private AnchorPane instructor_form;
+    @FXML
+    private AnchorPane Clothing_Form;
 
     @FXML
     private Button customer_btn;
@@ -239,8 +243,6 @@ public class AdminControlPage implements Initializable {
     @FXML
     private ComboBox<String> mealDelivery;
     //Clothing veriables
-    @FXML
-    private AnchorPane Clothing_Form;
     @FXML
     private TableColumn<String, String> clothIn_col_ProdID;
 
@@ -1669,6 +1671,11 @@ public void courseInventoryAddBtn() {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        dashboard_form.setVisible(true);
+        rentIn_form.setVisible(false);
+        catering_form.setVisible(false);
+        Clothing_Form.setVisible(false);
+        instructor_form.setVisible(false);
         displayUsername();
         yesOrNo();
         connect = database.connectDB();
@@ -1686,15 +1693,51 @@ public void courseInventoryAddBtn() {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             catering_form.setVisible(true);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+            health_Form.setVisible(false);
         } else if (event.getSource() == dashboard_btn) {
             dashboard_form.setVisible(true);
             rentIn_form.setVisible(false);
             catering_form.setVisible(false);
-
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+            health_Form.setVisible(false);
         } else if (event.getSource() == rent_btn) {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
             catering_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+            health_Form.setVisible(false);
+        }else if (event.getSource()==clothing_btn){
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            catering_form.setVisible(false);
+            Clothing_Form.setVisible(true);
+            instructor_form.setVisible(false);
+            health_Form.setVisible(false);
+        }else if(event.getSource() == customer_btn){
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            health_Form.setVisible(false);
+            catering_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+        }else if(event.getSource()==hospital_btn){
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            health_Form.setVisible(true);
+            catering_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+        }else if (event.getSource() ==edu_btn) {
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            catering_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(true);
+            health_Form.setVisible(false);
         }
     }
 

@@ -2,6 +2,7 @@ package com.example.easyneedsaoop;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,7 +36,10 @@ public class ClothShopPageController implements Initializable {
 
     @FXML
     private AnchorPane adminAnchorPane;
-
+    @FXML
+    private Button inventory_btn;
+    @FXML
+    private Button payment_btn;
     @FXML
     private TableColumn<?, ?> clothIn_col_ProdID;
 
@@ -397,13 +402,35 @@ public void InventoryImportBtn(){
         prodCat.setItems(categoryData);
     }
 
-    public void handleEvent(){
+    public void handleEvent(ActionEvent e){
+        if(e.getSource()==dashboard_btn){
+            dashboard_form.setVisible(true);
+            Clothing_Form.setVisible(false);
+        }else if(e.getSource()==inventory_btn){
+            dashboard_form.setVisible(false);
+            Clothing_Form.setVisible(true);
+        }else if(e.getSource()==payment_btn){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
+            Stage stage=new Stage();
+            Scene scene = null;
+            try {
+                scene = new Scene(fxmlLoader.load());
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+            stage.setScene(scene);
+            stage.setTitle("Easy Pay");
+            stage.show();
+            payment_btn.getScene().getWindow().hide();
+        }
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         optionAdder();
+        dashboard_form.setVisible(true);
+        Clothing_Form.setVisible(false);
         clothShopInventoryShowData();
     }
 }

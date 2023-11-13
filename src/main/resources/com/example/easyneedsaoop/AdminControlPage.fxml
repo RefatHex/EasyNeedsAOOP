@@ -830,7 +830,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="health_Form" layoutX="38.0" layoutY="6.0" prefHeight="589.0" prefWidth="857.0" stylesheets="@adminPageStyle.css">
+                        <AnchorPane fx:id="health_Form" layoutX="38.0" layoutY="6.0" prefHeight="589.0" prefWidth="857.0" stylesheets="@adminPageStyle.css" visible="false">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
