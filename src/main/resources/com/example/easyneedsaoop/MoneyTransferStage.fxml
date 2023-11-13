@@ -47,7 +47,7 @@
       </ImageView>
       <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@PhoneLogo.png" />
+            <Image url="@Phone_Logo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="438.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">

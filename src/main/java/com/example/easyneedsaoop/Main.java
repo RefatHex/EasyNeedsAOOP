@@ -8,9 +8,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
+
 public class Main extends Application {
-    public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("consumerPage.fxml"));
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AdminControlPage.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
 
   Image image = new Image("F:\\AOOP Project\\EasyNeedsUpdate\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");
