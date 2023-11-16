@@ -17,7 +17,7 @@
       <URL value="@adminPageStyle.css" />
    </stylesheets>
    <children>
-      <AnchorPane prefHeight="485.0" prefWidth="987.0">
+      <AnchorPane fx:id="homeAnchor" prefHeight="485.0" prefWidth="987.0">
          <children>
             <ImageView fitHeight="518.0" fitWidth="987.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,7 +31,7 @@
                   <String fx:value="white-bg" />
                </styleClass>
                <children>
-                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Home">
+                  <Button fx:id="home_anchor_btn" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#homeAnchorBtnAction" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Home">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -48,7 +48,7 @@
                         <String fx:value="radius2" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="178.0" layoutY="9.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
+                  <Button fx:id="order_btn" layoutX="178.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -67,11 +67,6 @@
                   </Button>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="39.0" fitWidth="44.0" layoutX="894.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@USERLOGO.png" />
-               </image>
-            </ImageView>
             <Label layoutX="801.0" layoutY="20.0" prefHeight="22.0" prefWidth="55.0" stylesheets="@loginsignup.css" text="  Points">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -81,7 +76,7 @@
                   <String fx:value="radius" />
                </styleClass>
             </Label>
-            <Button layoutX="744.0" layoutY="2.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="55.0" styleClass="transparent" stylesheets="@loginsignup.css">
+            <Button fx:id="rewards_btn" layoutX="744.0" layoutY="2.0" mnemonicParsing="false" onAction="#rewardsActionBtn" prefHeight="39.0" prefWidth="55.0" styleClass="transparent" stylesheets="@loginsignup.css">
                <graphic>
                   <ImageView fitHeight="49.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -90,11 +85,17 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="801.0" layoutY="254.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" text="Health Assistant">
+            <Button fx:id="health_btn_2" layoutX="801.0" layoutY="254.0" mnemonicParsing="false" onAction="#healthActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Health Assistant">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
+            <Button fx:id="user_btn" layoutX="885.0" layoutY="13.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" styleClass="transparent" stylesheets="@loginsignup.css" />
+            <ImageView fx:id="user_image" fitHeight="39.0" fitWidth="44.0" layoutX="896.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@USERLOGO.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <ImageView fitHeight="143.0" fitWidth="153.0" layoutX="63.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
@@ -102,7 +103,7 @@
             <Image url="@LogoHolder.png" />
          </image>
       </ImageView>
-      <Button layoutX="87.0" layoutY="135.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="87.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="home_btn_1" layoutX="87.0" layoutY="135.0" mnemonicParsing="false" onAction="#homeActionBtn" prefHeight="87.0" prefWidth="87.0" styleClass="transparent" stylesheets="@loginsignup.css">
          <graphic>
             <ImageView fitHeight="89.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -111,7 +112,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="106.0" layoutY="254.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" text="Home">
+      <Button fx:id="home_btn_2" layoutX="106.0" layoutY="254.0" mnemonicParsing="false" onAction="#homeActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Home">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -121,7 +122,7 @@
             <Image url="@LogoHolder.png" />
          </image>
       </ImageView>
-      <Button layoutX="282.0" layoutY="139.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="88.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="food_btn_1" layoutX="282.0" layoutY="139.0" mnemonicParsing="false" onAction="#foodActionBtn" prefHeight="89.0" prefWidth="88.0" styleClass="transparent" stylesheets="@loginsignup.css">
          <graphic>
             <ImageView fitHeight="70.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -130,7 +131,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="296.0" layoutY="254.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" text="Food">
+      <Button fx:id="food_btn_2" layoutX="296.0" layoutY="254.0" mnemonicParsing="false" onAction="#foodActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Food">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -140,12 +141,12 @@
             <Image url="@LogoHolder.png" />
          </image>
       </ImageView>
-      <Button layoutX="464.0" layoutY="254.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" text="Clothes">
+      <Button fx:id="cloth_btn_2" layoutX="464.0" layoutY="254.0" mnemonicParsing="false" onAction="#clothActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Clothes">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="459.0" layoutY="139.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="88.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="cloth_btn_1" layoutX="459.0" layoutY="139.0" mnemonicParsing="false" onAction="#clothActionBtn" prefHeight="89.0" prefWidth="88.0" styleClass="transparent" stylesheets="@loginsignup.css">
          <graphic>
             <ImageView fitHeight="67.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -164,7 +165,7 @@
             <Image url="@LogoHolder.png" />
          </image>
       </ImageView>
-      <Button layoutX="654.0" layoutY="145.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="78.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="education_btn_1" layoutX="654.0" layoutY="145.0" mnemonicParsing="false" onAction="#educationActionBtn" prefHeight="77.0" prefWidth="78.0" styleClass="transparent" stylesheets="@loginsignup.css">
          <graphic>
             <ImageView fitHeight="68.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -173,12 +174,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="644.0" layoutY="254.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" text="Education">
+      <Button fx:id="education_btn_2" layoutX="644.0" layoutY="254.0" mnemonicParsing="false" onAction="#educationActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Education">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="840.0" layoutY="145.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="78.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="health_btn_1" layoutX="840.0" layoutY="145.0" mnemonicParsing="false" onAction="#healthActionBtn" prefHeight="77.0" prefWidth="78.0" styleClass="transparent" stylesheets="@loginsignup.css">
          <graphic>
             <ImageView fitHeight="78.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.sql.Connection;
@@ -99,6 +100,7 @@ public class Controller {
                     alert.showAndWait();
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserType.fxml"));
                     Stage stage=new Stage();
+                    stage.initStyle(StageStyle.UNDECORATED);
                     Scene scene = new Scene(fxmlLoader.load());
                     stage.setTitle("EasyNeeds");
                     stage.setScene(scene);
