@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ScrollPane;
@@ -123,16 +124,21 @@ public class ConsumerPage {
         gridPane.getColumnConstraints().clear();
         for(int i=0;i<cardDetails.size();i++){
             try {
+                System.out.println(cardDetails.get(i).toString());
                 FXMLLoader loader=new FXMLLoader();
-                loader.setLocation(getClass().getResource("CateringCard.fxml"));
+                loader.setLocation(getClass().getResource("RentCard.fxml"));
                 AnchorPane pane=loader.load();
                 RentCardDesign cardR= loader.getController();
                 cardR.setData(cardDetails.get(i));
+
 
                 if(column==4){
                     column=0;
                     row+=1;
                 }
+                // Add margins to create space between cards
+                Insets margin = new Insets(10); // You can adjust the value based on your preference
+                GridPane.setMargin(pane, margin);
                 gridPane.add(pane,column++,row);
             } catch (Exception e) {
                 e.printStackTrace();

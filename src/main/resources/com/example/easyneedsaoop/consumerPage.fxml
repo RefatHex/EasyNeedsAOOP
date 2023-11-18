@@ -334,9 +334,9 @@
                               </AnchorPane>
                               <AnchorPane layoutX="200.0" layoutY="-10.0" prefHeight="552.0" prefWidth="931.0">
                                  <children>
-                                    <ScrollPane layoutY="141.0" prefHeight="411.0" prefWidth="931.0">
+                                    <ScrollPane layoutY="141.0" prefHeight="411.0" prefWidth="931.0" styleClass="white-bg" stylesheets="@HeadLabel.css">
                                        <content>
-                                          <GridPane fx:id="gridCard" prefHeight="27.0" prefWidth="0.0">
+                                          <GridPane fx:id="gridPane" prefHeight="27.0" prefWidth="114.0">
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>

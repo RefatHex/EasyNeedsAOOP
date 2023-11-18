@@ -8,6 +8,9 @@
     -fx-font-weight: normal;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
 }
+.book-btn{
+    -fx-background-color: #c53d3d;
+}
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
 }
