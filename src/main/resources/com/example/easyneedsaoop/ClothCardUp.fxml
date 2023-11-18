@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="171.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothCardUp">
+   <children>
+      <ImageView fitHeight="162.0" fitWidth="133.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <Label layoutX="143.0" layoutY="4.0" text="Price:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="30.0" prefHeight="20.0" prefWidth="50.0" text="Size:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="57.0" prefHeight="17.0" prefWidth="65.0" text="Shop Name:" />
+      <Label layoutX="143.0" layoutY="82.0" prefHeight="20.0" prefWidth="59.0" text="Location:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="192.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@4starrating.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="142.0" layoutY="137.0" prefHeight="20.0" prefWidth="50.0" text="Rating:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="140.0" layoutY="108.0" prefHeight="20.0" prefWidth="65.0" text="Quantity:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="206.0" layoutY="106.0" prefHeight="25.0" prefWidth="59.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
+      <TextField layoutX="187.0" layoutY="2.0" prefHeight="25.0" prefWidth="104.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+      <TextField layoutX="177.0" layoutY="28.0" prefHeight="25.0" prefWidth="117.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+      <TextField layoutX="209.0" layoutY="53.0" prefHeight="25.0" prefWidth="94.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+      <TextField layoutX="202.0" layoutY="80.0" prefHeight="25.0" prefWidth="94.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+   </children>
+   <stylesheets>
+      <URL value="@HeadLabel.css" />
+      <URL value="@loginsignup.css" />
+      <URL value="@consumerCss.css" />
+      <URL value="@adminPageStyle.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="radius2" />
+      <String fx:value="upper-anchore3" />
+   </styleClass>
+</AnchorPane>

@@ -87,6 +87,20 @@ Fx-background-radius:100;
     -fx-background-color: #fff;
     }
 
-    .User-button:hover {
+    .User-button2:hover {
         -fx-background-color: linear-gradient(to bottom right, #B9B5B5, #B9B5B5);
     }
+
+    .upper-anchore3{
+
+        -fx-background-color:#C6C5C5;
+    }
+
+    .upper-anchore4{
+
+            -fx-background-color:#EFEFEF;
+        }
+
+ .User-button:hover {
+            -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+        }

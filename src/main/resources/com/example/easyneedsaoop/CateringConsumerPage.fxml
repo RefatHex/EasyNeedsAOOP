@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.CateringConsumerPage">
+   <children>
+      <ImageView fitHeight="496.0" fitWidth="992.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BG.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="-2.0" prefHeight="496.0" prefWidth="243.0">
+         <stylesheets>
+            <URL value="@adminPageStyle.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@HeadLabel.css" />
+            <URL value="@loginsignup.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="upper-anchore3" />
+            <String fx:value="radius2" />
+         </styleClass>
+         <children>
+            <Label layoutX="38.0" layoutY="20.0" prefHeight="55.0" prefWidth="167.0" stylesheets="@HeadLabel.css" text=" Catering Order">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="upper-anchore2" />
+                  <String fx:value="radius3" />
+                  <String fx:value="shadow" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+            </Label>
+            <AnchorPane layoutX="17.0" layoutY="94.0" prefHeight="392.0" prefWidth="209.0">
+               <stylesheets>
+                  <URL value="@loginsignup.css" />
+                  <URL value="@HeadLabel.css" />
+                  <URL value="@consumerCss.css" />
+                  <URL value="@adminPageStyle.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="upper-anchore4" />
+               </styleClass>
+               <children>
+                  <Label layoutX="14.0" layoutY="22.0" text="Food Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="22.0" prefHeight="17.0" prefWidth="56.0" text="Price ৳">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="120.0" fitWidth="195.0" layoutX="8.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="19.0" layoutY="210.0" text="Quantity:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="90.0" layoutY="209.0" prefHeight="26.0" prefWidth="97.0" promptText="Choose" styleClass="radius" stylesheets="@HeadLabel.css" />
+                  <Label layoutX="39.0" layoutY="247.0" prefHeight="27.0" prefWidth="47.0" text="Deal:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="90.0" layoutY="247.0" prefHeight="26.0" prefWidth="97.0" promptText="Choose" styleClass="radius" stylesheets="@HeadLabel.css" />
+                  <Button layoutX="41.0" layoutY="292.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="ADD TO CART">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="radius3" />
+                        <String fx:value="shadow" />
+                        <String fx:value="User-button2" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="29.0" layoutY="340.0" mnemonicParsing="false" text="Pay Now">
+                     <stylesheets>
+                        <URL value="@HeadLabel.css" />
+                        <URL value="@loginsignup.css" />
+                        <URL value="@consumerCss.css" />
+                        <URL value="@adminPageStyle.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="radius3" />
+                        <String fx:value="upper-anchore3" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="139.0" layoutY="340.0" mnemonicParsing="false" text="Chat">
+                     <stylesheets>
+                        <URL value="@HeadLabel.css" />
+                        <URL value="@loginsignup.css" />
+                        <URL value="@consumerCss.css" />
+                        <URL value="@adminPageStyle.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="radius3" />
+                        <String fx:value="upper-anchore3" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="862.0" layoutY="7.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@HeadLabel.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CART2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="916.0" layoutY="7.0" minWidth="47.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="47.0" styleClass="transparent" stylesheets="@HeadLabel.css">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@USERLOGO.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="249.0" layoutY="7.0" minWidth="47.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="47.0" stylesheets="@HeadLabel.css">
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@BackBtnBlack.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="transparent" />
+            <String fx:value="User-button2" />
+            <String fx:value="radius" />
+         </styleClass>
+      </Button>
+      <AnchorPane layoutX="335.0" layoutY="61.0" prefHeight="71.0" prefWidth="223.0">
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="upper-anchore4" />
+            <String fx:value="radius2" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" opacity="0.48" stylesheets="@HeadLabel.css" text="Free Delivery">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="36.0" opacity="0.56" text="Over 150৳ Order">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="62.0" fitWidth="75.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@DeliveryCar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="610.0" layoutY="61.0" prefHeight="71.0" prefWidth="223.0">
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="upper-anchore4" />
+            <String fx:value="radius2" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" opacity="0.48" stylesheets="@HeadLabel.css" text="Shopping Online">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="36.0" opacity="0.56" prefHeight="27.0" prefWidth="150.0" text="get your shopping in same day">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="62.0" fitWidth="75.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@DeliveryTimeLogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="249.0" layoutY="139.0" prefHeight="347.0" prefWidth="742.0" styleClass="transparent" stylesheets="@HeadLabel.css">
+         <children>
+            <ScrollPane prefHeight="347.0" prefWidth="742.0">
+               <content>
+                  <AnchorPane prefHeight="615.0" prefWidth="734.0">
+                     <children>
+                        <GridPane layoutY="6.0">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
