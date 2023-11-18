@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.io.IOException;
@@ -392,6 +393,7 @@ public class cateringPageController implements Initializable {
                 logoutBtn.getScene().getWindow().hide();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
                 Stage stage=new Stage();
+                stage.initStyle(StageStyle.UNDECORATED);
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);

@@ -31,6 +31,7 @@
     -fx-background-radius: 0 0 10px 10px;
     -fx-background-color:#66666E;
 }
+
 .icon-color{
     -fx-background-color: white;
 }
@@ -38,7 +39,6 @@
 .down-box{
     -fx-background-radius: 30;
     -fx-background-color:#264e70;
-
 }
 
 .icons{
@@ -75,9 +75,35 @@
 .primary-colour{
 -Fx-background-color:#383838;
 }
+
 .secondary-colour{
 -Fx-background-color:#282828;
 }
+
+
 .round.border{
 Fx-background-radius:100;
 }
+
+.upper-anchore2{
+
+    -fx-background-color: #fff;
+    }
+
+    .User-button2:hover {
+        -fx-background-color: linear-gradient(to bottom right, #B9B5B5, #B9B5B5);
+    }
+
+    .upper-anchore3{
+
+        -fx-background-color:#C6C5C5;
+    }
+
+    .upper-anchore4{
+
+            -fx-background-color:#EFEFEF;
+        }
+
+ .User-button:hover {
+            -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+        }
