@@ -20,7 +20,7 @@
             <Image url="@BG.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutY="-2.0" prefHeight="496.0" prefWidth="243.0">
+      <AnchorPane fx:id="Slider" layoutX="-243.0" prefHeight="496.0" prefWidth="243.0">
          <stylesheets>
             <URL value="@adminPageStyle.css" />
             <URL value="@consumerCss.css" />
@@ -32,6 +32,16 @@
             <String fx:value="radius2" />
          </styleClass>
          <children>
+            <ImageView fitHeight="134.0" fitWidth="97.0" layoutX="129.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ShapeTwo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="102.0" fitWidth="223.0" layoutX="-4.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Shape.png" />
+               </image>
+            </ImageView>
             <Label layoutX="38.0" layoutY="20.0" prefHeight="55.0" prefWidth="167.0" stylesheets="@HeadLabel.css" text=" Catering Order">
                <font>
                   <Font name="Arial" size="23.0" />
@@ -55,6 +65,16 @@
                   <String fx:value="upper-anchore4" />
                </styleClass>
                <children>
+                  <ImageView fitHeight="140.0" fitWidth="137.0" layoutX="63.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ShapeTwo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="144.0" layoutX="8.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Shape.png" />
+                     </image>
+                  </ImageView>
                   <Label layoutX="14.0" layoutY="22.0" text="Food Name:">
                      <font>
                         <Font size="18.0" />
