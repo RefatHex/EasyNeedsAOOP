@@ -301,12 +301,12 @@
                                           <AnchorPane layoutX="25.0" layoutY="145.0" prefHeight="119.0" prefWidth="126.0" stylesheets="@adminPageStyle.css">
                                              <children>
                                                 <ImageView fx:id="clothShop_imageView" fitHeight="120.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
-                                                <Label fx:id="imgLbl12" layoutX="32.0" layoutY="31.0" text="Add  your">
+                                                <Label fx:id="imgLbl1" layoutX="32.0" layoutY="31.0" text="Add  your">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="imgLbl22" layoutX="44.0" layoutY="60.0" text="Photo">
+                                                <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Photo">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>

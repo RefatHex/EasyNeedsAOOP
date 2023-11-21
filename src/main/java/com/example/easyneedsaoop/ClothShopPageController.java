@@ -110,7 +110,7 @@ public class ClothShopPageController implements Initializable {
     private AnchorPane rentAnchor1;
 
     @FXML
-    private ImageView rentIn_imageView;
+    private ImageView clothShop_imageView;
 
     @FXML
     private Button rent_btn;
@@ -359,7 +359,7 @@ public void InventoryImportBtn(){
 
         data.path = file.getAbsolutePath();
         image = new Image(file.toURI().toString(), 126, 120, false, true);
-        rentIn_imageView.setImage(image);
+        clothShop_imageView.setImage(image);
         imgLbl1.setVisible(false);
         imgLbl2.setVisible(false);
 
