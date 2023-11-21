@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Education_Controller">
+<AnchorPane prefHeight="463.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothConsumerPage">
    <children>
-      <Label layoutX="209.0" layoutY="48.0" text="Consumer Education">
+      <ImageView fitHeight="544.0" fitWidth="974.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BG.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="845.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@HeadLabel.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@CART2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="905.0" minWidth="47.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="47.0" styleClass="transparent" stylesheets="@HeadLabel.css">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@USERLOGO.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane layoutX="194.0" layoutY="44.0" prefHeight="171.0" prefWidth="781.0">
+         <children>
+            <ScrollPane prefHeight="171.0" prefWidth="781.0">
+               <content>
+                  <AnchorPane prefHeight="171.0" prefWidth="1249.0">
+                     <children>
+                        <GridPane>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="193.0" layoutY="241.0" prefHeight="245.0" prefWidth="781.0">
+         <children>
+            <ScrollPane prefHeight="245.0" prefWidth="781.0">
+               <content>
+                  <AnchorPane prefHeight="513.0" prefWidth="766.0">
+                     <children>
+                        <GridPane>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="194.0" layoutY="22.0" text="Recent Post:">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="194.0" layoutY="215.0" text="Regular Post:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
    </children>
