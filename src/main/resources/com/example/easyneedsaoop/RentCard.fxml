@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -26,18 +25,8 @@
             <Label fx:id="location" layoutX="29.0" layoutY="27.0" text="Location:" />
             <Label layoutX="29.0" layoutY="44.0" text="Room:" />
             <Label fx:id="rent" layoutX="29.0" layoutY="61.0" text="Rent:" />
-            <Button layoutX="28.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="140.0" styleClass="book-btn" stylesheets="@HeadLabel.css" text="Book Now">
-               <font>
-                  <Font name="Bell MT" size="17.0" />
-               </font>
-            </Button>
             <Label layoutX="128.0" layoutY="53.0" text="Bachelor:" />
             <Label fx:id="bachelor" layoutX="179.0" layoutY="53.0" prefHeight="18.0" prefWidth="49.0" text="Label" />
-            <Button layoutX="172.0" layoutY="92.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="56.0" styleClass="book-btn" stylesheets="@HeadLabel.css" text="Chat">
-               <font>
-                  <Font name="Bell MT" size="14.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
       <ImageView fitHeight="49.0" fitWidth="46.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">

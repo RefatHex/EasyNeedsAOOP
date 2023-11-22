@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothConsumerPage">
+<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_ConsumerPage">
    <children>
-      <ImageView fitHeight="602.0" fitWidth="1200.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="602.0" fitWidth="1200.0" layoutX="-15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BG.jpg" />
          </image>
@@ -51,7 +51,7 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <Button layoutX="4.0" layoutY="104.0" mnemonicParsing="false" stylesheets="@HeadLabel.css">
+            <Button fx:id="cartBtn" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" stylesheets="@HeadLabel.css">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,13 +78,13 @@
             <Separator layoutX="28.0" layoutY="165.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="6.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="89.0" layoutY="41.0" prefHeight="188.0" prefWidth="1109.0">
+      <AnchorPane layoutX="89.0" layoutY="41.0" prefHeight="214.0" prefWidth="1110.0">
          <children>
-            <ScrollPane prefHeight="192.0" prefWidth="1109.0">
+            <ScrollPane prefHeight="214.0" prefWidth="1110.0">
                <content>
                   <AnchorPane prefHeight="177.0" prefWidth="1249.0">
                      <children>
-                        <GridPane>
+                        <GridPane fx:id="gridPane1" prefHeight="30.0" prefWidth="115.0">
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
@@ -95,13 +95,13 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="89.0" layoutY="265.0" prefHeight="334.0" prefWidth="1109.0">
+      <AnchorPane layoutX="89.0" layoutY="310.0" prefHeight="289.0" prefWidth="1110.0">
          <children>
             <ScrollPane prefHeight="334.0" prefWidth="1109.0">
                <content>
-                  <AnchorPane prefHeight="513.0" prefWidth="1094.0">
+                  <AnchorPane prefHeight="506.0" prefWidth="1094.0">
                      <children>
-                        <GridPane>
+                        <GridPane fx:id="gridPane2" prefHeight="30.0" prefWidth="94.0">
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
@@ -117,7 +117,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="244.0" text="Regular Post:">
+      <Label layoutX="89.0" layoutY="260.0" text="Regular Post:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

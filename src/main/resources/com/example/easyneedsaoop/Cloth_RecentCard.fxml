@@ -2,7 +2,7 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="171.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothCardUp">
+<AnchorPane prefHeight="199.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
    <children>
-      <ImageView fitHeight="162.0" fitWidth="133.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <ImageView fx:id="image" fitHeight="191.0" fitWidth="135.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <Label layoutX="143.0" layoutY="4.0" text="Price:">
          <font>
             <Font size="14.0" />
@@ -24,7 +24,7 @@
          </font>
       </Label>
       <Label layoutX="144.0" layoutY="57.0" prefHeight="17.0" prefWidth="65.0" text="Shop Name:" />
-      <Label layoutX="143.0" layoutY="82.0" prefHeight="20.0" prefWidth="59.0" text="Location:">
+      <Label layoutX="143.0" layoutY="82.0" prefHeight="20.0" prefWidth="59.0" text="Name">
          <font>
             <Font size="14.0" />
          </font>
@@ -44,11 +44,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="206.0" layoutY="106.0" prefHeight="25.0" prefWidth="59.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="187.0" layoutY="2.0" prefHeight="25.0" prefWidth="104.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="177.0" layoutY="28.0" prefHeight="25.0" prefWidth="117.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="209.0" layoutY="53.0" prefHeight="25.0" prefWidth="94.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="202.0" layoutY="80.0" prefHeight="25.0" prefWidth="94.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+      <Label fx:id="price" layoutX="188.0" layoutY="6.0" text="price" />
+      <Label fx:id="shopname" layoutX="221.0" layoutY="57.0" text="shopname" />
+      <TextField fx:id="quantity_box" layoutX="213.0" layoutY="106.0" prefHeight="26.0" prefWidth="73.0" />
+      <Button fx:id="cartBtn" layoutX="180.0" layoutY="167.0" mnemonicParsing="false" onAction="#handleEvent" text="Order" />
+      <TextField fx:id="size" layoutX="176.0" layoutY="28.0" prefHeight="26.0" prefWidth="59.0" />
+      <Label fx:id="id" layoutX="273.0" layoutY="6.0" text="ID" />
+      <Label fx:id="prodName" layoutX="192.0" layoutY="84.0" text="Label" />
    </children>
    <stylesheets>
       <URL value="@HeadLabel.css" />

@@ -146,7 +146,7 @@ public class ClothShopPageController implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO clothinginfo " +
-                    "(prodID, username, shopName, prodName, price,image, category, type, einfo, date)" +
+                    "(productID, username, shopName, prodName, price,image, category, type, einfo, date)" +
                     "VALUES(?, ?,?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 prepare = connect.prepareStatement(insertData);
@@ -212,7 +212,7 @@ public class ClothShopPageController implements Initializable {
         String updateData = "UPDATE clothinginfo SET " +
                 "username=?, shopName=?, prodName=?, price=?,image=?, category=?, " +
                 "type=?, einfo=?, date=? " +
-                "WHERE prodID=?";
+                "WHERE productID=?";
 
         try {
             prepare = connect.prepareStatement(updateData);
@@ -272,7 +272,7 @@ public class ClothShopPageController implements Initializable {
 
         Optional<ButtonType> result = confirmationAlert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.YES) {
-            String deleteQuery = "DELETE FROM clothinginfo WHERE prodID=? AND username=?";
+            String deleteQuery = "DELETE FROM clothinginfo WHERE productID=? AND username=?";
 
             try {
                 prepare = connect.prepareStatement(deleteQuery);
@@ -312,7 +312,7 @@ public class ClothShopPageController implements Initializable {
             ClothShopData data;
             while (result.next()) {
                 data = new ClothShopData(
-                        result.getInt("prodID"),
+                        result.getInt("productID"),
                         result.getString("username"),
                         result.getString("shopName"),
                         result.getString("prodName"),
@@ -335,7 +335,7 @@ public class ClothShopPageController implements Initializable {
     private ObservableList<ClothShopData> clothShopInventoryList;
     public void clothShopInventoryShowData() {
         clothShopInventoryList = getClothShopListData();
-        clothIn_col_ProdID.setCellValueFactory(new PropertyValueFactory<>("prodID"));
+        clothIn_col_ProdID.setCellValueFactory(new PropertyValueFactory<>("productID"));
         clothIn_col_ProdInfo.setCellValueFactory(new PropertyValueFactory<>("einfo"));
         clothIn_col_ProdName.setCellValueFactory(new PropertyValueFactory<>("prodName"));
         clothIn_col_ProdPrice.setCellValueFactory(new PropertyValueFactory<>("price"));

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ClothConsumerPage">
+<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Rent_Controller">
    <children>
       <ImageView fitHeight="602.0" fitWidth="1200.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -84,7 +84,7 @@
                <content>
                   <AnchorPane prefHeight="763.0" prefWidth="1094.0">
                      <children>
-                        <GridPane>
+                        <GridPane fx:id="gridPane" prefHeight="30.0" prefWidth="35.0">
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>

@@ -3,9 +3,9 @@ package com.example.easyneedsaoop;
 import java.util.Date;
 
 public class ClothShopData {
-    private int prodID;
+    private int productID;
 
-    private String username;
+    private String sellerUsername;
     private String shopName;
     private String prodName;
     private double price;
@@ -15,20 +15,20 @@ public class ClothShopData {
     private String einfo;
     private Date date;
 
-    public int getProdID() {
-        return prodID;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setProdID(int prodID) {
-        this.prodID = prodID;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
-    public String getUsername() {
-        return username;
+    public String getSellerUsername() {
+        return sellerUsername;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setSellerUsername(String sellerUsername) {
+        this.sellerUsername = sellerUsername;
     }
 
     public String getShopName() {
@@ -96,8 +96,8 @@ public class ClothShopData {
     }
 
     public ClothShopData(int prodID, String username, String shopName, String prodName, double price, String image, String category, String type, String einfo, Date date) {
-        this.prodID = prodID;
-        this.username = username;
+        this.productID = prodID;
+        this.sellerUsername = username;
         this.shopName = shopName;
         this.prodName = prodName;
         this.price = price;
@@ -106,5 +106,30 @@ public class ClothShopData {
         this.type = type;
         this.einfo = einfo;
         this.date = date;
+    }
+
+    public ClothShopData(int prodID, String shopName,String sellerUsername, String prodName, double price, String image) {
+        this.productID = prodID;
+        this.sellerUsername=sellerUsername;
+        this.shopName = shopName;
+        this.prodName = prodName;
+        this.price = price;
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "ClothShopData{" +
+                "productID=" + productID +
+                ", username='" + sellerUsername + '\'' +
+                ", shopName='" + shopName + '\'' +
+                ", prodName='" + prodName + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                ", category='" + category + '\'' +
+                ", type='" + type + '\'' +
+                ", einfo='" + einfo + '\'' +
+                ", date=" + date +
+                '}';
     }
 }

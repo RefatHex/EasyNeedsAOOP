@@ -172,4 +172,18 @@ public class rentData {
         this.address = address;
         this.image = image;
     }
+
+    public rentData(int id, String ownerName, String houseName, String userName, double rent, String address, String einfo, String image, boolean bachelor, boolean sublet, boolean dn_draw) {
+        this.id = id;
+        this.ownerName = ownerName;
+        this.houseName = houseName;
+        this.userName = userName;
+        this.rent = rent;
+        this.address = address;
+        this.einfo = einfo;
+        this.image = image;
+        this.bachelor = bachelor;
+        this.sublet = sublet;
+        this.dn_draw = dn_draw;
+    }
 }
