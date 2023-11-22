@@ -68,7 +68,7 @@
          </image>
       </ImageView>
       <Label layoutX="14.0" layoutY="598.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
-      <Button fx:id="Backbtn" layoutX="28.0" layoutY="26.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="49.0">
+      <Button fx:id="Backbtn" layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#BackBtnAction" prefHeight="44.0" prefWidth="49.0">
          <stylesheets>
             <URL value="@loginsignup.css" />
             <URL value="@adminPageStyle.css" />

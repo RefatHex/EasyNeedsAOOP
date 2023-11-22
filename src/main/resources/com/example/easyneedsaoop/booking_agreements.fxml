@@ -35,7 +35,7 @@
       </AnchorPane>
       <AnchorPane layoutY="279.0" prefHeight="317.0" prefWidth="634.0">
          <children>
-            <Label fx:id="userNameLabel" layoutX="11.0" layoutY="8.0" prefHeight="32.0" prefWidth="87.0" text="User Name:">
+            <Label fx:id="userNameLabel" layoutX="14.0" layoutY="8.0" prefHeight="32.0" prefWidth="87.0" text="User Name:">
                <font>
                   <Font size="14.0" />
                </font></Label>
@@ -57,7 +57,7 @@
                   <String fx:value="border" />
                </styleClass>
             </Button>
-            <Button fx:id="agreementBtn2" layoutX="541.0" layoutY="167.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="70.0" text="Check">
+            <Button fx:id="agreementBtn2" layoutX="541.0" layoutY="167.0" mnemonicParsing="false" onAction="#agreementBtn2Action" prefHeight="32.0" prefWidth="70.0" text="Check">
                <stylesheets>
                   <URL value="@loginsignup.css" />
                   <URL value="@consumerCss.css" />
@@ -83,8 +83,8 @@
                   <String fx:value="radius3" />
                   <String fx:value="User-button2" />
                </styleClass></Button>
-            <CheckBox fx:id="check1" layoutX="12.0" layoutY="213.0" mnemonicParsing="false" text="I 'm agree to all the term and condition" />
-            <CheckBox layoutX="14.0" layoutY="241.0" mnemonicParsing="false">
+            <CheckBox fx:id="check1" layoutX="12.0" layoutY="213.0" mnemonicParsing="false" text="I agree to all the terms and conditions" />
+            <CheckBox fx:id="check2" layoutX="14.0" layoutY="241.0" mnemonicParsing="false">
                <graphic>
                   <Label prefHeight="18.0" prefWidth="264.0" text="I agree to get updates about Easy Needs Feature" />
                </graphic></CheckBox>
@@ -118,7 +118,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Label fx:id="rent" layoutX="390.0" layoutY="14.0" prefHeight="20.0" prefWidth="93.0" text="Rent/Monthly:">
+            <Label fx:id="rent" layoutX="390.0" layoutY="14.0" prefHeight="20.0" prefWidth="105.0" text="Rent (Monthly):">
                <font>
                   <Font size="14.0" />
                </font>
@@ -135,7 +135,13 @@
                </font>
             </Label>
             <Label fx:id="room" layoutX="19.0" layoutY="109.0" prefHeight="18.0" prefWidth="47.0" text="Room:" />
+            <Button fx:id="backBtn" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="60.0" text="Go Back" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Backbtn.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
