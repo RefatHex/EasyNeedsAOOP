@@ -1591,6 +1591,7 @@ public void courseInventoryAddBtn() {
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
                 Stage stage=new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
+                stage.initStyle(StageStyle.UNDECORATED);
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);
                 stage.show();

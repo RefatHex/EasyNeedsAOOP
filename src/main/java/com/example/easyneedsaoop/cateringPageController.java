@@ -366,6 +366,7 @@ public class cateringPageController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
             Scene scene = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();

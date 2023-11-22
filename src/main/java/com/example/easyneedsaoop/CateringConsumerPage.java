@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -154,6 +155,7 @@ public class CateringConsumerPage implements Initializable {
             CatringCart cardR = loader.getController();
             cardR.setData(clickedData);
             Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (Exception e) {

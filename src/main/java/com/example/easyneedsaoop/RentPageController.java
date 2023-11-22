@@ -438,6 +438,7 @@ public class RentPageController implements Initializable {
             rentIn_form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
