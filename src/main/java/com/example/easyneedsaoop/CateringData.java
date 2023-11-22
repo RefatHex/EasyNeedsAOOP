@@ -35,6 +35,17 @@ public class CateringData {
       this.date = date;
    }
 
+   public CateringData(int id, String shopName, String userName, String address, String image, double price, String mealType, String mealDelivery) {
+      this.id = id;
+      this.shopName = shopName;
+      this.userName = userName;
+      this.address = address;
+      this.image = image;
+      this.price = price;
+      this.mealType = mealType;
+      this.mealDelivery = mealDelivery;
+   }
+
    public int getId() {
       return id;
    }
@@ -146,5 +157,25 @@ public class CateringData {
 
    public void setDate(Date date) {
       this.date = date;
+   }
+
+   @Override
+   public String toString() {
+      return "CateringData{" +
+              "id=" + id +
+              ", ownerName='" + ownerName + '\'' +
+              ", shopName='" + shopName + '\'' +
+              ", branchName='" + branchName + '\'' +
+              ", userName='" + userName + '\'' +
+              ", address='" + address + '\'' +
+              ", contact='" + contact + '\'' +
+              ", extraInfo='" + extraInfo + '\'' +
+              ", image='" + image + '\'' +
+              ", price=" + price +
+              ", mealType='" + mealType + '\'' +
+              ", billPay='" + billPay + '\'' +
+              ", mealDelivery='" + mealDelivery + '\'' +
+              ", date=" + date +
+              '}';
    }
 }

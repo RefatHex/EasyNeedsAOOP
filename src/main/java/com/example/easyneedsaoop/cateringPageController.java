@@ -143,7 +143,7 @@ public class cateringPageController implements Initializable {
     private Image image;
     private Alert alert;
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
-    public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
+    public String[] mealDeliveryOption={"Home Delivery","Dine in"};
     public String[] billOption={"Daily","Weekly","Monthly"};
     private Connection connect;
     private PreparedStatement prepare;
@@ -164,8 +164,8 @@ public class cateringPageController implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO cateringinfo " +
-                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, mealType, billPay,mealDelivery,date)" +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, image,mealType, billPay,mealDelivery,date)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
             try {
                 prepare = connect.prepareStatement(insertData);

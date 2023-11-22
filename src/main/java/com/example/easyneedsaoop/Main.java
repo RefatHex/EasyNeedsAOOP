@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Consumer_rent.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Consumer_food.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
 
   //Image image = new Image("F:\\AOOP Project\\EasyNeedsUpdate\\src\\main\\resources\\com\\example\\easyneedsaoop\\EasyNeed.png");

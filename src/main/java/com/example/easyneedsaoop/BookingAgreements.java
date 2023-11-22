@@ -71,6 +71,22 @@ public class BookingAgreements {
     private Image image;
     rentData dataa;
     int id;
+    private int homeid;
+    private String ownerName;
+    private String houseName;
+    private String ownerUsername;
+    private double rentt;
+    private String address;
+    private String nidImage;
+    private boolean bachelor;
+    private boolean sublet;
+    private boolean dn_draw;
+    private Date date;
+    private Connection connect;
+    private PreparedStatement prepare;
+    private Statement statement;
+    private ResultSet result;
+
     public void InventoryImportBtn(){
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
@@ -89,27 +105,13 @@ public class BookingAgreements {
         userNameLabel.setText(data.getUserName());
         houseNameLabel.setText(data.getHouseName());
         locationLabel.setText(data.getAddress());
+        room.setText(String.valueOf(data.getRoom()));
         String path = "File:" + data.getImage();
         image = new Image(path, 626, 274, false, true);
         viwer.setImage(image);
         locationLabel.setText(data.getAddress());
         rent.setText(String.valueOf(data.getRent()));
     }
-    private int homeid;
-    private String ownerName;
-    private String houseName;
-    private String ownerUsername;
-    private double rentt;
-    private String address;
-    private String nidImage;
-    private boolean bachelor;
-    private boolean sublet;
-    private boolean dn_draw;
-    private Date date;
-    private Connection connect;
-    private PreparedStatement prepare;
-    private Statement statement;
-    private ResultSet result;
 
     public void placeOrder() {
         String insertSql = "INSERT INTO rentorder (ownerName, houseName, ownerUserName, tanentUserName, rent, address, nidImage, date) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
@@ -146,6 +148,5 @@ public class BookingAgreements {
        if(e.getSource()==bookBtn){
           placeOrder();
        }
-
     }}
 
