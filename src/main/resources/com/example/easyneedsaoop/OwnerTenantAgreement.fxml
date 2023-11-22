@@ -13,62 +13,62 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <CheckBox layoutX="36.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give fare within first 10 days of the month" textFill="WHITE">
+      <CheckBox fx:id="ck2" layoutX="36.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give fare within first 10 days of the month" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp" textFill="#fffbfe">
+      <CheckBox fx:id="ck3" layoutX="36.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp" textFill="#fffbfe">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Bills other than the rent is tenants' concern" textFill="WHITE">
+      <CheckBox fx:id="ck4" layoutX="36.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Bills other than the rent is tenants' concern" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="In case of leaving home, must inform 2 months earlier" textFill="WHITE">
+      <CheckBox fx:id="ck5" layoutX="36.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="In case of leaving home, must inform 2 months earlier" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="If rent is delayed, 1000 BDT will be charged extra" textFill="WHITE">
+      <CheckBox fx:id="ck6" layoutX="36.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="If rent is delayed, 1000 BDT will be charged extra" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="To book the home, tenant must advance 5000 BDT" textFill="WHITE">
+      <CheckBox fx:id="ck7" layoutX="36.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="To book the home, tenant must advance 5000 BDT" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give 2000 BDT for security money" textFill="WHITE">
+      <CheckBox fx:id="ck8" layoutX="36.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give 2000 BDT for security money" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Gas/Water/Electricity Bill is included in the rent" textFill="WHITE">
+      <CheckBox fx:id="ck9" layoutX="36.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Gas/Water/Electricity Bill is included in the rent" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="No Pet Allowed" textFill="WHITE">
+      <CheckBox fx:id="ck10" layoutX="36.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="No Pet Allowed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" stylesheets="@adminPageStyle.css" text="Rent amount is fixed" textFill="WHITE">
+      <CheckBox fx:id="ck1" layoutX="36.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" stylesheets="@adminPageStyle.css" text="Rent amount is fixed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="397.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is negotiable" textFill="WHITE">
+      <CheckBox fx:id="ck11" layoutX="36.0" layoutY="397.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is negotiable" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox layoutX="36.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must maintain cleanliness" textFill="WHITE">
+      <CheckBox fx:id="ck12" layoutX="36.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must maintain cleanliness" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>

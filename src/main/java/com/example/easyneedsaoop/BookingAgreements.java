@@ -6,17 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +25,10 @@ import java.sql.Statement;
 import java.util.Date;
 
 public class BookingAgreements {
+
+    @FXML
+    private Button backBtn;
+    private Alert alert;
     @FXML
     private Button agreementBtn;
 
@@ -38,6 +43,8 @@ public class BookingAgreements {
 
     @FXML
     private CheckBox check1;
+    @FXML
+    private CheckBox check2;
 
     @FXML
     private Label einfo;
@@ -111,6 +118,13 @@ public class BookingAgreements {
     private Statement statement;
     private ResultSet result;
 
+    public boolean nidImport(){
+        if(urlBox.getText().equals("")){
+            return false;
+        }
+        return true;
+    }
+
     public void placeOrder() {
         String insertSql = "INSERT INTO rentorder (ownerName, houseName, ownerUserName, tanentUserName, rent, address, nidImage, date) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
         connect = database.connectDB();
@@ -143,9 +157,29 @@ public class BookingAgreements {
     }
      @FXML
      void handleBookingClick(ActionEvent e) {
-       if(e.getSource()==bookBtn){
-          placeOrder();
+       if(e.getSource()==bookBtn) {
+           if (check1.isSelected() && check2.isSelected() && nidImport()) {
+               placeOrder();
+           } else {
+               alert = new Alert(Alert.AlertType.ERROR);
+               alert.setTitle("Already registered");
+               alert.setHeaderText(null);
+               alert.setContentText("Cannot proceed without agreeing to terms and conditions");
+               alert.showAndWait();
+           }
        }
 
-    }}
+    }
+    public void backBtnAction(){
+        backBtn.getScene().getWindow().hide();
+    }
+    public void agreementBtn2Action() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OwnerTenantAgreement.fxml"));
+        Stage stage=new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
 

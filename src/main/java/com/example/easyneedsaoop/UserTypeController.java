@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,7 +69,7 @@ public class UserTypeController  {
     private void showPage(String selectedOption) {
         String location="";
         if (selectedOption.equals(Type[0])) {
-            location="consumerPage.fxml";
+            location="FrontPage.fxml";
         } else if (selectedOption.equals(Type[1])) {
             location="healthAssistantPage.fxml";
         } else if (selectedOption.equals(Type[2])) {
@@ -86,6 +87,7 @@ public class UserTypeController  {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(location));
             Stage stage = new Stage();
             Scene scene = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("EasyNeeds");
             stage.setScene(scene);
             stage.show();

@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.io.IOException;
@@ -192,6 +193,7 @@ public class RentPageController implements Initializable {
                 Stage stage=new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
+                stage.initStyle(StageStyle.UNDECORATED);
                 stage.setScene(scene);
                 stage.show();
             }
@@ -440,7 +442,7 @@ public class RentPageController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
-            rentPayment_btn.getScene().getWindow().hide();
+            //rentPayment_btn.getScene().getWindow().hide();
         }
     }
 

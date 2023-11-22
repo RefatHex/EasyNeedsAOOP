@@ -14,6 +14,9 @@ import java.io.IOException;
 public class MoneyTransferStage {
 
     @FXML
+    private Button Backbtn;
+
+    @FXML
     private TextField receiverMobileTxt;
 
     @FXML
@@ -57,6 +60,10 @@ public class MoneyTransferStage {
             receiverMobileTxt.clear();
             userPasswordTxt.clear();
         }
+    }
+
+    public void BackBtnAction(){
+        Backbtn.getScene().getWindow().hide();
     }
 
 }
