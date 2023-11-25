@@ -159,6 +159,11 @@ public class BookingAgreements {
      void handleBookingClick(ActionEvent e) {
        if(e.getSource()==bookBtn) {
            if (check1.isSelected() && check2.isSelected() && nidImport()) {
+               alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Success");
+               alert.setHeaderText(null);
+               alert.setContentText("Successfully Booked");
+               alert.showAndWait();
                placeOrder();
            } else {
                alert = new Alert(Alert.AlertType.ERROR);

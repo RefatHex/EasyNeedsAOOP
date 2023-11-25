@@ -196,6 +196,7 @@ public class cateringPageController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Data added successfully!");
                 alert.showAndWait();
+                cateringInventoryShowData();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -282,6 +283,7 @@ public class cateringPageController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please provide the ID of the record to be deleted.");
             alert.showAndWait();
+            cateringInventoryShowData();
             return;
         }
 
@@ -321,6 +323,9 @@ public class cateringPageController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        connect = database.connectDB();
+        cateringInventoryShowData();
         displayUsername();
         optionAdder();
         dashboard_form.setVisible(true);
@@ -372,7 +377,7 @@ public class cateringPageController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
-            cateringPaymentBtn.getScene().getWindow().hide();
+            //cateringPaymentBtn.getScene().getWindow().hide();
         }
     }
 

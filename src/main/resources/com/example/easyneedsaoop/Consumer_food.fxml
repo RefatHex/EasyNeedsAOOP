@@ -139,7 +139,7 @@
             </Label>
             <Separator layoutX="26.0" layoutY="202.0" orientation="VERTICAL" prefHeight="71.0" prefWidth="6.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
             <Separator layoutX="5.0" layoutY="66.0" prefHeight="3.0" prefWidth="47.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
-            <Button layoutX="5.0" layoutY="8.0" minWidth="47.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="47.0" stylesheets="@HeadLabel.css">
+            <Button fx:id="backBtn" layoutX="5.0" layoutY="8.0" minWidth="47.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="44.0" prefWidth="47.0" stylesheets="@HeadLabel.css">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>

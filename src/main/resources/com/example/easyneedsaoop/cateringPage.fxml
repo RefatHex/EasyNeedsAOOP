@@ -306,13 +306,13 @@
                                           </Button>
                                           <AnchorPane layoutX="14.0" layoutY="140.0" prefHeight="120.0" prefWidth="123.0" stylesheets="@adminPageStyle.css">
                                              <children>
-                                                <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
-                                                <Label fx:id="imgLbl11" layoutX="27.0" layoutY="32.0" text="Add  Brand">
+                                                <ImageView fx:id="imageView" fitHeight="120.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
+                                                <Label fx:id="imgLbl1" layoutX="27.0" layoutY="32.0" text="Add  Brand">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="imgLbl21" layoutX="44.0" layoutY="60.0" text="Logo">
+                                                <Label fx:id="imgLbl2" layoutX="44.0" layoutY="60.0" text="Logo">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>

@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -167,6 +168,15 @@ public class CateringConsumerPage implements Initializable {
         List<String> sortType = new ArrayList<>(Arrays.asList(sortOption));
         ObservableList sortData= FXCollections.observableArrayList(sortType);
         sortBtn.setItems(sortData);
+    }
+    public void backBtnAction() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+        backBtn.getScene().getWindow().hide();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
