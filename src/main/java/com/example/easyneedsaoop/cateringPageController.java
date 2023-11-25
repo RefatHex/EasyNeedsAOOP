@@ -323,6 +323,8 @@ public class cateringPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayUsername();
         optionAdder();
+        dashboard_form.setVisible(true);
+        catering_form.setVisible(false);
     }
     public void optionAdder(){
         List<String> mtype = new ArrayList<>(Arrays.asList(mealTypeOption));
