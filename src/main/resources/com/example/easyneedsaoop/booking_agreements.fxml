@@ -138,10 +138,14 @@
             <Button fx:id="backBtn" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="60.0" text="Go Back" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Backbtn.png" />
-         </image>
-      </ImageView>
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#backBtnAction">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
+               <image>
+                  <Image url="@Backbtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
