@@ -7,16 +7,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Rent_Controller">
+<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Health_Controller">
    <children>
       <ImageView fitHeight="602.0" fitWidth="1200.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -91,7 +89,7 @@
             <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="233.0" layoutY="12.0" prefHeight="21.0" prefWidth="150.0">
+      <ComboBox fx:id="serrviceList" layoutX="233.0" layoutY="12.0" prefHeight="21.0" prefWidth="150.0">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius3" />
@@ -103,27 +101,6 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
-      <Separator layoutX="637.0" layoutY="6.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
-      <HBox layoutX="765.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
-         <children>
-            <TextField opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@SearchLogo.png" />
-               </image>
-            </ImageView>
-         </children>
-         <stylesheets>
-            <URL value="@HeadLabel.css" />
-            <URL value="@loginsignup.css" />
-            <URL value="@consumerCss.css" />
-         </stylesheets>
-         <styleClass>
-            <String fx:value="upper-anchore2" />
-            <String fx:value="shadow" />
-            <String fx:value="radius2" />
-         </styleClass>
-      </HBox>
       <Button fx:id="backBtn" layoutX="15.0" layoutY="560.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back">
          <stylesheets>
             <URL value="@HeadLabel.css" />
@@ -136,5 +113,29 @@
             <String fx:value="User-button2" />
             <String fx:value="shadow" />
          </styleClass></Button>
+      <ComboBox fx:id="locationList" layoutX="406.0" layoutY="11.0" prefHeight="21.0" prefWidth="150.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="radius3" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+      </ComboBox>
+      <ComboBox fx:id="nameList" layoutX="568.0" layoutY="11.0" prefHeight="21.0" prefWidth="150.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="radius3" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+      </ComboBox>
    </children>
 </AnchorPane>

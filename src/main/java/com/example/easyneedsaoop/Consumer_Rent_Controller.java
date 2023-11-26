@@ -81,7 +81,7 @@ public class Consumer_Rent_Controller implements Initializable {
                     row+=1;
                 }
                 // Add margins to create space between cards
-                Insets margin = new Insets(10); // You can adjust the value based on your preference
+                Insets margin = new Insets(10);
                 GridPane.setMargin(pane, margin);
                 gridPane.add(pane,column++,row);
             } catch (Exception e) {

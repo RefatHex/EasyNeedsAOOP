@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Slider" prefHeight="495.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.CatringCart">
+<AnchorPane fx:id="Slider" prefHeight="495.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_booking_cart">
    <stylesheets>
       <URL value="@adminPageStyle.css" />
       <URL value="@consumerCss.css" />
@@ -65,23 +65,23 @@
                   <Image url="@Shape.png" />
                </image>
             </ImageView>
-            <Label fx:id="foodName" layoutX="14.0" layoutY="22.0" prefHeight="27.0" prefWidth="110.0" text="Doctor's Name:">
+            <Label fx:id="name" layoutX="14.0" layoutY="22.0" prefHeight="27.0" prefWidth="110.0" text="Doctor's Name:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <ImageView fx:id="cartImage" fitHeight="134.0" fitWidth="236.0" layoutX="24.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="14.0" layoutY="210.0" text="Specialised:">
+            <Label fx:id="specialized" layoutX="14.0" layoutY="210.0" text="Specialised:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="242.0" prefHeight="27.0" prefWidth="97.0" text="Visiting Time:" AnchorPane.bottomAnchor="125.0">
+            <Label fx:id="start" layoutX="12.0" layoutY="242.0" prefHeight="27.0" prefWidth="41.0" text="start" AnchorPane.bottomAnchor="125.0">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="Book" layoutX="78.0" layoutY="324.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="Book Appointment">
+            <Button fx:id="Book" layoutX="78.0" layoutY="324.0" mnemonicParsing="false" onAction="#placeAppointment" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="Book Appointment">
                <styleClass>
                   <String fx:value="white-bg" />
                   <String fx:value="radius3" />
@@ -113,14 +113,24 @@
                   <String fx:value="upper-anchore3" />
                </styleClass>
             </Button>
-            <Label layoutX="14.0" layoutY="269.0" text="Appointment Fee:">
+            <Label fx:id="fee" layoutX="14.0" layoutY="269.0" text="Appointment Fee:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="298.0" text="Hospital Name:">
+            <Label fx:id="name" layoutX="14.0" layoutY="298.0" text="Hospital Name:">
                <font>
                   <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="54.0" layoutY="241.0" prefHeight="27.0" prefWidth="13.0" text="-">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="finish" layoutX="65.0" layoutY="241.0" prefHeight="27.0" prefWidth="41.0" text="finish">
+               <font>
+                  <Font size="16.0" />
                </font>
             </Label>
          </children>

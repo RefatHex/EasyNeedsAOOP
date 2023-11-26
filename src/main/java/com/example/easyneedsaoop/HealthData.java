@@ -14,6 +14,8 @@ public class HealthData {
     String service;
     String extraInfo;
     Date date;
+    String hospital;
+    String image;
 
     public HealthData(int cardID, String docName, String userName, String docMajor, int start, int end, double fee, String day, String service, String extraInfo, Date date) {
         this.cardID = cardID;
@@ -27,6 +29,30 @@ public class HealthData {
         this.service = service;
         this.extraInfo = extraInfo;
         this.date = date;
+    }
+
+    public HealthData(int cardID, String docName, String userName, String docMajor, int start, int end, double fee, String day, String service, String extraInfo, Date date, String hospital, String image) {
+        this.cardID = cardID;
+        this.docName = docName;
+        this.userName = userName;
+        this.docMajor = docMajor;
+        this.start = start;
+        this.end = end;
+        this.fee = fee;
+        this.day = day;
+        this.service = service;
+        this.extraInfo = extraInfo;
+        this.date = date;
+        this.hospital = hospital;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getHospital() {
+        return hospital;
     }
 
     public int getCardID() {
@@ -81,6 +107,7 @@ public class HealthData {
         return fee;
     }
 
+
     public void setFee(double fee) {
         this.fee = fee;
     }
@@ -115,5 +142,24 @@ public class HealthData {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "HealthData{" +
+                "cardID=" + cardID +
+                ", docName='" + docName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", docMajor='" + docMajor + '\'' +
+                ", start=" + start +
+                ", end=" + end +
+                ", fee=" + fee +
+                ", day='" + day + '\'' +
+                ", service='" + service + '\'' +
+                ", extraInfo='" + extraInfo + '\'' +
+                ", date=" + date +
+                ", hospital='" + hospital + '\'' +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

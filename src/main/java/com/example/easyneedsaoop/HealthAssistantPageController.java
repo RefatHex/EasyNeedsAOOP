@@ -163,8 +163,8 @@ public class HealthAssistantPageController implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO hassisanceinfo " +
-                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, location, date,hospitalName)" +
-                    "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, location, date,hospitalName,image)" +
+                    "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 prepare = connect.prepareStatement(insertData);
                 prepare.setString(1, doctorID.getText());
@@ -183,6 +183,9 @@ public class HealthAssistantPageController implements Initializable {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
                 prepare.setString(11, sqlDate.toString());
                 prepare.setString(12, hospital.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(13,path);
                 prepare.executeUpdate();
 
                 alert = new Alert(Alert.AlertType.INFORMATION);

@@ -8,20 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="317.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
+<AnchorPane prefHeight="317.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_card">
    <children>
-      <ImageView fitHeight="157.0" fitWidth="216.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <Label layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="101.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
+      <ImageView fx:id="image" fitHeight="157.0" fitWidth="216.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <Label fx:id="name" layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="101.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="8.0" layoutY="201.0" prefHeight="20.0" prefWidth="79.0" text="Specialised:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="138.0">
+      <Label fx:id="specialize" layoutX="8.0" layoutY="201.0" prefHeight="20.0" prefWidth="79.0" text="Specialised:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="138.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="6.0" layoutY="227.0" prefHeight="20.0" prefWidth="101.0" text="Hospital Name:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="116.0">
+      <Label fx:id="hsopital" layoutX="6.0" layoutY="227.0" prefHeight="20.0" prefWidth="101.0" text="Hospital Name:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="116.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="8.0" layoutY="264.0" prefHeight="20.0" prefWidth="79.0" text="Visiting Fee:" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="255.0">
+      <Label fx:id="fee" layoutX="8.0" layoutY="264.0" prefHeight="20.0" prefWidth="79.0" text="Visiting Fee:" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="255.0">
          <font>
             <Font size="14.0" />
          </font>
