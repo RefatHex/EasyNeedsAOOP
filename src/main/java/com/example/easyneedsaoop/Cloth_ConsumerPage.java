@@ -1,7 +1,9 @@
 package com.example.easyneedsaoop;
 
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -22,8 +25,8 @@ import java.util.ResourceBundle;
 
 public class Cloth_ConsumerPage implements Initializable {
 
-//    @FXML
-//    private AnchorPane cartForm;
+    @FXML
+    private AnchorPane cart_form;
 //
 //    @FXML
 //    private TableView<?> cartTable;
@@ -47,7 +50,9 @@ public class Cloth_ConsumerPage implements Initializable {
     private GridPane gridPane2;
 
     @FXML
-    private Button order;
+    private Button cartBtn;
+    @FXML
+    private Button closeBtn;
 
 
     private Connection connect;
@@ -134,6 +139,23 @@ public class Cloth_ConsumerPage implements Initializable {
             }
         }
     }
+
+    public void slideCartForm(ActionEvent event){
+        TranslateTransition slider=new TranslateTransition();
+
+        if(event.getSource()==cartBtn){
+            slider.setNode(cart_form);
+            slider.setToX(300);
+            slider.setDuration(Duration.seconds(.5));
+            slider.play();
+        }else if(event.getSource()==closeBtn){
+            slider.setNode(cart_form);
+            slider.setToX(0);
+            slider.setDuration(Duration.seconds(.5));
+            slider.play();
+        }
+            slider.play();
+        }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

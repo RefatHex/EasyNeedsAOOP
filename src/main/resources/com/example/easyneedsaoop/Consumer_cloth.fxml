@@ -53,7 +53,7 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <Button fx:id="cartBtn" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" stylesheets="@HeadLabel.css">
+            <Button fx:id="cartBtn" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" onAction="#slideCartForm" stylesheets="@HeadLabel.css">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -162,9 +162,9 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
-      <AnchorPane prefHeight="599.0" prefWidth="289.0">
+      <AnchorPane fx:id="cart_form" layoutX="-290.0" prefHeight="599.0" prefWidth="289.0">
          <children>
-            <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="229.0" prefWidth="285.0" stylesheets="@adminPageStyle.css">
+            <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="342.0" prefWidth="278.0" stylesheets="@adminPageStyle.css">
               <columns>
                 <TableColumn fx:id="menu_col_productName" prefWidth="112.0" text="Product Name" />
                 <TableColumn fx:id="menu_col_quantity" prefWidth="54.0" text="Quantity" />
@@ -172,32 +172,12 @@
                   <TableColumn fx:id="menu_col_price" prefWidth="70.0" text="Price" />
               </columns>
             </TableView>
-            <Label layoutX="81.0" layoutY="261.0" text="Total:">
+            <Label layoutX="100.0" layoutY="361.0" text="Total:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="125.0" layoutY="261.0" text="0.00৳">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="60.0" layoutY="305.0" text="Amount:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <TextField layoutX="120.0" layoutY="300.0" prefHeight="35.0" prefWidth="100.0" promptText="0.00৳" styleClass="transparent" stylesheets="@HeadLabel.css">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="62.0" layoutY="348.0" text="Change:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="124.0" layoutY="348.0" prefHeight="17.0" prefWidth="46.0" text="0.00৳">
+            <Label layoutX="144.0" layoutY="361.0" text="0.00৳">
                <font>
                   <Font size="16.0" />
                </font>
@@ -229,7 +209,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="closebtn" layoutX="54.0" layoutY="555.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Close" />
+            <Button fx:id="closeBtn" layoutX="54.0" layoutY="555.0" mnemonicParsing="false" onAction="#slideCartForm" prefHeight="25.0" prefWidth="46.0" text="Close" />
          </children>
          <stylesheets>
             <URL value="@HeadLabel.css" />
