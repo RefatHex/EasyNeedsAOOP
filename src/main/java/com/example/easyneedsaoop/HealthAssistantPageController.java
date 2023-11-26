@@ -54,6 +54,8 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private TextField extraInfo;
+    @FXML
+    private TextField hospital;
 
     @FXML
     private AnchorPane healthAnchor;
@@ -161,8 +163,8 @@ public class HealthAssistantPageController implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO hassisanceinfo " +
-                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, extraInfo, date)" +
-                    "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, location, date,hospitalName)" +
+                    "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 prepare = connect.prepareStatement(insertData);
                 prepare.setString(1, doctorID.getText());
@@ -180,7 +182,7 @@ public class HealthAssistantPageController implements Initializable {
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
                 prepare.setString(11, sqlDate.toString());
-
+                prepare.setString(12, hospital.getText());
                 prepare.executeUpdate();
 
                 alert = new Alert(Alert.AlertType.INFORMATION);
@@ -291,7 +293,7 @@ public class HealthAssistantPageController implements Initializable {
 
         String checkExistingData = "SELECT * FROM hassisanceinfo WHERE id=? AND userName=?";
         String updateData = "UPDATE hassisanceinfo " +
-                "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, extraInfo=? " +
+                "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, location=? " +
                 "WHERE cardID=? AND userName=?";
 
         try {
@@ -366,7 +368,7 @@ public class HealthAssistantPageController implements Initializable {
                         result.getDouble("fee"),
                         result.getString("day"),
                         result.getString("service"),
-                        result.getString("extraInfo"),
+                        result.getString("location"),
                         result.getDate("date")
                 );
                 listData.add(data);

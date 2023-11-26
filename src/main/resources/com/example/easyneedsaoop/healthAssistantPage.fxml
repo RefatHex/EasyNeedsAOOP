@@ -308,12 +308,12 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </AnchorPane>
-                                          <Label layoutX="356.0" layoutY="86.0" text="Extra info:">
+                                          <Label layoutX="356.0" layoutY="86.0" text="Location">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="extraInfo" layoutX="445.0" layoutY="83.0" prefHeight="26.0" prefWidth="134.0" promptText="Extra info if any" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="extraInfo" layoutX="445.0" layoutY="83.0" prefHeight="26.0" prefWidth="134.0" promptText="Chamber Location" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <TextField fx:id="startingHour" layoutX="445.0" layoutY="13.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter starting hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="335.0" layoutY="15.0" text="Starting hour:">
                                              <font>
@@ -343,6 +343,12 @@
                                              </font>
                                           </Label>
                                           <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter amount" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <Label layoutX="579.0" layoutY="144.0" text="Hospital Name">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="hospital" layoutX="695.0" layoutY="142.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter hospital Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>

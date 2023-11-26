@@ -434,6 +434,8 @@ public class AdminControlPage implements Initializable {
     private TextField visitingFee;
     @FXML
     private TextField startingHour;
+    @FXML
+    private TextField hospital;
 
 
     public String[] daysInWeeks = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
@@ -1366,8 +1368,8 @@ public void courseInventoryAddBtn() {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO hassisanceinfo " +
-                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, extraInfo, date)" +
-                    "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+                    "( cardID, docName, userName, docMajor, start, end, fee, day, service, location, date,hospitalName)" +
+                    "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 prepare = connect.prepareStatement(insertData);
                 prepare.setString(1, doctorID.getText());
@@ -1385,6 +1387,7 @@ public void courseInventoryAddBtn() {
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
                 prepare.setString(11, sqlDate.toString());
+                prepare.setString(12, hospital.getText());
 
                 prepare.executeUpdate();
 
@@ -1471,7 +1474,7 @@ public void courseInventoryAddBtn() {
 
         String checkExistingData = "SELECT * FROM hassisanceinfo WHERE id=? AND userName=?";
         String updateData = "UPDATE hassisanceinfo " +
-                "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, extraInfo=? " +
+                "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, location=? " +
                 "WHERE cardID=? AND userName=?";
 
         try {
@@ -1546,7 +1549,7 @@ public void courseInventoryAddBtn() {
                         result.getDouble("fee"),
                         result.getString("day"),
                         result.getString("service"),
-                        result.getString("extraInfo"),
+                        result.getString("location"),
                         result.getDate("date")
                 );
                 listData.add(data);
