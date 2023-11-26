@@ -51,6 +51,9 @@ public class CatringCart implements Initializable {
     private Label price;
 
     @FXML
+    private Button backBtn;
+
+    @FXML
     private AnchorPane slider;
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
     public String[] mealPerDayOption={"1 meal","2 meal","3 meal"};
@@ -104,6 +107,9 @@ public class CatringCart implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void backBtnAction(){
+        backBtn.getScene().getWindow().hide();
     }
 
 
