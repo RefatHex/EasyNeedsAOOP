@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="317.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
+   <children>
+      <ImageView fitHeight="157.0" fitWidth="216.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <Label layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="101.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="201.0" prefHeight="20.0" prefWidth="79.0" text="Specialised:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="138.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="227.0" prefHeight="20.0" prefWidth="101.0" text="Hospital Name:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="116.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="64.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@4starrating.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="6.0" layoutY="285.0" prefHeight="20.0" prefWidth="57.0" text="Rating:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="8.0" layoutY="264.0" prefHeight="20.0" prefWidth="79.0" text="Visiting Fee:" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="255.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@HeadLabel.css" />
+      <URL value="@loginsignup.css" />
+      <URL value="@consumerCss.css" />
+      <URL value="@adminPageStyle.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="radius2" />
+   </styleClass>
+</AnchorPane>
