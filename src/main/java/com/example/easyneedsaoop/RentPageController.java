@@ -6,12 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -34,6 +36,8 @@ public class RentPageController implements Initializable {
 
     @FXML
     private AnchorPane dashboard_form;
+    @FXML
+    private AnchorPane order_form;
 
     @FXML
     private Label imgLbl1;
@@ -45,10 +49,14 @@ public class RentPageController implements Initializable {
     private Button logoutBtn;
 
     @FXML
+    private Button order_btn;
+
+    @FXML
     private AnchorPane mainForm;
 
     @FXML
     private AnchorPane menuAnchorPane;
+
 
     @FXML
     private AnchorPane rentAnchor;
@@ -64,21 +72,17 @@ public class RentPageController implements Initializable {
 
     @FXML
     private TextField rentIn_Rent;
-
     @FXML
-    private Button rentIn_UpdateBtn;
-
+    private GridPane gridPane;
     @FXML
-    private Button rentIn_addBtn;
+    private Button orders_btn;
+
 
     @FXML
     private TextField rentIn_address;
 
     @FXML
     private ComboBox<?> rentIn_bachelorBox;
-
-    @FXML
-    private Button rentIn_clearBtn;
 
     @FXML
     private TableColumn<rentData, String> rentIn_col_Id;
@@ -167,14 +171,18 @@ public class RentPageController implements Initializable {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
+    private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        dashboard_form.setVisible(true);
+        rentIn_form.setVisible(false);
+        order_form.setVisible(false);
         displayUsername();
         yesOrNo();
         getListData();
         rentInventoryShowData();
+        menuDisplayOrderCard();
 
     }
 
@@ -426,23 +434,85 @@ public class RentPageController implements Initializable {
 
         }
     }
+    public ObservableList<rentOrderData> menuGetOrderData() {
+        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
+        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, data.username);
+            result = prepare.executeQuery();
+            rentOrderData orderData;
+            while (result.next()) {
+                orderData = new rentOrderData(result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("houseName"),
+                        result.getString("ownerUserName"),
+                        result.getString("tanentUserName"),
+                        result.getDouble("rent"),
+                        result.getString("address"),
+                        result.getString("nidImage"),
+                        result.getDate("date"));
+                listOrderData.add(orderData);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listOrderData;
+    }
+
+    public void menuDisplayOrderCard() {
+        orderDetails.clear();
+        orderDetails.addAll(menuGetOrderData());
+        int row = 0;
+        int column = 0;
+        gridPane.getRowConstraints().clear();
+        gridPane.getColumnConstraints().clear();
+        for (rentOrderData orderDetail : orderDetails) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("order_show.fxml"));
+                AnchorPane pane = loader.load();
+                OrderShow cardR = loader.getController();
+                cardR.setData(orderDetail);
+//                pane.setOnMouseClicked(event -> handleOrderCardClick(cardR));
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                GridPane.setMargin(pane, margin);
+                gridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public void handleEvent(ActionEvent event) throws IOException {
         if (event.getSource() == rentInventory_btn) {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
+            order_form.setVisible(false);
         } else if (event.getSource() == rentDashboard_btn) {
             dashboard_form.setVisible(true);
             rentIn_form.setVisible(false);
+            order_form.setVisible(false);
+
         } else if (event.getSource() == rentPayment_btn) {
             dashboard_form.setVisible(false);
+            order_form.setVisible(false);
             rentIn_form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
             //rentPayment_btn.getScene().getWindow().hide();
+        }else if (event.getSource() == order_btn){
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            order_form.setVisible(true);
+
         }
     }
 

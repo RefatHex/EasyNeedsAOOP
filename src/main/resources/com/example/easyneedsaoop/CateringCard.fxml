@@ -2,50 +2,33 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="218.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="218.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Catering_card">
    <children>
-      <ImageView fitHeight="219.0" fitWidth="255.0" opacity="0.05" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CateringLogo2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="151.0" fitWidth="204.0" layoutX="6.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="78.0" prefWidth="210.0">
+      <ImageView fx:id="imageview" fitHeight="151.0" fitWidth="204.0" layoutX="6.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="97.0" prefWidth="218.0">
          <children>
-            <Label layoutX="14.0" layoutY="53.0" text="Price:">
+            <Label fx:id="price" layoutX="14.0" layoutY="53.0" text="Price:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="6.0" text="Catering Name:">
+            <Label fx:id="name" layoutX="14.0" layoutY="6.0" text="Catering Name:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="29.0" text="Location:">
+            <Label fx:id="delivery" layoutX="15.0" layoutY="75.0" text="Deal:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="106.0" prefHeight="25.0" prefWidth="99.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <TextField layoutX="72.0" layoutY="27.0" prefHeight="25.0" prefWidth="133.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <TextField layoutX="57.0" layoutY="52.0" prefHeight="25.0" prefWidth="139.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
          </children>
       </AnchorPane>
-      <Label layoutX="14.0" layoutY="81.0" text="Deal:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <ComboBox layoutX="52.0" layoutY="77.0" prefHeight="25.0" prefWidth="79.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
    </children>
    <stylesheets>
       <URL value="@consumerCss.css" />

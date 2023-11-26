@@ -143,7 +143,7 @@ public class cateringPageController implements Initializable {
     private Image image;
     private Alert alert;
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
-    public String[] mealDeliveryOption={"Daily","Weekly","Monthly"};
+    public String[] mealDeliveryOption={"Home Delivery","Dine in"};
     public String[] billOption={"Daily","Weekly","Monthly"};
     private Connection connect;
     private PreparedStatement prepare;
@@ -164,8 +164,8 @@ public class cateringPageController implements Initializable {
             alert.showAndWait();
         } else {
             String insertData = "INSERT INTO cateringinfo " +
-                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, mealType, billPay,mealDelivery,date)" +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                    "(ownerName, shopName, branchName, userName, price, address, contact, extraInfo, image,mealType, billPay,mealDelivery,date)" +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
             try {
                 prepare = connect.prepareStatement(insertData);
@@ -196,6 +196,7 @@ public class cateringPageController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Data added successfully!");
                 alert.showAndWait();
+                cateringInventoryShowData();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -282,6 +283,7 @@ public class cateringPageController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Please provide the ID of the record to be deleted.");
             alert.showAndWait();
+            cateringInventoryShowData();
             return;
         }
 
@@ -321,8 +323,13 @@ public class cateringPageController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        connect = database.connectDB();
+        cateringInventoryShowData();
         displayUsername();
         optionAdder();
+        dashboard_form.setVisible(true);
+        catering_form.setVisible(false);
     }
     public void optionAdder(){
         List<String> mtype = new ArrayList<>(Arrays.asList(mealTypeOption));
@@ -366,10 +373,11 @@ public class cateringPageController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
             Scene scene = new Scene(fxmlLoader.load());
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
-            cateringPaymentBtn.getScene().getWindow().hide();
+            //cateringPaymentBtn.getScene().getWindow().hide();
         }
     }
 

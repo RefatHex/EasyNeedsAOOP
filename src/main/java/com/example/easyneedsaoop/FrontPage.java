@@ -4,10 +4,14 @@ package com.example.easyneedsaoop;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.util.Optional;
 
 public class FrontPage {
 
@@ -52,9 +56,12 @@ public class FrontPage {
 
     @FXML
     private Button order_btn;
+    @FXML
+    private Button logoutBtn;
 
     @FXML
     private Button rewards_btn;
+    private Alert alert ;
 
     public void homeAnchorBtnAction(){
 
@@ -134,6 +141,28 @@ public class FrontPage {
     }
     public void rewardsActionBtn(){
 
+    }
+    public void logout() {
+        try {
+            alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Are you sure you want to logout?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if (option.get().equals(ButtonType.OK)) {
+                logoutBtn.getScene().getWindow().hide();
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setTitle("EasyNeeds");
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.setScene(scene);
+                stage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

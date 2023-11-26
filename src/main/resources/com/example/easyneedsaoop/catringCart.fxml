@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Slider" prefHeight="496.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.CatringCart">
+   <stylesheets>
+      <URL value="@adminPageStyle.css" />
+      <URL value="@consumerCss.css" />
+      <URL value="@HeadLabel.css" />
+      <URL value="@loginsignup.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="upper-anchore3" />
+      <String fx:value="radius" />
+      <String fx:value="radius2" />
+   </styleClass>
+   <children>
+      <ImageView fitHeight="134.0" fitWidth="97.0" layoutX="129.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ShapeTwo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="102.0" fitWidth="223.0" layoutX="-4.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Shape.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="38.0" layoutY="20.0" prefHeight="55.0" prefWidth="167.0" stylesheets="@HeadLabel.css" text=" Catering Order">
+         <font>
+            <Font name="Arial" size="23.0" />
+         </font>
+         <styleClass>
+            <String fx:value="upper-anchore2" />
+            <String fx:value="radius3" />
+            <String fx:value="shadow" />
+            <String fx:value="User-button2" />
+         </styleClass>
+      </Label>
+      <AnchorPane fx:id="slider" layoutX="10.0" layoutY="91.0" prefHeight="392.0" prefWidth="209.0">
+         <stylesheets>
+            <URL value="@loginsignup.css" />
+            <URL value="@HeadLabel.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="upper-anchore4" />
+         </styleClass>
+         <children>
+            <ImageView fitHeight="140.0" fitWidth="137.0" layoutX="63.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ShapeTwo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="134.0" fitWidth="144.0" layoutX="8.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Shape.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="foodName" layoutX="14.0" layoutY="22.0" text="Food Name:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="price" layoutX="144.0" layoutY="22.0" prefHeight="17.0" prefWidth="56.0" text="Price ৳">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="cartImage" fitHeight="120.0" fitWidth="195.0" layoutX="8.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="19.0" layoutY="210.0" text="Quantity:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="mealType" layoutX="90.0" layoutY="209.0" prefHeight="26.0" prefWidth="97.0" promptText="Choose" styleClass="radius" stylesheets="@HeadLabel.css" />
+            <Label layoutX="39.0" layoutY="247.0" prefHeight="27.0" prefWidth="47.0" text="Deal:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="plans" layoutX="90.0" layoutY="247.0" prefHeight="26.0" prefWidth="97.0" promptText="Choose" styleClass="radius" stylesheets="@HeadLabel.css" />
+            <Button fx:id="Book" layoutX="41.0" layoutY="292.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="Book Now">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="radius3" />
+                  <String fx:value="shadow" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="payBtn" layoutX="29.0" layoutY="340.0" mnemonicParsing="false" text="Pay Now">
+               <stylesheets>
+                  <URL value="@HeadLabel.css" />
+                  <URL value="@loginsignup.css" />
+                  <URL value="@consumerCss.css" />
+                  <URL value="@adminPageStyle.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="upper-anchore3" />
+               </styleClass>
+            </Button>
+            <Button fx:id="chatBtn" layoutX="139.0" layoutY="340.0" mnemonicParsing="false" text="Chat">
+               <stylesheets>
+                  <URL value="@HeadLabel.css" />
+                  <URL value="@loginsignup.css" />
+                  <URL value="@consumerCss.css" />
+                  <URL value="@adminPageStyle.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="upper-anchore3" />
+               </styleClass>
+            </Button>
+            <Button fx:id="backBtn" layoutX="92.0" layoutY="366.0" mnemonicParsing="false" onAction="#backBtnAction" text="Back" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
