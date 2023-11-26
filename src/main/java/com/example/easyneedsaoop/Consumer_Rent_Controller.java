@@ -2,6 +2,7 @@ package com.example.easyneedsaoop;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -154,7 +155,10 @@ public class Consumer_Rent_Controller implements Initializable {
             backBtn.getScene().getWindow().hide();
         }
 
+
+    public void slideCartForm(ActionEvent actionEvent) {
     }
+}
 
 
 
