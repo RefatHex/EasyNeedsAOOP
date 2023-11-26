@@ -7,6 +7,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,9 +18,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="599.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_ConsumerPage">
+<AnchorPane prefHeight="599.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_ConsumerPage">
    <children>
-      <ImageView fitHeight="602.0" fitWidth="1200.0" layoutX="-15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="593.0" fitWidth="1185.0" layoutX="-12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BG.jpg" />
          </image>
@@ -78,11 +80,11 @@
             <Separator layoutX="28.0" layoutY="165.0" orientation="VERTICAL" prefHeight="192.0" prefWidth="6.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="89.0" layoutY="41.0" prefHeight="214.0" prefWidth="1110.0">
+      <AnchorPane layoutX="89.0" layoutY="49.0" prefHeight="214.0" prefWidth="1075.0">
          <children>
-            <ScrollPane prefHeight="214.0" prefWidth="1110.0">
+            <ScrollPane prefHeight="214.0" prefWidth="1083.0">
                <content>
-                  <AnchorPane prefHeight="177.0" prefWidth="1249.0">
+                  <AnchorPane prefHeight="213.0" prefWidth="1461.0">
                      <children>
                         <GridPane fx:id="gridPane1" prefHeight="30.0" prefWidth="115.0">
                            <rowConstraints>
@@ -95,11 +97,11 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="89.0" layoutY="310.0" prefHeight="289.0" prefWidth="1110.0">
+      <AnchorPane layoutX="89.0" layoutY="291.0" prefHeight="307.0" prefWidth="1057.0">
          <children>
-            <ScrollPane prefHeight="334.0" prefWidth="1109.0">
+            <ScrollPane prefHeight="307.0" prefWidth="1083.0">
                <content>
-                  <AnchorPane prefHeight="506.0" prefWidth="1094.0">
+                  <AnchorPane prefHeight="526.0" prefWidth="1080.0">
                      <children>
                         <GridPane fx:id="gridPane2" prefHeight="30.0" prefWidth="94.0">
                            <rowConstraints>
@@ -112,22 +114,22 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <Label layoutX="89.0" layoutY="14.0" text="Recent Post:">
+      <Label layoutX="93.0" layoutY="13.0" text="Recent Post:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="260.0" text="Regular Post:">
+      <Label layoutX="89.0" layoutY="270.0" text="Regular Post:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="77.0" fitWidth="76.0" layoutX="-4.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="77.0" fitWidth="76.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="195.0" layoutY="12.0" prefHeight="21.0" prefWidth="150.0">
+      <ComboBox layoutX="197.0" layoutY="11.0" prefHeight="21.0" prefWidth="150.0">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius3" />
@@ -139,8 +141,8 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
-      <Separator layoutX="637.0" layoutY="6.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
-      <HBox layoutX="765.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
+      <Separator layoutX="634.0" layoutY="10.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
+      <HBox layoutX="766.0" layoutY="11.0" prefHeight="25.0" prefWidth="200.0">
          <children>
             <TextField opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
             <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
@@ -160,5 +162,85 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
+      <AnchorPane prefHeight="599.0" prefWidth="289.0">
+         <children>
+            <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="229.0" prefWidth="285.0" stylesheets="@adminPageStyle.css">
+              <columns>
+                <TableColumn fx:id="menu_col_productName" prefWidth="112.0" text="Product Name" />
+                <TableColumn fx:id="menu_col_quantity" prefWidth="54.0" text="Quantity" />
+                  <TableColumn fx:id="menu_col_size" prefWidth="46.0" text="Size" />
+                  <TableColumn fx:id="menu_col_price" prefWidth="70.0" text="Price" />
+              </columns>
+            </TableView>
+            <Label layoutX="81.0" layoutY="261.0" text="Total:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="125.0" layoutY="261.0" text="0.00৳">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="305.0" text="Amount:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="120.0" layoutY="300.0" prefHeight="35.0" prefWidth="100.0" promptText="0.00৳" styleClass="transparent" stylesheets="@HeadLabel.css">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="62.0" layoutY="348.0" text="Change:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="348.0" prefHeight="17.0" prefWidth="46.0" text="0.00৳">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="24.0" layoutY="404.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="238.0" stylesheets="@HeadLabel.css" text="Pay Now">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+            </Button>
+            <Button layoutX="24.0" layoutY="508.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+            </Button>
+            <Button layoutX="147.0" layoutY="508.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" stylesheets="@HeadLabel.css" text="Receipt">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="closebtn" layoutX="54.0" layoutY="555.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Close" />
+         </children>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@adminPageStyle.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@loginsignup.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="upper-anchore4" />
+            <String fx:value="radius" />
+         </styleClass>
+      </AnchorPane>
    </children>
 </AnchorPane>
