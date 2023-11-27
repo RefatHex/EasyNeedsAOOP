@@ -36,19 +36,13 @@ public class MoneyTransferStage {
     private Button confirmPaymentButton;
 
     @FXML
-    public void confirmPaymentButtonAction() throws IOException {
+    public void confirmPaymentButtonAction()  {
         if(userMobileTxt.getText()!= "" && userPasswordTxt.getText()!= "" && sendAmountTxt.getText()!= "" && receiverMobileTxt.getText() != ""){
             alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Congratulation");
+            alert.setTitle("Congratulations");
             alert.setHeaderText(null);
             alert.setContentText("Successfully Sent!");
             alert.showAndWait();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consumerPage.fxml"));
-            Stage stage=new Stage();
-            Scene scene = new Scene(fxmlLoader.load());
-            stage.setTitle("EasyNeeds");
-            stage.setScene(scene);
-            stage.show();
             confirmPaymentButton.getScene().getWindow().hide();
         }else{
             alert = new Alert(Alert.AlertType.ERROR);

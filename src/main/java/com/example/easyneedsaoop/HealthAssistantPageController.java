@@ -233,9 +233,10 @@ public class HealthAssistantPageController implements Initializable {
             stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Easy Pay");
             stage.show();
-            payment_btn.getScene().getWindow().hide();
+            //payment_btn.getScene().getWindow().hide();
 
         }
     }
@@ -442,13 +443,12 @@ public class HealthAssistantPageController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        healthAssistanceShowData();
         displayUsername();
         setAvailabilty();
         setServiceType();
         healthAssistanceShowData();
         connect=database.connectDB();
-
     }
     public void InventoryImportBtn(ActionEvent event) {
         FileChooser openFile = new FileChooser();
