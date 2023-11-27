@@ -107,3 +107,8 @@ Fx-background-radius:100;
  .User-button:hover {
             -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
         }
+
+ .scroll-bar{
+ -fx-opacity: 0;
+ -fx-background-color: transparent;
+ }

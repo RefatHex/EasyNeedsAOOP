@@ -404,6 +404,7 @@ public class InstructorPageController implements Initializable {
         ObservableList courseTypeData=FXCollections.observableArrayList(CourseType);
         courseCategory.setItems(courseTypeData);
         course_type.setItems(courseCategoryData);
+        course_type.setEditable(true);
     }
 
     public void handleEvent(){
