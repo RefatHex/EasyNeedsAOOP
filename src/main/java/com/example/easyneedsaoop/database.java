@@ -8,7 +8,7 @@ public class database {
     public static Connection connectDB(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost/easyneeds","root","refat");
+            return DriverManager.getConnection("jdbc:mysql://localhost/easyneeds","root","");
         } catch (Exception e) {
             e.printStackTrace();
         }

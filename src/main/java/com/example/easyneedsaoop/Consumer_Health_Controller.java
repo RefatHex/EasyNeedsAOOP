@@ -15,6 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -156,8 +157,14 @@ public class Consumer_Health_Controller implements Initializable {
     private void populateServiceList() {
         populateComboBox(serrviceList, "service");
     }
-    public void backBtnAction(ActionEvent event) {
-
+    public void backBtnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+        backBtn.getScene().getWindow().hide();
     }
 
     @Override
