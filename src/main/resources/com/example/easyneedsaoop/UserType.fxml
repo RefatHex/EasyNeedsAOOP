@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,24 +9,133 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="632.0" styleClass="gradient" stylesheets="@loginsignup.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserTypeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="347.0" styleClass="radius3" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserTypeController">
    <children>
-      <Label fx:id="welcomeLbl" alignment="CENTER" layoutX="112.0" layoutY="182.0" prefHeight="54.0" prefWidth="442.0" text="Welcome Sir, How Do You Wish To Continue?" textFill="WHITE">
+      <ImageView fitHeight="346.0" fitWidth="293.0" layoutX="27.0" layoutY="431.0" opacity="0.26" pickOnBounds="true" preserveRatio="true" rotate="-89.4">
+         <image>
+            <Image url="@BlueShape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="295.0" fitWidth="207.0" layoutX="136.0" layoutY="248.0" opacity="0.64" pickOnBounds="true" preserveRatio="true" rotate="179.3">
+         <image>
+            <Image url="@ShapeTwo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="157.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Shape.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="welcomeLbl" alignment="CENTER" layoutX="56.0" layoutY="83.0" prefHeight="34.0" prefWidth="235.0" text="Welcome To Easy Needs">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="upper-anchore4" />
+            <String fx:value="white-form" />
+         </styleClass>
       </Label>
-      <Button fx:id="firstBtn" alignment="CENTER" layoutX="231.0" layoutY="245.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As a Consumer" />
-      <Button fx:id="secondBtn" alignment="CENTER" layoutX="231.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As an Instructor" />
-      <Button fx:id="thirdBtn" alignment="CENTER" layoutX="231.0" layoutY="353.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As a Home Owner" />
-      <Button fx:id="fourthBtn" alignment="CENTER" layoutX="231.0" layoutY="410.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As a Catering Owner" />
-      <Button fx:id="fifthBtn" alignment="CENTER" layoutX="231.0" layoutY="463.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As a Cloth Seller" />
-      <Button fx:id="sixthBtn" alignment="CENTER" layoutX="231.0" layoutY="517.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="171.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="As a Health Assistant" />
-      <ImageView fitHeight="146.0" fitWidth="178.0" layoutX="218.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="6.0" layoutY="719.0" text="© 2023 EasyNeeds" AnchorPane.leftAnchor="6.0" />
+      <Button fx:id="firstBtn" alignment="CENTER" layoutX="123.0" layoutY="187.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="76.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0" AnchorPane.topAnchor="187.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ConsumerLogo.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="secondBtn" alignment="CENTER" layoutX="123.0" layoutY="277.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="90.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0" AnchorPane.topAnchor="277.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@education.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="thirdBtn" alignment="CENTER" layoutX="123.0" layoutY="367.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="83.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0" AnchorPane.topAnchor="367.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="fifthBtn" alignment="CENTER" layoutX="123.0" layoutY="457.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="88.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@clothing.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="sixthBtn" alignment="CENTER" layoutX="123.0" layoutY="547.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="84.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="fourthBtn" alignment="CENTER" layoutX="123.0" layoutY="637.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="100.0" styleClass="transparent" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="123.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ricebowl.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="welcomeLbl1" alignment="CENTER" layoutX="10.0" layoutY="139.0" prefHeight="17.0" prefWidth="328.0" text="How Do You Wish To Continue?">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@loginsignup.css" />
+            <URL value="@consumerCss.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="white-form" />
+            <String fx:value="upper-anchore4" />
+         </styleClass>
+      </Label>
+      <ImageView fitHeight="221.0" fitWidth="130.0" layoutX="109.0" layoutY="-38.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@EasyNeed.png" />
+            <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <Label layoutX="516.0" layoutY="553.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
+   <stylesheets>
+      <URL value="@loginsignup.css" />
+      <URL value="@consumerCss.css" />
+      <URL value="@adminPageStyle.css" />
+      <URL value="@HeadLabel.css" />
+   </stylesheets>
 </AnchorPane>
