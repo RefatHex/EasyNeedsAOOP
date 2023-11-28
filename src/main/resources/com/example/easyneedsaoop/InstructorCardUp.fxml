@@ -2,47 +2,45 @@
 
 <?import java.lang.String?>
 <?import java.net.URL?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="171.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
+<AnchorPane prefHeight="121.0" prefWidth="283.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardUp">
    <children>
-      <ImageView fitHeight="162.0" fitWidth="133.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <Label layoutX="143.0" layoutY="4.0" text="Price:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="142.0" layoutY="38.0" prefHeight="20.0" prefWidth="86.0" text="Course Type:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="146.0" layoutY="69.0" prefHeight="17.0" prefWidth="78.0" text="Course Name:" />
-      <Label layoutX="147.0" layoutY="99.0" prefHeight="20.0" prefWidth="59.0" text="Quantity:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="192.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="112.0" fitWidth="139.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="191.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@4starrating.png" />
          </image>
       </ImageView>
-      <Label layoutX="142.0" layoutY="137.0" prefHeight="20.0" prefWidth="50.0" text="Rating:">
+      <Label layoutX="142.0" layoutY="94.0" prefHeight="20.0" prefWidth="50.0" text="Rating:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="224.0" layoutY="36.0" prefHeight="25.0" prefWidth="59.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
-      <ComboBox layoutX="212.0" layoutY="97.0" prefHeight="25.0" prefWidth="59.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="220.0" layoutY="65.0" prefHeight="25.0" prefWidth="78.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
-      <TextField layoutX="185.0" layoutY="2.0" prefHeight="25.0" prefWidth="78.0" styleClass="transparent" stylesheets="@HeadLabel.css" />
+      <Label fx:id="price" layoutX="142.0" layoutY="4.0" text="Price:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="name" layoutX="142.0" layoutY="29.0" prefHeight="20.0" prefWidth="92.0" text="Course Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="type" layoutX="143.0" layoutY="52.0" prefHeight="20.0" prefWidth="86.0" text="Course Type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="category" layoutX="142.0" layoutY="74.0" prefHeight="20.0" prefWidth="68.0" text="category">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
    <stylesheets>
       <URL value="@HeadLabel.css" />

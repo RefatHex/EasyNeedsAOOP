@@ -81,75 +81,54 @@ public class Consumer_Education_Controller implements Initializable {
         System.out.println("Clicked on category: " + type);
     }
 
-    public void displayCourseCards() {
-        gridPane2.getChildren().clear();
+    public void displayInstructorCardsForUsernames() {
+        gridPane2.getChildren().clear(); // Clear existing content
 
-
-        ObservableList<CourseData> courseDataList = getCourseData();
+        // Retrieve distinct usernames from the courseinfo table
+        List<String> distinctUsernames = getDistinctUsernames();
 
         int row = 0;
         int column = 0;
 
-        for (CourseData courseData : courseDataList) {
+        for (String username : distinctUsernames) {
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("InstructorCardDown.fxml"));
+                loader.setLocation(getClass().getResource("InstructorCard.fxml"));
                 AnchorPane pane = loader.load();
-                InstructorCardDown cardController = loader.getController();
-                cardController.setData(courseData);
-                pane.setOnMouseClicked(event -> handleCardClick(cardController.getData()));
+                InstructorCard cardController = loader.getController();
 
+                // Set the username as a parameter to setData method
+                cardController.setName(username);
 
-                if (column == 4) {
-                    column = 0;
-                    row += 1;
-                }
                 // Add margins to create space between cards
                 Insets margin = new Insets(10);
                 GridPane.setMargin(pane, margin);
-                gridPane2.add(pane, column++, row);
+                gridPane2.add(pane, column, row++);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    private void handleCardClick(CourseData clickedData) {
-        System.out.println(clickedData.getCourseID());
-    }
-
-    // Method to retrieve course data from the courseinfo table
-    private ObservableList<CourseData> getCourseData() {
-        String sql = "SELECT * FROM courseinfo";
-        ObservableList<CourseData> courseDataList = FXCollections.observableArrayList();
+    // Method to retrieve distinct usernames from the courseinfo table
+    private List<String> getDistinctUsernames() {
+        String sql = "SELECT DISTINCT userName FROM courseinfo";
+        List<String> usernames = new ArrayList<>();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            CourseData courseDetails;
             while (result.next()) {
-                courseDetails = new CourseData(
-                        result.getInt("courseID"),
-                        result.getString("courseName"),
-                        result.getDouble("price"),
-                        result.getString("instructorName"),
-                        result.getString("userName"),
-                        result.getString("description"),
-                        result.getString("image"),
-                        result.getString("info"),
-                        result.getString("category"),
-                        result.getString("type"),
-                        result.getDate("date")
-                );
-                courseDataList.add(courseDetails);
+                usernames.add(result.getString("userName"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return courseDataList;
+        return usernames;
     }
+
 
     public void optionAdder(){
         List<String> sortType = new ArrayList<>(Arrays.asList(sortOption));
@@ -161,6 +140,6 @@ public class Consumer_Education_Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         optionAdder();
         addCategoriesToGridPane();
-        displayCourseCards();
+        displayInstructorCardsForUsernames();
     }
 }

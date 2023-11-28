@@ -5,9 +5,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,9 +46,9 @@ public class InstructorCard {
         for (CourseData courseData : courseDataList) {
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("InstructorCardDown.fxml"));
+                loader.setLocation(getClass().getResource("InstructorCardUp.fxml"));
                 AnchorPane pane = loader.load();
-                InstructorCardDown cardController = loader.getController();
+                InstructorCardUp cardController = loader.getController();
                 cardController.setData(courseData);
                 pane.setOnMouseClicked(event -> handleCardClick(cardController.getData()));
 
@@ -54,7 +57,7 @@ public class InstructorCard {
                 // Add margins to create space between cards
                 Insets margin = new Insets(10);
                 GridPane.setMargin(pane, margin);
-                gridPane.add(pane, column, row++);
+                gridPane.add(pane, column++, row);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -62,7 +65,22 @@ public class InstructorCard {
     }
 
     private void handleCardClick(CourseData clickedData) {
-        System.out.println(clickedData.getCourseID());
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("InstructorOrderPage.fxml"));
+            AnchorPane pane = loader.load();
+
+            InstructorOrderPage orderPage = loader.getController();
+            orderPage.setData(clickedData);
+
+
+            // Create a new stage and set the scene
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(new Scene(pane));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // Method to retrieve course data from the courseinfo table

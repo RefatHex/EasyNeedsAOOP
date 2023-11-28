@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="528.0" prefWidth="529.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorOrderPage">
+   <children>
+      <AnchorPane prefHeight="549.0" prefWidth="529.0" styleClass="white-bg" stylesheets="@HeadLabel.css">
+         <children>
+            <AnchorPane prefHeight="534.0" prefWidth="493.0">
+               <children>
+                  <ImageView fitHeight="260.0" fitWidth="490.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@BG.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="8.0" layoutY="15.0" prefHeight="267.0" prefWidth="271.0" stylesheets="@HeadLabel.css">
+               <children>
+                  <ImageView fx:id="viwer" fitHeight="274.0" fitWidth="324.0" layoutX="-1.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" styleClass="upper-anchore3" />
+               </children>
+               <styleClass>
+                  <String fx:value="radius" />
+                  <String fx:value="shadow" />
+                  <String fx:value="border" />
+               </styleClass>
+            </AnchorPane>
+            <AnchorPane layoutX="-10.0" layoutY="279.0" prefHeight="260.0" prefWidth="353.0">
+               <children>
+                  <Label fx:id="userNameLabel" layoutX="14.0" layoutY="8.0" prefHeight="32.0" prefWidth="87.0" text="User Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="courseName" layoutX="14.0" layoutY="40.0" prefHeight="32.0" prefWidth="87.0" text="House Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locationLabel" layoutX="16.0" layoutY="72.0" prefHeight="32.0" prefWidth="61.0" text="Location:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="check1" layoutX="14.0" layoutY="141.0" mnemonicParsing="false" text="I agree to all the terms and conditions" />
+                  <CheckBox fx:id="check2" layoutX="15.0" layoutY="170.0" mnemonicParsing="false" />
+                  <Button fx:id="bookBtn" layoutX="78.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleBookingClick" prefHeight="32.0" prefWidth="161.0" text="Enroll Now">
+                     <stylesheets>
+                        <URL value="@loginsignup.css" />
+                        <URL value="@HeadLabel.css" />
+                        <URL value="@consumerCss.css" />
+                        <URL value="@adminPageStyle.css" />
+                     </stylesheets>
+                     <styleClass>
+                        <String fx:value="radius3" />
+                        <String fx:value="User-button2" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="chatBtn" layoutX="249.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" stylesheets="@HeadLabel.css" text="Chat">
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="radius" />
+                        <String fx:value="User-button2" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ChatLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="price" layoutX="19.0" layoutY="109.0" prefHeight="18.0" prefWidth="47.0" text="Price">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backBtn" layoutX="13.0" layoutY="203.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="47.0" text="Back" />
+                  <Label layoutX="39.0" layoutY="172.0" prefHeight="18.0" prefWidth="264.0" text="I agree to get updates about Easy Needs Feature" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
