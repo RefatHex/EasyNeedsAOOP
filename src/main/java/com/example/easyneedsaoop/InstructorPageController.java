@@ -2,6 +2,7 @@ package com.example.easyneedsaoop;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -407,8 +408,26 @@ public class InstructorPageController implements Initializable {
         course_type.setEditable(true);
     }
 
-    public void handleEvent(){
-
+    public void handleEvent(ActionEvent e){
+        if(e.getSource()==dashboard_btn){
+            dashboard_form.setVisible(true);
+            instructor_form.setVisible(false);
+        }else if(e.getSource()==inventory_btn){
+            dashboard_form.setVisible(false);
+            instructor_form.setVisible(true);
+        }else if(e.getSource()==payment_btn){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
+            Stage stage=new Stage();
+            Scene scene = null;
+            try {
+                scene = new Scene(fxmlLoader.load());
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+            stage.setScene(scene);
+            stage.setTitle("Easy Pay");
+            stage.show();
+        }
     }
 
     @Override

@@ -6,11 +6,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +27,8 @@ public class Consumer_Education_Controller implements Initializable {
 
     @FXML
     private GridPane gridPane1;
-
+    @FXML
+    private Button backBtn;
     @FXML
     private GridPane gridPane2;
 
@@ -141,5 +147,14 @@ public class Consumer_Education_Controller implements Initializable {
         optionAdder();
         addCategoriesToGridPane();
         displayInstructorCardsForUsernames();
+    }
+    public void backBtnAction() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
+        Stage stage=new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+        backBtn.getScene().getWindow().hide();
     }
 }

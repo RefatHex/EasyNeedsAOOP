@@ -8,14 +8,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +31,8 @@ public class Cloth_ConsumerPage implements Initializable {
 
     @FXML
     private AnchorPane cart_form;
-
+    @FXML
+    private Button backBtn;
     @FXML
     private TableView<?> cartTable;
 
@@ -163,5 +168,14 @@ public class Cloth_ConsumerPage implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         menuDisplayMainCard();
         menuDisplayRecentCard();
+    }
+    public void backBtnAction() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
+        Stage stage=new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+        backBtn.getScene().getWindow().hide();
     }
 }

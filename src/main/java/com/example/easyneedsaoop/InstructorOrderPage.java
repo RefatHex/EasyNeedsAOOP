@@ -69,7 +69,7 @@ public class InstructorOrderPage {
     }
 
     public void backBtnAction(ActionEvent event) {
-
+        backBtn.getScene().getWindow().hide();
     }
 
 

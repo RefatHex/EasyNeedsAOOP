@@ -12,7 +12,7 @@
             <Image url="@AboutUs.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="back_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="36.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="2.0">
+      <Button fx:id="back_btn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#back_btn_Action" prefHeight="41.0" prefWidth="36.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <graphic>
             <ImageView fitHeight="41.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>

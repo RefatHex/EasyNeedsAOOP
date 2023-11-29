@@ -122,94 +122,94 @@ public class Controller {
         }
     }
     public void regBtn() {
-        if(agreement.isSelected()){
             if (suUsername.getText().isEmpty() ||
                     suPassword.getText().isEmpty() ||
                     suQuestion.getSelectionModel().getSelectedItem() == null) {
-                alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Already registered");
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Empty Fields");
                 alert.setHeaderText(null);
-                alert.setContentText("Already registered as a" + (String) suQuestion.getSelectionModel().getSelectedItem());
+                alert.setContentText("Fields cannot be empty");
                 alert.showAndWait();
                 return;
-            }
-            String regData = "INSERT INTO user (name, username, password, occupation, date) VALUES(?, ?, ?, ?, ?)";
-            String checkUsername = "SELECT name, occupation FROM user WHERE username = ?";
+            }else {
+                if (agreement.isSelected()) {
+                    String regData = "INSERT INTO user (name, username, password, occupation, date) VALUES(?, ?, ?, ?, ?)";
+                    String checkUsername = "SELECT name, occupation FROM user WHERE username = ?";
 
-            try {
-                connect = database.connectDB();
-                prepare = connect.prepareStatement(checkUsername);
-                prepare.setString(1, suUsername.getText());
+                    try {
+                        connect = database.connectDB();
+                        prepare = connect.prepareStatement(checkUsername);
+                        prepare.setString(1, suUsername.getText());
 
-                result = prepare.executeQuery();
+                        result = prepare.executeQuery();
 
-                if (result.next()) {
-                    String existingName = result.getString("name");
-                    String existingOccupation = result.getString("occupation");
+                        if (result.next()) {
+                            String existingName = result.getString("name");
+                            String existingOccupation = result.getString("occupation");
 
-                    if (!existingName.equals(suName.getText())) {
-                        alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Username Taken");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Username already exists");
-                        alert.showAndWait();
-                        return;
-                    }
-                    if (existingOccupation.equals(suQuestion.getSelectionModel().getSelectedItem().toString())) {
-                        alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Already registered");
-                        alert.setHeaderText(null);
-                        alert.setContentText( "Already registered as a " + existingOccupation);
-                        alert.showAndWait();
-                        return;
-                    }
-                }
+                            if (!existingName.equals(suName.getText())) {
+                                alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("Username Taken");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Username already exists");
+                                alert.showAndWait();
+                                return;
+                            }
+                            if (existingOccupation.equals(suQuestion.getSelectionModel().getSelectedItem().toString())) {
+                                alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setTitle("Already registered");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Already registered as a " + existingOccupation);
+                                alert.showAndWait();
+                                return;
+                            }
+                        }
 
-                prepare = connect.prepareStatement(regData);
-                prepare.setString(1, suName.getText());
-                data.name =suName.getText().trim();
-                prepare.setString(2, suUsername.getText());
-                prepare.setString(3, suPassword.getText());
-                prepare.setString(4, suQuestion.getSelectionModel().getSelectedItem().toString());
+                        prepare = connect.prepareStatement(regData);
+                        prepare.setString(1, suName.getText());
+                        data.name = suName.getText().trim();
+                        prepare.setString(2, suUsername.getText());
+                        prepare.setString(3, suPassword.getText());
+                        prepare.setString(4, suQuestion.getSelectionModel().getSelectedItem().toString());
 
-                java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
-                prepare.setDate(5, sqlDate);
+                        java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
+                        prepare.setDate(5, sqlDate);
 
-                prepare.executeUpdate();
+                        prepare.executeUpdate();
 //                alert.show("information",,);
-                alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Massage");
-                alert.setHeaderText(null);
-                alert.setContentText("Successfully Registered Account");
-                alert.showAndWait();
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Information Massage");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Successfully Registered Account");
+                        alert.showAndWait();
 
-                suName.setText("");
-                suUsername.setText("");
-                suPassword.setText("");
-                suQuestion.getSelectionModel().clearSelection();
+                        suName.setText("");
+                        suUsername.setText("");
+                        suPassword.setText("");
+                        suQuestion.getSelectionModel().clearSelection();
 
-                TranslateTransition slider = new TranslateTransition();
-                slider.setNode(sidePanel);
-                slider.setToX(0);
-                slider.setDuration(Duration.seconds(.5));
+                        TranslateTransition slider = new TranslateTransition();
+                        slider.setNode(sidePanel);
+                        slider.setToX(0);
+                        slider.setDuration(Duration.seconds(.5));
 
-                slider.setOnFinished((ActionEvent e) -> {
-                    sideAlreadyHave.setVisible(false);
-                    sideCreateButton.setVisible(true);
-                });
-                slider.play();}
-            catch (Exception e) {
-                e.printStackTrace();
+                        slider.setOnFinished((ActionEvent e) -> {
+                            sideAlreadyHave.setVisible(false);
+                            sideCreateButton.setVisible(true);
+                        });
+                        slider.play();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Terms and Conditions not agreed");
+                    alert.showAndWait();
+                }
             }
-        }else{
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Message");
-            alert.setHeaderText(null);
-            alert.setContentText("Terms and Conditions not agreed");
-            alert.showAndWait();
         }
-    }
-
     public void regQuesList(){
         List<String> listQ=new ArrayList<>();
         Collections.addAll(listQ, Type);
