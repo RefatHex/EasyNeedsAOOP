@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="121.0" prefWidth="283.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardUp">
    <children>
-      <ImageView fx:id="image" fitHeight="112.0" fitWidth="139.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <ImageView fx:id="image" fitHeight="112.0" fitWidth="134.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="191.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@4starrating.png" />

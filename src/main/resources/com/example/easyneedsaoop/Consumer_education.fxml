@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="463.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Education_Controller">
+<AnchorPane prefHeight="485.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Education_Controller">
    <children>
-      <ImageView fitHeight="544.0" fitWidth="974.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="487.0" fitWidth="968.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BG.jpg" />
          </image>
@@ -38,16 +37,16 @@
             </ImageView>
          </graphic>
       </Button>
-      <AnchorPane layoutX="113.0" layoutY="41.0" prefHeight="414.0" prefWidth="857.0">
+      <AnchorPane layoutX="113.0" layoutY="41.0" prefHeight="438.0" prefWidth="843.0">
          <children>
             <ScrollPane prefHeight="438.0" prefWidth="854.0">
                <content>
-                  <AnchorPane prefHeight="438.0" prefWidth="863.0">
+                  <AnchorPane prefHeight="438.0" prefWidth="839.0">
                      <children>
-                        <GridPane fx:id="gridPane2" layoutY="97.0" prefHeight="30.0" prefWidth="98.0">
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
+                        <GridPane fx:id="gridPane2">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
                         </GridPane>
                      </children>
                   </AnchorPane>

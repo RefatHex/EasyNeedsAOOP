@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -21,12 +22,12 @@
                     <Font size="27.0" />
                 </font>
             </Label>
-            <Button fx:id="loginButton" layoutX="42.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Login" />
-            <Hyperlink fx:id="forgotButton" layoutX="42.0" layoutY="269.0" onAction="#forgotPasswordAction" text="Forgot Password" />
-         <Button fx:id="exitButton" layoutX="42.0" layoutY="368.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" />
-         <TextField fx:id="usernameField" layoutX="42.0" layoutY="156.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
-         <PasswordField fx:id="passwordField" layoutX="42.0" layoutY="218.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
-         <Label layoutX="100.0" layoutY="442.0" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+            <Button fx:id="loginButton" layoutX="42.0" layoutY="296.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Login" />
+            <Hyperlink fx:id="forgotButton" layoutX="42.0" layoutY="252.0" onAction="#forgotPasswordAction" text="Forgot Password" />
+         <Button fx:id="exitButton" layoutX="42.0" layoutY="359.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="46.0" prefWidth="232.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Exit" />
+         <TextField fx:id="usernameField" layoutX="42.0" layoutY="142.0" prefHeight="36.0" prefWidth="232.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
+         <PasswordField fx:id="passwordField" layoutX="42.0" layoutY="205.0" prefHeight="36.0" prefWidth="232.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
+         <Label layoutX="100.0" layoutY="438.0" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" AnchorPane.leftAnchor="100.0" />
         </AnchorPane>
         <AnchorPane fx:id="signUpForm" layoutY="5.0" prefHeight="462.0" prefWidth="304.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="33.0" layoutY="68.0" prefHeight="39.0" prefWidth="220.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Register Account">
@@ -36,10 +37,12 @@
             </Label>
             <TextField fx:id="suName" layoutX="42.0" layoutY="127.0" prefHeight="40.0" prefWidth="220.0" promptText="Name" styleClass="textfield" stylesheets="@loginsignup.css" />
             <TextField fx:id="suPassword" layoutX="42.0" layoutY="225.0" prefHeight="40.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginsignup.css" />
-            <Button fx:id="suButton" layoutX="44.0" layoutY="342.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
-            <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="277.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a/an" styleClass="white-form" stylesheets="@loginsignup.css" />
+            <Button fx:id="suButton" layoutX="44.0" layoutY="366.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="46.0" prefWidth="220.0" styleClass="login-button" stylesheets="@loginsignup.css" text="Sign Up" />
+            <ComboBox fx:id="suQuestion" layoutX="44.0" layoutY="307.0" prefHeight="39.0" prefWidth="220.0" promptText="I am a/an" styleClass="white-form" stylesheets="@loginsignup.css" />
             <TextField fx:id="suUsername" layoutX="42.0" layoutY="175.0" prefHeight="40.0" prefWidth="220.0" promptText="Username" styleClass="textfield" stylesheets="@loginsignup.css" />
-         <Label layoutX="102.0" layoutY="440.0" text="© 2023 EasyNeeds" />
+         <Label layoutX="104.0" layoutY="451.0" text="© 2023 EasyNeeds" />
+         <CheckBox fx:id="agreement" layoutX="41.0" layoutY="276.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="220.0" text="I agree with all terms and conditions" textFill="#837979" />
+         <Button fx:id="about_btn" layoutX="100.0" layoutY="426.0" mnemonicParsing="false" onAction="#about_btn_Action" styleClass="transparent" stylesheets="@HeadLabel.css" text="about EasyNeeds" />
         </AnchorPane>
         <AnchorPane fx:id="sidePanel" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Label layoutX="55.0" layoutY="329.0" prefHeight="23.0" prefWidth="194.0" text="Create Account" textFill="WHITE">
