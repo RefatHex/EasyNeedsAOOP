@@ -105,7 +105,7 @@
             <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="195.0" layoutY="12.0" prefHeight="21.0" prefWidth="150.0">
+      <ComboBox fx:id="sortOption" layoutX="195.0" layoutY="12.0" onAction="#handleSearchAndSort" prefHeight="21.0" prefWidth="150.0">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius3" />
@@ -120,12 +120,16 @@
       <Separator layoutX="637.0" layoutY="6.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
       <HBox layoutX="765.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
          <children>
-            <TextField opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@SearchLogo.png" />
-               </image>
-            </ImageView>
+            <TextField fx:id="searchLocationBox" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search Location" styleClass="transparent" stylesheets="@HeadLabel.css" />
+            <Button fx:id="searchLocationBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="34.0" prefWidth="46.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@SearchLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <stylesheets>
             <URL value="@HeadLabel.css" />

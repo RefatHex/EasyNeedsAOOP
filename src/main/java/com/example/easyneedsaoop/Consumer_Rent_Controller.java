@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -20,7 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class Consumer_Rent_Controller implements Initializable {
 
@@ -32,72 +34,142 @@ public class Consumer_Rent_Controller implements Initializable {
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
+
+    @FXML
+    private TextField searchLocationBox;
+
+    @FXML
+    private Button searchLocationBtn;
+    @FXML
+    private ComboBox<?> sortOption;
+    public String[] sortOptions={"Relevance","A to Z","Z to A","Newest First","Oldest First"};
+
+    StringBuilder queryBuilder = new StringBuilder("SELECT * FROM `rentinfo` WHERE 1");
+
+
+
     private ObservableList<rentData> cardDetails= FXCollections.observableArrayList();
+    private ObservableList<rentData> executeQuery(String sql) {
+        ObservableList<rentData> listData = FXCollections.observableArrayList();
 
+        Connection connect = null;
+        PreparedStatement prepare = null;
+        ResultSet result = null;
 
-    public ObservableList<rentData> menuGetData(){
-        String sql="SELECT * FROM `rentinfo`";
-        ObservableList<rentData> listData= FXCollections.observableArrayList();
+        try {
+            connect = database.connectDB();
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
 
-        connect=database.connectDB();
-        try{
-            prepare=connect.prepareStatement(sql);
-            result= prepare.executeQuery();
             rentData houseData;
-            while(result.next()){
-                houseData=new rentData(result.getInt("id"),
+            while (result.next()) {
+                houseData = new rentData(
+                        result.getInt("id"),
                         result.getString("houseName"),
                         result.getInt("flatNo"),
                         result.getDouble("rent"),
                         result.getString("address"),
-                        result.getString("image"));
+                        result.getString("image")
+                );
                 listData.add(houseData);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            // Close resources in a finally block to ensure they are closed even if an exception occurs
+            try {
+                if (result != null) result.close();
+                if (prepare != null) prepare.close();
+                if (connect != null) connect.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
         return listData;
     }
-    public void menuDisplayCard(){
-        cardDetails.clear();
-        cardDetails.addAll(menuGetData());
-        int row=0;
-        int column=0;
+
+    public void menuDisplayCard(ObservableList<rentData> displayData) {
+        int row = 0;
+        int column = 0;
+        gridPane.getChildren().clear();
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
-        for(int i=0;i<cardDetails.size();i++){
+
+        for (int i = 0; i < displayData.size(); i++) {
             try {
-                System.out.println(cardDetails.get(i).toString());
-                FXMLLoader loader=new FXMLLoader();
+                System.out.println(displayData.get(i).toString());
+                FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("RentCard.fxml"));
-                AnchorPane pane=loader.load();
-                RentCardDesign cardR= loader.getController();
-                cardR.setData(cardDetails.get(i));
+                AnchorPane pane = loader.load();
+                RentCardDesign cardR = loader.getController();
+                cardR.setData(displayData.get(i));
                 pane.setOnMouseClicked(event -> handleCardClick(cardR));
 
-
-                if(column==4){
-                    column=0;
-                    row+=1;
+                if (column == 4) {
+                    column = 0;
+                    row += 1;
                 }
                 // Add margins to create space between cards
                 Insets margin = new Insets(10);
                 GridPane.setMargin(pane, margin);
-                gridPane.add(pane,column++,row);
+                gridPane.add(pane, column++, row);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
+    private ObservableList<rentData> updateSearchAndSortQuery() {
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM `rentinfo` WHERE 1");
+
+        String locationFilter = searchLocationBox.getText();
+        if (!locationFilter.isEmpty()) {
+            queryBuilder.append(" AND address LIKE '%").append(locationFilter).append("%'");
+        }
+
+        ObservableList<rentData> searchData = executeQuery(queryBuilder.toString());
+
+        String selectedSortOption = String.valueOf(sortOption.getValue());
+        if (selectedSortOption != null) {
+            switch (selectedSortOption) {
+                case "A to Z":
+                    searchData.sort(Comparator.comparing(rentData::getHouseName));
+                    break;
+                case "Z to A":
+                    searchData.sort(Comparator.comparing(rentData::getHouseName).reversed());
+                    break;
+                case "Newest First":
+                    searchData.sort(Comparator.comparing(rentData::getId).reversed());
+                    break;
+                case "Oldest First":
+                    searchData.sort(Comparator.comparing(rentData::getId));
+                    break;
+                // Add more cases as needed
+                default:
+                    // Default case: Do nothing (no sorting)
+                    break;
+            }
+        }
+
+        return searchData;
+    }
+
+    public void handleSearchAndSort() {
+        cardDetails.clear();
+        cardDetails.addAll(updateSearchAndSortQuery());
+
+        menuDisplayCard(cardDetails);
+    }
+
     private void handleCardClick(RentCardDesign card) {
         rentData clickedData = card.getData();
         try {
-            rentData houseData = menuGetSpecificData(clickedData.getId());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("booking_agreements.fxml"));
             AnchorPane pane = loader.load();
 
             BookingAgreements bookingController = loader.getController();
-            bookingController.setData(houseData);
+            bookingController.setData(clickedData);
 
 
             // Create a new stage and set the scene
@@ -110,40 +182,10 @@ public class Consumer_Rent_Controller implements Initializable {
         }
 
     }
-
-
-
-    public rentData menuGetSpecificData(int id) {
-        String sql = "SELECT * FROM `rentinfo` WHERE id=?";
-        rentData houseData = null;
-
-        connect = database.connectDB();
-        try (PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
-            preparedStatement.setInt(1, id);
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                if (resultSet.next()) {
-                    houseData = new rentData(
-                            resultSet.getInt("id"),
-                            resultSet.getString("ownerName"),
-                            resultSet.getString("houseName"),
-                            resultSet.getString("username"),
-                            resultSet.getDouble("rent"),
-                            resultSet.getString("address"),
-                            resultSet.getString("einfo"),
-                            resultSet.getString("image"),
-                            resultSet.getBoolean("bachelor"),
-                            resultSet.getBoolean("sublet"),
-                            resultSet.getBoolean("dn_draw"));
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return houseData;
-    }
         @Override
         public void initialize (URL url, ResourceBundle resourceBundle){
-            menuDisplayCard();
+            menuDisplayCard(executeQuery("SELECT * FROM `rentinfo`"));
+            optionAdder();
         }
         public void backBtnAction() throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
@@ -157,6 +199,11 @@ public class Consumer_Rent_Controller implements Initializable {
 
 
     public void slideCartForm(ActionEvent actionEvent) {
+    }
+    public void optionAdder(){
+        List<String> sortType = new ArrayList<>(Arrays.asList(sortOptions));
+        ObservableList sortData= FXCollections.observableArrayList(sortType);
+        sortOption.setItems(sortData);
     }
 }
 

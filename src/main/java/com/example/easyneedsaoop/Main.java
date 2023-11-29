@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class Main extends Application {
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Consumer_health.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Consumer_rent.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("EasyNeeds");
