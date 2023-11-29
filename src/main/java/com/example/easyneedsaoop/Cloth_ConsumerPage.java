@@ -27,21 +27,21 @@ public class Cloth_ConsumerPage implements Initializable {
 
     @FXML
     private AnchorPane cart_form;
-//
-//    @FXML
-//    private TableView<?> cartTable;
-//
-//    @FXML
-//    private TableColumn<?, ?> col_price;
-//
-//    @FXML
-//    private TableColumn<?, ?> col_productName;
-//
-//    @FXML
-//    private TableColumn<?, ?> col_quantity;
-//
-//    @FXML
-//    private TableColumn<?, ?> col_size;
+
+    @FXML
+    private TableView<?> cartTable;
+
+    @FXML
+    private TableColumn<?, ?> col_price;
+
+    @FXML
+    private TableColumn<?, ?> col_productName;
+
+    @FXML
+    private TableColumn<?, ?> col_quantity;
+
+    @FXML
+    private TableColumn<?, ?> col_size;
 
     @FXML
     private GridPane gridPane1;
@@ -53,6 +53,8 @@ public class Cloth_ConsumerPage implements Initializable {
     private Button cartBtn;
     @FXML
     private Button closeBtn;
+    @FXML
+    private Button removeBtn;
 
 
     private Connection connect;
