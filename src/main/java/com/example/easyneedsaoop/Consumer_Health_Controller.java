@@ -27,6 +27,8 @@ public class Consumer_Health_Controller implements Initializable {
 
     @FXML
     private Button backBtn;
+    @FXML
+    private Button search_btn;
 
     @FXML
     private GridPane gridPane;
@@ -47,14 +49,35 @@ public class Consumer_Health_Controller implements Initializable {
 
     private ObservableList<HealthData> cardDetails= FXCollections.observableArrayList();
 
-    public ObservableList<HealthData> healthGetData() {
-        String sql = "SELECT * FROM `hassisanceinfo`";
+    private String baseQuery = "SELECT * FROM `hassisanceinfo` WHERE 1";
+
+    private ObservableList<HealthData> updateQuery() {
+        StringBuilder queryBuilder = new StringBuilder(baseQuery);
+
+        addFilterToQuery(queryBuilder, "location", locationList.getValue());
+        addFilterToQuery(queryBuilder, "userName", nameList.getValue());
+        addFilterToQuery(queryBuilder, "service", serrviceList.getValue());
+
+        String updatedQuery = queryBuilder.toString();
+        ObservableList<HealthData> updatedData = executeQuery(updatedQuery);
+
+        return updatedData;
+    }
+
+    private void addFilterToQuery(StringBuilder queryBuilder, String columnName, String selectedValue) {
+        if (selectedValue != null && !selectedValue.isEmpty()) {
+            queryBuilder.append(" AND ").append(columnName).append(" = '").append(selectedValue).append("'");
+        }
+    }
+
+    private ObservableList<HealthData> executeQuery(String sql) {
         ObservableList<HealthData> listData = FXCollections.observableArrayList();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
+
             HealthData healthData;
             while (result.next()) {
                 healthData = new HealthData(
@@ -82,9 +105,10 @@ public class Consumer_Health_Controller implements Initializable {
 
     public void healthDisplayCard() {
         cardDetails.clear();
-        cardDetails.addAll(healthGetData());
+        cardDetails.addAll(updateQuery());
         int row = 0;
         int column = 0;
+        gridPane.getChildren().clear();
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
         for (int i = 0; i < cardDetails.size(); i++) {
@@ -165,6 +189,11 @@ public class Consumer_Health_Controller implements Initializable {
         stage.setScene(scene);
         stage.show();
         backBtn.getScene().getWindow().hide();
+    }
+    public void handleSearchBtn(ActionEvent event){
+        cardDetails.clear();
+        cardDetails.addAll(updateQuery());
+        healthDisplayCard();
     }
 
     @Override

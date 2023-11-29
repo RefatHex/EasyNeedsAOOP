@@ -165,12 +165,12 @@
       <AnchorPane fx:id="cart_form" layoutX="-290.0" prefHeight="599.0" prefWidth="289.0">
          <children>
             <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="342.0" prefWidth="278.0" stylesheets="@adminPageStyle.css">
-              <columns>
-                <TableColumn fx:id="menu_col_productName" prefWidth="112.0" text="Product Name" />
-                <TableColumn fx:id="menu_col_quantity" prefWidth="54.0" text="Quantity" />
+               <columns>
+                  <TableColumn fx:id="menu_col_productName" prefWidth="112.0" text="Product Name" />
+                  <TableColumn fx:id="menu_col_quantity" prefWidth="54.0" text="Quantity" />
                   <TableColumn fx:id="menu_col_size" prefWidth="46.0" text="Size" />
                   <TableColumn fx:id="menu_col_price" prefWidth="70.0" text="Price" />
-              </columns>
+               </columns>
             </TableView>
             <Label layoutX="100.0" layoutY="361.0" text="Total:">
                <font>
@@ -191,7 +191,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button layoutX="24.0" layoutY="508.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
+            <Button fx:id="removeBtn" layoutX="24.0" layoutY="508.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

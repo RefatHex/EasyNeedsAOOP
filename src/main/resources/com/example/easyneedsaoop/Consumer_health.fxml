@@ -137,5 +137,6 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
+      <Button fx:id="search_btn" layoutX="743.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleSearchBtn" text="Search" />
    </children>
 </AnchorPane>
