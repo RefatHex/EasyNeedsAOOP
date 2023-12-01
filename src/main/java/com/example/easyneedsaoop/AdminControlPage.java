@@ -1603,6 +1603,44 @@ public void courseInventoryAddBtn() {
             e.printStackTrace();
         }
     }
+    public ObservableList<customersData> customersDataList() {
+
+        ObservableList<customersData> listData = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM user";
+        connect = database.connectDB();
+
+        try {
+
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
+            customersData cData;
+
+            while (result.next()) {
+                cData = new customersData(result.getInt("id"),
+                        result.getDate("Date"),
+                        result.getString("Name"),
+                        result.getString("occupation"));
+                listData.add(cData);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listData;
+    }
+
+    private ObservableList<customersData> customersListData;
+
+    public void customersShowData() {
+        customersListData = customersDataList();
+//
+//        customers_col_customerID.setCellValueFactory(new PropertyValueFactory<>("id"));
+//        customers_col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+//        customers_col_occupation.setCellValueFactory(new PropertyValueFactory<>("occupation"));
+//        customers_col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
+//
+//        customers_tableView.setItems(customersListData);
+    }
 
 
 

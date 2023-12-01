@@ -69,6 +69,7 @@ public class Cloth_ConsumerPage implements Initializable {
     private ObservableList<ClothShopData> cardDetails= FXCollections.observableArrayList();
 
 
+
     public ObservableList<ClothShopData> menuGetData(){
         String sql="SELECT * FROM clothinginfo";
         ObservableList<ClothShopData> listData=FXCollections.observableArrayList();

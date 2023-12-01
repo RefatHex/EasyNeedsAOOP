@@ -51,7 +51,7 @@
       <Label fx:id="shopname" layoutX="93.0" layoutY="202.0" prefHeight="18.0" prefWidth="117.0" text="Label" />
       <Label fx:id="prodName" layoutX="75.0" layoutY="227.0" prefHeight="18.0" prefWidth="146.0" text="Label" />
       <TextField fx:id="quantity" layoutX="73.0" layoutY="281.0" prefHeight="26.0" prefWidth="44.0" />
-      <Button fx:id="orderBtn" layoutX="74.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleEvent" text="Order" />
+      <Button fx:id="orderBtn" layoutX="74.0" layoutY="335.0" mnemonicParsing="false" onAction="#placeOrder" text="Order" />
       <TextField fx:id="size" layoutX="48.0" layoutY="248.0" prefHeight="26.0" prefWidth="56.0" />
       <Label fx:id="id" layoutX="188.0" layoutY="179.0" text="Label" />
    </children>

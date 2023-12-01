@@ -8,6 +8,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class Cloth_MainCard {
 
     @FXML
@@ -47,10 +52,33 @@ public class Cloth_MainCard {
         price.setText(String.valueOf(data.getPrice()));
         prodName.setText(data.getProdName());
     }
-    public void handleEvent(ActionEvent e){
-        if(e.getSource()==orderBtn){
+    public void placeOrder() {
+        String insertSql = "INSERT INTO clothOrder (username, ownerUserName, productID, price, date) VALUES (?, ?, ?, ?, NOW())";
+        Connection connect = database.connectDB();
 
+        try (PreparedStatement preparedStatement = connect.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
+            preparedStatement.setString(1, com.example.easyneedsaoop.data.username);
+            preparedStatement.setString(2, data.getSellerUsername());
+            preparedStatement.setInt(3, data.getProductID());
+            preparedStatement.setDouble(4, data.getPrice());
+
+            int affectedRows = preparedStatement.executeUpdate();
+
+            if (affectedRows > 0) {
+                try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                    } else {
+                        System.out.println("Failed to retrieve order ID.");
+                    }
+                }
+            } else {
+                System.out.println("Failed to place order.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
 
 }
