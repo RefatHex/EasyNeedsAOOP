@@ -8,21 +8,28 @@ public class Server {
     private ServerSocket serverSocket;
 
 
-    public Server(){
+    public Server(ServerSocket serverSocket){
+       this.serverSocket=serverSocket;
+    }
+
+    public void startServer(){
         try{
-            serverSocket = new ServerSocket(33333);
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Server has accepted a connection...");
-                serve(clientSocket);
+            while (!serverSocket.isClosed()){
+                Socket socket=serverSocket.accept();
+                System.out.println("A user connected");
+                ClientHandler clientHandler=new ClientHandler(socket);
+
+                Thread thread=new Thread(clientHandler);
+                thread.start();
             }
         }catch (Exception e){
-            e.printStackTrace();
+
         }
     }
 
-    public void serve(Socket clientSocket) throws IOException, ClassNotFoundException{
-        NetworkUtil networkUtil = new NetworkUtil(clientSocket);
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket=new ServerSocket(1234);
+        Server server=new Server(serverSocket);
+        server.startServer();
     }
-
 }
