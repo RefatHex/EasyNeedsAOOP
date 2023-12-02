@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
 
+
 public class Consumer_Rent_Controller implements Initializable {
 
     @FXML

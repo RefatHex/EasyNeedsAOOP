@@ -1,85 +1,133 @@
 package com.example.easyneedsaoop;
 
-import javafx.scene.layout.BorderWidths;
-
 import java.io.*;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Client {
     private Socket socket;
-    private BufferedReader reader;
-    private BufferedWriter writer;
+    private BufferedReader bufferedReader;
+    private BufferedWriter bufferedWriter;
     private String username;
+    private String targetUsername;
 
-    public Client(Socket socket,String username){
-        try{
-            this.socket=socket;
-            this.reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            this.writer=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        }catch (Exception e){
-            closeAll(socket,reader,writer);
+    public Client(Socket socket, String username, String targetUsername) {
+        try {
+            this.socket = socket;
+            this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            this.username = username;
+            this.targetUsername = targetUsername;
+        } catch (IOException e) {
+            closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
 
-    public void sendMessage(){
-        try{
-            writer.write(username);
-            writer.newLine();
-            writer.flush();
+    public void start() {
+        listenForMessage();
+        sendMessage();
+    }
 
-            Scanner scan=new Scanner(System.in);
-            while(socket.isConnected()){
-                String messageToSend=scan.nextLine();
-                writer.write(username+": "+messageToSend);
-                writer.newLine();
-                writer.flush();
+    public void sendMessage() {
+        try {
+            // Send the target username along with the message
+            String message = targetUsername + ": " + username + ": " + "Hello, this is a test message.";
+
+            bufferedWriter.write(message);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+
+            // Assuming you have a method to execute an SQL INSERT statement, like executeInsert
+            if (executeInsert(username, targetUsername, message)) {
+                System.out.println("Message sent and saved to the database successfully!");
+            } else {
+                System.out.println("Failed to save message to the database.");
             }
-        }catch (Exception e){
-            closeAll(socket,reader,writer);
+
+            Scanner scanner = new Scanner(System.in);
+            while (socket.isConnected()) {
+                String messageToSend = scanner.nextLine();
+                message = targetUsername + ": " + username + ": " + messageToSend;
+
+                bufferedWriter.write(message);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+
+                if (executeInsert(username, targetUsername, message)) {
+                    System.out.println("Message sent and saved to the database successfully!");
+                } else {
+                    System.out.println("Failed to save message to the database.");
+                }
+            }
+        } catch (IOException e) {
+            closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
-    public void listenForMessage(){
-        new Thread(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        String msgFromGroupChat;
-                        while (socket.isConnected()){
-                            try{
-                                msgFromGroupChat=reader.readLine();
-                                System.out.println(msgFromGroupChat);
-                            }catch (Exception e){
-                                closeAll(socket,reader,writer);
-                            }
-                        }
-                    }
-                }
-        ).start();
+
+    private boolean executeInsert(String senderUsername, String receiverUsername, String message) {
+        String insertSql = "INSERT INTO messages (senderUsername, receiverUsername, message) VALUES (?, ?, ?)";
+
+        try (Connection connection = database.connectDB();
+             PreparedStatement preparedStatement = connection.prepareStatement(insertSql)) {
+
+            preparedStatement.setString(1, senderUsername);
+            preparedStatement.setString(2, receiverUsername);
+            preparedStatement.setString(3, message);
+
+            int affectedRows = preparedStatement.executeUpdate();
+            return affectedRows > 0;
+        } catch (Exception e) {
+            closeAll(socket, bufferedReader, bufferedWriter);
+            return false;
+        }
     }
-    public void closeAll(Socket socket ,BufferedReader bufferedReader,BufferedWriter bufferedWriter){
-        try{
-            if(bufferedReader!=null){
+
+    public void listenForMessage() {
+        new Thread(() -> {
+            String msgFromGChat;
+            while (socket.isConnected()) {
+                try {
+                    msgFromGChat = bufferedReader.readLine();
+                    if (msgFromGChat == null) {
+                        System.out.println("Disconnected from the server.");
+                        break;
+                    }
+                    // Check if the message is from the target username
+                    if (msgFromGChat.startsWith(targetUsername + ":")) {
+                        System.out.println(msgFromGChat);
+                    }
+                } catch (IOException e) {
+                    closeAll(socket, bufferedReader, bufferedWriter);
+                }
+            }
+        }).start();
+    }
+
+    public void closeAll(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
+        try {
+            if (bufferedReader != null) {
                 bufferedReader.close();
             }
-            if(bufferedWriter!=null){
+            if (bufferedWriter != null) {
                 bufferedWriter.close();
             }
-            if(socket!=null){
+            if (socket != null) {
                 socket.close();
             }
-        }catch (Exception e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args) throws IOException {
-        Scanner scan=new Scanner(System.in);
-        System.out.println("Enter your username: ");
-        String username=scan.nextLine();
-        Socket socket=new Socket("localhost",1234);
-        Client client=new Client(socket,username);
-        client.listenForMessage();
-        client.sendMessage();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Define your username: ");
+        String targetUsername="nabil";
+        String username = scanner.nextLine();
+        Socket socket = new Socket("localhost", 5555);
+        Client client = new Client(socket, username,targetUsername);
+        client.start();
     }
 }
