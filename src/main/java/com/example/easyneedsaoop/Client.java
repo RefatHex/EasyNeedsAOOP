@@ -1,15 +1,10 @@
 package com.example.easyneedsaoop;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.Initializable;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Client {

@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="ap_main" prefHeight="396.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ChatBox">
    <children>
-      <Button fx:id="button_send" layoutX="398.0" layoutY="348.0" mnemonicParsing="false" onAction="#buttonAction" text="send" />
+      <Button fx:id="button_send" layoutX="398.0" layoutY="348.0" mnemonicParsing="false" text="send" />
       <TextField fx:id="tf_message" layoutX="51.0" layoutY="348.0" prefHeight="25.0" prefWidth="321.0" promptText="Write your message here" />
       <ScrollPane fx:id="sp_main" layoutX="30.0" layoutY="63.0" prefHeight="256.0" prefWidth="418.0">
          <content>
