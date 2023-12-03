@@ -18,7 +18,6 @@ public class Client {
     private BufferedWriter bufferedWriter;
     private String username;
     private String targetUsername;
-    private String sendMessage1; //this message i
 
     public Client(Socket socket, String username, String targetUsername) {
         try {
@@ -32,46 +31,20 @@ public class Client {
         }
     }
 
-    //Use this sendMessage variable, this is collected from the fxml
-    public void setMessageToSend(String message) {
-        this.sendMessage1 = targetUsername + ": " + username + ": " + message;
-    }
 
-    public void start() {
-        listenForMessage();
-        sendMessage();
-    }
 
-    public void sendMessage() {
+    public void sendMessage(String messageToSend) {
         try {
-            // Send the target username along with the message
-            String message = targetUsername + ": " + username + ": " + "Hello, this is a test message.";
+            String message = targetUsername + ": " + username + ": " + messageToSend;
 
             bufferedWriter.write(message);
             bufferedWriter.newLine();
             bufferedWriter.flush();
 
-            // Assuming you have a method to execute an SQL INSERT statement, like executeInsert
             if (executeInsert(username, targetUsername, message)) {
                 System.out.println("Message sent and saved to the database successfully!");
             } else {
                 System.out.println("Failed to save message to the database.");
-            }
-
-            Scanner scanner = new Scanner(System.in);
-            while (socket.isConnected()) {
-                String messageToSend = scanner.nextLine();
-                message = targetUsername + ": " + username + ": " + messageToSend;
-
-                bufferedWriter.write(message);
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
-
-                if (executeInsert(username, targetUsername, message)) {
-                    System.out.println("Message sent and saved to the database successfully!");
-                } else {
-                    System.out.println("Failed to save message to the database.");
-                }
             }
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
@@ -140,6 +113,9 @@ public class Client {
         String username = scanner.nextLine();
         Socket socket = new Socket("localhost", 5555);
         Client client = new Client(socket, username,targetUsername);
-        client.start();
+        System.out.println("Enter your message: ");
+        String messageToSend = scanner.nextLine();
+        client.sendMessage(messageToSend);
+        client.listenForMessage();
     }
 }

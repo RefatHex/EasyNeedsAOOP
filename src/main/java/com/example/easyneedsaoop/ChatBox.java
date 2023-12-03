@@ -128,8 +128,8 @@ public class ChatBox implements Initializable {
                 hBox.getChildren().add(textFlow);
                 vbox_messages.getChildren().add(hBox);
 
-                client.setMessageToSend(messageToSend);
-                client.sendMessage();
+
+                client.sendMessage(messageToSend);
                 tf_message.clear();
             }
         }
