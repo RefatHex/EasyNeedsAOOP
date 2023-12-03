@@ -101,16 +101,16 @@ public class Client {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Define your username: ");
-        String targetUsername="nabil";
-        String username = scanner.nextLine();
-        Socket socket = new Socket("localhost", 5555);
-        Client client = new Client(socket, username,targetUsername);
-        System.out.println("Enter your message: ");
-        String messageToSend = scanner.nextLine();
-        client.sendMessage(messageToSend);
-        client.listenForMessage();
-    }
+//    public static void main(String[] args) throws IOException {
+////        Scanner scanner = new Scanner(System.in);
+////        //System.out.print("Define your username: ");
+////        String targetUsername="nabil";
+////        String username = scanner.nextLine();
+////        Socket socket = new Socket("localhost", 5555);
+////        Client client = new Client(socket, username,targetUsername);
+////        System.out.print("Enter your message: ");
+////        String messageToSend = scanner.nextLine();
+////        client.sendMessage(messageToSend);
+////        client.listenForMessage();
+//    }
 }

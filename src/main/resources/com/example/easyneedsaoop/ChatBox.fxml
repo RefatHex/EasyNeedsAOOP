@@ -26,5 +26,6 @@
             </Label>
          </children>
       </AnchorPane>
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back" />
    </children>
 </AnchorPane>

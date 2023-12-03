@@ -3,14 +3,19 @@ package com.example.easyneedsaoop;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -110,6 +115,16 @@ public class CatringCart implements Initializable {
     }
     public void backBtnAction(){
         backBtn.getScene().getWindow().hide();
+    }
+    public void chatBtnHandler() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
+        AnchorPane pane = loader.load();
+        ChatBox cardR = loader.getController();
+        cardR.setData(data.getUserName());
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(new Scene(pane));
+        stage.show();
     }
 
 

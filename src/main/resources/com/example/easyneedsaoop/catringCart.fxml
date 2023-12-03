@@ -109,7 +109,7 @@
                   <String fx:value="upper-anchore3" />
                </styleClass>
             </Button>
-            <Button fx:id="chatBtn" layoutX="139.0" layoutY="340.0" mnemonicParsing="false" text="Chat">
+            <Button fx:id="chatBtn" layoutX="139.0" layoutY="340.0" mnemonicParsing="false" onAction="#chatBtnHandler" text="Chat">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />

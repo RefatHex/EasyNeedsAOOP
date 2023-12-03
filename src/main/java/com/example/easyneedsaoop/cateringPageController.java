@@ -381,6 +381,17 @@ public class cateringPageController implements Initializable {
         }
     }
 
+    public void handleMessengerBtn() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
+        AnchorPane pane = loader.load();
+        ChatBox cardR = loader.getController();
+        cardR.setData("rasel");
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(new Scene(pane));
+        stage.show();
+    }
+
     public void displayUsername(){
         String user=data.username;
         user=user.substring(0,1).toUpperCase()+ user.substring(1);

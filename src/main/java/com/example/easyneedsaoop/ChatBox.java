@@ -31,8 +31,10 @@ public class ChatBox implements Initializable {
     private Client client;
     private String username=data.username;
     private String targetUsername;
+    @FXML
+    private Button backBtn;
 
-    public void setData(Socket socket,String targetUsername){
+    public void setData(String targetUsername){
         this.targetUsername=targetUsername;
     }
 
@@ -58,6 +60,10 @@ public class ChatBox implements Initializable {
                 tf_message.clear();
             }
         });
+    }
+
+    public void backBtnAction(){
+        backBtn.getScene().getWindow().hide();
     }
 
     // Add a message to the UI
