@@ -1,6 +1,5 @@
 package com.example.easyneedsaoop;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -29,28 +28,28 @@ public class ChatBox implements Initializable {
     @FXML
     private ScrollPane sp_main;
     private Client client;
-    private String username=data.username;
+    private String username = data.username;
     private String targetUsername;
     @FXML
     private Button backBtn;
 
-    public void setData(String targetUsername){
-        this.targetUsername=targetUsername;
+    public void setData(String targetUsername) {
+        this.targetUsername = targetUsername;
+        if (client == null) {
+            initializeClient();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
-            client = new Client(new Socket("localhost", 5555), username, targetUsername);
-            System.out.println("Connected to server");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         vbox_messages.heightProperty().addListener((observable, oldValue, newValue) ->
                 sp_main.setVvalue((Double) newValue));
 
-        client.listenForMessage();
+        if (targetUsername == null) {
+            targetUsername = "defaultTargetUsername";
+        }
+
+        initializeClient();
 
         button_send.setOnAction(event -> {
             String messageToSend = tf_message.getText();
@@ -62,7 +61,18 @@ public class ChatBox implements Initializable {
         });
     }
 
-    public void backBtnAction(){
+    private void initializeClient() {
+        try {
+            client = new Client(new Socket("localhost", 5555), username, targetUsername);
+            System.out.println("Connected to server");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        client.listenForMessage();
+    }
+
+    public void backBtnAction() {
         backBtn.getScene().getWindow().hide();
     }
 
