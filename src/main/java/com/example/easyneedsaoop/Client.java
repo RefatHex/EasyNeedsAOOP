@@ -1,9 +1,15 @@
 package com.example.easyneedsaoop;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.Initializable;
+
 import java.io.*;
 import java.net.Socket;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Client {
@@ -12,6 +18,7 @@ public class Client {
     private BufferedWriter bufferedWriter;
     private String username;
     private String targetUsername;
+    private String sendMessage1; //this message i
 
     public Client(Socket socket, String username, String targetUsername) {
         try {
@@ -23,6 +30,11 @@ public class Client {
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
         }
+    }
+
+    //Use this sendMessage variable, this is collected from the fxml
+    public void setMessageToSend(String message) {
+        this.sendMessage1 = targetUsername + ": " + username + ": " + message;
     }
 
     public void start() {
