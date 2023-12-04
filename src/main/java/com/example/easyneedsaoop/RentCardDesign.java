@@ -41,6 +41,8 @@ public class RentCardDesign implements Initializable {
     @FXML
     private Label rent;
     private rentData data;
+    @FXML
+    private Label room;
 
     public rentData getData() {
         return data;
@@ -51,6 +53,7 @@ public class RentCardDesign implements Initializable {
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
+
     private ObservableList<rentData> cardDetails= FXCollections.observableArrayList();
     public void setData(rentData data) {
         this.data = data;
@@ -60,6 +63,7 @@ public class RentCardDesign implements Initializable {
         houseImage.setImage(image);
         location.setText(data.getAddress());
         rent.setText(String.valueOf(data.getRent()));
+        room.setText(String.valueOf(data.getRoom()));
     }
 
 

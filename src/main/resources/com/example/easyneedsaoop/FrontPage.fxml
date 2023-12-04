@@ -65,7 +65,7 @@
                         <String fx:value="radius2" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="message_btn" layoutX="333.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
+                  <Button fx:id="message_btn" layoutX="319.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="153.0" stylesheets="@loginsignup.css" text="Messages">
                      <graphic>
                         <ImageView fitHeight="51.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -164,13 +164,14 @@ public class rentData {
         this.date=date;
     }
 
-    public rentData(int id, String houseName, int flatNo, double rent, String address, String image) {
+    public rentData(int id, String houseName, int flatNo, double rent, String address, String image, int room) {
         this.id = id;
         this.houseName = houseName;
         this.flatNo = flatNo;
         this.rent = rent;
         this.address = address;
         this.image = image;
+        this.room = room ;
     }
 
     public rentData(int id, String ownerName, String houseName, String userName, double rent, String address, String einfo, String image, boolean bachelor, boolean sublet, boolean dn_draw) {

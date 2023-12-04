@@ -70,7 +70,8 @@ public class Consumer_Rent_Controller implements Initializable {
                         result.getInt("flatNo"),
                         result.getDouble("rent"),
                         result.getString("address"),
-                        result.getString("image")
+                        result.getString("image"),
+                        result.getInt("room")
                 );
                 listData.add(houseData);
             }

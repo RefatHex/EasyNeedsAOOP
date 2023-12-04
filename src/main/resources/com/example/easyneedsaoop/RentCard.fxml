@@ -23,7 +23,7 @@
                </image>
             </ImageView>
             <Label fx:id="location" layoutX="29.0" layoutY="27.0" text="Location:" />
-            <Label layoutX="29.0" layoutY="44.0" text="Room:" />
+            <Label fx:id="room" layoutX="29.0" layoutY="44.0" text="Room:" />
             <Label fx:id="rent" layoutX="29.0" layoutY="61.0" text="Rent:" />
             <Label layoutX="128.0" layoutY="53.0" text="Bachelor:" />
             <Label fx:id="bachelor" layoutX="179.0" layoutY="53.0" prefHeight="18.0" prefWidth="49.0" text="Label" />
