@@ -63,7 +63,7 @@
                                     <Button fx:id="catering_btn" layoutX="14.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" />
                                     <Button fx:id="cateringPaymentBtn" layoutX="16.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
                                     <Label layoutX="57.0" layoutY="576.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
-                                    <Button fx:id="messengerBtn" layoutX="14.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleMessengerBtn" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Messenger" />
+                                    <Button fx:id="chat_btn" layoutX="14.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleMessengerBtn" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                  </children>
                               </AnchorPane>
                            </children>

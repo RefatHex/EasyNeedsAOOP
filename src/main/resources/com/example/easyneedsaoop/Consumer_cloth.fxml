@@ -162,7 +162,8 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
-      <AnchorPane fx:id="cart_form" layoutX="-290.0" prefHeight="599.0" prefWidth="289.0">
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back" />
+      <AnchorPane fx:id="cart_form" layoutX="-289.0" prefHeight="599.0" prefWidth="289.0">
          <children>
             <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="342.0" prefWidth="278.0" stylesheets="@adminPageStyle.css">
                <columns>
@@ -191,7 +192,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="removeBtn" layoutX="24.0" layoutY="508.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
+            <Button fx:id="removeBtn" layoutX="27.0" layoutY="488.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -200,7 +201,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button layoutX="147.0" layoutY="508.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" stylesheets="@HeadLabel.css" text="Receipt">
+            <Button layoutX="145.0" layoutY="488.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" stylesheets="@HeadLabel.css" text="Receipt">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -210,6 +211,23 @@
                </styleClass>
             </Button>
             <Button fx:id="closeBtn" layoutX="54.0" layoutY="555.0" mnemonicParsing="false" onAction="#slideCartForm" prefHeight="25.0" prefWidth="46.0" text="Close" />
+            <Button fx:id="chatBtn" layoutX="171.0" layoutY="547.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="radius" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ChatLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
          <stylesheets>
             <URL value="@HeadLabel.css" />
@@ -222,6 +240,5 @@
             <String fx:value="radius" />
          </styleClass>
       </AnchorPane>
-      <Button fx:id="backBtn" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back" />
    </children>
 </AnchorPane>

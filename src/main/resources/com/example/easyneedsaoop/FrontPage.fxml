@@ -23,7 +23,7 @@
                <image>
                   <Image url="@BG.jpg" />
                </image></ImageView>
-            <AnchorPane layoutX="334.0" layoutY="360.0" prefHeight="77.0" prefWidth="320.0" stylesheets="@HeadLabel.css">
+            <AnchorPane layoutX="258.0" layoutY="338.0" prefHeight="77.0" prefWidth="471.0" stylesheets="@HeadLabel.css">
                <styleClass>
                   <String fx:value="radius" />
                   <String fx:value="radius2" />
@@ -53,6 +53,23 @@
                         <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Orders.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="User-button" />
+                        <String fx:value="radius2" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="message_btn" layoutX="333.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ChatLogo.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -96,7 +113,7 @@
                   <Image url="@USERLOGO.png" />
                </image>
             </ImageView>
-            <Button fx:id="logoutBtn" layoutX="44.0" layoutY="410.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="55.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE">
+            <Button fx:id="logoutBtn" layoutX="434.0" layoutY="434.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE">
                <styleClass>
                   <String fx:value="upper-anchore" />
                   <String fx:value="User-button" />

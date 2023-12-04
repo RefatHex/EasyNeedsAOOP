@@ -60,8 +60,9 @@
                                     </Button>
                                     <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                                     <Button fx:id="inventory_btn" layoutX="14.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" />
-                                    <Button fx:id="payment_btn" layoutX="15.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
+                                    <Button fx:id="payment_btn" layoutX="16.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
                                     <Label layoutX="57.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Button fx:id="chat_btn" layoutX="15.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                  </children>
                               </AnchorPane>
                            </children>
