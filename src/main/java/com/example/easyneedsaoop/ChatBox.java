@@ -1,5 +1,6 @@
 package com.example.easyneedsaoop;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -35,9 +36,10 @@ public class ChatBox implements Initializable {
 
     public void setData(String targetUsername) {
         this.targetUsername = targetUsername;
-        if (client == null) {
-            initializeClient();
-        }
+//        if (client == null) {
+//            initializeClient();
+//        }
+        initializeClient();
     }
 
     @Override
@@ -55,7 +57,7 @@ public class ChatBox implements Initializable {
             String messageToSend = tf_message.getText();
             if (!messageToSend.isEmpty()) {
                 addMessageToUI("You: " + messageToSend, true);
-                client.sendMessage(messageToSend);
+                new Thread(() -> client.sendMessage(messageToSend)).start();
                 tf_message.clear();
             }
         });
@@ -63,17 +65,27 @@ public class ChatBox implements Initializable {
 
     private void initializeClient() {
         try {
-            client = new Client(new Socket("localhost", 5555), username, targetUsername);
+            client = new Client(new Socket("localhost", 5555), username, targetUsername,this);
             System.out.println("Connected to server");
+            client.listenForMessage();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        client.listenForMessage();
     }
 
     public void backBtnAction() {
         backBtn.getScene().getWindow().hide();
+    }
+
+    public void receiveMessageFromServer(String message) {
+        // Assuming the message format is "SenderUsername: Message"
+//        String[] parts = message.split(": ");
+
+//            String senderUsername = parts[0];
+//            String messageContent = parts[2];
+
+        addLabel( message);
+
     }
 
     // Add a message to the UI
@@ -93,5 +105,24 @@ public class ChatBox implements Initializable {
 
         hBox.getChildren().add(textFlow);
         vbox_messages.getChildren().add(hBox);
+    }
+
+    // Add this method to handle incoming messages and add them to the UI
+    public void addLabel(String message) {
+        Platform.runLater(() -> {
+            HBox hBox = new HBox();
+            hBox.setAlignment(Pos.CENTER_LEFT);
+            hBox.setPadding(new Insets(5, 5, 5, 10));
+
+            Text text = new Text(message);
+            TextFlow textFlow = new TextFlow(text);
+            textFlow.setStyle("-fx-background-color: rgb(233,233,235); " +
+                    "-fx-background-radius: 20px;");
+
+            textFlow.setPadding(new Insets(5, 10, 5, 10));
+            hBox.getChildren().add(textFlow);
+
+            vbox_messages.getChildren().add(hBox);
+        });
     }
 }

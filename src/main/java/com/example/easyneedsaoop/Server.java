@@ -1,50 +1,75 @@
 package com.example.easyneedsaoop;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server {
 
-    private ServerSocket serverSocket;
+    private static final int PORT = 5555;
+    private static Set<PrintWriter> clientWriters = new HashSet<>();
 
-    public Server(ServerSocket serverSocket) {
-        this.serverSocket=serverSocket;
-    }
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.println("Server is running and waiting for clients...");
 
-    public void startServer(){
-        try{
+            ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-            while(!serverSocket.isClosed()){
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("New client connected: " + clientSocket);
 
-                Socket socket = serverSocket.accept();
-                System.out.println("Someone has connected to the server!");
-                ClientHandler clientHandler = new ClientHandler(socket);
+                // Create a new PrintWriter for the client
+                PrintWriter writer = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()), true);
 
-                Thread thread = new Thread(clientHandler);
-                thread.start();
+                // Add the PrintWriter to the set of client writers
+                clientWriters.add(writer);
 
+                // Handle each client in a separate thread
+                executorService.submit(() -> handleClient(clientSocket, writer));
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
 
         }
     }
 
-    public void closeServerSocket(){
-        try {
-            if(serverSocket != null){
-                serverSocket.close();
-            }
-        }catch(IOException e){
+    private static void handleClient(Socket clientSocket, PrintWriter writer) {
+        try (
+                BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
+        ) {
+            String clientAddress = clientSocket.getInetAddress().toString();
+            System.out.println("Handling client at " + clientAddress);
 
-            e.printStackTrace();
+            // Your logic for handling messages from the client goes here
+            while (true) {
+                String message = reader.readLine();
+                if (message == null) {
+                    System.out.println("Client disconnected: " + clientAddress);
+                    break;
+                }
+
+                // Broadcast the received message to all connected clients
+                broadcastMessage(message, writer);
+            }
+        } catch (IOException e) {
+        } finally {
+            // Remove the writer when the client disconnects
+            clientWriters.remove(writer);
+            broadcastMessage("Server: Client left the room.",writer);
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(5555);
-        Server server = new Server(serverSocket);
-        server.startServer();
-
+    private static void broadcastMessage(String message, PrintWriter senderWriter) {
+        System.out.println("Broadcasting message: " + message);
+        for (PrintWriter writer : clientWriters) {
+            if (writer != senderWriter) {
+                writer.println(message);
+            }
+        }
     }
+
 }

@@ -1,6 +1,5 @@
 package com.example.easyneedsaoop;
 
-
 import java.io.*;
 import java.net.Socket;
 import java.sql.Connection;
@@ -13,25 +12,24 @@ public class Client {
     private BufferedWriter bufferedWriter;
     private String username;
     private String targetUsername;
+    ChatBox chatBox;
 
-    public Client(Socket socket, String username, String targetUsername) {
+    public Client(Socket socket, String username, String targetUsername, ChatBox chatBox) {
         try {
             this.socket = socket;
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             this.bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.username = username;
             this.targetUsername = targetUsername;
+            this.chatBox = chatBox;
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
 
 
-
-    public void sendMessage(String messageToSend) {
+    public void sendMessage(String message) {
         try {
-            String message = targetUsername + ": " + username + ": " + messageToSend;
-
             bufferedWriter.write(message);
             bufferedWriter.newLine();
             bufferedWriter.flush();
@@ -39,10 +37,23 @@ public class Client {
             if (executeInsert(username, targetUsername, message)) {
                 System.out.println("Message sent and saved to the database successfully!");
             } else {
-                System.out.println("Failed to save message to the database.");
+                System.out.println("Failed to save the message to the database.");
             }
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
+        }
+    }
+
+    private void getUserInput() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            while (socket.isConnected()) {
+                System.out.print("Enter your message: ");
+                String messageToSend = scanner.nextLine();
+                sendMessage(targetUsername + ": " + username + ": " + messageToSend);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -74,10 +85,11 @@ public class Client {
                         System.out.println("Disconnected from the server.");
                         break;
                     }
-                    // Check if the message is from the target username
-                    if (msgFromGChat.startsWith(targetUsername + ":")) {
+//                     Check if the message is from the target username
+                    //if (msgFromGChat.startsWith(targetUsername + ":")) {
                         System.out.println(msgFromGChat);
-                    }
+                    this.chatBox.receiveMessageFromServer(msgFromGChat);
+                    //}
                 } catch (IOException e) {
                     closeAll(socket, bufferedReader, bufferedWriter);
                 }
@@ -100,17 +112,4 @@ public class Client {
             e.printStackTrace();
         }
     }
-
-//    public static void main(String[] args) throws IOException {
-////        Scanner scanner = new Scanner(System.in);
-////        //System.out.print("Define your username: ");
-////        String targetUsername="nabil";
-////        String username = scanner.nextLine();
-////        Socket socket = new Socket("localhost", 5555);
-////        Client client = new Client(socket, username,targetUsername);
-////        System.out.print("Enter your message: ");
-////        String messageToSend = scanner.nextLine();
-////        client.sendMessage(messageToSend);
-////        client.listenForMessage();
-//    }
 }
