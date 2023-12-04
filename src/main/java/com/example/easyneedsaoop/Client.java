@@ -1,5 +1,6 @@
 package com.example.easyneedsaoop;
 
+
 import java.io.*;
 import java.net.Socket;
 import java.sql.Connection;
@@ -7,12 +8,13 @@ import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class Client {
+
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
     private String username;
     private String targetUsername;
-    ChatBox chatBox;
+    private ChatBox chatBox;
 
     public Client(Socket socket, String username, String targetUsername, ChatBox chatBox) {
         try {
@@ -22,11 +24,19 @@ public class Client {
             this.username = username;
             this.targetUsername = targetUsername;
             this.chatBox = chatBox;
+
+            // Send the target username to the server
+            sendTargetUsername();
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
 
+    private void sendTargetUsername() throws IOException {
+        bufferedWriter.write(targetUsername);
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
+    }
 
     public void sendMessage(String message) {
         try {
@@ -41,19 +51,6 @@ public class Client {
             }
         } catch (IOException e) {
             closeAll(socket, bufferedReader, bufferedWriter);
-        }
-    }
-
-    private void getUserInput() {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            while (socket.isConnected()) {
-                System.out.print("Enter your message: ");
-                String messageToSend = scanner.nextLine();
-                sendMessage(targetUsername + ": " + username + ": " + messageToSend);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -85,11 +82,12 @@ public class Client {
                         System.out.println("Disconnected from the server.");
                         break;
                     }
-//                     Check if the message is from the target username
-                    //if (msgFromGChat.startsWith(targetUsername + ":")) {
-                        System.out.println(msgFromGChat);
+
+                    // Check if the message is from the target username
+//                    if (msgFromGChat.startsWith(targetUsername + ":")) {
+                    System.out.println(msgFromGChat);
                     this.chatBox.receiveMessageFromServer(msgFromGChat);
-                    //}
+//                    }
                 } catch (IOException e) {
                     closeAll(socket, bufferedReader, bufferedWriter);
                 }
