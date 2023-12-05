@@ -17,6 +17,9 @@ import javafx.scene.text.TextFlow;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ChatBox implements Initializable {
@@ -33,6 +36,7 @@ public class ChatBox implements Initializable {
     private String targetUsername;
     @FXML
     private Button backBtn;
+    Connection connection;
 
     public void setData(String targetUsername) {
         this.targetUsername = targetUsername;
@@ -50,6 +54,12 @@ public class ChatBox implements Initializable {
 
         initializeClient();
 
+        // Retrieve and display existing messages
+        List<String> existingMessages = getMessagesBySenderAndReceiver(username, targetUsername);
+        for (String message : existingMessages) {
+            addMessageToUI(message, false);
+        }
+
         button_send.setOnAction(event -> {
             String messageToSend = tf_message.getText();
             if (!messageToSend.isEmpty()) {
@@ -62,10 +72,11 @@ public class ChatBox implements Initializable {
 
     private void initializeClient() {
         try {
+             connection = database.connectDB();
             client = new Client(new Socket("localhost", 5555), username, targetUsername, this);
             System.out.println("Connected to server");
             client.listenForMessage();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -97,6 +108,35 @@ public class ChatBox implements Initializable {
             hBox.getChildren().add(textFlow);
             vbox_messages.getChildren().add(hBox);
         });
+    }
+
+    // Retrieve messages from the database based on sender and receiver
+    private List<String> getMessagesBySenderAndReceiver(String sender, String receiver) {
+        List<String> messages = new ArrayList<>();
+
+        try {
+            String sql = "SELECT senderUsername, message FROM messages WHERE (senderUsername = ? AND receiverUsername = ?) OR (senderUsername = ? AND receiverUsername = ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, sender);
+                preparedStatement.setString(2, receiver);
+                preparedStatement.setString(3, receiver);
+                preparedStatement.setString(4, sender);
+
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        String senderUsername = resultSet.getString("senderUsername");
+                        String message = resultSet.getString("message");
+
+                        messages.add(senderUsername + ": " + message);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(messages.toString());
+
+        return messages;
     }
 
     // Add this method to handle incoming messages and add them to the UI

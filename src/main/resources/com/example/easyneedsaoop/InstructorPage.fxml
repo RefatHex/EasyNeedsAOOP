@@ -15,6 +15,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
@@ -71,7 +73,7 @@
                      <center>
                         <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                            <children>
-                              <AnchorPane fx:id="instructor_form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
+                              <AnchorPane fx:id="instructor_form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css" visible="false">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -336,6 +338,33 @@
                                                 </AreaChart>
                                              </children>
                                           </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="chat_form" layoutX="5.0" layoutY="-10.0" prefHeight="620.0" prefWidth="902.0" visible="false">
+                                 <children>
+                                    <AnchorPane layoutX="41.0" layoutY="4.0" prefHeight="600.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ScrollPane prefHeight="594.0" prefWidth="858.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="658.0" prefWidth="847.0">
+                                                   <children>
+                                                      <GridPane fx:id="messageGridPane" prefHeight="49.0" prefWidth="207.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </ScrollPane>
                                        </children>
                                     </AnchorPane>
                                  </children>

@@ -1,16 +1,21 @@
 package com.example.easyneedsaoop;
 
-public class messages {
+public class messageData {
     int id;
     private String message;
     private String senderUsername;
     private String receiverUsername;
 
-    public messages(int id, String message, String senderUsername, String receiverUsername) {
+    public messageData(int id, String message, String senderUsername, String receiverUsername) {
         this.id = id;
         this.message = message;
         this.senderUsername = senderUsername;
         this.receiverUsername = receiverUsername;
+    }
+
+    public messageData(String senderUsername,String message) {
+        this.message = message;
+        this.senderUsername = senderUsername;
     }
 
     public int getId() {

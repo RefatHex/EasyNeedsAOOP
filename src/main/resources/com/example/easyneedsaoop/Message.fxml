@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="63.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.OrderShow">
+<AnchorPane prefHeight="63.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Message">
    <children>
       <Label fx:id="customer_name" layoutX="14.0" layoutY="20.0" prefHeight="23.0" prefWidth="115.0" text="User Name" />
-      <Label fx:id="house_Name" layoutX="146.0" layoutY="20.0" prefHeight="23.0" prefWidth="102.0" text="Last Message" />
-      <Button fx:id="chatBtn" layoutX="300.0" layoutY="11.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
+      <Label fx:id="last_msg" layoutX="146.0" layoutY="20.0" prefHeight="23.0" prefWidth="102.0" text="Last Message" />
+      <Button fx:id="chatBtn" layoutX="300.0" layoutY="11.0" mnemonicParsing="false" onAction="#chatBtnHandler" prefHeight="32.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius" />

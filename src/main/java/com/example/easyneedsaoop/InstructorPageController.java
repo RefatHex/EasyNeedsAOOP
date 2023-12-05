@@ -6,23 +6,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
+import java.util.Date;
 
 public class InstructorPageController implements Initializable {
 
@@ -137,6 +137,15 @@ public class InstructorPageController implements Initializable {
 
     private Alert alert;
     private Image image;
+    @FXML
+    private GridPane messageGridPane;
+
+    @FXML
+    private Button chat_btn;
+
+    @FXML
+    private AnchorPane chat_form;
+
 
     private String[] courseCategoryOption ={"Education","Tech","Programming","Study Material","Motivational"};
     private String[] courseTypeOption ={"Weekly","Yearly","Semester","Trimester"};
@@ -306,6 +315,55 @@ public class InstructorPageController implements Initializable {
             }
         }
     }
+    private Map<String, StringBuilder> getMessagesByReceiver() {
+        Map<String, StringBuilder> messagesMap = new HashMap<>();
+        String sql = "SELECT senderUsername, message FROM messages WHERE receiverUsername = ?";
+        try (
+             PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, data.username);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    String senderUsername = resultSet.getString("senderUsername");
+                    String message = resultSet.getString("message");
+
+                    messagesMap.computeIfAbsent(senderUsername, k -> new StringBuilder()).append(message).append("\n");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return messagesMap;
+    }
+    public void showMessageList() {
+        int row = 0;
+        int column = 0;
+        messageGridPane.getChildren().clear();
+        messageGridPane.getRowConstraints().clear();
+        messageGridPane.getColumnConstraints().clear();
+        Map<String, StringBuilder> messagesMap=getMessagesByReceiver();
+
+        for (Map.Entry<String, StringBuilder> entry : messagesMap.entrySet()) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Message.fxml"));
+                AnchorPane pane = loader.load();
+                Message card = loader.getController();
+
+                card.setData(new messageData(entry.getKey(), entry.getValue().toString()));
+
+
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                messageGridPane.setMargin(pane, margin);
+                messageGridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public void InventoryImportBtn(){
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
@@ -412,9 +470,11 @@ public class InstructorPageController implements Initializable {
         if(e.getSource()==dashboard_btn){
             dashboard_form.setVisible(true);
             instructor_form.setVisible(false);
+            chat_form.setVisible(false);
         }else if(e.getSource()==inventory_btn){
             dashboard_form.setVisible(false);
             instructor_form.setVisible(true);
+            chat_form.setVisible(false);
         }else if(e.getSource()==payment_btn){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
@@ -427,6 +487,11 @@ public class InstructorPageController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
+        }else if(e.getSource()==chat_btn){
+            dashboard_form.setVisible(false);
+            instructor_form.setVisible(false);
+            chat_form.setVisible(true);
+            showMessageList();
         }
     }
 
@@ -435,5 +500,6 @@ public class InstructorPageController implements Initializable {
         optionAdder();
         connect = database.connectDB();
         courseInventoryShowData();
+        showMessageList();
     }
 }
