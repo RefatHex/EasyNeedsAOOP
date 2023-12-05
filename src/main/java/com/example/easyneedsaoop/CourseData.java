@@ -116,4 +116,11 @@ public class CourseData {
         this.type = type;
         this.date = date;
     }
+
+    public CourseData(int courseID, String instructorName, String userName, Date date) {
+        this.courseID = courseID;
+        this.instructorName = instructorName;
+        this.userName = userName;
+        this.date = date;
+    }
 }

@@ -151,7 +151,7 @@ public class InstructorPageController implements Initializable {
     @FXML
     private GridPane gridPane;
 
-    private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
+    private ObservableList<CourseData> orderDetails= FXCollections.observableArrayList();
 
 
     private String[] courseCategoryOption ={"Education","Tech","Programming","Study Material","Motivational"};
@@ -506,32 +506,29 @@ public class InstructorPageController implements Initializable {
             dashboard_form.setVisible(false);
             instructor_form.setVisible(false);
             order_form.setVisible(true);
+            menuGetOrderData();
         }
     }
-    public ObservableList<rentOrderData> menuGetOrderData() {
-        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
-        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+    public ObservableList<CourseData> menuGetOrderData() {
+        String sql = "SELECT * FROM `enrolldb` WHERE ownerName = ?";
+        ObservableList<CourseData> listOrderData = FXCollections.observableArrayList();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             prepare.setString(1, data.username);
             result = prepare.executeQuery();
-            rentOrderData orderData;
+            CourseData orderData;
             while (result.next()) {
-                orderData = new rentOrderData(result.getInt("id"),
+                orderData = new CourseData(
+                        result.getInt("cardID"),
                         result.getString("ownerName"),
-                        result.getString("houseName"),
-                        result.getString("ownerUserName"),
-                        result.getString("tanentUserName"),
-                        result.getDouble("rent"),
-                        result.getString("address"),
-                        result.getString("nidImage"),
+                        result.getString("username"),
                         result.getDate("date"));
-                listOrderData.add(orderData);
+                        listOrderData.add(orderData);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            } catch (Exception ex) {
+            throw new RuntimeException(ex);
         }
         return listOrderData;
     }
@@ -544,7 +541,7 @@ public class InstructorPageController implements Initializable {
         int column = 0;
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
-        for (rentOrderData orderDetail : orderDetails) {
+        for (CourseData orderDetail : orderDetails) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("order_show.fxml"));

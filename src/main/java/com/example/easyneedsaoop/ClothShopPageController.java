@@ -33,7 +33,7 @@ public class ClothShopPageController implements Initializable {
     @FXML
     private AnchorPane chat_form;
 
-    private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
+    private ObservableList<ClothShopData> orderDetails= FXCollections.observableArrayList();
     @FXML
     private GridPane messageGridPane;
     @FXML
@@ -442,6 +442,7 @@ public void InventoryImportBtn(){
             dashboard_form.setVisible(false);
             Clothing_Form.setVisible(false);
             order_form.setVisible(true);
+            menuGetOrderData();
         }
 
     }
@@ -495,25 +496,21 @@ public void InventoryImportBtn(){
             }
         }
     }
-    public ObservableList<rentOrderData> menuGetOrderData() {
-        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
-        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+    public ObservableList<ClothShopData> menuGetOrderData() {
+        String sql = "SELECT * FROM `clothorder` WHERE ownerUserName = ?";
+        ObservableList<ClothShopData> listOrderData = FXCollections.observableArrayList();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             prepare.setString(1, data.username);
             result = prepare.executeQuery();
-            rentOrderData orderData;
+            ClothShopData orderData;
             while (result.next()) {
-                orderData = new rentOrderData(result.getInt("id"),
-                        result.getString("ownerName"),
-                        result.getString("houseName"),
-                        result.getString("ownerUserName"),
-                        result.getString("tanentUserName"),
-                        result.getDouble("rent"),
-                        result.getString("address"),
-                        result.getString("nidImage"),
+                orderData = new ClothShopData(result.getInt("productid"),
+                        result.getString("username"),
+                        result.getString("ownerusername"),
+                        result.getDouble(String.valueOf("price")),
                         result.getDate("date"));
                 listOrderData.add(orderData);
             }
@@ -531,7 +528,7 @@ public void InventoryImportBtn(){
         int column = 0;
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
-        for (rentOrderData orderDetail : orderDetails) {
+        for (ClothShopData orderDetail : orderDetails) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("order_show.fxml"));
