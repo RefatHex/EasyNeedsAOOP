@@ -87,7 +87,7 @@ public class UserTypeController  {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(location));
             Stage stage = new Stage();
             Scene scene = new Scene(fxmlLoader.load());
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("EasyNeeds");
             stage.setScene(scene);
             stage.show();

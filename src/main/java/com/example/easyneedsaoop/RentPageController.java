@@ -24,10 +24,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.sql.SQLException;
+import java.util.*;
 
 public class RentPageController implements Initializable {
 
@@ -47,6 +45,8 @@ public class RentPageController implements Initializable {
 
     @FXML
     private Button logoutBtn;
+    @FXML
+    private AnchorPane chat_form;
 
     @FXML
     private Button order_btn;
@@ -154,6 +154,8 @@ public class RentPageController implements Initializable {
 
     @FXML
     private TextField rentIn_rooms;
+    @FXML
+    private Button chat_btn;
 
     @FXML
     private ComboBox<?> rentIn_subletOption;
@@ -171,6 +173,8 @@ public class RentPageController implements Initializable {
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
+    @FXML
+    private GridPane messageGridPane;
     private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
 
     @Override
@@ -201,7 +205,7 @@ public class RentPageController implements Initializable {
                 Stage stage=new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 stage.setScene(scene);
                 stage.show();
             }
@@ -434,6 +438,7 @@ public class RentPageController implements Initializable {
 
         }
     }
+    //copy this
     public ObservableList<rentOrderData> menuGetOrderData() {
         String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
         ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
@@ -462,6 +467,7 @@ public class RentPageController implements Initializable {
         return listOrderData;
     }
 
+    //copy this
     public void menuDisplayOrderCard() {
         orderDetails.clear();
         orderDetails.addAll(menuGetOrderData());
@@ -502,7 +508,7 @@ public class RentPageController implements Initializable {
             rentIn_form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
@@ -512,7 +518,61 @@ public class RentPageController implements Initializable {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             order_form.setVisible(true);
+        }else if(event.getSource()==chat_btn){
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            chat_form.setVisible(true);
+            showMessageList();
+        }
+    }
+    private Map<String, StringBuilder> getMessagesByReceiver() {
+        Map<String, StringBuilder> messagesMap = new HashMap<>();
+        String sql = "SELECT senderUsername, message FROM messages WHERE receiverUsername = ?";
+        try (
+                PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
 
+            preparedStatement.setString(1, data.username);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    String senderUsername = resultSet.getString("senderUsername");
+                    String message = resultSet.getString("message");
+
+                    messagesMap.computeIfAbsent(senderUsername, k -> new StringBuilder()).append(message).append("\n");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return messagesMap;
+    }
+    //copy this to other classes
+    public void showMessageList() {
+        int row = 0;
+        int column = 0;
+        messageGridPane.getChildren().clear();
+        messageGridPane.getRowConstraints().clear();
+        messageGridPane.getColumnConstraints().clear();
+        Map<String, StringBuilder> messagesMap=getMessagesByReceiver();
+
+        for (Map.Entry<String, StringBuilder> entry : messagesMap.entrySet()) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Message.fxml"));
+                AnchorPane pane = loader.load();
+                Message card = loader.getController();
+
+                card.setData(new messageData(entry.getKey(), entry.getValue().toString()));
+
+
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                messageGridPane.setMargin(pane, margin);
+                messageGridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

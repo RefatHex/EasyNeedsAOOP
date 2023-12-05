@@ -75,7 +75,7 @@ public class InstructorCard {
 
             // Create a new stage and set the scene
             Stage stage = new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (Exception e) {

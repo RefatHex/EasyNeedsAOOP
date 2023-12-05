@@ -176,7 +176,7 @@ public class Consumer_Rent_Controller implements Initializable {
 
             // Create a new stage and set the scene
             Stage stage = new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (Exception e) {
@@ -192,7 +192,7 @@ public class Consumer_Rent_Controller implements Initializable {
         public void backBtnAction() throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
             Stage stage=new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();

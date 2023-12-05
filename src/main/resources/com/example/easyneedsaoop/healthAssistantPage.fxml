@@ -15,6 +15,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
@@ -58,11 +60,12 @@
                                           <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                                    <Button fx:id="inventory_btn" layoutX="14.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="15.0" />
-                                    <Button fx:id="payment_btn" layoutX="16.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
+                                    <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                                    <Button fx:id="inventory_btn" layoutX="15.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                                    <Button fx:id="payment_btn" layoutX="16.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
                                     <Label layoutX="57.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                     <Button fx:id="chat_btn" layoutX="15.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
+                                    <Button fx:id="order_btn" layoutX="18.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -352,6 +355,51 @@
                                           <TextField fx:id="hospital" layoutX="695.0" layoutY="142.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter hospital Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="chat_form" prefHeight="620.0" prefWidth="902.0" visible="false">
+                                 <children>
+                                    <AnchorPane layoutX="41.0" layoutY="4.0" prefHeight="600.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ScrollPane prefHeight="594.0" prefWidth="858.0">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="658.0" prefWidth="847.0">
+                                                   <children>
+                                                      <GridPane fx:id="messageGridPane" prefHeight="49.0" prefWidth="207.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="order_form" prefHeight="600.0" prefWidth="889.0" visible="false">
+                                 <children>
+                                    <Label layoutX="400.0" layoutY="22.0" prefHeight="21.0" prefWidth="89.0" text="Order List" />
+                                    <ScrollPane layoutX="72.0" layoutY="54.0" prefHeight="518.0" prefWidth="766.0">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="859.0">
+                                             <children>
+                                                <GridPane fx:id="gridPane" layoutY="14.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
                                  </children>
                               </AnchorPane>
                            </children>

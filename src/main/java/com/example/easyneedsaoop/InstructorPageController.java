@@ -139,12 +139,19 @@ public class InstructorPageController implements Initializable {
     private Image image;
     @FXML
     private GridPane messageGridPane;
-
+    @FXML
+    private Button order_btn;
     @FXML
     private Button chat_btn;
-
+    @FXML
+    private AnchorPane order_form;
     @FXML
     private AnchorPane chat_form;
+
+    @FXML
+    private GridPane gridPane;
+
+    private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
 
 
     private String[] courseCategoryOption ={"Education","Tech","Programming","Study Material","Motivational"};
@@ -315,6 +322,8 @@ public class InstructorPageController implements Initializable {
             }
         }
     }
+
+    //copy this to other classes
     private Map<String, StringBuilder> getMessagesByReceiver() {
         Map<String, StringBuilder> messagesMap = new HashMap<>();
         String sql = "SELECT senderUsername, message FROM messages WHERE receiverUsername = ?";
@@ -337,6 +346,7 @@ public class InstructorPageController implements Initializable {
 
         return messagesMap;
     }
+    //copy this to other classes
     public void showMessageList() {
         int row = 0;
         int column = 0;
@@ -440,7 +450,7 @@ public class InstructorPageController implements Initializable {
                 logoutBtn.getScene().getWindow().hide();
                 Stage stage=new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);
@@ -492,6 +502,63 @@ public class InstructorPageController implements Initializable {
             instructor_form.setVisible(false);
             chat_form.setVisible(true);
             showMessageList();
+        }else if (e.getSource() == order_btn){
+            dashboard_form.setVisible(false);
+            instructor_form.setVisible(false);
+            order_form.setVisible(true);
+        }
+    }
+    public ObservableList<rentOrderData> menuGetOrderData() {
+        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
+        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, data.username);
+            result = prepare.executeQuery();
+            rentOrderData orderData;
+            while (result.next()) {
+                orderData = new rentOrderData(result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("houseName"),
+                        result.getString("ownerUserName"),
+                        result.getString("tanentUserName"),
+                        result.getDouble("rent"),
+                        result.getString("address"),
+                        result.getString("nidImage"),
+                        result.getDate("date"));
+                listOrderData.add(orderData);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listOrderData;
+    }
+
+    //copy this
+    public void menuDisplayOrderCard() {
+        orderDetails.clear();
+        orderDetails.addAll(menuGetOrderData());
+        int row = 0;
+        int column = 0;
+        gridPane.getRowConstraints().clear();
+        gridPane.getColumnConstraints().clear();
+        for (rentOrderData orderDetail : orderDetails) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("order_show.fxml"));
+                AnchorPane pane = loader.load();
+                OrderShow cardR = loader.getController();
+                cardR.setData(orderDetail);
+//                pane.setOnMouseClicked(event -> handleOrderCardClick(cardR));
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                GridPane.setMargin(pane, margin);
+                gridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -501,5 +568,6 @@ public class InstructorPageController implements Initializable {
         connect = database.connectDB();
         courseInventoryShowData();
         showMessageList();
+        menuDisplayOrderCard ();
     }
 }

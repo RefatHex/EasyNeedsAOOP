@@ -6,12 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,18 +21,21 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.*;
+import java.util.Date;
 
 public class ClothShopPageController implements Initializable {
     @FXML
     private Label imgLbl1;
     @FXML
     private Label imgLbl2;
+    @FXML
+    private AnchorPane chat_form;
 
+    private ObservableList<rentOrderData> orderDetails= FXCollections.observableArrayList();
+    @FXML
+    private GridPane messageGridPane;
     @FXML
     private AnchorPane Clothing_Form;
 
@@ -42,10 +47,13 @@ public class ClothShopPageController implements Initializable {
     private Button payment_btn;
     @FXML
     private TableColumn<?, ?> clothIn_col_ProdID;
+    @FXML
+    private AnchorPane order_form;
 
     @FXML
     private TableColumn<?, ?> clothIn_col_ProdInfo;
-
+    @FXML
+    private GridPane gridPane;
     @FXML
     private TableColumn<?, ?> clothIn_col_ProdName;
 
@@ -63,7 +71,8 @@ public class ClothShopPageController implements Initializable {
 
     @FXML
     private TableView<ClothShopData> clothingTable;
-
+    @FXML
+    private Button chat_btn;
     @FXML
     private Button customer_btn;
 
@@ -78,6 +87,8 @@ public class ClothShopPageController implements Initializable {
 
     @FXML
     private Label imgLbl22;
+    @FXML
+    private Button order_btn;
 
     @FXML
     private Button logoutBtn;
@@ -377,7 +388,7 @@ public void InventoryImportBtn(){
                 logoutBtn.getScene().getWindow().hide();
                 Stage stage=new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);
@@ -421,10 +432,123 @@ public void InventoryImportBtn(){
             stage.setScene(scene);
             stage.setTitle("Easy Pay");
             stage.show();
-            payment_btn.getScene().getWindow().hide();
+            //payment_btn.getScene().getWindow().hide();
+        }else if(e.getSource()==chat_btn){
+            dashboard_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            chat_form.setVisible(true);
+            showMessageList();
+        }else if (e.getSource() == order_btn){
+            dashboard_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            order_form.setVisible(true);
         }
 
     }
+    private Map<String, StringBuilder> getMessagesByReceiver() {
+        Map<String, StringBuilder> messagesMap = new HashMap<>();
+        String sql = "SELECT senderUsername, message FROM messages WHERE receiverUsername = ?";
+        try (
+                PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, data.username);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    String senderUsername = resultSet.getString("senderUsername");
+                    String message = resultSet.getString("message");
+
+                    messagesMap.computeIfAbsent(senderUsername, k -> new StringBuilder()).append(message).append("\n");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return messagesMap;
+    }
+    //copy this to other classes
+    public void showMessageList() {
+        int row = 0;
+        int column = 0;
+        messageGridPane.getChildren().clear();
+        messageGridPane.getRowConstraints().clear();
+        messageGridPane.getColumnConstraints().clear();
+        Map<String, StringBuilder> messagesMap=getMessagesByReceiver();
+
+        for (Map.Entry<String, StringBuilder> entry : messagesMap.entrySet()) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Message.fxml"));
+                AnchorPane pane = loader.load();
+                Message card = loader.getController();
+
+                card.setData(new messageData(entry.getKey(), entry.getValue().toString()));
+
+
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                messageGridPane.setMargin(pane, margin);
+                messageGridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public ObservableList<rentOrderData> menuGetOrderData() {
+        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
+        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, data.username);
+            result = prepare.executeQuery();
+            rentOrderData orderData;
+            while (result.next()) {
+                orderData = new rentOrderData(result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("houseName"),
+                        result.getString("ownerUserName"),
+                        result.getString("tanentUserName"),
+                        result.getDouble("rent"),
+                        result.getString("address"),
+                        result.getString("nidImage"),
+                        result.getDate("date"));
+                listOrderData.add(orderData);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listOrderData;
+    }
+
+    //copy this
+    public void menuDisplayOrderCard() {
+        orderDetails.clear();
+        orderDetails.addAll(menuGetOrderData());
+        int row = 0;
+        int column = 0;
+        gridPane.getRowConstraints().clear();
+        gridPane.getColumnConstraints().clear();
+        for (rentOrderData orderDetail : orderDetails) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("order_show.fxml"));
+                AnchorPane pane = loader.load();
+                OrderShow cardR = loader.getController();
+                cardR.setData(orderDetail);
+//                pane.setOnMouseClicked(event -> handleOrderCardClick(cardR));
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                GridPane.setMargin(pane, margin);
+                gridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -432,5 +556,6 @@ public void InventoryImportBtn(){
         dashboard_form.setVisible(true);
         Clothing_Form.setVisible(false);
         clothShopInventoryShowData();
+        menuDisplayOrderCard ();
     }
 }

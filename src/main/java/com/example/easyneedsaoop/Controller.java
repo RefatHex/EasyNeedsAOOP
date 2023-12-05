@@ -102,7 +102,7 @@ public class Controller {
                     alert.showAndWait();
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserType.fxml"));
                     Stage stage=new Stage();
-                    stage.initStyle(StageStyle.UNDECORATED);
+                    //stage.initStyle(StageStyle.UNDECORATED);
                     Scene scene = new Scene(fxmlLoader.load());
                     stage.setTitle("EasyNeeds");
                     stage.setScene(scene);
@@ -252,7 +252,7 @@ public class Controller {
     public void about_btn_Action(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("About_Us.fxml"));
         Stage stage=new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("EasyNeeds");
         stage.setScene(scene);

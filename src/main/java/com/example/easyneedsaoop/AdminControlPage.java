@@ -1594,7 +1594,7 @@ public void courseInventoryAddBtn() {
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
                 Stage stage=new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);
                 stage.show();
@@ -1668,7 +1668,7 @@ public void courseInventoryAddBtn() {
                 logoutBtn.getScene().getWindow().hide();
                 Stage stage=new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);

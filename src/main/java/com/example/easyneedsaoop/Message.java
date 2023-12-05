@@ -40,7 +40,7 @@ public class Message {
         cardR.setData(data.getSenderUsername());
         System.out.println(data.getSenderUsername());
         Stage stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(new Scene(pane));
         stage.show();
     }

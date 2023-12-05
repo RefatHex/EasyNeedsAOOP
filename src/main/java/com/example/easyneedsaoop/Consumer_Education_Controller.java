@@ -152,7 +152,7 @@ public class Consumer_Education_Controller implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
         Stage stage=new Stage();
         Scene scene = new Scene(fxmlLoader.load());
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
         backBtn.getScene().getWindow().hide();

@@ -79,7 +79,7 @@ public class FrontPage {
             System.out.println(ex.getMessage());
         }
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         home_btn_1.getScene().getWindow().hide();
     }
@@ -93,7 +93,7 @@ public class FrontPage {
             System.out.println(ex.getMessage());
         }
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         food_btn_1.getScene().getWindow().hide();
     }
@@ -107,7 +107,7 @@ public class FrontPage {
             System.out.println(ex.getMessage());
         }
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         education_btn_1.getScene().getWindow().hide();
     }
@@ -121,7 +121,7 @@ public class FrontPage {
             System.out.println(ex.getMessage());
         }
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         education_btn_1.getScene().getWindow().hide();
     }
@@ -135,7 +135,7 @@ public class FrontPage {
             System.out.println(ex.getMessage());
         }
         stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
         education_btn_1.getScene().getWindow().hide();
     }
@@ -156,7 +156,7 @@ public class FrontPage {
                 Stage stage = new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
-                stage.initStyle(StageStyle.UNDECORATED);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 stage.setScene(scene);
                 stage.show();
             }

@@ -122,7 +122,7 @@ public class CatringCart implements Initializable {
         ChatBox cardR = loader.getController();
         cardR.setData(data.getUserName());
         Stage stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(new Scene(pane));
         stage.show();
     }

@@ -94,10 +94,10 @@ public class health_booking_cart {
                     if (generatedKeys.next()) {
                         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
                         Stage stage = new Stage();
-                        stage.initStyle(StageStyle.UNDECORATED);
+                        //stage.initStyle(StageStyle.UNDECORATED);
                         Scene scene = new Scene(fxmlLoader.load());
                         stage.setScene(scene);
-                        stage.initStyle(StageStyle.UNDECORATED);
+                        //stage.initStyle(StageStyle.UNDECORATED);
                         stage.setTitle("Easy Pay");
                         stage.show();
                         System.out.println("Appointment placed successfully! Appointment ID: " + generatedKeys.getInt(1));

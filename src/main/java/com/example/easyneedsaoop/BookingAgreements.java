@@ -182,7 +182,7 @@ public class BookingAgreements {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OwnerTenantAgreement.fxml"));
         Stage stage=new Stage();
         Scene scene = new Scene(fxmlLoader.load());
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
     }

@@ -156,7 +156,7 @@ public class CateringConsumerPage implements Initializable {
             CatringCart cardR = loader.getController();
             cardR.setData(clickedData);
             Stage stage = new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(pane));
             stage.show();
         } catch (Exception e) {
@@ -172,7 +172,7 @@ public class CateringConsumerPage implements Initializable {
     public void backBtnAction() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FrontPage.fxml"));
         Stage stage=new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();

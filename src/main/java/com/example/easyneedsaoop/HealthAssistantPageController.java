@@ -6,12 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,10 +21,9 @@ import javafx.stage.StageStyle;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -30,7 +31,8 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private AnchorPane adminAnchorPane;
-
+    @FXML
+    private AnchorPane order_form;
     @FXML
     private ComboBox<?> availableOn;
 
@@ -68,7 +70,8 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private Button health_clearbtn;
-
+    @FXML
+    private Button chat_btn;
     @FXML
     private TableColumn<?, ?> health_col_ID;
 
@@ -83,6 +86,10 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> health_col_fee;
+    @FXML
+    private AnchorPane chat_form;
+    @FXML
+    private Button order_btn;
 
     @FXML
     private TableColumn<?, ?> health_col_name;
@@ -92,7 +99,7 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> health_col_specialist;
-
+    private ObservableList<rentOrderData> orderDetails = FXCollections.observableArrayList();
     @FXML
     private TableColumn<?, ?> health_col_starting;
 
@@ -135,20 +142,22 @@ public class HealthAssistantPageController implements Initializable {
     private TextField startingHour;
     @FXML
     private Label userName;
+    @FXML
+    private GridPane messageGridPane;
 
-    public String[] daysInWeeks = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-    public String[] service ={"Paid","Free"};
+    public String[] daysInWeeks = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    public String[] service = {"Paid", "Free"};
     private Image image;
     private Alert alert;
     private Connection connect;
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
+    @FXML
+    private GridPane gridPane;
 
 
-
-
-    public void healthAssistanceAddBtn(){
+    public void healthAssistanceAddBtn() {
         if (doctorID.getText().isEmpty() ||
                 doctorName.getText().isEmpty() ||
                 startingHour.getText().isEmpty() ||
@@ -175,7 +184,7 @@ public class HealthAssistantPageController implements Initializable {
                 prepare.setString(6, endingHour.getText());
                 prepare.setString(7, visitingFee.getText());
                 prepare.setString(8, availableOn.getSelectionModel().getSelectedItem().toString());
-                prepare.setString(9,serviceType.getSelectionModel().getSelectedItem().toString());
+                prepare.setString(9, serviceType.getSelectionModel().getSelectedItem().toString());
                 prepare.setString(10, extraInfo.getText());
 
 
@@ -185,7 +194,7 @@ public class HealthAssistantPageController implements Initializable {
                 prepare.setString(12, hospital.getText());
                 String path = data.path;
                 path = path.replace("\\", "\\\\");
-                prepare.setString(13,path);
+                prepare.setString(13, path);
                 prepare.executeUpdate();
 
                 alert = new Alert(Alert.AlertType.INFORMATION);
@@ -194,8 +203,8 @@ public class HealthAssistantPageController implements Initializable {
                 alert.setContentText("Successfully Added!");
                 alert.showAndWait();
 
-                 healthAssistanceShowData();
-                 healthAssistanceClearBtn();
+                healthAssistanceShowData();
+                healthAssistanceClearBtn();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -203,19 +212,17 @@ public class HealthAssistantPageController implements Initializable {
     }
 
 
-      public void healthAssistanceClearBtn() {
-          doctorID.clear();
-          doctorName.clear();
-          startingHour.clear();
-          endingHour.clear();
-          extraInfo.clear();
-          serviceType.getSelectionModel().clearSelection();
-          specialtyIn.clear();
-          visitingFee.clear();
-          availableOn.getSelectionModel().clearSelection();
+    public void healthAssistanceClearBtn() {
+        doctorID.clear();
+        doctorName.clear();
+        startingHour.clear();
+        endingHour.clear();
+        extraInfo.clear();
+        serviceType.getSelectionModel().clearSelection();
+        specialtyIn.clear();
+        visitingFee.clear();
+        availableOn.getSelectionModel().clearSelection();
     }
-
-
 
 
     public void handleEvent(ActionEvent event) throws IOException {
@@ -230,16 +237,25 @@ public class HealthAssistantPageController implements Initializable {
             health_Form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage = new Stage();
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Easy Pay");
             stage.show();
             //payment_btn.getScene().getWindow().hide();
-
+        }else if(event.getSource()==chat_btn){
+            dashboard_form.setVisible(false);
+            health_Form.setVisible(false);
+            chat_form.setVisible(true);
+            showMessageList();
+        }else if (event.getSource() == order_btn){
+            dashboard_form.setVisible(false);
+            health_Form.setVisible(false);
+            order_form.setVisible(true);
         }
     }
+
     public void healthAssistanceDeleteBtn() {
         if (doctorID.getText().isEmpty()) {
             return;
@@ -276,8 +292,8 @@ public class HealthAssistantPageController implements Initializable {
                 alert.setContentText("Record deleted successfully!");
                 alert.showAndWait();
 
-                 healthAssistanceShowData();
-                 healthAssistanceClearBtn();
+                healthAssistanceShowData();
+                healthAssistanceClearBtn();
             } else {
                 alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Warning");
@@ -337,8 +353,8 @@ public class HealthAssistantPageController implements Initializable {
                 alert.setContentText("Record updated successfully!");
                 alert.showAndWait();
 
-                 healthAssistanceShowData();
-                 healthAssistanceClearBtn();
+                healthAssistanceShowData();
+                healthAssistanceClearBtn();
             } else {
                 alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Warning");
@@ -350,6 +366,7 @@ public class HealthAssistantPageController implements Initializable {
             e.printStackTrace();
         }
     }
+
     // Method to fetch health data from the database
     public ObservableList<HealthData> getHealthListData() {
         ObservableList<HealthData> listData = FXCollections.observableArrayList();
@@ -415,32 +432,34 @@ public class HealthAssistantPageController implements Initializable {
             if (option.get().equals(ButtonType.OK)) {
                 logoutBtn.getScene().getWindow().hide();
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginsignup.fxml"));
-                Stage stage=new Stage();
+                Stage stage = new Stage();
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("EasyNeeds");
                 stage.setScene(scene);
                 stage.show();
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void displayUsername(){
-        String user=data.username;
-        user=user.substring(0,1).toUpperCase()+ user.substring(1);
+    public void displayUsername() {
+        String user = data.username;
+        user = user.substring(0, 1).toUpperCase() + user.substring(1);
 
         userName.setText(user);
     }
 
-    void setAvailabilty(){
-        ObservableList listData= FXCollections.observableArrayList(daysInWeeks);
+    void setAvailabilty() {
+        ObservableList listData = FXCollections.observableArrayList(daysInWeeks);
         availableOn.setItems(listData);
     }
-    void setServiceType(){
-        ObservableList listData= FXCollections.observableArrayList(service);
+
+    void setServiceType() {
+        ObservableList listData = FXCollections.observableArrayList(service);
         serviceType.setItems(listData);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         healthAssistanceShowData();
@@ -448,8 +467,10 @@ public class HealthAssistantPageController implements Initializable {
         setAvailabilty();
         setServiceType();
         healthAssistanceShowData();
-        connect=database.connectDB();
+        connect = database.connectDB();
+        menuDisplayOrderCard ();
     }
+
     public void InventoryImportBtn(ActionEvent event) {
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
@@ -464,4 +485,109 @@ public class HealthAssistantPageController implements Initializable {
         }
     }
 
+    private Map<String, StringBuilder> getMessagesByReceiver() {
+        Map<String, StringBuilder> messagesMap = new HashMap<>();
+        String sql = "SELECT senderUsername, message FROM messages WHERE receiverUsername = ?";
+        try (
+                PreparedStatement preparedStatement = connect.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, data.username);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    String senderUsername = resultSet.getString("senderUsername");
+                    String message = resultSet.getString("message");
+
+                    messagesMap.computeIfAbsent(senderUsername, k -> new StringBuilder()).append(message).append("\n");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return messagesMap;
+    }
+
+    //copy this to other classes
+    public void showMessageList() {
+        int row = 0;
+        int column = 0;
+        messageGridPane.getChildren().clear();
+        messageGridPane.getRowConstraints().clear();
+        messageGridPane.getColumnConstraints().clear();
+        Map<String, StringBuilder> messagesMap = getMessagesByReceiver();
+
+        for (Map.Entry<String, StringBuilder> entry : messagesMap.entrySet()) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Message.fxml"));
+                AnchorPane pane = loader.load();
+                Message card = loader.getController();
+
+                card.setData(new messageData(entry.getKey(), entry.getValue().toString()));
+
+
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                messageGridPane.setMargin(pane, margin);
+                messageGridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public ObservableList<rentOrderData> menuGetOrderData() {
+        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
+        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            prepare.setString(1, data.username);
+            result = prepare.executeQuery();
+            rentOrderData orderData;
+            while (result.next()) {
+                orderData = new rentOrderData(result.getInt("id"),
+                        result.getString("ownerName"),
+                        result.getString("houseName"),
+                        result.getString("ownerUserName"),
+                        result.getString("tanentUserName"),
+                        result.getDouble("rent"),
+                        result.getString("address"),
+                        result.getString("nidImage"),
+                        result.getDate("date"));
+                listOrderData.add(orderData);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listOrderData;
+    }
+
+    //copy this
+    public void menuDisplayOrderCard() {
+        orderDetails.clear();
+        orderDetails.addAll(menuGetOrderData());
+        int row = 0;
+        int column = 0;
+        gridPane.getRowConstraints().clear();
+        gridPane.getColumnConstraints().clear();
+        for (rentOrderData orderDetail : orderDetails) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("order_show.fxml"));
+                AnchorPane pane = loader.load();
+                OrderShow cardR = loader.getController();
+                cardR.setData(orderDetail);
+//                pane.setOnMouseClicked(event -> handleOrderCardClick(cardR));
+                // Add margins to create space between cards
+                Insets margin = new Insets(10);
+                GridPane.setMargin(pane, margin);
+                gridPane.add(pane, column, row++);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
