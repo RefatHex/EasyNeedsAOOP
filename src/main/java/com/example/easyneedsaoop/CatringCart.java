@@ -116,18 +116,6 @@ public class CatringCart implements Initializable {
     public void backBtnAction(){
         backBtn.getScene().getWindow().hide();
     }
-    public void chatBtnHandler() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
-        AnchorPane pane = loader.load();
-        ChatBox cardR = loader.getController();
-        cardR.setData(data.getUserName());
-        Stage stage = new Stage();
-        //stage.initStyle(StageStyle.UNDECORATED);
-        stage.setScene(new Scene(pane));
-        stage.show();
-    }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         optionAdder();

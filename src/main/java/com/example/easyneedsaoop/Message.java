@@ -34,15 +34,8 @@ public class Message {
         last_msg.setText(data.getMessage());
     }
     public void chatBtnHandler() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
-        AnchorPane pane = loader.load();
-        ChatBox cardR = loader.getController();
-        cardR.setData(data.getSenderUsername());
-        System.out.println(data.getSenderUsername());
-        Stage stage = new Stage();
-        //stage.initStyle(StageStyle.UNDECORATED);
-        stage.setScene(new Scene(pane));
-        stage.show();
+        ChatBoxOpenner c=new ChatBoxOpenner();
+        c.chatBtnHandler(data.getSenderUsername());
     }
 
 }

@@ -55,7 +55,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Button>
-                        <Button fx:id="chatBtn" layoutX="396.0" layoutY="196.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" stylesheets="@HeadLabel.css" text="Chat">
+                        <Button fx:id="chatBtn" layoutX="396.0" layoutY="196.0" mnemonicParsing="false" onAction="#chatBtnHandler" prefHeight="32.0" prefWidth="81.0" stylesheets="@HeadLabel.css" text="Chat">
                            <styleClass>
                               <String fx:value="shadow" />
                               <String fx:value="radius" />

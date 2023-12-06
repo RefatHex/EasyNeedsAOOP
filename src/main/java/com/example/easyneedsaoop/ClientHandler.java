@@ -1,79 +1,102 @@
 package com.example.easyneedsaoop;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class ClientHandler implements Runnable{
+public class ClientHandler implements Runnable {
 
-    public static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
+    private static final HashMap<String, ClientHandler> clientHandlers = new HashMap<>();
+
     private Socket socket;
-    private BufferedReader reader;
-    private BufferedWriter writer;
-    private String clientUsername;
+    private BufferedReader buffReader;
+    private BufferedWriter buffWriter;
+    private String name;
 
-    public ClientHandler(Socket socket){
-        try{
-            this.socket=socket;
-            this.writer =new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            this.reader =new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            this.clientUsername= reader.readLine();
-            clientHandlers.add(this);
-            broadcastMSG("Server: "+clientUsername+"has entered the chat room.");
+    public ClientHandler(Socket socket) {
+        try {
+            this.socket = socket;
+            this.buffWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            this.buffReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            this.name = buffReader.readLine();
 
-        }catch(IOException e){
-            closeAll(socket, reader, writer);
+            synchronized (clientHandlers) {
+                clientHandlers.put(name, this);
+            }
 
+            broadcastMessage("SERVER" + name + " has entered the room");
+
+        } catch (Exception e) {
+            closeAll(socket, buffReader, buffWriter);
         }
     }
 
     @Override
     public void run() {
-
         String messageFromClient;
-        while(socket.isConnected()){
-            try{
-                messageFromClient= reader.readLine();
-                broadcastMSG(messageFromClient);
-            }catch(IOException e){
-                closeAll(socket, reader, writer);
+
+        while (socket.isConnected()) {
+            try {
+                messageFromClient = buffReader.readLine();
+                broadcastMessage(messageFromClient);
+            } catch (Exception e) {
+                closeAll(socket, buffReader, buffWriter);
                 break;
             }
         }
-
     }
 
-    public void broadcastMSG(String messageToSend){
-        for(ClientHandler clientHandler: clientHandlers){
-            try{
-                if(!clientHandler.clientUsername.equals(clientUsername)){
-                    clientHandler.writer.write(messageToSend);
-                    clientHandler.writer.newLine();
-                    clientHandler.writer.flush();
+    public void broadcastMessage(String messageToSend) {
+        synchronized (clientHandlers) {
+            for (ClientHandler clientHandler : clientHandlers.values()) {
+                try {
+                    if (messageToSend != null) {
+                        String[] parts = messageToSend.split(":");
+                        if (parts.length >= 3) {
+                            String sender = parts[0];
+                            String receiver = parts[1];
+                            String message = parts[2];
+                            System.out.println(message);
+
+                            if (!clientHandler.name.equals(sender) && clientHandler.name.equals(receiver)) {
+                                clientHandler.buffWriter.write(messageToSend);
+                                clientHandler.buffWriter.newLine();
+                                clientHandler.buffWriter.flush();
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    closeAll(socket, buffReader, buffWriter);
                 }
-            }catch(IOException e){
-                closeAll(socket, reader, writer);
             }
         }
     }
-    public void removeCliHandler(){
-        clientHandlers.remove(this);
-        broadcastMSG("Server: "+clientUsername+" left the room.");
+
+
+
+    public void removeClientHandler() {
+        synchronized (clientHandlers) {
+            clientHandlers.remove(name);
+            broadcastMessage("server " + name + " has gone");
+        }
     }
 
-    public void closeAll(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter){
-        removeCliHandler();
-        try{
-            if(bufferedReader !=null){
-                bufferedReader.close();
+    public void closeAll(Socket socket, BufferedReader buffReader, BufferedWriter buffWriter) {
+        removeClientHandler();
+        try {
+            if (buffReader != null) {
+                buffReader.close();
             }
-            if(bufferedWriter !=null){
-                bufferedWriter.close();
+            if (buffWriter != null) {
+                buffWriter.close();
             }
-            if(socket != null){
+            if (socket != null) {
                 socket.close();
             }
-        }catch(IOException e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

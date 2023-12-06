@@ -30,7 +30,7 @@
                      <left>
                         <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                            <children>
-                              <AnchorPane fx:id="menuAnchorPane" layoutX="-20.0" layoutY="-20.0" prefHeight="620.0" prefWidth="253.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-20.0">
+                              <AnchorPane fx:id="menuAnchorPane" layoutX="-15.0" layoutY="-10.0" prefHeight="610.0" prefWidth="248.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-10.0">
                                  <children>
                                     <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>

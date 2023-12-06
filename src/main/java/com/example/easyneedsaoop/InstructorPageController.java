@@ -481,10 +481,12 @@ public class InstructorPageController implements Initializable {
             dashboard_form.setVisible(true);
             instructor_form.setVisible(false);
             chat_form.setVisible(false);
+            order_form.setVisible(false);
         }else if(e.getSource()==inventory_btn){
             dashboard_form.setVisible(false);
             instructor_form.setVisible(true);
             chat_form.setVisible(false);
+            order_form.setVisible(false);
         }else if(e.getSource()==payment_btn){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
@@ -506,6 +508,7 @@ public class InstructorPageController implements Initializable {
             dashboard_form.setVisible(false);
             instructor_form.setVisible(false);
             order_form.setVisible(true);
+            chat_form.setVisible(false);
         }
     }
     public ObservableList<rentOrderData> menuGetOrderData() {

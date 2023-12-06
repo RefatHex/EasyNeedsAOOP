@@ -10,9 +10,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -133,5 +135,8 @@ public class InstructorOrderPage {
 
         return false;
     }
-
+    public void chatBtnHandler() throws IOException {
+        ChatBoxOpenner c=new ChatBoxOpenner();
+        c.chatBtnHandler(data.getUserName());
+    }
 }
