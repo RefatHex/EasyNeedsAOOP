@@ -5,6 +5,16 @@ import java.util.Date;
 public class ClothShopData {
     private int productID;
 
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private String sellerUsername;
     private String shopName;
     private String prodName;
@@ -115,6 +125,14 @@ public class ClothShopData {
         this.prodName = prodName;
         this.price = price;
         this.image = image;
+    }
+
+    public ClothShopData(int productID, String username, String sellerUsername, double price, Date date) {
+        this.productID = productID;
+        this.username = username;
+        this.sellerUsername = sellerUsername;
+        this.price = price;
+        this.date = date;
     }
 
     @Override
