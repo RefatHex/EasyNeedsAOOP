@@ -384,9 +384,13 @@ public class cateringPageController implements Initializable {
         if (event.getSource() == catering_btn) {
             dashboard_form.setVisible(false);
             catering_form.setVisible(true);
+            order_form.setVisible(false);
+            chat_form.setVisible(false);
         } else if (event.getSource() == dashboard_btn) {
             dashboard_form.setVisible(true);
             catering_form.setVisible(false);
+            order_form.setVisible(false);
+            chat_form.setVisible(false);
         } else if (event.getSource() == cateringPaymentBtn) {
             dashboard_form.setVisible(false);
             catering_form.setVisible(false);
@@ -402,24 +406,26 @@ public class cateringPageController implements Initializable {
             dashboard_form.setVisible(false);
             catering_form.setVisible(false);
             order_form.setVisible(true);
+            chat_form.setVisible(false);
         } else if (event.getSource() == chat_btn) {
             dashboard_form.setVisible(false);
             catering_form.setVisible(false);
             chat_form.setVisible(true);
+            order_form.setVisible(false);
             showMessageList();
         }
     }
 
-        public void handleMessengerBtn () throws IOException {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
-            AnchorPane pane = loader.load();
-            ChatBox cardR = loader.getController();
-            cardR.setData("rasel");
-            Stage stage = new Stage();
-            //stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(new Scene(pane));
-            stage.show();
-        }
+//        public void handleMessengerBtn () throws IOException {
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("ChatBox.fxml"));
+//                AnchorPane pane = loader.load();
+//                ChatBox cardR = loader.getController();
+//                cardR.setData("rasel");
+//                Stage stage = new Stage();
+//                //stage.initStyle(StageStyle.UNDECORATED);
+//                stage.setScene(new Scene(pane));
+//                stage.show();
+//            }
 
         public void displayUsername () {
             String user = data.username;

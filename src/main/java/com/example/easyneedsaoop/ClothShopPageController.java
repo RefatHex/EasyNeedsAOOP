@@ -417,9 +417,13 @@ public void InventoryImportBtn(){
         if(e.getSource()==dashboard_btn){
             dashboard_form.setVisible(true);
             Clothing_Form.setVisible(false);
+            order_form.setVisible(false);
+            chat_form.setVisible(false);
         }else if(e.getSource()==inventory_btn){
             dashboard_form.setVisible(false);
             Clothing_Form.setVisible(true);
+            chat_form.setVisible(false);
+            order_form.setVisible(false);
         }else if(e.getSource()==payment_btn){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage=new Stage();
@@ -437,11 +441,13 @@ public void InventoryImportBtn(){
             dashboard_form.setVisible(false);
             Clothing_Form.setVisible(false);
             chat_form.setVisible(true);
+            order_form.setVisible(false);
             showMessageList();
         }else if (e.getSource() == order_btn){
             dashboard_form.setVisible(false);
             Clothing_Form.setVisible(false);
             order_form.setVisible(true);
+            chat_form.setVisible(false);
             menuGetOrderData();
         }
 

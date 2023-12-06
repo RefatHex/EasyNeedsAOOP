@@ -151,7 +151,7 @@ public class CateringConsumerPage implements Initializable {
         CateringData clickedData = card.getData();
         try {
             System.out.println(clickedData.toString());
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CatringCart.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("catringCart.fxml"));
             AnchorPane pane = loader.load();
             CatringCart cardR = loader.getController();
             cardR.setData(clickedData);

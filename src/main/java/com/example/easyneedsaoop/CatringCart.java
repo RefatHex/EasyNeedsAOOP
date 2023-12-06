@@ -61,7 +61,7 @@ public class CatringCart implements Initializable {
     @FXML
     private AnchorPane slider;
     public String[] mealTypeOption={"Daily","Weekly","Monthly"};
-    public String[] mealPerDayOption={"1 meal","2 meal","3 meal"};
+    public String[] mealPerDayOption={"Breakfast","Breakfast + Lunch","Breakfast+Lunch+Dinner","Lunch + Dinner", "Breakfast + Dinner"};
     CateringData data;
     private Connection connect;
     private Image image;
@@ -112,6 +112,19 @@ public class CatringCart implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void chatBtnHandler() throws IOException {
+        ChatBoxOpenner chatBoxOpenner = new ChatBoxOpenner();
+        chatBoxOpenner.chatBtnHandler(data.getUserName());
+    }
+    public void payBtnAction() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        //stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.setTitle("Easy Pay");
+        stage.show();
     }
     public void backBtnAction(){
         backBtn.getScene().getWindow().hide();

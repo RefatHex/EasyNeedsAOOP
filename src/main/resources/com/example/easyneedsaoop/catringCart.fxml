@@ -97,7 +97,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="payBtn" layoutX="29.0" layoutY="340.0" mnemonicParsing="false" text="Pay Now">
+            <Button fx:id="payBtn" layoutX="29.0" layoutY="340.0" mnemonicParsing="false" onAction="#payBtnAction" text="Pay Now">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />

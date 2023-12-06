@@ -502,6 +502,7 @@ public class InstructorPageController implements Initializable {
         }else if(e.getSource()==chat_btn){
             dashboard_form.setVisible(false);
             instructor_form.setVisible(false);
+            order_form.setVisible(false);
             chat_form.setVisible(true);
             showMessageList();
         }else if (e.getSource() == order_btn){

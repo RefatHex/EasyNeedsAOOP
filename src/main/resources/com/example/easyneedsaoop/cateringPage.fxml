@@ -65,7 +65,7 @@
                                     <Button fx:id="catering_btn" layoutX="16.0" layoutY="250.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="13.0" />
                                     <Button fx:id="cateringPaymentBtn" layoutX="17.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
                                     <Label layoutX="58.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
-                                    <Button fx:id="chat_btn" layoutX="14.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleMessengerBtn" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
+                                    <Button fx:id="chat_btn" layoutX="14.0" layoutY="442.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                     <Button fx:id="order_btn" layoutX="17.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
                               </AnchorPane>
@@ -360,33 +360,6 @@
                                           <Insets top="-6.0" />
                                        </opaqueInsets>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="chat_form" layoutX="15.0" prefHeight="620.0" prefWidth="902.0" visible="false">
-                                       <children>
-                                          <AnchorPane layoutX="41.0" layoutY="4.0" prefHeight="600.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="4.0">
-                                             <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="radius" />
-                                                <String fx:value="shadow" />
-                                             </styleClass>
-                                             <children>
-                                                <ScrollPane prefHeight="594.0" prefWidth="858.0">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="658.0" prefWidth="847.0">
-                                                         <children>
-                                                            <GridPane fx:id="messageGridPane" prefHeight="49.0" prefWidth="207.0">
-                                                               <columnConstraints>
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                               </columnConstraints>
-                                                            </GridPane>
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                </ScrollPane>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
                               <AnchorPane fx:id="chat_form" prefHeight="620.0" prefWidth="902.0" visible="false">
@@ -416,6 +389,7 @@
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
+                              
                               <AnchorPane fx:id="order_form" prefHeight="600.0" prefWidth="889.0" visible="false">
                                  <children>
                                     <Label layoutX="400.0" layoutY="22.0" prefHeight="21.0" prefWidth="89.0" text="Order List" />

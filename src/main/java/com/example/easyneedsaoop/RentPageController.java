@@ -497,13 +497,15 @@ public class RentPageController implements Initializable {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
             order_form.setVisible(false);
+            chat_form.setVisible(false);
         } else if (event.getSource() == rentDashboard_btn) {
             dashboard_form.setVisible(true);
             rentIn_form.setVisible(false);
             order_form.setVisible(false);
-
+            chat_form.setVisible(false);
         } else if (event.getSource() == rentPayment_btn) {
             dashboard_form.setVisible(false);
+            chat_form.setVisible(false);
             order_form.setVisible(false);
             rentIn_form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
@@ -518,9 +520,11 @@ public class RentPageController implements Initializable {
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             order_form.setVisible(true);
+            chat_form.setVisible(false);
         }else if(event.getSource()==chat_btn){
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
+            order_form.setVisible(false);
             chat_form.setVisible(true);
             showMessageList();
         }
