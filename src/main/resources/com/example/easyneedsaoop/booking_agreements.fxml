@@ -66,7 +66,7 @@
                   <String fx:value="User-button2" />
                   <String fx:value="radius3" />
                </styleClass></Button>
-            <Label layoutX="12.0" layoutY="127.0" prefHeight="32.0" prefWidth="184.0" text="Enter Url or Add your Nid">
+            <Label layoutX="12.0" layoutY="127.0" prefHeight="32.0" prefWidth="184.0" text="Enter your NID number">
                <font>
                   <Font name="Times New Roman" size="16.0" />
                </font>
