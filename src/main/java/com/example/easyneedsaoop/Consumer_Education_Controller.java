@@ -39,8 +39,12 @@ public class Consumer_Education_Controller implements Initializable {
     private Statement statement;
     private ResultSet result;
 
-    public String[] sortOption={"Relevance","A to Z","Z to A","Newest First","Oldest First"};
-
+    public String[] sortOption={"Relevance","Z to A","Newest First","Oldest First"};
+    private String selectedType = "";
+    public void refreshBtnAction(){
+        selectedType="";
+        displayInstructorCardsForUsernames();
+    }
 
 
 
@@ -82,15 +86,15 @@ public class Consumer_Education_Controller implements Initializable {
         return types;
     }
 
-    
+
     private void handleTypesClick(String type) {
         System.out.println("Clicked on category: " + type);
+        selectedType = type;
+        displayInstructorCardsForUsernames();
     }
-
     public void displayInstructorCardsForUsernames() {
-        gridPane2.getChildren().clear(); // Clear existing content
+        gridPane2.getChildren().clear();
 
-        // Retrieve distinct usernames from the courseinfo table
         List<String> distinctUsernames = getDistinctUsernames();
 
         int row = 0;
@@ -103,8 +107,8 @@ public class Consumer_Education_Controller implements Initializable {
                 AnchorPane pane = loader.load();
                 InstructorCard cardController = loader.getController();
 
-                // Set the username as a parameter to setData method
-                cardController.setName(username);
+                // Set the username and selected type as parameters to setData method
+                cardController.setName(username, selectedType);
 
                 // Add margins to create space between cards
                 Insets margin = new Insets(10);

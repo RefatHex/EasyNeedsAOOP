@@ -28,17 +28,19 @@ public class InstructorCard {
     private PreparedStatement prepare;
     private Statement statement;
     private ResultSet result;
+    private String type;
 
-    public void setName(String name) {
+    public void setName(String name, String type) {
         this.name.setText(name);
-        displayCourseCards(name);
+        this.type = type;
+        displayCourseCards(name, type);
     }
 
-    public void displayCourseCards(String name) {
+
+    public void displayCourseCards(String name, String type) {
         gridPane.getChildren().clear();
 
-
-        ObservableList<CourseData> courseDataList = getCourseData(name);
+        ObservableList<CourseData> courseDataList = getCourseData(name, type);
 
         int row = 0;
         int column = 0;
@@ -84,14 +86,18 @@ public class InstructorCard {
     }
 
     // Method to retrieve course data from the courseinfo table
-    private ObservableList<CourseData> getCourseData(String username) {
-        String sql = "SELECT * FROM courseinfo WHERE userName = ?";
+    private ObservableList<CourseData> getCourseData(String username, String type) {
+        String baseSql = "SELECT * FROM courseinfo WHERE userName = ?";
+        String sql = (type.equals("")) ? baseSql : baseSql + " AND type = ?";
         ObservableList<CourseData> courseDataList = FXCollections.observableArrayList();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             prepare.setString(1, username);
+            if (!type.equals("")) {
+                prepare.setString(2, type);
+            }
             result = prepare.executeQuery();
 
             CourseData courseDetails;
