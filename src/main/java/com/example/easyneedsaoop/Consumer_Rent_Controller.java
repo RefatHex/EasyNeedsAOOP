@@ -67,6 +67,7 @@ public class Consumer_Rent_Controller implements Initializable {
                 houseData = new rentData(
                         result.getInt("id"),
                         result.getString("houseName"),
+                        result.getString("userName"),
                         result.getInt("flatNo"),
                         result.getDouble("rent"),
                         result.getString("address"),
@@ -98,14 +99,14 @@ public class Consumer_Rent_Controller implements Initializable {
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
 
-        for (int i = 0; i < displayData.size(); i++) {
+        for (rentData displayDatum : displayData) {
             try {
-                System.out.println(displayData.get(i).toString());
+                System.out.println(displayDatum.toString());
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("RentCard.fxml"));
                 AnchorPane pane = loader.load();
                 RentCardDesign cardR = loader.getController();
-                cardR.setData(displayData.get(i));
+                cardR.setData(displayDatum);
                 pane.setOnMouseClicked(event -> handleCardClick(cardR));
 
                 if (column == 4) {

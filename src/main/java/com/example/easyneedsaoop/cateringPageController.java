@@ -151,7 +151,7 @@ public class cateringPageController implements Initializable {
     private GridPane messageGridPane;
     @FXML
     private Button order_btn;
-    private ObservableList<rentOrderData> orderDetails = FXCollections.observableArrayList();
+    private ObservableList<CateringOrderData> orderDetails = FXCollections.observableArrayList();
 
     private Image image;
     private Alert alert;
@@ -407,6 +407,7 @@ public class cateringPageController implements Initializable {
             catering_form.setVisible(false);
             order_form.setVisible(true);
             chat_form.setVisible(false);
+            menuDisplayOrderCard();
         } else if (event.getSource() == chat_btn) {
             dashboard_form.setVisible(false);
             catering_form.setVisible(false);
@@ -556,26 +557,24 @@ public class cateringPageController implements Initializable {
                 }
             }
         }
-        public ObservableList<rentOrderData> menuGetOrderData() {
-            String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
-            ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+        public ObservableList<CateringOrderData> menuGetOrderData() {
+            String sql = "SELECT * FROM `cateringorder` WHERE ownerUserName = ?";
+            ObservableList<CateringOrderData> listOrderData = FXCollections.observableArrayList();
 
             connect = database.connectDB();
             try {
                 prepare = connect.prepareStatement(sql);
                 prepare.setString(1, data.username);
                 result = prepare.executeQuery();
-                rentOrderData orderData;
+                CateringOrderData orderData;
                 while (result.next()) {
-                    orderData = new rentOrderData(result.getInt("id"),
-                            result.getString("ownerName"),
-                            result.getString("houseName"),
-                            result.getString("ownerUserName"),
-                            result.getString("tanentUserName"),
-                            result.getDouble("rent"),
-                            result.getString("address"),
-                            result.getString("nidImage"),
-                            result.getDate("date"));
+                    orderData = new CateringOrderData(
+                    result.getInt("orderId"),
+                            result.getInt("listingId"),
+                            result.getString("buyerUserName"),
+                            result.getDouble("price"),
+                            result.getDate("date")
+                    );
                     listOrderData.add(orderData);
                 }
             } catch (Exception e) {
@@ -592,13 +591,14 @@ public class cateringPageController implements Initializable {
             int column = 0;
             gridPane.getRowConstraints().clear();
             gridPane.getColumnConstraints().clear();
-            for (rentOrderData orderDetail : orderDetails) {
+            for (CateringOrderData orderDetail : orderDetails) {
                 try {
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(getClass().getResource("order_show.fxml"));
                     AnchorPane pane = loader.load();
                     OrderShow cardR = loader.getController();
                     cardR.setData(orderDetail);
+                    System.out.println(orderDetail.toString());
 //                pane.setOnMouseClicked(event -> handleOrderCardClick(cardR));
                     // Add margins to create space between cards
                     Insets margin = new Insets(10);

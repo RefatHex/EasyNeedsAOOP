@@ -104,21 +104,8 @@ public class BookingAgreements {
         locationLabel.setText(data.getAddress());
         rent.setText(String.valueOf(data.getRent()));
     }
-    private String ownerName;
-    private int homeid;
-    private String houseName;
-    private String ownerUsername;
-    private double rentt;
-    private String address;
-    private String nidImage;
-    private boolean bachelor;
-    private boolean sublet;
-    private boolean dn_draw;
-    private Date date;
+
     private Connection connect;
-    private PreparedStatement prepare;
-    private Statement statement;
-    private ResultSet result;
 
     public boolean nidImport(){
         if(urlBox.getText().equals("")){
@@ -138,7 +125,7 @@ public class BookingAgreements {
             preparedStatement.setString(4, data.username);
             preparedStatement.setDouble(5, dataa.getRent());
             preparedStatement.setString(6, dataa.getAddress());
-            preparedStatement.setString(7, nidImage);
+            preparedStatement.setString(7, data.path);
 
             int affectedRows = preparedStatement.executeUpdate();
 
@@ -175,7 +162,6 @@ public class BookingAgreements {
                alert.showAndWait();
            }
        }
-
     }
     public void backBtnAction(){
         backBtn.getScene().getWindow().hide();

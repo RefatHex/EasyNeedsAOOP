@@ -19,8 +19,14 @@ public class OrderShow {
     private Label house_Name;
     rentOrderData data;
     CourseData courseData;
-    CateringData cateringData;
+    CateringOrderData cateringData;
     ClothShopData clothShopData;
+    public void setData(CateringOrderData data){
+        this.cateringData=data;
+        customer_name.setText(cateringData.getBuyerUserName());
+        house_Name.setText(String.valueOf(data.getOrderId()));
+        date.setText(String.valueOf(data.getDate()));
+    }
 
     public void setData(rentOrderData data){
         this.data=data;

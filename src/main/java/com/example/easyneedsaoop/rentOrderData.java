@@ -61,4 +61,19 @@ public class rentOrderData {
         this.nidImage = nidImage;
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "rentOrderData{" +
+                "id=" + id +
+                ", ownerName='" + ownerName + '\'' +
+                ", houseName='" + houseName + '\'' +
+                ", ownerUserName='" + ownerUserName + '\'' +
+                ", tanentUserName='" + tanentUserName + '\'' +
+                ", rent=" + rent +
+                ", address='" + address + '\'' +
+                ", nidImage='" + nidImage + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }

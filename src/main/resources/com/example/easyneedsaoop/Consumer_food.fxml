@@ -165,11 +165,15 @@
       <HBox layoutX="760.0" layoutY="40.0" prefHeight="25.0" prefWidth="200.0">
          <children>
             <TextField fx:id="location" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search Location" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@SearchLogo.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="locationBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="26.0" prefWidth="42.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@SearchLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <stylesheets>
             <URL value="@HeadLabel.css" />
@@ -182,7 +186,7 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
-      <ComboBox fx:id="sortBtn" layoutX="90.0" layoutY="44.0" prefHeight="26.0" prefWidth="131.0">
+      <ComboBox fx:id="sortBtn" layoutX="90.0" layoutY="44.0" onAction="#handleSearchAndSort" prefHeight="26.0" prefWidth="131.0">
          <stylesheets>
             <URL value="@consumerCss.css" />
             <URL value="@HeadLabel.css" />

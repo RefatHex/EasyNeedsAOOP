@@ -27,10 +27,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class CateringConsumerPage implements Initializable {
 
@@ -86,18 +83,17 @@ public class CateringConsumerPage implements Initializable {
 
 
 
-    public String[] sortOption={"Relevance","A to Z","Z to A","Newest First","Oldest First"};
+    public String[] sortOption={"Relevance","Z to A","Newest First","Oldest First"};
 
-    public ObservableList<CateringData> menuGetData(){
-        String sql="SELECT * FROM `cateringinfo`";
-        ObservableList<CateringData> listData= FXCollections.observableArrayList();
+    public ObservableList<CateringData> menuGetData(String sql) {
+        ObservableList<CateringData> listData = FXCollections.observableArrayList();
 
-        connect=database.connectDB();
-        try{
-            prepare=connect.prepareStatement(sql);
-            result= prepare.executeQuery();
+        connect = database.connectDB();
+        try {
+            prepare = connect.prepareStatement(sql);
+            result = prepare.executeQuery();
             CateringData mealDetails;
-            while(result.next()){
+            while (result.next()) {
                 mealDetails=new CateringData(
                         result.getInt("id"),
                         result.getString("shopName"),
@@ -110,19 +106,58 @@ public class CateringConsumerPage implements Initializable {
                 );
                 listData.add(mealDetails);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return listData;
     }
-    public void menuDisplayCard(){
+
+
+    private ObservableList<CateringData> updateSearchAndSortQuery() {
+        String searchFilter = location.getText();
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM `cateringinfo` WHERE 1");
+
+        if (!searchFilter.isEmpty()) {
+            queryBuilder.append(" AND shopName LIKE '%").append(searchFilter).append("%'");
+        }
+
+        ObservableList<CateringData> searchData = menuGetData(queryBuilder.toString());
+
+        String selectedSortOption = String.valueOf(sortBtn.getValue());
+        if (selectedSortOption != null) {
+            switch (selectedSortOption) {
+                case "Z to A":
+                    searchData.sort(Comparator.comparing(CateringData::getShopName).reversed());
+                    break;
+                case "Newest First":
+                    searchData.sort(Comparator.comparing(CateringData::getId).reversed());
+                    break;
+                case "Oldest First":
+                    searchData.sort(Comparator.comparing(CateringData::getId));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return searchData;
+    }
+
+    public void handleSearchAndSort() {
         cardDetails.clear();
-        cardDetails.addAll(menuGetData());
+        cardDetails.addAll(updateSearchAndSortQuery());
+        System.out.println("sorted");
+
+        menuDisplayCard(cardDetails);
+    }
+
+    public void menuDisplayCard(ObservableList<CateringData> displayData){
         int row=0;
         int column=0;
+        gridPane.getChildren().clear();
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
-        for (CateringData cardDetail : cardDetails) {
+        for (CateringData cardDetail : displayData) {
             try {
                 System.out.println(cardDetail.toString());
                 FXMLLoader loader = new FXMLLoader();
@@ -181,6 +216,8 @@ public class CateringConsumerPage implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         optionAdder();
-        menuDisplayCard();
+        cardDetails.clear();
+        cardDetails.addAll(menuGetData("SELECT * FROM `cateringinfo`"));
+        menuDisplayCard(cardDetails);
     }
 }
