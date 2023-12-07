@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Slider" prefHeight="495.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_booking_cart">
+<AnchorPane fx:id="Slider" prefHeight="528.0" prefWidth="303.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_booking_cart">
    <stylesheets>
       <URL value="@adminPageStyle.css" />
       <URL value="@consumerCss.css" />
@@ -43,7 +43,7 @@
             <String fx:value="User-button2" />
          </styleClass>
       </Label>
-      <AnchorPane fx:id="slider" layoutX="10.0" layoutY="91.0" prefHeight="392.0" prefWidth="286.0">
+      <AnchorPane fx:id="slider" layoutX="10.0" layoutY="91.0" prefHeight="427.0" prefWidth="286.0">
          <stylesheets>
             <URL value="@loginsignup.css" />
             <URL value="@HeadLabel.css" />
@@ -55,28 +55,28 @@
             <String fx:value="upper-anchore4" />
          </styleClass>
          <children>
-            <ImageView fitHeight="164.0" fitWidth="153.0" layoutX="128.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@ShapeTwo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="134.0" fitWidth="144.0" layoutX="8.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="187.0" fitWidth="191.0" layoutX="1.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Shape.png" />
                </image>
             </ImageView>
-            <Label fx:id="name" layoutX="14.0" layoutY="22.0" prefHeight="27.0" prefWidth="110.0" text="Doctor's Name:">
+            <ImageView fitHeight="218.0" fitWidth="181.0" layoutX="106.0" layoutY="204.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ShapeTwo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="name" layoutX="12.0" layoutY="14.0" prefHeight="27.0" prefWidth="110.0" text="Doctor's Name:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fx:id="cartImage" fitHeight="134.0" fitWidth="236.0" layoutX="24.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="cartImage" fitHeight="156.0" fitWidth="270.0" layoutX="9.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="specialized" layoutX="14.0" layoutY="210.0" text="Specialised:">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="start" layoutX="12.0" layoutY="242.0" prefHeight="27.0" prefWidth="41.0" text="start" AnchorPane.bottomAnchor="125.0">
+            <Label fx:id="start" layoutX="12.0" layoutY="242.0" prefHeight="27.0" prefWidth="41.0" text="start" AnchorPane.bottomAnchor="158.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -89,7 +89,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="payBtn" layoutX="12.0" layoutY="354.0" mnemonicParsing="false" text="Pay Now">
+            <Button fx:id="payBtn" layoutX="13.0" layoutY="366.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="82.0" text="Pay Now">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />
@@ -101,7 +101,7 @@
                   <String fx:value="upper-anchore3" />
                </styleClass>
             </Button>
-            <Button fx:id="chatBtn" layoutX="219.0" layoutY="353.0" mnemonicParsing="false" text="Chat">
+            <Button fx:id="chatBtn" layoutX="197.0" layoutY="367.0" mnemonicParsing="false" text="Chat">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />
@@ -112,6 +112,13 @@
                   <String fx:value="radius3" />
                   <String fx:value="upper-anchore3" />
                </styleClass>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ChatLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Label fx:id="fee" layoutX="14.0" layoutY="269.0" text="Appointment Fee:">
                <font>
@@ -133,8 +140,8 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button fx:id="backBtn" layoutX="123.0" layoutY="388.0" mnemonicParsing="false" onAction="#backBtnAction" styleClass="radius3" stylesheets="@HeadLabel.css" text="Back" />
          </children>
       </AnchorPane>
-      <Button fx:id="backBtn" layoutY="8.0" mnemonicParsing="false" onAction="#backBtnAction" styleClass="radius3" stylesheets="@HeadLabel.css" text="Back" />
    </children>
 </AnchorPane>

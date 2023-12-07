@@ -117,11 +117,11 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
-      <Separator layoutX="637.0" layoutY="6.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
+      <Separator layoutX="641.0" layoutY="11.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
       <HBox layoutX="765.0" layoutY="10.0" prefHeight="25.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="searchLocationBox" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search Location" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <Button fx:id="searchLocationBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="34.0" prefWidth="46.0">
+            <TextField fx:id="searchLocationBox" opacity="0.72" prefHeight="34.0" prefWidth="139.0" promptText="Search Location" styleClass="transparent" stylesheets="@HeadLabel.css" />
+            <Button fx:id="searchLocationBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="34.0" prefWidth="46.0" styleClass="transparent" stylesheets="@consumerCss.css">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -142,6 +142,14 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
-      <Button fx:id="backBtn" layoutX="14.0" layoutY="560.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back" />
+      <Button fx:id="backBtn" layoutX="14.0" layoutY="552.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="33.0" prefWidth="60.0" text="Go Back">
+         <stylesheets>
+            <URL value="@consumerCss.css" />
+            <URL value="@HeadLabel.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="User-button2" />
+         </styleClass></Button>
    </children>
 </AnchorPane>

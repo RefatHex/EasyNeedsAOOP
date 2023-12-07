@@ -89,7 +89,7 @@
                </font>
             </Label>
             <ComboBox fx:id="plans" layoutX="90.0" layoutY="247.0" prefHeight="26.0" prefWidth="97.0" promptText="Choose" styleClass="radius" stylesheets="@HeadLabel.css" />
-            <Button fx:id="Book" layoutX="41.0" layoutY="292.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="Book Now">
+            <Button fx:id="Book" layoutX="41.0" layoutY="284.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="30.0" prefWidth="130.0" stylesheets="@HeadLabel.css" text="Book Now">
                <styleClass>
                   <String fx:value="white-bg" />
                   <String fx:value="radius3" />
@@ -97,7 +97,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="payBtn" layoutX="29.0" layoutY="340.0" mnemonicParsing="false" onAction="#payBtnAction" text="Pay Now">
+            <Button fx:id="payBtn" layoutX="5.0" layoutY="323.0" mnemonicParsing="false" onAction="#payBtnAction" prefHeight="35.0" prefWidth="72.0" text="Pay Now">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />
@@ -106,10 +106,10 @@
                </stylesheets>
                <styleClass>
                   <String fx:value="radius3" />
-                  <String fx:value="upper-anchore3" />
+                  <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="chatBtn" layoutX="139.0" layoutY="340.0" mnemonicParsing="false" onAction="#chatBtnHandler" text="Chat">
+            <Button fx:id="chatBtn" layoutX="123.0" layoutY="323.0" mnemonicParsing="false" onAction="#chatBtnHandler" text="Chat">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />
@@ -118,10 +118,22 @@
                </stylesheets>
                <styleClass>
                   <String fx:value="radius3" />
-                  <String fx:value="upper-anchore3" />
+                  <String fx:value="User-button2" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="47.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ChatLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="backBtn" layoutX="84.0" layoutY="366.0" mnemonicParsing="false" onAction="#backBtnAction" stylesheets="@consumerCss.css" text="Back">
+               <styleClass>
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <Button fx:id="backBtn" layoutX="92.0" layoutY="366.0" mnemonicParsing="false" onAction="#backBtnAction" text="Back" />
          </children>
       </AnchorPane>
    </children>

@@ -135,7 +135,11 @@
                </font>
             </Label>
             <Label fx:id="room" layoutX="19.0" layoutY="109.0" prefHeight="18.0" prefWidth="47.0" text="Room:" />
-            <Button fx:id="backBtn" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="60.0" text="Go Back" />
+            <Button fx:id="backBtn" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="60.0" stylesheets="@consumerCss.css" text="Go Back">
+               <styleClass>
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius3" />
+               </styleClass></Button>
          </children>
       </AnchorPane>
    </children>

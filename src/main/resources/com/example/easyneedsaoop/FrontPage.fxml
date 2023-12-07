@@ -23,7 +23,7 @@
                <image>
                   <Image url="@BG.jpg" />
                </image></ImageView>
-            <AnchorPane layoutX="258.0" layoutY="338.0" prefHeight="77.0" prefWidth="471.0" stylesheets="@HeadLabel.css">
+            <AnchorPane fx:id="command_form" layoutX="258.0" layoutY="338.0" prefHeight="77.0" prefWidth="480.0" stylesheets="@HeadLabel.css">
                <styleClass>
                   <String fx:value="radius" />
                   <String fx:value="radius2" />
@@ -44,7 +44,7 @@
                      </font>
                      <styleClass>
                         <String fx:value="transparent" />
-                        <String fx:value="User-button" />
+                        <String fx:value="User-button2" />
                         <String fx:value="radius2" />
                      </styleClass>
                   </Button>
@@ -61,7 +61,7 @@
                      </font>
                      <styleClass>
                         <String fx:value="transparent" />
-                        <String fx:value="User-button" />
+                        <String fx:value="User-button2" />
                         <String fx:value="radius2" />
                      </styleClass>
                   </Button>
@@ -78,7 +78,7 @@
                      </font>
                      <styleClass>
                         <String fx:value="transparent" />
-                        <String fx:value="User-button" />
+                        <String fx:value="User-button2" />
                         <String fx:value="radius2" />
                      </styleClass>
                   </Button>
@@ -89,11 +89,11 @@
                   <Font name="System Bold" size="12.0" />
                </font>
                <styleClass>
-                  <String fx:value="gradient" />
+                  <String fx:value="Lightwhite-bg" />
                   <String fx:value="radius" />
                </styleClass>
             </Label>
-            <Button fx:id="rewards_btn" layoutX="744.0" layoutY="2.0" mnemonicParsing="false" onAction="#rewardsActionBtn" prefHeight="39.0" prefWidth="55.0" styleClass="transparent" stylesheets="@loginsignup.css">
+            <Button fx:id="rewards_btn" layoutX="744.0" layoutY="2.0" mnemonicParsing="false" onAction="#rewardsActionBtn" prefHeight="47.0" prefWidth="55.0" styleClass="transparent">
                <graphic>
                   <ImageView fitHeight="49.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -101,26 +101,45 @@
                      </image>
                   </ImageView>
                </graphic>
+               <stylesheets>
+                  <URL value="@loginsignup.css" />
+                  <URL value="@HeadLabel.css" />
+               </stylesheets>
             </Button>
             <Button fx:id="health_btn_2" layoutX="801.0" layoutY="254.0" mnemonicParsing="false" onAction="#healthActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Health Assistant">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="user_btn" layoutX="885.0" layoutY="13.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0" styleClass="transparent" stylesheets="@loginsignup.css" />
-            <ImageView fx:id="user_image" fitHeight="39.0" fitWidth="44.0" layoutX="896.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@USERLOGO.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="logoutBtn" layoutX="434.0" layoutY="434.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE">
+            <Button fx:id="user_btn" layoutX="885.0" layoutY="13.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0">
+               <graphic>
+                  <ImageView fx:id="user_image" fitHeight="39.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@USERLOGO.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <stylesheets>
+                  <URL value="@loginsignup.css" />
+                  <URL value="@HeadLabel.css" />
+               </stylesheets>
                <styleClass>
-                  <String fx:value="upper-anchore" />
-                  <String fx:value="User-button" />
-               </styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius3" />
+               </styleClass></Button>
+            <Button fx:id="logoutBtn" layoutX="434.0" layoutY="434.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="120.0" text="Sign Out">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+               <stylesheets>
+                  <URL value="@HeadLabel.css" />
+                  <URL value="@HeadLabel.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius3" />
+               </styleClass>
             </Button>
          </children>
       </AnchorPane>
@@ -129,7 +148,7 @@
             <Image url="@LogoHolder.png" />
          </image>
       </ImageView>
-      <Button fx:id="home_btn_1" layoutX="87.0" layoutY="135.0" mnemonicParsing="false" onAction="#homeActionBtn" prefHeight="87.0" prefWidth="87.0" styleClass="transparent" stylesheets="@loginsignup.css">
+      <Button fx:id="home_btn_1" layoutX="87.0" layoutY="135.0" mnemonicParsing="false" onAction="#homeActionBtn" prefHeight="87.0" prefWidth="87.0" styleClass="transparent">
          <graphic>
             <ImageView fitHeight="89.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -137,6 +156,10 @@
                </image>
             </ImageView>
          </graphic>
+         <stylesheets>
+            <URL value="@loginsignup.css" />
+            <URL value="@HeadLabel.css" />
+         </stylesheets>
       </Button>
       <Button fx:id="home_btn_2" layoutX="106.0" layoutY="254.0" mnemonicParsing="false" onAction="#homeActionBtn" styleClass="transparent" stylesheets="@loginsignup.css" text="Home">
          <font>
@@ -220,5 +243,7 @@
          </image>
       </ImageView>
       <Button layoutX="788.0" layoutY="10.0" mnemonicParsing="false" styleClass="transparent" stylesheets="@loginsignup.css" />
+      <AnchorPane fx:id="order_form" prefHeight="494.0" prefWidth="987.0" visible="false" />
+      <AnchorPane fx:id="chat_form" prefHeight="494.0" prefWidth="987.0" visible="false" />
    </children>
 </AnchorPane>

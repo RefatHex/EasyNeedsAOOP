@@ -10,6 +10,16 @@
 
 <AnchorPane prefHeight="317.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_card">
    <children>
+      <ImageView fitHeight="150.0" fitWidth="101.0" layoutX="6.0" layoutY="175.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Shape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="260.0" layoutX="4.0" layoutY="162.0" nodeOrientation="INHERIT" opacity="0.26" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ShapeFive.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="image" fitHeight="157.0" fitWidth="216.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <Label fx:id="name" layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="101.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
          <font>

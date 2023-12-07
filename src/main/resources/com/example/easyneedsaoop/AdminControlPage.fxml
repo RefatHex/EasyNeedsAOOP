@@ -47,7 +47,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="logoutBtn" layoutX="55.0" layoutY="551.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="111.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="55.0">
+                              <Button fx:id="logoutBtn" layoutX="60.0" layoutY="508.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="53.0" prefWidth="111.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="60.0">
                                  <styleClass>
                                     <String fx:value="upper-anchore" />
                                     <String fx:value="User-button" />
@@ -62,7 +62,6 @@
                               <Button fx:id="edu_btn" layoutX="15.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                               <Button fx:id="hospital_btn" layoutX="15.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                               <Button fx:id="customer_btn" layoutX="15.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="202.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
-                              <Button fx:id="chat_btn" layoutX="15.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="201.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -985,6 +984,16 @@
                                     <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter amount" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                  </children>
                               </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="customer_form" layoutX="32.0" prefHeight="600.0" prefWidth="870.0">
+                           <children>
+                              <TableView layoutX="7.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
                            </children>
                         </AnchorPane>
                      </children>

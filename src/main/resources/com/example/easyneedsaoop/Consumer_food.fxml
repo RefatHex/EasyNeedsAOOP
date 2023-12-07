@@ -31,9 +31,10 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
          <styleClass>
-            <String fx:value="upper-anchore4" />
             <String fx:value="radius2" />
             <String fx:value="shadow" />
+            <String fx:value="upper-anchore4" />
+            <String fx:value="User-button2" />
          </styleClass>
          <children>
             <Label layoutX="14.0" layoutY="9.0" opacity="0.48" stylesheets="@HeadLabel.css" text="Free Delivery">
@@ -64,6 +65,7 @@
             <String fx:value="upper-anchore4" />
             <String fx:value="radius2" />
             <String fx:value="shadow" />
+            <String fx:value="User-button2" />
          </styleClass>
          <children>
             <Label layoutX="14.0" layoutY="9.0" opacity="0.48" stylesheets="@HeadLabel.css" text="Shopping Online">
@@ -83,11 +85,11 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="98.0" layoutY="104.0" prefHeight="392.0" prefWidth="894.0" styleClass="transparent" stylesheets="@HeadLabel.css">
+      <AnchorPane layoutX="86.0" layoutY="104.0" prefHeight="392.0" prefWidth="907.0" styleClass="transparent" stylesheets="@HeadLabel.css">
          <children>
-            <ScrollPane layoutX="1.0" prefHeight="392.0" prefWidth="894.0">
+            <ScrollPane layoutX="1.0" prefHeight="392.0" prefWidth="907.0">
                <content>
-                  <AnchorPane prefHeight="637.0" prefWidth="882.0">
+                  <AnchorPane prefHeight="637.0" prefWidth="905.0">
                      <children>
                         <GridPane fx:id="gridPane" prefHeight="30.0" prefWidth="0.0">
                            <rowConstraints>
@@ -99,7 +101,7 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="25.0" layoutY="121.0" prefHeight="330.0" prefWidth="58.0">
+      <AnchorPane layoutX="15.0" layoutY="127.0" prefHeight="330.0" prefWidth="58.0">
          <stylesheets>
             <URL value="@HeadLabel.css" />
             <URL value="@loginsignup.css" />
@@ -128,13 +130,18 @@
                </styleClass>
             </Button>
             <Separator layoutX="5.0" layoutY="140.0" prefHeight="0.0" prefWidth="46.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
-            <Label contentDisplay="CENTER" layoutX="5.0" layoutY="288.0" prefHeight="21.0" prefWidth="46.0" stylesheets="@HeadLabel.css" text="EasyNeeds">
+            <Label contentDisplay="CENTER" layoutX="5.0" layoutY="288.0" prefHeight="21.0" prefWidth="46.0" text="EasyNeeds">
                <font>
                   <Font size="9.0" />
                </font>
+               <stylesheets>
+                  <URL value="@HeadLabel.css" />
+                  <URL value="@consumerCss.css" />
+               </stylesheets>
                <styleClass>
-                  <String fx:value="upper-anchore4" />
-                  <String fx:value="shadow" />
+                  <String fx:value="upper-anchore3" />
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius3" />
                </styleClass>
             </Label>
             <Separator layoutX="26.0" layoutY="202.0" orientation="VERTICAL" prefHeight="71.0" prefWidth="6.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
@@ -157,7 +164,7 @@
       </AnchorPane>
       <HBox layoutX="760.0" layoutY="40.0" prefHeight="25.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="location" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" text="Search location" />
+            <TextField fx:id="location" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search Location" styleClass="transparent" stylesheets="@HeadLabel.css" />
             <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@SearchLogo.png" />
@@ -175,18 +182,15 @@
             <String fx:value="radius2" />
          </styleClass>
       </HBox>
-      <ComboBox fx:id="sortBtn" layoutX="124.0" layoutY="44.0" prefHeight="26.0" prefWidth="97.0">
-         <styleClass>
-            <String fx:value="shadow" />
-            <String fx:value="radius3" />
-            <String fx:value="upper-anchore4" />
-         </styleClass>
+      <ComboBox fx:id="sortBtn" layoutX="90.0" layoutY="44.0" prefHeight="26.0" prefWidth="131.0">
          <stylesheets>
-            <URL value="@HeadLabel.css" />
             <URL value="@consumerCss.css" />
-            <URL value="@loginsignup.css" />
-            <URL value="@adminPageStyle.css" />
+            <URL value="@HeadLabel.css" />
          </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="User-button2" />
+         </styleClass>
       </ComboBox>
       <ImageView fitHeight="88.0" fitWidth="97.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>

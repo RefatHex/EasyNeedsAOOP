@@ -12,6 +12,16 @@
 
 <AnchorPane prefHeight="199.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
    <children>
+      <ImageView fitHeight="246.0" fitWidth="165.0" layoutX="141.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BlueShape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="127.0" fitWidth="110.0" layoutX="200.0" layoutY="20.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Shape.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="image" fitHeight="191.0" fitWidth="135.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <Label layoutX="143.0" layoutY="4.0" text="Price:">
          <font>
@@ -47,7 +57,11 @@
       <Label fx:id="price" layoutX="188.0" layoutY="6.0" text="price" />
       <Label fx:id="shopname" layoutX="221.0" layoutY="57.0" text="shopname" />
       <TextField fx:id="quantity_box" layoutX="213.0" layoutY="106.0" prefHeight="26.0" prefWidth="73.0" />
-      <Button fx:id="cartBtn" layoutX="180.0" layoutY="167.0" mnemonicParsing="false" onAction="#placeOrder" text="Order" />
+      <Button fx:id="cartBtn" layoutX="177.0" layoutY="159.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="26.0" prefWidth="86.0" stylesheets="@consumerCss.css" text="Order Now" AnchorPane.topAnchor="164.0">
+         <styleClass>
+            <String fx:value="radius2" />
+            <String fx:value="User-button2" />
+         </styleClass></Button>
       <TextField fx:id="size" layoutX="176.0" layoutY="28.0" prefHeight="26.0" prefWidth="59.0" />
       <Label fx:id="id" layoutX="273.0" layoutY="6.0" text="ID" />
       <Label fx:id="prodName" layoutX="192.0" layoutY="84.0" text="Label" />
@@ -61,6 +75,5 @@
    <styleClass>
       <String fx:value="shadow" />
       <String fx:value="radius2" />
-      <String fx:value="upper-anchore3" />
    </styleClass>
 </AnchorPane>

@@ -101,7 +101,7 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
-      <Button fx:id="backBtn" layoutX="15.0" layoutY="560.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back">
+      <Button fx:id="backBtn" layoutX="15.0" layoutY="531.0" mnemonicParsing="false" onAction="#backBtnAction" text="Go Back">
          <stylesheets>
             <URL value="@HeadLabel.css" />
             <URL value="@consumerCss.css" />
@@ -137,6 +137,14 @@
             <URL value="@adminPageStyle.css" />
          </stylesheets>
       </ComboBox>
-      <Button fx:id="search_btn" layoutX="743.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleSearchBtn" text="Search" />
+      <Button fx:id="search_btn" layoutX="743.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleSearchBtn" prefHeight="25.0" prefWidth="85.0" text="Search">
+         <stylesheets>
+            <URL value="@consumerCss.css" />
+            <URL value="@HeadLabel.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="radius3" />
+            <String fx:value="User-button2" />
+         </styleClass></Button>
    </children>
 </AnchorPane>

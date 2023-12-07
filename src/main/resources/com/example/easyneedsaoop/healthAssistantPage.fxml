@@ -30,7 +30,7 @@
                      <left>
                         <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                            <children>
-                              <AnchorPane fx:id="menuAnchorPane" layoutX="-20.0" layoutY="-20.0" prefHeight="620.0" prefWidth="253.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-20.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-20.0">
+                              <AnchorPane fx:id="menuAnchorPane" layoutX="-17.0" layoutY="-20.0" prefHeight="631.0" prefWidth="250.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-17.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-20.0">
                                  <children>
                                     <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
@@ -63,7 +63,7 @@
                                     <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                                     <Button fx:id="inventory_btn" layoutX="15.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                                     <Button fx:id="payment_btn" layoutX="16.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
-                                    <Label layoutX="57.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Label layoutX="57.0" layoutY="595.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                     <Button fx:id="chat_btn" layoutX="15.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                     <Button fx:id="order_btn" layoutX="18.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
@@ -194,7 +194,7 @@
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="health_Form" layoutX="39.0" layoutY="-15.0" prefHeight="607.0" prefWidth="846.0" stylesheets="@adminPageStyle.css">
+                              <AnchorPane fx:id="health_Form" layoutX="39.0" layoutY="-9.0" prefHeight="620.0" prefWidth="862.0" stylesheets="@adminPageStyle.css">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -352,7 +352,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="hospital" layoutX="695.0" layoutY="142.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter hospital Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="hospital" layoutX="695.0" layoutY="142.0" prefHeight="26.0" prefWidth="124.0" promptText="Enter hospital Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>
