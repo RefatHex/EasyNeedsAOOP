@@ -102,7 +102,7 @@
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>
-            <Button fx:id="chatBtn" layoutX="523.0" layoutY="261.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
+            <Button fx:id="chatBtn" layoutX="523.0" layoutY="261.0" mnemonicParsing="false" onAction="#chatBtnAction" prefHeight="39.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
                <styleClass>
                   <String fx:value="shadow" />
                   <String fx:value="radius" />

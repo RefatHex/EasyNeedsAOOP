@@ -23,67 +23,6 @@
                <image>
                   <Image url="@BG.jpg" />
                </image></ImageView>
-            <AnchorPane fx:id="command_form" layoutX="258.0" layoutY="338.0" prefHeight="77.0" prefWidth="480.0" stylesheets="@HeadLabel.css">
-               <styleClass>
-                  <String fx:value="radius" />
-                  <String fx:value="radius2" />
-                  <String fx:value="shadow" />
-                  <String fx:value="white-bg" />
-               </styleClass>
-               <children>
-                  <Button fx:id="home_anchor_btn" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#homeAnchorBtnAction" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Home">
-                     <graphic>
-                        <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@HOMEbtn.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="User-button2" />
-                        <String fx:value="radius2" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="order_btn" layoutX="178.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
-                     <graphic>
-                        <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Orders.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="User-button2" />
-                        <String fx:value="radius2" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="message_btn" layoutX="319.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="153.0" stylesheets="@loginsignup.css" text="Messages">
-                     <graphic>
-                        <ImageView fitHeight="51.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@ChatLogo.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="User-button2" />
-                        <String fx:value="radius2" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </AnchorPane>
             <Label layoutX="801.0" layoutY="20.0" prefHeight="22.0" prefWidth="55.0" stylesheets="@loginsignup.css" text="  Points">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -141,6 +80,67 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
+            <AnchorPane fx:id="command_form" layoutX="254.0" layoutY="323.0" prefHeight="77.0" prefWidth="480.0" stylesheets="@HeadLabel.css">
+               <styleClass>
+                  <String fx:value="radius" />
+                  <String fx:value="radius2" />
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <Button fx:id="home_anchor_btn" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#homeAnchorBtnAction" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Home">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@HOMEbtn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="User-button2" />
+                        <String fx:value="radius2" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="order_btn" layoutX="178.0" layoutY="9.0" mnemonicParsing="false" onAction="#orderActionBtn" prefHeight="61.0" prefWidth="128.0" stylesheets="@loginsignup.css" text="Orders">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Orders.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="User-button2" />
+                        <String fx:value="radius2" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="message_btn" layoutX="319.0" layoutY="9.0" mnemonicParsing="false" onAction="#msgBtnAction" prefHeight="61.0" prefWidth="153.0" stylesheets="@loginsignup.css" text="Messages">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@ChatLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="User-button2" />
+                        <String fx:value="radius2" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <ImageView fitHeight="143.0" fitWidth="153.0" layoutX="63.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">

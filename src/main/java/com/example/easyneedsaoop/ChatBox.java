@@ -66,7 +66,7 @@ public class ChatBox implements Initializable {
 
     private void initializeClient() {
         try {
-            client = new Client(new Socket("localhost", 5555), username, targetUsername,this);
+            client = new Client(new Socket("localhost", 1234), username, targetUsername,this);
             System.out.println("Connected to server");
             client.readMessage();
         } catch (IOException e) {

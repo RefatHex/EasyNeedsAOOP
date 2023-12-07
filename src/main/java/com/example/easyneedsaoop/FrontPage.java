@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -41,6 +42,14 @@ public class FrontPage {
 
     @FXML
     private Button health_btn_1;
+    @FXML
+    private AnchorPane chat_form;
+    @FXML
+    private AnchorPane command_form;
+    @FXML
+    private AnchorPane order_form;
+    @FXML
+    private AnchorPane homeAnchor;
 
     @FXML
     private Button health_btn_2;
@@ -64,10 +73,22 @@ public class FrontPage {
     private Alert alert ;
 
     public void homeAnchorBtnAction(){
-
+        homeAnchor.setVisible(true);
+        command_form.setVisible(true);
+        order_form.setVisible(false);
+        chat_form.setVisible(false);
     }
     public void orderActionBtn(){
-
+        homeAnchor.setVisible(false);
+        command_form.setVisible(true);
+        order_form.setVisible(true);
+        chat_form.setVisible(false);
+    }
+    public void msgBtnAction(){
+        homeAnchor.setVisible(false);
+        command_form.setVisible(true);
+        order_form.setVisible(false);
+        chat_form.setVisible(true);
     }
     public void homeActionBtn(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Consumer_rent.fxml"));

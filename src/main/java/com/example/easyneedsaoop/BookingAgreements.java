@@ -78,6 +78,7 @@ public class BookingAgreements {
     private Image image;
     rentData dataa;
     int id;
+    private String userName;
     public void InventoryImportBtn(){
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
@@ -94,6 +95,7 @@ public class BookingAgreements {
         this.dataa = data;
         id=data.getId();
         userNameLabel.setText(data.getUserName());
+        userName = data.getUserName();
         houseNameLabel.setText(data.getHouseName());
         locationLabel.setText(data.getAddress());
         String path = "File:" + data.getImage();
@@ -102,8 +104,8 @@ public class BookingAgreements {
         locationLabel.setText(data.getAddress());
         rent.setText(String.valueOf(data.getRent()));
     }
-    private int homeid;
     private String ownerName;
+    private int homeid;
     private String houseName;
     private String ownerUsername;
     private double rentt;
@@ -185,6 +187,10 @@ public class BookingAgreements {
         //stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
+    }
+    public void chatBtnAction() throws IOException {
+        ChatBoxOpenner chatBoxOpenner = new ChatBoxOpenner();
+        chatBoxOpenner.chatBtnHandler(userName);
     }
 }
 
