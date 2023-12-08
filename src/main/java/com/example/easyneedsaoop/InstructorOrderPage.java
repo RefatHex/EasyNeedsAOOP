@@ -77,7 +77,11 @@ public class InstructorOrderPage {
 
     public void handleBookingClick(ActionEvent event) {
         if (isAlreadyEnrolled(data.getCourseID(), com.example.easyneedsaoop.data.username)) {
-            System.out.println("Already enrolled in this course!");
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Already enrolled in this course");
+            alert.showAndWait();
             return;
         }
         String insertSql = "INSERT INTO enrollDB (cardID,OwnerName,userName,date) VALUES ( ?, ?, ?, NOW())";
@@ -92,15 +96,20 @@ public class InstructorOrderPage {
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
-                        Stage stage = new Stage();
-                        //stage.initStyle(StageStyle.UNDECORATED);
-                        Scene scene = new Scene(fxmlLoader.load());
-                        stage.setScene(scene);
-                        //stage.initStyle(StageStyle.UNDECORATED);
-                        stage.setTitle("Easy Pay");
-                        stage.show();
-                        System.out.println("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
+//                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
+//                        Stage stage = new Stage();
+//                        //stage.initStyle(StageStyle.UNDECORATED);
+//                        Scene scene = new Scene(fxmlLoader.load());
+//                        stage.setScene(scene);
+//                        //stage.initStyle(StageStyle.UNDECORATED);
+//                        stage.setTitle("Easy Pay");
+//                        stage.show();
+//                        //System.out.println("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Congratulations");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
+                        alert.showAndWait();
                     } else {
                         alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Error");

@@ -103,6 +103,7 @@ public class BookingAgreements {
         viwer.setImage(image);
         locationLabel.setText(data.getAddress());
         rent.setText(String.valueOf(data.getRent()));
+        room.setText(String.valueOf(data.getRoom()));
     }
 
     private Connection connect;
@@ -132,7 +133,12 @@ public class BookingAgreements {
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        //System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Success");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        alert.showAndWait();
                     } else {
                         System.out.println("Failed to retrieve order ID.");
                     }
@@ -148,11 +154,6 @@ public class BookingAgreements {
      void handleBookingClick(ActionEvent e) {
        if(e.getSource()==bookBtn) {
            if (check1.isSelected() && check2.isSelected() && nidImport()) {
-               alert = new Alert(Alert.AlertType.INFORMATION);
-               alert.setTitle("Success");
-               alert.setHeaderText(null);
-               alert.setContentText("Successfully Booked");
-               alert.showAndWait();
                placeOrder();
            } else {
                alert = new Alert(Alert.AlertType.ERROR);

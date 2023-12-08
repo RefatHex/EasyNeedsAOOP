@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -65,6 +66,7 @@ public class CatringCart implements Initializable {
     CateringData data;
     private Connection connect;
     private Image image;
+    private Alert alert;
 
     public void setData(CateringData clickedData){
         this.data=clickedData;
@@ -101,7 +103,12 @@ public class CatringCart implements Initializable {
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        //System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Congratulations");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        alert.showAndWait();
                     } else {
                         System.out.println("Failed to retrieve order ID.");
                     }
