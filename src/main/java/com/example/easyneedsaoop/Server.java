@@ -37,7 +37,7 @@ public class Server {
 
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(1234);
+            ServerSocket serverSocket = new ServerSocket(123);
             Server server = new Server(serverSocket);
             server.startServer();
         } catch (Exception e) {

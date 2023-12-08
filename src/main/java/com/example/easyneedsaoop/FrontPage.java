@@ -185,5 +185,8 @@ public class FrontPage {
             e.printStackTrace();
         }
     }
+    public void handleUserBtnAction(){
+
+    }
 
 }

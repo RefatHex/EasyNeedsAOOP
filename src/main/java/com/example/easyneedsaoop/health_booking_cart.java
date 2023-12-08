@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -92,15 +93,20 @@ public class health_booking_cart {
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
-                        Stage stage = new Stage();
-                        //stage.initStyle(StageStyle.UNDECORATED);
-                        Scene scene = new Scene(fxmlLoader.load());
-                        stage.setScene(scene);
-                        //stage.initStyle(StageStyle.UNDECORATED);
-                        stage.setTitle("Easy Pay");
-                        stage.show();
+//                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
+//                        Stage stage = new Stage();
+//                        //stage.initStyle(StageStyle.UNDECORATED);
+//                        Scene scene = new Scene(fxmlLoader.load());
+//                        stage.setScene(scene);
+//                        //stage.initStyle(StageStyle.UNDECORATED);
+//                        stage.setTitle("Easy Pay");
+//                        stage.show();
                         System.out.println("Appointment placed successfully! Appointment ID: " + generatedKeys.getInt(1));
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Congratulations");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Appointment placed successfully! Appointment ID: " + generatedKeys.getInt(1));
+                        alert.showAndWait();
                     } else {
                         alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("Error");
@@ -116,6 +122,10 @@ public class health_booking_cart {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void chatBtnAction() throws IOException {
+        ChatBoxOpenner chatBoxOpenner = new ChatBoxOpenner();
+        chatBoxOpenner.chatBtnHandler(healthData.userName);
     }
 
 }

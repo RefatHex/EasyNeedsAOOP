@@ -39,7 +39,7 @@
             <String fx:value="line" />
          </styleClass>
          <children>
-            <Button layoutX="5.0" layoutY="30.0" minWidth="38.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="45.0" stylesheets="@HeadLabel.css">
+            <Button fx:id="userBtn" layoutX="5.0" layoutY="30.0" minWidth="38.0" mnemonicParsing="false" onAction="#handleUserBtnAction" prefHeight="44.0" prefWidth="45.0" stylesheets="@HeadLabel.css">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>

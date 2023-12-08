@@ -50,6 +50,8 @@ public class Cloth_ConsumerPage implements Initializable {
 
     @FXML
     private GridPane gridPane1;
+    @FXML
+    private Button userBtn;
 
     @FXML
     private GridPane gridPane2;
@@ -178,5 +180,8 @@ public class Cloth_ConsumerPage implements Initializable {
         stage.setScene(scene);
         stage.show();
         backBtn.getScene().getWindow().hide();
+    }
+    public void handleUserBtnAction(){
+
     }
 }

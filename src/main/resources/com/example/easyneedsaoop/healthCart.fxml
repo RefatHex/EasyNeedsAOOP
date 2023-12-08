@@ -89,19 +89,7 @@
                   <String fx:value="User-button2" />
                </styleClass>
             </Button>
-            <Button fx:id="payBtn" layoutX="13.0" layoutY="366.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="82.0" text="Pay Now">
-               <stylesheets>
-                  <URL value="@HeadLabel.css" />
-                  <URL value="@loginsignup.css" />
-                  <URL value="@consumerCss.css" />
-                  <URL value="@adminPageStyle.css" />
-               </stylesheets>
-               <styleClass>
-                  <String fx:value="radius3" />
-                  <String fx:value="upper-anchore3" />
-               </styleClass>
-            </Button>
-            <Button fx:id="chatBtn" layoutX="197.0" layoutY="367.0" mnemonicParsing="false" text="Chat">
+            <Button fx:id="chatBtn" layoutX="177.0" layoutY="373.0" mnemonicParsing="false" onAction="#chatBtnAction" prefHeight="42.0" prefWidth="93.0" text="Chat">
                <stylesheets>
                   <URL value="@HeadLabel.css" />
                   <URL value="@loginsignup.css" />
@@ -140,7 +128,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="backBtn" layoutX="123.0" layoutY="388.0" mnemonicParsing="false" onAction="#backBtnAction" styleClass="radius3" stylesheets="@HeadLabel.css" text="Back" />
+            <Button fx:id="backBtn" layoutX="20.0" layoutY="373.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="42.0" prefWidth="93.0" styleClass="radius3" stylesheets="@HeadLabel.css" text="Back" />
          </children>
       </AnchorPane>
    </children>

@@ -76,26 +76,27 @@ public class InstructorOrderPage {
 
 
     public void handleBookingClick(ActionEvent event) {
-        if (isAlreadyEnrolled(data.getCourseID(), com.example.easyneedsaoop.data.username)) {
+        if(check1.isSelected()&&check2.isSelected()){
+            if (isAlreadyEnrolled(data.getCourseID(), com.example.easyneedsaoop.data.username)) {
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Already enrolled in this course");
             alert.showAndWait();
             return;
-        }
-        String insertSql = "INSERT INTO enrollDB (cardID,OwnerName,userName,date) VALUES ( ?, ?, ?, NOW())";
-        Connection connect = database.connectDB();
+        } else {
+            String insertSql = "INSERT INTO enrollDB (cardID,OwnerName,userName,date) VALUES ( ?, ?, ?, NOW())";
+            Connection connect = database.connectDB();
 
-        try (PreparedStatement preparedStatement = connect.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setInt(1, data.getCourseID());
-            preparedStatement.setString(2, data.getInstructorName());
-            preparedStatement.setString(3, com.example.easyneedsaoop.data.username);
-            int affectedRows = preparedStatement.executeUpdate();
+            try (PreparedStatement preparedStatement = connect.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
+                preparedStatement.setInt(1, data.getCourseID());
+                preparedStatement.setString(2, data.getInstructorName());
+                preparedStatement.setString(3, com.example.easyneedsaoop.data.username);
+                int affectedRows = preparedStatement.executeUpdate();
 
-            if (affectedRows > 0) {
-                try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
+                if (affectedRows > 0) {
+                    try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                        if (generatedKeys.next()) {
 //                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
 //                        Stage stage = new Stage();
 //                        //stage.initStyle(StageStyle.UNDECORATED);
@@ -105,27 +106,37 @@ public class InstructorOrderPage {
 //                        stage.setTitle("Easy Pay");
 //                        stage.show();
 //                        //System.out.println("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
-                        alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Congratulations");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
-                        alert.showAndWait();
-                    } else {
-                        alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Error");
-                        alert.setHeaderText(null);
-                        alert.setContentText("Unable to Enroll");
-                        alert.showAndWait();
+                            alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Congratulations");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Course enrolled successfully! Enroll ID: " + generatedKeys.getInt(1));
+                            alert.showAndWait();
+                        } else {
+                            alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Unable to Enroll");
+                            alert.showAndWait();
 
+                        }
                     }
+                } else {
+                    System.out.println("Failed to place appointment.");
                 }
-            } else {
-                System.out.println("Failed to place appointment.");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-    }
+        } else{
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Agree with all terms and conditions to continue");
+            alert.showAndWait();
+        }
+        }
+
+
     // Method to check if the user is already enrolled
     private boolean isAlreadyEnrolled(int cardID, String userName) {
         String selectSql = "SELECT * FROM enrollDB WHERE cardID = ? AND userName = ?";

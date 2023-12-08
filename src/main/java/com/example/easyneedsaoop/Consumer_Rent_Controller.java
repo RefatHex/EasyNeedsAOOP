@@ -30,6 +30,8 @@ public class Consumer_Rent_Controller implements Initializable {
     @FXML
     private Button backBtn;
     @FXML
+    private Button userBtn;
+    @FXML
     private GridPane gridPane;
     private Connection connect;
     private PreparedStatement prepare;
@@ -207,6 +209,9 @@ public class Consumer_Rent_Controller implements Initializable {
         List<String> sortType = new ArrayList<>(Arrays.asList(sortOptions));
         ObservableList sortData= FXCollections.observableArrayList(sortType);
         sortOption.setItems(sortData);
+    }
+    public void handleUserBtnAction(){
+
     }
 }
 

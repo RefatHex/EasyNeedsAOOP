@@ -28,6 +28,8 @@ public class Consumer_Health_Controller implements Initializable {
     @FXML
     private Button backBtn;
     @FXML
+    private Button userBtn;
+    @FXML
     private Button search_btn;
 
     @FXML
@@ -203,5 +205,8 @@ public class Consumer_Health_Controller implements Initializable {
         populateNameList();
         populateServiceList();
         healthDisplayCard();
+    }
+    public void handleUserBtnAction(){
+
     }
 }

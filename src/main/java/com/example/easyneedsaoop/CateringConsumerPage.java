@@ -36,7 +36,8 @@ public class CateringConsumerPage implements Initializable {
 
     @FXML
     private AnchorPane cartForm;
-
+    @FXML
+    private Button userBtn;
     @FXML
     private Button cartBtn;
     @FXML
@@ -219,5 +220,8 @@ public class CateringConsumerPage implements Initializable {
         cardDetails.clear();
         cardDetails.addAll(menuGetData("SELECT * FROM `cateringinfo`"));
         menuDisplayCard(cardDetails);
+    }
+    public void handleUserBtnAction(){
+
     }
 }

@@ -39,7 +39,7 @@
                            </font>
                         </Label>
                         <CheckBox fx:id="check1" layoutX="14.0" layoutY="141.0" mnemonicParsing="false" text="I agree to all the terms and conditions" />
-                        <CheckBox fx:id="check2" layoutX="15.0" layoutY="170.0" mnemonicParsing="false" />
+                        <CheckBox fx:id="check2" layoutX="15.0" layoutY="170.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="299.0" text="I agree to get updates about Easy Needs Features" />
                         <Button fx:id="bookBtn" layoutX="171.0" layoutY="198.0" mnemonicParsing="false" onAction="#handleBookingClick" prefHeight="32.0" prefWidth="161.0" text="Enroll Now">
                            <stylesheets>
                               <URL value="@loginsignup.css" />
@@ -78,7 +78,6 @@
                            </font>
                         </Label>
                         <Button fx:id="backBtn" layoutX="43.0" layoutY="201.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="47.0" text="Back" />
-                        <Label layoutX="39.0" layoutY="172.0" prefHeight="18.0" prefWidth="264.0" text="I agree to get updates about Easy Needs Feature" />
                      </children>
                   </AnchorPane>
                </children>

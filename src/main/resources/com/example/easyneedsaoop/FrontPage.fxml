@@ -50,7 +50,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="user_btn" layoutX="885.0" layoutY="13.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="39.0">
+            <Button fx:id="user_btn" layoutX="885.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleUserBtnAction" prefHeight="35.0" prefWidth="39.0">
                <graphic>
                   <ImageView fx:id="user_image" fitHeight="39.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
