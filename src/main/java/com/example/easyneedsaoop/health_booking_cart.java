@@ -81,13 +81,14 @@ public class health_booking_cart {
 
 
     public void placeAppointment() {
-        String insertSql = "INSERT INTO healthAppointment (cardID,docName,userName,date) VALUES ( ?, ?, ?, NOW())";
+        String insertSql = "INSERT INTO healthAppointment (cardID,docName,userName,date,easyneeds.healthappointment.ownerUserName) VALUES (?, ?, ?, NOW(),?)";
         Connection connect = database.connectDB();
 
         try (PreparedStatement preparedStatement = connect.prepareStatement(insertSql, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setInt(1, healthData.getCardID());
             preparedStatement.setString(2, healthData.getDocName());
             preparedStatement.setString(3, com.example.easyneedsaoop.data.username);
+            preparedStatement.setString(4, healthData.getUserName());
             int affectedRows = preparedStatement.executeUpdate();
 
             if (affectedRows > 0) {

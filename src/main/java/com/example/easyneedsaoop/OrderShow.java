@@ -21,6 +21,7 @@ public class OrderShow {
     CourseData courseData;
     CateringOrderData cateringData;
     ClothShopData clothShopData;
+    healthappointmentOrder healthData;
     public void setData(CateringOrderData data){
         this.cateringData=data;
         customer_name.setText(cateringData.getBuyerUserName());
@@ -45,5 +46,11 @@ public class OrderShow {
         customer_name.setText(clothShopData.getUsername());
         house_Name.setText(String.valueOf(clothShopData.getProductID()));
         date.setText(String.valueOf(data.getDate()));
+    }
+    public void setData(healthappointmentOrder healthData){
+        this.healthData=healthData;
+        customer_name.setText(healthData.getUserName());
+        house_Name.setText(String.valueOf(healthData.getCardID()));
+        date.setText(String.valueOf(healthData.getDate()));
     }
 }

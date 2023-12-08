@@ -99,7 +99,7 @@ public class HealthAssistantPageController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> health_col_specialist;
-    private ObservableList<rentOrderData> orderDetails = FXCollections.observableArrayList();
+    private ObservableList<healthappointmentOrder> orderDetails = FXCollections.observableArrayList();
     @FXML
     private TableColumn<?, ?> health_col_starting;
 
@@ -257,6 +257,7 @@ public class HealthAssistantPageController implements Initializable {
         }else if (event.getSource() == order_btn){
             dashboard_form.setVisible(false);
             health_Form.setVisible(false);
+            menuDisplayOrderCard();
             order_form.setVisible(true);
             chat_form.setVisible(false);
         }
@@ -474,7 +475,7 @@ public class HealthAssistantPageController implements Initializable {
         setServiceType();
         healthAssistanceShowData();
         connect = database.connectDB();
-        menuDisplayOrderCard ();
+        menuDisplayOrderCard();
     }
 
     public void InventoryImportBtn(ActionEvent event) {
@@ -543,28 +544,24 @@ public class HealthAssistantPageController implements Initializable {
         }
     }
 
-    public ObservableList<rentOrderData> menuGetOrderData() {
-        String sql = "SELECT * FROM `rentorder` WHERE ownerUserName = ?";
-        ObservableList<rentOrderData> listOrderData = FXCollections.observableArrayList();
+    public ObservableList<healthappointmentOrder> menuGetOrderData() {
+        String sql = "SELECT * FROM `healthappointment` WHERE ownerUserName = ?";
+        ObservableList<healthappointmentOrder> listOrderData = FXCollections.observableArrayList();
 
         connect = database.connectDB();
         try {
             prepare = connect.prepareStatement(sql);
             prepare.setString(1, data.username);
             result = prepare.executeQuery();
-            rentOrderData orderData;
+            healthappointmentOrder orderData;
             while (result.next()) {
-                orderData = new rentOrderData(result.getInt("id"),
-                        result.getString("ownerName"),
-                        result.getString("houseName"),
-                        result.getString("ownerUserName"),
-                        result.getString("tanentUserName"),
-                        result.getDouble("rent"),
-                        result.getString("address"),
-                        result.getString("nidImage"),
-                        result.getDate("date"));
-                listOrderData.add(orderData);
-            }
+                orderData = new healthappointmentOrder(result.getInt("id"),
+                        result.getInt("cardID"),
+                        result.getString("docName"),
+                        result.getString("userName"),
+                        result.getDate("date"),
+                        result.getString("ownerUserName"));
+                listOrderData.add(orderData);}
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -579,7 +576,7 @@ public class HealthAssistantPageController implements Initializable {
         int column = 0;
         gridPane.getRowConstraints().clear();
         gridPane.getColumnConstraints().clear();
-        for (rentOrderData orderDetail : orderDetails) {
+        for (healthappointmentOrder orderDetail : orderDetails) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("order_show.fxml"));

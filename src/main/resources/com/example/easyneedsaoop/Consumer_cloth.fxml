@@ -7,8 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -53,7 +51,7 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <Button fx:id="cartBtn" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" onAction="#slideCartForm" stylesheets="@HeadLabel.css">
+            <Button fx:id="cartBtn" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" stylesheets="@HeadLabel.css">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -130,7 +128,7 @@
             <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <ComboBox layoutX="197.0" layoutY="11.0" prefHeight="21.0" prefWidth="150.0">
+      <ComboBox fx:id="sortBtn" layoutX="197.0" layoutY="11.0" onAction="#handleSearchAndSort" prefHeight="21.0" prefWidth="150.0">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius3" />
@@ -145,12 +143,16 @@
       <Separator layoutX="634.0" layoutY="10.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
       <HBox layoutX="766.0" layoutY="11.0" prefHeight="25.0" prefWidth="200.0">
          <children>
-            <TextField opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@SearchLogo.png" />
-               </image>
-            </ImageView>
+            <TextField fx:id="shopNameBox" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
+            <Button fx:id="shopNameBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="34.0" prefWidth="38.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@SearchLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
          <stylesheets>
             <URL value="@HeadLabel.css" />
@@ -172,87 +174,5 @@
             <String fx:value="radius3" />
             <String fx:value="User-button2" />
          </styleClass></Button>
-      <AnchorPane fx:id="cart_form" layoutX="-289.0" layoutY="-3.0" prefHeight="599.0" prefWidth="289.0">
-         <children>
-            <TableView fx:id="menu_tableView" layoutX="4.0" layoutY="4.0" prefHeight="342.0" prefWidth="278.0">
-               <columns>
-                  <TableColumn fx:id="menu_col_productName" prefWidth="112.0" text="Product Name" />
-                  <TableColumn fx:id="menu_col_quantity" prefWidth="54.0" text="Quantity" />
-                  <TableColumn fx:id="menu_col_size" prefWidth="46.0" text="Size" />
-                  <TableColumn fx:id="menu_col_price" prefWidth="70.0" text="Price" />
-               </columns>
-            </TableView>
-            <Label layoutX="100.0" layoutY="361.0" text="Total:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="144.0" layoutY="361.0" text="0.00৳">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Button layoutX="24.0" layoutY="404.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="238.0" stylesheets="@HeadLabel.css" text="Pay Now">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="radius3" />
-                  <String fx:value="User-button2" />
-               </styleClass>
-            </Button>
-            <Button fx:id="removeBtn" layoutX="27.0" layoutY="488.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" stylesheets="@HeadLabel.css" text="Remove">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="radius3" />
-                  <String fx:value="User-button2" />
-               </styleClass>
-            </Button>
-            <Button layoutX="145.0" layoutY="488.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="106.0" stylesheets="@HeadLabel.css" text="Receipt">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="radius3" />
-                  <String fx:value="User-button2" />
-               </styleClass>
-            </Button>
-            <Button fx:id="closeBtn" layoutX="40.0" layoutY="555.0" mnemonicParsing="false" onAction="#slideCartForm" prefHeight="32.0" prefWidth="60.0" stylesheets="@HeadLabel.css" text="Close">
-               <styleClass>
-                  <String fx:value="User-button2" />
-                  <String fx:value="radius3" />
-               </styleClass>
-            </Button>
-            <Button fx:id="chatBtn" layoutX="171.0" layoutY="547.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" stylesheets="@HeadLabel.css" text="Chat">
-               <styleClass>
-                  <String fx:value="shadow" />
-                  <String fx:value="radius" />
-                  <String fx:value="User-button2" />
-               </styleClass>
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@ChatLogo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-         </children>
-         <stylesheets>
-            <URL value="@HeadLabel.css" />
-            <URL value="@adminPageStyle.css" />
-            <URL value="@consumerCss.css" />
-            <URL value="@loginsignup.css" />
-         </stylesheets>
-         <styleClass>
-            <String fx:value="upper-anchore4" />
-            <String fx:value="radius" />
-         </styleClass>
-      </AnchorPane>
    </children>
 </AnchorPane>
