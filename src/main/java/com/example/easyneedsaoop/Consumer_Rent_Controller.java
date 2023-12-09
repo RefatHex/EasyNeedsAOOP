@@ -210,8 +210,9 @@ public class Consumer_Rent_Controller implements Initializable {
         ObservableList sortData= FXCollections.observableArrayList(sortType);
         sortOption.setItems(sortData);
     }
-    public void handleUserBtnAction(){
-
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
     }
 }
 

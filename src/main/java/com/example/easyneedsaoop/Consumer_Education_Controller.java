@@ -161,4 +161,8 @@ public class Consumer_Education_Controller implements Initializable {
         stage.show();
         backBtn.getScene().getWindow().hide();
     }
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
+    }
 }

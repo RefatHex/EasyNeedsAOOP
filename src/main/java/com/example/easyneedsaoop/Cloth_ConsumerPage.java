@@ -232,7 +232,8 @@ public class Cloth_ConsumerPage implements Initializable {
         ObservableList sortData= FXCollections.observableArrayList(sortType);
         sortBtn.setItems(sortData);
     }
-    public void handleUserBtnAction(){
-
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
     }
 }

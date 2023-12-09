@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class FrontPage {
@@ -185,8 +186,9 @@ public class FrontPage {
             e.printStackTrace();
         }
     }
-    public void handleUserBtnAction(){
-
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
     }
 
 }

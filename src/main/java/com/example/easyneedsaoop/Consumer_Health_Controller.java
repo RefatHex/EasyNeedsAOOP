@@ -206,7 +206,8 @@ public class Consumer_Health_Controller implements Initializable {
         populateServiceList();
         healthDisplayCard();
     }
-    public void handleUserBtnAction(){
-
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
     }
 }

@@ -221,7 +221,8 @@ public class CateringConsumerPage implements Initializable {
         cardDetails.addAll(menuGetData("SELECT * FROM `cateringinfo`"));
         menuDisplayCard(cardDetails);
     }
-    public void handleUserBtnAction(){
-
+    public void handleUserBtnAction() throws IOException {
+        OpenUserDetails details=new OpenUserDetails();
+        details.show();
     }
 }
