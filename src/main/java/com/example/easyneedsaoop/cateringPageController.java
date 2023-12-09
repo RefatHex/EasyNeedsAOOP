@@ -104,13 +104,11 @@ public class cateringPageController implements Initializable {
     @FXML
     private AnchorPane catering_form;
 
-    @FXML
-    private Button dashboard_btn;
+
     @FXML
     private GridPane gridPane;
 
-    @FXML
-    private AnchorPane dashboard_form;
+
 
     @FXML
     private TextField extraInfoText;
@@ -344,8 +342,8 @@ public class cateringPageController implements Initializable {
         cateringInventoryShowData();
         displayUsername();
         optionAdder();
-        dashboard_form.setVisible(true);
-        catering_form.setVisible(false);
+
+        catering_form.setVisible(true);
         menuDisplayOrderCard ();
     }
 
@@ -382,17 +380,12 @@ public class cateringPageController implements Initializable {
 
     public void handleEvent(ActionEvent event) throws IOException {
         if (event.getSource() == catering_btn) {
-            dashboard_form.setVisible(false);
+
             catering_form.setVisible(true);
             order_form.setVisible(false);
             chat_form.setVisible(false);
-        } else if (event.getSource() == dashboard_btn) {
-            dashboard_form.setVisible(true);
-            catering_form.setVisible(false);
-            order_form.setVisible(false);
-            chat_form.setVisible(false);
         } else if (event.getSource() == cateringPaymentBtn) {
-            dashboard_form.setVisible(false);
+
             catering_form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage = new Stage();
@@ -403,13 +396,13 @@ public class cateringPageController implements Initializable {
             stage.show();
             //cateringPaymentBtn.getScene().getWindow().hide();
         } else if (event.getSource() == order_btn) {
-            dashboard_form.setVisible(false);
+
             catering_form.setVisible(false);
             order_form.setVisible(true);
             chat_form.setVisible(false);
             menuDisplayOrderCard();
         } else if (event.getSource() == chat_btn) {
-            dashboard_form.setVisible(false);
+
             catering_form.setVisible(false);
             chat_form.setVisible(true);
             order_form.setVisible(false);

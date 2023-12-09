@@ -76,11 +76,9 @@ public class ClothShopPageController implements Initializable {
     @FXML
     private Button customer_btn;
 
-    @FXML
-    private Button dashboard_btn;
 
-    @FXML
-    private AnchorPane dashboard_form;
+
+
 
     @FXML
     private Label imgLbl12;
@@ -414,13 +412,8 @@ public void InventoryImportBtn(){
     }
 
     public void handleEvent(ActionEvent e){
-        if(e.getSource()==dashboard_btn){
-            dashboard_form.setVisible(true);
-            Clothing_Form.setVisible(false);
-            order_form.setVisible(false);
-            chat_form.setVisible(false);
-        }else if(e.getSource()==inventory_btn){
-            dashboard_form.setVisible(false);
+        if(e.getSource()==inventory_btn){
+
             Clothing_Form.setVisible(true);
             chat_form.setVisible(false);
             order_form.setVisible(false);
@@ -438,13 +431,13 @@ public void InventoryImportBtn(){
             stage.show();
             //payment_btn.getScene().getWindow().hide();
         }else if(e.getSource()==chat_btn){
-            dashboard_form.setVisible(false);
+
             Clothing_Form.setVisible(false);
             chat_form.setVisible(true);
             order_form.setVisible(false);
             showMessageList();
         }else if (e.getSource() == order_btn){
-            dashboard_form.setVisible(false);
+
             Clothing_Form.setVisible(false);
             order_form.setVisible(true);
             chat_form.setVisible(false);
@@ -556,8 +549,8 @@ public void InventoryImportBtn(){
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         optionAdder();
-        dashboard_form.setVisible(true);
-        Clothing_Form.setVisible(false);
+
+        Clothing_Form.setVisible(true);
         clothShopInventoryShowData();
         menuDisplayOrderCard ();
     }

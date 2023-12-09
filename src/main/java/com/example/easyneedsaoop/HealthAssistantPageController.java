@@ -39,11 +39,7 @@ public class HealthAssistantPageController implements Initializable {
     @FXML
     private TableView<HealthData> healthAssistantTable;
 
-    @FXML
-    private Button dashboard_btn;
 
-    @FXML
-    private AnchorPane dashboard_form;
 
     @FXML
     private TextField doctorID;
@@ -227,17 +223,11 @@ public class HealthAssistantPageController implements Initializable {
 
     public void handleEvent(ActionEvent event) throws IOException {
         if (event.getSource() == inventory_btn) {
-            dashboard_form.setVisible(false);
+
             health_Form.setVisible(true);
             chat_form.setVisible(false);
             order_form.setVisible(false);
-        } else if (event.getSource() == dashboard_btn) {
-            dashboard_form.setVisible(true);
-            health_Form.setVisible(false);
-            chat_form.setVisible(false);
-            order_form.setVisible(false);
         } else if (event.getSource() == payment_btn) {
-            dashboard_form.setVisible(false);
             health_Form.setVisible(false);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MoneyTransferStage.fxml"));
             Stage stage = new Stage();
@@ -249,13 +239,13 @@ public class HealthAssistantPageController implements Initializable {
             stage.show();
             //payment_btn.getScene().getWindow().hide();
         }else if(event.getSource()==chat_btn){
-            dashboard_form.setVisible(false);
+
             health_Form.setVisible(false);
             chat_form.setVisible(true);
             order_form.setVisible(false);
             showMessageList();
         }else if (event.getSource() == order_btn){
-            dashboard_form.setVisible(false);
+
             health_Form.setVisible(false);
             menuDisplayOrderCard();
             order_form.setVisible(true);
@@ -469,6 +459,7 @@ public class HealthAssistantPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        health_Form.setVisible(true);
         healthAssistanceShowData();
         displayUsername();
         setAvailabilty();

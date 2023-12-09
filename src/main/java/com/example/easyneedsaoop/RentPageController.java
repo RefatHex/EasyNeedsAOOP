@@ -32,8 +32,7 @@ public class RentPageController implements Initializable {
     @FXML
     private AnchorPane adminAnchorPane;
 
-    @FXML
-    private AnchorPane dashboard_form;
+
     @FXML
     private AnchorPane order_form;
 
@@ -61,8 +60,7 @@ public class RentPageController implements Initializable {
     @FXML
     private AnchorPane rentAnchor;
 
-    @FXML
-    private Button rentDashboard_btn;
+
 
     @FXML
     private TableView<rentData> rentInTable;
@@ -179,8 +177,8 @@ public class RentPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        dashboard_form.setVisible(true);
-        rentIn_form.setVisible(false);
+
+        rentIn_form.setVisible(true);
         order_form.setVisible(false);
         displayUsername();
         yesOrNo();
@@ -494,17 +492,11 @@ public class RentPageController implements Initializable {
     }
     public void handleEvent(ActionEvent event) throws IOException {
         if (event.getSource() == rentInventory_btn) {
-            dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
             order_form.setVisible(false);
             chat_form.setVisible(false);
-        } else if (event.getSource() == rentDashboard_btn) {
-            dashboard_form.setVisible(true);
-            rentIn_form.setVisible(false);
-            order_form.setVisible(false);
-            chat_form.setVisible(false);
         } else if (event.getSource() == rentPayment_btn) {
-            dashboard_form.setVisible(false);
+
             chat_form.setVisible(false);
             order_form.setVisible(false);
             rentIn_form.setVisible(false);
@@ -517,12 +509,12 @@ public class RentPageController implements Initializable {
             stage.show();
             //rentPayment_btn.getScene().getWindow().hide();
         }else if (event.getSource() == order_btn){
-            dashboard_form.setVisible(false);
+
             rentIn_form.setVisible(false);
             order_form.setVisible(true);
             chat_form.setVisible(false);
         }else if(event.getSource()==chat_btn){
-            dashboard_form.setVisible(false);
+
             rentIn_form.setVisible(false);
             order_form.setVisible(false);
             chat_form.setVisible(true);

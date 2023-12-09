@@ -54,11 +54,6 @@ public class InstructorPageController implements Initializable {
     @FXML
     private ComboBox<?> course_type;
 
-    @FXML
-    private Button dashboard_btn;
-
-    @FXML
-    private AnchorPane dashboard_form;
 
     @FXML
     private TextField instructName;
@@ -477,13 +472,7 @@ public class InstructorPageController implements Initializable {
     }
 
     public void handleEvent(ActionEvent e){
-        if(e.getSource()==dashboard_btn){
-            dashboard_form.setVisible(true);
-            instructor_form.setVisible(false);
-            chat_form.setVisible(false);
-            order_form.setVisible(false);
-        }else if(e.getSource()==inventory_btn){
-            dashboard_form.setVisible(false);
+         if(e.getSource()==inventory_btn){
             instructor_form.setVisible(true);
             chat_form.setVisible(false);
             order_form.setVisible(false);
@@ -500,13 +489,13 @@ public class InstructorPageController implements Initializable {
             stage.setTitle("Easy Pay");
             stage.show();
         }else if(e.getSource()==chat_btn){
-            dashboard_form.setVisible(false);
+
             instructor_form.setVisible(false);
             order_form.setVisible(false);
             chat_form.setVisible(true);
             showMessageList();
         }else if (e.getSource() == order_btn){
-            dashboard_form.setVisible(false);
+
             instructor_form.setVisible(false);
             order_form.setVisible(true);
             chat_form.setVisible(false);
@@ -568,6 +557,7 @@ public class InstructorPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        instructor_form.setVisible(true);
         optionAdder();
         connect = database.connectDB();
         courseInventoryShowData();
