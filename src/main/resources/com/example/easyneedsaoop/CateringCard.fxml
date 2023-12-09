@@ -12,22 +12,22 @@
       <ImageView fx:id="imageview" fitHeight="151.0" fitWidth="204.0" layoutX="6.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="97.0" prefWidth="218.0">
          <children>
-            <ImageView fitHeight="145.0" fitWidth="218.0" layoutX="4.0" layoutY="-2.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="145.0" fitWidth="235.0" layoutX="4.0" layoutY="-2.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ShapeFive.png" />
                </image>
             </ImageView>
-            <Label fx:id="price" layoutX="14.0" layoutY="53.0" text="Price:">
+            <Label fx:id="price" layoutX="14.0" layoutY="41.0" text="Price">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="name" layoutX="14.0" layoutY="6.0" text="Catering Name:">
+            <Label fx:id="name" layoutX="14.0" layoutY="6.0" text="Catering Name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="delivery" layoutX="15.0" layoutY="75.0" text="Deal:">
+            <Label fx:id="delivery" layoutX="15.0" layoutY="75.0" text="Deal">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

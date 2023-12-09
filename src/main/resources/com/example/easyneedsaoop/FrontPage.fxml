@@ -67,7 +67,7 @@
                   <String fx:value="User-button2" />
                   <String fx:value="radius3" />
                </styleClass></Button>
-            <Button fx:id="logoutBtn" layoutX="434.0" layoutY="434.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="120.0" text="Sign Out">
+            <Button fx:id="logoutBtn" layoutX="434.0" layoutY="422.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="120.0" text="Sign Out">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -80,7 +80,7 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <AnchorPane fx:id="command_form" layoutX="254.0" layoutY="323.0" prefHeight="77.0" prefWidth="480.0" stylesheets="@HeadLabel.css">
+            <AnchorPane fx:id="command_form" layoutX="331.0" layoutY="322.0" prefHeight="77.0" prefWidth="327.0" stylesheets="@HeadLabel.css">
                <styleClass>
                   <String fx:value="radius" />
                   <String fx:value="radius2" />
@@ -110,23 +110,6 @@
                         <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Orders.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="transparent" />
-                        <String fx:value="User-button2" />
-                        <String fx:value="radius2" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="message_btn" layoutX="319.0" layoutY="9.0" mnemonicParsing="false" onAction="#msgBtnAction" prefHeight="61.0" prefWidth="153.0" stylesheets="@loginsignup.css" text="Messages">
-                     <graphic>
-                        <ImageView fitHeight="51.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@ChatLogo.png" />
                            </image>
                         </ImageView>
                      </graphic>

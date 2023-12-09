@@ -11,11 +11,6 @@
 
 <AnchorPane prefHeight="323.0" prefWidth="212.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardDown">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="103.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Shape.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="143.0" fitWidth="209.0" layoutX="13.0" layoutY="176.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ShapeFive.png" />

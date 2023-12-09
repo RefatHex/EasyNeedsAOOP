@@ -13,31 +13,36 @@
 
 <AnchorPane prefHeight="630.0" prefWidth="544.0" styleClass="gradient" stylesheets="@loginsignup.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.MoneyTransferStage">
    <children>
-      <Label layoutX="60.0" layoutY="268.0" prefHeight="27.0" prefWidth="115.0" text="Mobile No :" textFill="WHITE">
+      <ImageView fitHeight="630.0" fitWidth="544.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MoneyBg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="213.0" prefHeight="27.0" prefWidth="115.0" text="Mobile No :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="60.0" layoutY="447.0" prefHeight="27.0" prefWidth="65.0" text="Pin:" textFill="WHITE">
+      <Label layoutX="60.0" layoutY="392.0" prefHeight="27.0" prefWidth="65.0" text="Pin:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="userMobileTxt" layoutX="148.0" layoutY="259.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your mobile number" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <PasswordField fx:id="userPasswordTxt" layoutX="148.0" layoutY="438.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your password here" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <TextField fx:id="sendAmountTxt" layoutX="148.0" layoutY="319.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter advance payment in Taka" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <Label layoutX="60.0" layoutY="328.0" prefHeight="27.0" prefWidth="115.0" text="Amount :" textFill="WHITE">
+      <TextField fx:id="userMobileTxt" layoutX="148.0" layoutY="204.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your mobile number" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <PasswordField fx:id="userPasswordTxt" layoutX="148.0" layoutY="383.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter your password here" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <TextField fx:id="sendAmountTxt" layoutX="148.0" layoutY="264.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter advance payment in Taka" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <Label layoutX="60.0" layoutY="273.0" prefHeight="27.0" prefWidth="115.0" text="Amount :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="188.0" layoutY="516.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Confirm Payment" textAlignment="CENTER">
+      <Button fx:id="confirmPaymentButton" alignment="CENTER" layoutX="188.0" layoutY="461.0" mnemonicParsing="false" onAction="#confirmPaymentButtonAction" prefHeight="53.0" prefWidth="169.0" styleClass="create-btn" stylesheets="@consumerCss.css" text="Confirm Payment" textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="Arial Bold" size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="receiverMobileTxt" layoutX="148.0" layoutY="380.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter mobile number of recepient" styleClass="text-field" stylesheets="@loginsignup.css" />
-      <Label layoutX="60.0" layoutY="389.0" prefHeight="27.0" prefWidth="80.0" text="Recipient :" textFill="WHITE">
+      <TextField fx:id="receiverMobileTxt" layoutX="148.0" layoutY="325.0" prefHeight="44.0" prefWidth="280.0" promptText="Enter mobile number of recepient" styleClass="text-field" stylesheets="@loginsignup.css" />
+      <Label layoutX="60.0" layoutY="334.0" prefHeight="27.0" prefWidth="80.0" text="Recipient :" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -47,27 +52,27 @@
             <Image url="@MoneyTransferLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@PhoneLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="438.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="438.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@DollarLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="435.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@RecipientLogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="437.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="437.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@LockLogo.png" />
          </image>
       </ImageView>
-      <Label layoutX="14.0" layoutY="598.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+      <Label layoutX="14.0" layoutY="570.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
       <Button fx:id="Backbtn" layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#BackBtnAction" prefHeight="44.0" prefWidth="49.0">
          <stylesheets>
             <URL value="@loginsignup.css" />
@@ -84,7 +89,7 @@
          </graphic>
          <styleClass>
             <String fx:value="transparent" />
-            <String fx:value="table-view" />
+            <String fx:value="User-button2" />
             <String fx:value="radius" />
          </styleClass>
       </Button>

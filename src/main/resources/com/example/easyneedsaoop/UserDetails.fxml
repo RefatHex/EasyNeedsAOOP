@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,40 +12,70 @@
 
 <AnchorPane prefHeight="164.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserDetails">
    <children>
-      <AnchorPane prefHeight="243.0" prefWidth="328.0">
+      <AnchorPane prefHeight="237.0" prefWidth="328.0">
          <children>
-            <ImageView fitHeight="207.0" fitWidth="328.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="91.0" fitWidth="328.0" layoutY="164.0" opacity="0.13" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@UnderShape.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="166.0" fitWidth="328.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@BG.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="16.0" layoutY="91.0" text="Name">
+            <Label layoutX="16.0" layoutY="91.0" text="Name:">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="129.0" text="User Name">
+            <Label layoutX="16.0" layoutY="129.0" text="User Name:">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="61.0" text="ID">
+            <Label layoutX="16.0" layoutY="61.0" text="ID:">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="user_id" layoutX="51.0" layoutY="63.0" prefHeight="17.0" prefWidth="227.0" />
-            <Label fx:id="name" layoutX="71.0" layoutY="93.0" prefHeight="17.0" prefWidth="227.0" />
-            <Label fx:id="username" layoutX="111.0" layoutY="131.0" prefHeight="17.0" prefWidth="203.0" />
+            <Label fx:id="user_id" layoutX="51.0" layoutY="61.0" prefHeight="22.0" prefWidth="227.0">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font></Label>
+            <Label fx:id="name" layoutX="71.0" layoutY="93.0" prefHeight="21.0" prefWidth="227.0">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font></Label>
+            <Label fx:id="username" layoutX="105.0" layoutY="127.0" prefHeight="25.0" prefWidth="197.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
             <ImageView fitHeight="58.0" fitWidth="88.0" layoutX="-5.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@EasyNeeds.png" />
                </image>
             </ImageView>
-            <Label layoutX="-2.0" layoutY="164.0" prefHeight="22.0" prefWidth="110.0" text="Change Password:" />
-            <TextField fx:id="old_pass" layoutY="186.0" promptText="Old Password" />
-            <TextField fx:id="new_pass" layoutX="4.0" layoutY="217.0" promptText="New Password" />
-            <Button fx:id="change_btn" layoutX="159.0" layoutY="218.0" mnemonicParsing="false" onAction="#handlePassChange" text="Change" />
+            <Label layoutX="16.0" layoutY="164.0" prefHeight="22.0" prefWidth="120.0" text="Change Password:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <TextField fx:id="old_pass" layoutX="14.0" layoutY="193.0" prefHeight="25.0" prefWidth="181.0" promptText="Old Password" styleClass="radius" stylesheets="@HeadLabel.css" />
+            <TextField fx:id="new_pass" layoutX="14.0" layoutY="224.0" prefHeight="25.0" prefWidth="181.0" promptText="New Password" styleClass="radius" stylesheets="@HeadLabel.css" />
+            <Button fx:id="change_btn" layoutX="223.0" layoutY="200.0" mnemonicParsing="false" onAction="#handlePassChange" prefHeight="37.0" prefWidth="69.0" text="Change">
+               <stylesheets>
+                  <URL value="@consumerCss.css" />
+                  <URL value="@HeadLabel.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="radius3" />
+                  <String fx:value="User-button2" />
+               </styleClass></Button>
+            <Label layoutX="104.0" layoutY="9.0" prefHeight="31.0" prefWidth="128.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" text="User Details">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

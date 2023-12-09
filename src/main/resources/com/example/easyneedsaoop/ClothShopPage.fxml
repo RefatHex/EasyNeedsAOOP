@@ -200,7 +200,7 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <TableView fx:id="clothingTable" layoutX="4.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                    <TableView fx:id="clothingTable" layoutX="4.0" layoutY="10.0" prefHeight="279.0" prefWidth="847.0" stylesheets="@adminPageStyle.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
                                        <columns>
                                           <TableColumn fx:id="clothIn_col_ProdID" prefWidth="32.79997253417969" text="Prod Id" />
                                           <TableColumn fx:id="clothIn_col_ProdName" prefWidth="91.20001983642578" text="Prod Name" />

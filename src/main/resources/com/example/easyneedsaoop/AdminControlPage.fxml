@@ -153,7 +153,7 @@
                                     </ScrollPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="41.0" layoutY="193.0" prefHeight="430.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="193.0">
+                              <AnchorPane layoutX="41.0" layoutY="193.0" prefHeight="430.0" prefWidth="853.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" visible="false" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="193.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="radius" />
@@ -837,7 +837,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="health_Form" layoutX="38.0" layoutY="6.0" prefHeight="589.0" prefWidth="857.0" stylesheets="@adminPageStyle.css" visible="false">
+                        <AnchorPane fx:id="health_Form" layoutX="38.0" layoutY="6.0" prefHeight="589.0" prefWidth="857.0" stylesheets="@adminPageStyle.css">
                            <styleClass>
                               <String fx:value="white-bg" />
                               <String fx:value="radius" />
@@ -860,7 +860,7 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <AnchorPane fx:id="healthAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
+                              <AnchorPane fx:id="healthAnchor" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="upper-anchore3" stylesheets="@HeadLabel.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                  <children>
                                     <Label layoutX="112.0" layoutY="15.0" text="ID:">
                                        <font>

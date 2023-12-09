@@ -257,7 +257,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </Button>
-                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthAssistanceAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                          <Button fx:id="health_addbtn" layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#healthAssistanceAddBtn" prefHeight="36.0" prefWidth="89.0" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -338,7 +338,7 @@
                                           <ComboBox fx:id="availableOn" layoutX="696.0" layoutY="12.0" prefHeight="29.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
-                                                <String fx:value="table-view" />
+                                                <String fx:value="User-button" />
                                              </styleClass>
                                           </ComboBox>
                                           <Label layoutX="348.0" layoutY="145.0" text="Visiting Fee:">

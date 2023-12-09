@@ -9,11 +9,6 @@
 
 <AnchorPane prefHeight="121.0" prefWidth="283.0" styleClass="shadow" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardUp">
    <children>
-      <ImageView fitHeight="120.0" fitWidth="114.0" layoutX="141.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Shape.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="98.0" fitWidth="140.0" layoutX="143.0" layoutY="-1.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ShapeFive.png" />

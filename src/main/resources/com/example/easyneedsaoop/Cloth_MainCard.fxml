@@ -3,7 +3,6 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -13,19 +12,9 @@
 
 <AnchorPane prefHeight="374.0" prefWidth="229.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_MainCard">
    <children>
-      <ImageView fitHeight="122.0" fitWidth="165.0" layoutX="126.0" layoutY="211.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Shape.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="207.0" fitWidth="169.0" layoutX="60.0" layoutY="185.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BlueShape.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="91.0" fitWidth="100.0" layoutX="-2.0" layoutY="294.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.73" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ShapeTwo.png" />
          </image>
       </ImageView>
       <ImageView fx:id="image" fitHeight="157.0" fitWidth="222.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
@@ -74,7 +63,6 @@
          </styleClass></Button>
       <TextField fx:id="size" layoutX="48.0" layoutY="248.0" prefHeight="26.0" prefWidth="56.0" />
       <Label fx:id="id" layoutX="188.0" layoutY="179.0" text="Label" />
-      <ComboBox layoutX="134.0" layoutY="249.0" prefHeight="25.0" prefWidth="68.0" />
    </children>
    <stylesheets>
       <URL value="@HeadLabel.css" />

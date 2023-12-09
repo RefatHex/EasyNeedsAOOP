@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.BarChart?>
@@ -31,7 +32,7 @@
                      <left>
                         <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                            <children>
-                              <AnchorPane fx:id="menuAnchorPane" layoutX="-10.0" layoutY="-10.0" prefHeight="610.0" prefWidth="243.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-10.0">
+                              <AnchorPane fx:id="menuAnchorPane" layoutX="-10.0" layoutY="-10.0" prefHeight="610.0" prefWidth="243.0" styleClass="upper-anchore" stylesheets="@HeadLabel.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-10.0">
                                  <children>
                                     <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
@@ -214,7 +215,7 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <AnchorPane layoutX="42.0" layoutY="312.0" prefHeight="288.0" prefWidth="841.0" styleClass="gradient" stylesheets="@loginsignup.css">
+                                    <AnchorPane layoutX="42.0" layoutY="312.0" prefHeight="288.0" prefWidth="841.0" styleClass="upper-anchore3">
                                        <children>
                                           <Label layoutX="90.0" layoutY="15.0" text="ID:">
                                              <font>
@@ -359,6 +360,10 @@
                                        <opaqueInsets>
                                           <Insets top="-6.0" />
                                        </opaqueInsets>
+                                       <stylesheets>
+                                          <URL value="@loginsignup.css" />
+                                          <URL value="@HeadLabel.css" />
+                                       </stylesheets>
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>

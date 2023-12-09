@@ -1,79 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="600.0" styleClass="gradient" stylesheets="@loginsignup.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.OwnerTenantAgreementController">
    <children>
-      <Label alignment="CENTER" layoutX="76.0" layoutY="14.0" prefHeight="53.0" prefWidth="449.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Home Owner-Tenant Agreement">
+      <ImageView fitHeight="552.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Bgpro.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="76.0" layoutY="25.0" prefHeight="53.0" prefWidth="449.0" styleClass="textfieldPro" stylesheets="@HeadLabel.css" text="Home Owner-Tenant Agreement" textFill="WHITE" AnchorPane.topAnchor="27.0">
          <font>
-            <Font size="30.0" />
+            <Font name="Bell MT Bold" size="30.0" />
          </font>
       </Label>
-      <CheckBox fx:id="ck2" layoutX="36.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give fare within first 10 days of the month" textFill="WHITE">
+      <CheckBox fx:id="ck2" layoutX="42.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give fare within first 10 days of the month" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck3" layoutX="36.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp" textFill="#fffbfe">
+      <CheckBox fx:id="ck3" layoutX="42.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="The main gates of the building will be locked by 12.30 am sharp" textFill="#fffbfe">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck4" layoutX="36.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Bills other than the rent is tenants' concern" textFill="WHITE">
+      <CheckBox fx:id="ck4" layoutX="42.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Bills other than the rent is tenants' concern" textFill="WHITE" AnchorPane.topAnchor="190.0">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck5" layoutX="36.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="In case of leaving home, must inform 2 months earlier" textFill="WHITE">
+      <CheckBox fx:id="ck5" layoutX="42.0" layoutY="221.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="In case of leaving home, must inform 2 months earlier" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck6" layoutX="36.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="If rent is delayed, 1000 BDT will be charged extra" textFill="WHITE">
+      <CheckBox fx:id="ck6" layoutX="42.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="If rent is delayed, 1000 BDT will be charged extra" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck7" layoutX="36.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="To book the home, tenant must advance 5000 BDT" textFill="WHITE">
+      <CheckBox fx:id="ck7" layoutX="42.0" layoutY="283.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="To book the home, tenant must advance 5000 BDT" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck8" layoutX="36.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give 2000 BDT for security money" textFill="WHITE">
+      <CheckBox fx:id="ck8" layoutX="42.0" layoutY="313.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must give 2000 BDT for security money" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck9" layoutX="36.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Gas/Water/Electricity Bill is included in the rent" textFill="WHITE">
+      <CheckBox fx:id="ck9" layoutX="42.0" layoutY="342.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Gas/Water/Electricity Bill is included in the rent" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck10" layoutX="36.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="No Pet Allowed" textFill="WHITE">
+      <CheckBox fx:id="ck10" layoutX="42.0" layoutY="372.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="No Pet Allowed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck1" layoutX="36.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" stylesheets="@adminPageStyle.css" text="Rent amount is fixed" textFill="WHITE">
+      <CheckBox fx:id="ck1" layoutX="42.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is fixed" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck11" layoutX="36.0" layoutY="397.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is negotiable" textFill="WHITE">
+      <CheckBox fx:id="ck11" layoutX="42.0" layoutY="406.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Rent amount is negotiable" textFill="WHITE" AnchorPane.topAnchor="404.0">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ck12" layoutX="36.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must maintain cleanliness" textFill="WHITE">
+      <CheckBox fx:id="ck12" layoutX="42.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="502.0" text="Must maintain cleanliness" textFill="WHITE" AnchorPane.topAnchor="436.0">
          <font>
             <Font size="16.0" />
          </font>
       </CheckBox>
-      <Button fx:id="completeButton" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" onAction="#completeButtonAction" prefHeight="46.0" prefWidth="100.0" styleClass="login-button" stylesheets="@HeadLabel.css" text="Complete" />
-      <Label layoutX="487.0" layoutY="523.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+      <Button fx:id="completeButton" layoutX="250.0" layoutY="477.0" mnemonicParsing="false" onAction="#completeButtonAction" prefHeight="46.0" prefWidth="100.0" text="Complete">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="23.0" />
+         </font>
+         <stylesheets>
+            <URL value="@HeadLabel.css" />
+            <URL value="@adminPageStyle.css" />
+         </stylesheets>
+         <styleClass>
+            <String fx:value="nav-btn" />
+            <String fx:value="radius" />
+         </styleClass></Button>
+      <Label layoutX="460.0" layoutY="500.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
    </children>
 </AnchorPane>

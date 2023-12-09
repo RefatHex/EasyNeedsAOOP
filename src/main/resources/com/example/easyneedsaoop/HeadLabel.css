@@ -50,7 +50,9 @@
 }
 
 .User-button:hover {
-    -fx-background-color: linear-gradient(to bottom right,  #99CCEB,#4B81E4);
+    -fx-border-color: #FFFFFF;
+      -fx-border-width: 0 0 0 3px;
+      -fx-padding: 0 0 0 5px;
 }
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);

@@ -17,11 +17,6 @@
             <Image url="@BlueShape.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="127.0" fitWidth="110.0" layoutX="200.0" layoutY="20.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Shape.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="image" fitHeight="191.0" fitWidth="135.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <Label layoutX="143.0" layoutY="4.0" text="Price:">
          <font>
