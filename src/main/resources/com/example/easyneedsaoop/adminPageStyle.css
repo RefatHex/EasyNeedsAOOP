@@ -16,6 +16,7 @@
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
 }
+
 .nav-btn:hover{
     -fx-background-color: #fff;
     -fx-text-fill: #000;
@@ -54,12 +55,12 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-padding: 0;
-    -fx-border-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+    -fx-border-color: linear-gradient(to bottom right, #99CCEB,#4B81E4);
     -fx-border-radius: 5px;
     -fx-border-width: 1.5px;
 }
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom right,#8DC6FF, #FF7272);
+    -fx-background-color: linear-gradient(to bottom right,#8DC6FF, #99CCEB,#4B81E4);
     -fx-background-radius: 5px 5px 0 0;
     -fx-background-insets: 0 0 0 0;
 }

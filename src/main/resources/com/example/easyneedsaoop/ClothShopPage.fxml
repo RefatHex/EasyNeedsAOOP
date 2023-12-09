@@ -51,7 +51,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="logoutBtn" layoutX="56.0" layoutY="514.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="55.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="51.0" AnchorPane.leftAnchor="56.0">
+                                    <Button fx:id="logoutBtn" layoutX="57.0" layoutY="510.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="55.0" prefWidth="120.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="57.0">
                                        <styleClass>
                                           <String fx:value="upper-anchore" />
                                           <String fx:value="User-button" />
@@ -60,12 +60,11 @@
                                           <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="dashboard_btn" layoutX="17.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="12.0" />
-                                    <Button fx:id="inventory_btn" layoutX="17.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="12.0" />
-                                    <Button fx:id="payment_btn" layoutX="15.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                                    <Label layoutX="57.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
-                                    <Button fx:id="chat_btn" layoutX="16.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                                    <Button fx:id="order_btn" layoutX="17.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
+                                    <Button fx:id="dashboard_btn" layoutX="17.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="12.0" />
+                                    <Button fx:id="inventory_btn" layoutX="17.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="12.0" />
+                                    <Button fx:id="payment_btn" layoutX="15.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
+                                    <Label layoutX="58.0" layoutY="588.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Button fx:id="order_btn" layoutX="17.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
                               </AnchorPane>
                            </children>

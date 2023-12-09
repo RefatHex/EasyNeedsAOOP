@@ -77,7 +77,18 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Button fx:id="backBtn" layoutX="43.0" layoutY="201.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="32.0" prefWidth="47.0" text="Back" />
+                        <Button fx:id="backBtn" layoutX="43.0" layoutY="201.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="38.0" prefWidth="69.0" text="Back">
+                           <stylesheets>
+                              <URL value="@HeadLabel.css" />
+                              <URL value="@consumerCss.css" />
+                           </stylesheets>
+                           <styleClass>
+                              <String fx:value="User-button2" />
+                              <String fx:value="radius2" />
+                           </styleClass>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
                      </children>
                   </AnchorPane>
                </children>

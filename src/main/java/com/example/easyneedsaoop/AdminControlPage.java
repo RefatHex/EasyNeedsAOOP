@@ -29,6 +29,8 @@ public class AdminControlPage implements Initializable {
     private AnchorPane instructor_form;
     @FXML
     private AnchorPane Clothing_Form;
+    @FXML
+    private AnchorPane customer_form;
 
     @FXML
     private Button customer_btn;
@@ -1732,6 +1734,7 @@ public void courseInventoryAddBtn() {
     }
     public void handleEvent(ActionEvent event) {
         if (event.getSource() == food_btn) {
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             catering_form.setVisible(true);
@@ -1739,6 +1742,7 @@ public void courseInventoryAddBtn() {
             instructor_form.setVisible(false);
             health_Form.setVisible(false);
         } else if (event.getSource() == dashboard_btn) {
+            customer_form.setVisible(false);
             dashboard_form.setVisible(true);
             rentIn_form.setVisible(false);
             catering_form.setVisible(false);
@@ -1746,6 +1750,7 @@ public void courseInventoryAddBtn() {
             instructor_form.setVisible(false);
             health_Form.setVisible(false);
         } else if (event.getSource() == rent_btn) {
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(true);
             catering_form.setVisible(false);
@@ -1753,6 +1758,7 @@ public void courseInventoryAddBtn() {
             instructor_form.setVisible(false);
             health_Form.setVisible(false);
         }else if (event.getSource()==clothing_btn){
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             catering_form.setVisible(false);
@@ -1760,6 +1766,7 @@ public void courseInventoryAddBtn() {
             instructor_form.setVisible(false);
             health_Form.setVisible(false);
         }else if(event.getSource() == customer_btn){
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             health_Form.setVisible(false);
@@ -1767,6 +1774,7 @@ public void courseInventoryAddBtn() {
             Clothing_Form.setVisible(false);
             instructor_form.setVisible(false);
         }else if(event.getSource()==hospital_btn){
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             health_Form.setVisible(true);
@@ -1774,6 +1782,7 @@ public void courseInventoryAddBtn() {
             Clothing_Form.setVisible(false);
             instructor_form.setVisible(false);
         }else if (event.getSource() ==edu_btn) {
+            customer_form.setVisible(false);
             dashboard_form.setVisible(false);
             rentIn_form.setVisible(false);
             catering_form.setVisible(false);
@@ -1781,6 +1790,15 @@ public void courseInventoryAddBtn() {
             instructor_form.setVisible(true);
             health_Form.setVisible(false);
         }
+    }
+    public void customerBtnAction(){
+            customer_form.setVisible(true);
+            dashboard_form.setVisible(false);
+            rentIn_form.setVisible(false);
+            catering_form.setVisible(false);
+            Clothing_Form.setVisible(false);
+            instructor_form.setVisible(false);
+            health_Form.setVisible(false);
     }
 
 }

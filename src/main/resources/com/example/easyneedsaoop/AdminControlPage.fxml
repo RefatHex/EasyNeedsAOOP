@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.chart.AreaChart?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -9,9 +10,11 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -26,11 +29,11 @@
                <left>
                   <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="menuAnchorPane" layoutX="3.0" layoutY="83.0" prefHeight="600.0" prefWidth="230.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="menuAnchorPane" layoutX="3.0" layoutY="83.0" prefHeight="600.0" prefWidth="230.0" styleClass="upper-anchore" stylesheets="@HeadLabel.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="33.0" layoutY="32.0" prefHeight="37.0" prefWidth="194.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Easyneeds Admin page" textFill="WHITE">
+                                    <Label layoutX="18.0" layoutY="26.0" prefHeight="37.0" prefWidth="194.0" styleClass="head-label-white" stylesheets="@loginsignup.css" text="Easyneeds Admin page" textFill="WHITE">
                                        <font>
                                           <Font name="Century Schoolbook" size="16.0" />
                                        </font>
@@ -47,21 +50,26 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="logoutBtn" layoutX="60.0" layoutY="508.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="53.0" prefWidth="111.0" stylesheets="@HeadLabel.css" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="60.0">
+                              <Button fx:id="logoutBtn" layoutX="60.0" layoutY="516.0" minWidth="29.0" mnemonicParsing="false" onAction="#logout" prefHeight="53.0" prefWidth="111.0" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="60.0">
                                  <styleClass>
-                                    <String fx:value="upper-anchore" />
-                                    <String fx:value="User-button" />
+                                    <String fx:value="User-button2" />
+                                    <String fx:value="radius3" />
+                                    <String fx:value="upper-anchore3" />
                                  </styleClass>
                                  <font>
                                     <Font name="System Bold" size="16.0" />
-                                 </font></Button>
+                                 </font>
+                                 <stylesheets>
+                                    <URL value="@HeadLabel.css" />
+                                    <URL value="@consumerCss.css" />
+                                 </stylesheets></Button>
                               <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                               <Button fx:id="rent_btn" layoutX="15.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Rent Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                               <Button fx:id="food_btn" layoutX="15.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="45.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Food Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                               <Button fx:id="clothing_btn" layoutX="15.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Clothing Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                               <Button fx:id="edu_btn" layoutX="15.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="41.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Education Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
                               <Button fx:id="hospital_btn" layoutX="15.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="213.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Hospital Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="202.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
+                              <Button fx:id="customer_btn" layoutX="15.0" layoutY="452.0" mnemonicParsing="false" onAction="#customerBtnAction" prefHeight="42.0" prefWidth="202.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Customers" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -70,7 +78,7 @@
                <center>
                   <AnchorPane fx:id="adminAnchorPane" prefHeight="622.0" prefWidth="930.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
+                        <AnchorPane fx:id="dashboard_form" layoutX="-5.0" layoutY="-11.0" prefHeight="611.0" prefWidth="907.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="-11.0">
                            <children>
                               <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="153.0" prefWidth="851.0" style="-fx-background-color: white;" stylesheets="@adminPageStyle.css" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -159,7 +167,7 @@
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <BarChart layoutX="-37.0" layoutY="10.0" prefHeight="398.0" prefWidth="415.0" title="Customer's Chart" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-37.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="10.0">
+                                          <BarChart layoutX="4.0" layoutY="10.0" prefHeight="396.0" prefWidth="386.0" title="Customer's Chart" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="10.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
@@ -176,7 +184,7 @@
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <AreaChart layoutX="14.0" layoutY="14.0" prefHeight="396.0" prefWidth="385.0" title="Income Chart" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="14.0">
+                                          <AreaChart layoutX="14.0" layoutY="2.0" prefHeight="396.0" prefWidth="386.0" title="Income Chart" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
                                              <xAxis>
                                                 <CategoryAxis side="BOTTOM" />
                                              </xAxis>
@@ -986,14 +994,50 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="customer_form" layoutX="32.0" prefHeight="600.0" prefWidth="870.0">
+                        <AnchorPane fx:id="customer_form" layoutX="32.0" prefHeight="600.0" prefWidth="870.0" visible="false">
                            <children>
-                              <TableView layoutX="7.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0">
+                              <ImageView fitHeight="435.0" fitWidth="869.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@BG.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="435.0" fitWidth="868.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@BG.jpg" />
+                                 </image>
+                              </ImageView>
+                              <TableView layoutX="22.0" layoutY="21.0" prefHeight="391.0" prefWidth="825.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn fx:id="customer_col_id" prefWidth="155.0" text="ID" />
+                                  <TableColumn fx:id="customer_col_name" prefWidth="166.0" text="Name" />
+                                    <TableColumn fx:id="customer_col_username" prefWidth="174.0" text="User Name" />
+                                    <TableColumn fx:id="customer_col_role" prefWidth="174.0" text="Role" />
+                                    <TableColumn fx:id="customer_col_date" prefWidth="156.0" text="Date" />
                                 </columns>
                               </TableView>
+                              <Button fx:id="userremove_btn" layoutX="423.0" layoutY="463.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="182.0" text="Remove User">
+                                 <graphic>
+                                    <ImageView fitHeight="54.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@RemoveUserBtn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="User-button2" />
+                                    <String fx:value="textfield-design" />
+                                 </styleClass>
+                                 <stylesheets>
+                                    <URL value="@HeadLabel.css" />
+                                    <URL value="@consumerCss.css" />
+                                    <URL value="@adminPageStyle.css" />
+                                 </stylesheets>
+                              </Button>
+                              <TextField layoutX="174.0" layoutY="464.0" prefHeight="64.0" prefWidth="182.0" styleClass="radius3" stylesheets="@HeadLabel.css" />
+                              <Separator layoutX="364.0" layoutY="495.0" prefHeight="0.0" prefWidth="52.0" />
                            </children>
                         </AnchorPane>
                      </children>

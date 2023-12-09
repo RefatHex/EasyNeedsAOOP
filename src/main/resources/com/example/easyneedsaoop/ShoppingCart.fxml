@@ -1,24 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.ShoppingCart">
    <children>
       <AnchorPane layoutX="14.0" layoutY="81.0" prefHeight="400.0" prefWidth="281.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <ImageView fitHeight="109.0" fitWidth="147.0" layoutX="185.0" layoutY="338.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Shape.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="109.0" fitWidth="147.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Shape.png" />
+               </image>
+            </ImageView>
             <TableView fx:id="cartTable" layoutY="-2.0" prefHeight="340.0" prefWidth="282.0">
               <columns>
                 <TableColumn fx:id="col_productName" prefWidth="107.20001524686813" text="Product Name" />
                 <TableColumn fx:id="col_size" prefWidth="41.60003662109375" text="Size" />
                   <TableColumn fx:id="col_quantity" prefWidth="67.199951171875" text="Quantity" />
-                  <TableColumn fx:id="col_price" prefWidth="57.60002136230469" text="Price" />
+                  <TableColumn fx:id="col_price" prefWidth="63.0" text="Price" />
               </columns>
             </TableView>
-            <Button fx:id="order" layoutX="103.0" layoutY="361.0" mnemonicParsing="false" text="order" />
+            <Button fx:id="order" layoutX="34.0" layoutY="355.0" mnemonicParsing="false" stylesheets="@HeadLabel.css">
+               <graphic>
+                  <ImageView fitHeight="88.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@OrderBtn.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="User-button2" />
+                  <String fx:value="radius" />
+               </styleClass></Button>
          </children>
       </AnchorPane>
    </children>

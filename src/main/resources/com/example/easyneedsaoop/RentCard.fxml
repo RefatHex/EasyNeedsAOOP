@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="252.0" stylesheets="@adminPageStyle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.RentCardDesign">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="252.0" styleClass="radius" stylesheets="@adminPageStyle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.RentCardDesign">
    <children>
       <ImageView fx:id="houseImage" fitHeight="152.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutX="-3.0" layoutY="160.0" prefHeight="152.0" prefWidth="256.0">
@@ -40,8 +39,4 @@
          </font>
       </Label>
    </children>
-   <styleClass>
-      <String fx:value="table-view" />
-      <String fx:value="radius" />
-   </styleClass>
 </AnchorPane>

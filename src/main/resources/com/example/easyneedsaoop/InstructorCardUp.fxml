@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,8 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="121.0" prefWidth="283.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardUp">
+<AnchorPane prefHeight="121.0" prefWidth="283.0" styleClass="shadow" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorCardUp">
    <children>
+      <ImageView fitHeight="120.0" fitWidth="114.0" layoutX="141.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Shape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="140.0" layoutX="143.0" layoutY="-1.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ShapeFive.png" />
+         </image>
+      </ImageView>
       <ImageView fx:id="image" fitHeight="112.0" fitWidth="134.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="191.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -36,7 +45,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="category" layoutX="142.0" layoutY="74.0" prefHeight="20.0" prefWidth="68.0" text="category">
+      <Label fx:id="category" layoutX="142.0" layoutY="74.0" prefHeight="20.0" prefWidth="68.0" text="category:">
          <font>
             <Font size="14.0" />
          </font>
@@ -48,9 +57,4 @@
       <URL value="@consumerCss.css" />
       <URL value="@adminPageStyle.css" />
    </stylesheets>
-   <styleClass>
-      <String fx:value="shadow" />
-      <String fx:value="radius2" />
-      <String fx:value="upper-anchore3" />
-   </styleClass>
 </AnchorPane>

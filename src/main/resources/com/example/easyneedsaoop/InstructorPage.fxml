@@ -30,7 +30,7 @@
                      <left>
                         <AnchorPane prefHeight="583.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                            <children>
-                              <AnchorPane fx:id="menuAnchorPane" layoutX="-15.0" layoutY="-10.0" prefHeight="610.0" prefWidth="248.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-10.0">
+                              <AnchorPane fx:id="menuAnchorPane" layoutX="-15.0" layoutY="-16.0" prefHeight="620.0" prefWidth="248.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-16.0">
                                  <children>
                                     <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
@@ -63,7 +63,7 @@
                                     <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                                     <Button fx:id="inventory_btn" layoutX="16.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="13.0" />
                                     <Button fx:id="payment_btn" layoutX="16.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
-                                    <Label layoutX="57.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Label layoutX="57.0" layoutY="584.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                     <Button fx:id="chat_btn" layoutX="15.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="225.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                     <Button fx:id="order_btn" layoutX="16.0" layoutY="386.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
@@ -201,7 +201,7 @@
                                                 <String fx:value="radius" />
                                              </styleClass>
                                           </AnchorPane>
-                                          <Label layoutX="519.0" layoutY="96.0" text="Extra info:">
+                                          <Label layoutX="504.0" layoutY="96.0" text="Extra info:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
@@ -213,7 +213,7 @@
                                              </font>
                                           </Label>
                                           <TextField fx:id="instructName" layoutX="597.0" layoutY="12.0" prefHeight="27.0" prefWidth="149.0" promptText="Your Instructor name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <Label layoutX="450.0" layoutY="57.0" text="Course Description:">
+                                          <Label layoutX="439.0" layoutY="57.0" text="Course Description:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>

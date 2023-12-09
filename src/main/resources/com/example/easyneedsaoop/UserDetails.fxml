@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="457.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserDetails">
+<AnchorPane prefHeight="164.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserDetails">
    <children>
-      <AnchorPane prefHeight="448.0" prefWidth="921.0">
+      <AnchorPane prefHeight="164.0" prefWidth="312.0">
          <children>
-            <ImageView fitHeight="535.0" fitWidth="921.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="164.0" fitWidth="338.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@BG.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="16.0" layoutY="91.0" text="Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="129.0" text="User Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="61.0" text="ID">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="63.0" prefHeight="17.0" prefWidth="227.0" />
+            <Label layoutX="71.0" layoutY="93.0" prefHeight="17.0" prefWidth="227.0" />
+            <Label layoutX="111.0" layoutY="131.0" prefHeight="17.0" prefWidth="203.0" />
+            <ImageView fitHeight="58.0" fitWidth="88.0" layoutX="-5.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@EasyNeeds.png" />
                </image>
             </ImageView>
          </children>

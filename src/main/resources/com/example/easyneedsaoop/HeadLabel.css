@@ -50,7 +50,7 @@
 }
 
 .User-button:hover {
-    -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+    -fx-background-color: linear-gradient(to bottom right,  #99CCEB,#4B81E4);
 }
 .shadow{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
@@ -105,7 +105,7 @@ Fx-background-radius:100;
         }
 
  .User-button:hover {
-            -fx-background-color: linear-gradient(to bottom right, #8DC6FF, #FF7272);
+            -fx-background-color: linear-gradient(to bottom right, #B9B5B5, #B9B5B5);
         }
 
  .scroll-bar{

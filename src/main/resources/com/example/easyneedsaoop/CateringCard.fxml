@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="218.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Catering_card">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="218.0" styleClass="shadow" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Catering_card">
    <children>
       <ImageView fx:id="imageview" fitHeight="151.0" fitWidth="204.0" layoutX="6.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
       <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="97.0" prefWidth="218.0">
          <children>
+            <ImageView fitHeight="145.0" fitWidth="218.0" layoutX="4.0" layoutY="-2.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ShapeFive.png" />
+               </image>
+            </ImageView>
             <Label fx:id="price" layoutX="14.0" layoutY="53.0" text="Price:">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -34,8 +39,4 @@
       <URL value="@consumerCss.css" />
       <URL value="@adminPageStyle.css" />
    </stylesheets>
-   <styleClass>
-      <String fx:value="radius3" />
-      <String fx:value="shadow" />
-   </styleClass>
 </AnchorPane>

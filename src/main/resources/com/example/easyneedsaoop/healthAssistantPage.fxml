@@ -32,7 +32,7 @@
                            <children>
                               <AnchorPane fx:id="menuAnchorPane" layoutX="-17.0" layoutY="-20.0" prefHeight="631.0" prefWidth="250.0" styleClass="login-button" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-17.0" AnchorPane.rightAnchor="-31.0" AnchorPane.topAnchor="-20.0">
                                  <children>
-                                    <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" styleClass="User-button" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <AnchorPane layoutX="-33.0" layoutY="-29.0" prefHeight="89.0" prefWidth="200.0" stylesheets="@HeadLabel.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Label alignment="CENTER" layoutX="16.0" layoutY="26.0" prefHeight="37.0" prefWidth="222.0" styleClass="head-label" stylesheets="@loginsignup.css" text="Health Assistant Page" textFill="WHITE">
                                              <font>
@@ -60,12 +60,12 @@
                                           <Font name="System Bold" size="20.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                                    <Button fx:id="inventory_btn" layoutX="15.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
-                                    <Button fx:id="payment_btn" layoutX="16.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
+                                    <Button fx:id="dashboard_btn" layoutX="15.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Dashboard" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="12.0" />
+                                    <Button fx:id="inventory_btn" layoutX="15.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="11.0" />
+                                    <Button fx:id="payment_btn" layoutX="16.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
                                     <Label layoutX="57.0" layoutY="595.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                     <Button fx:id="chat_btn" layoutX="15.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
-                                    <Button fx:id="order_btn" layoutX="18.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
+                                    <Button fx:id="order_btn" layoutX="15.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="223.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -338,7 +338,7 @@
                                           <ComboBox fx:id="availableOn" layoutX="696.0" layoutY="12.0" prefHeight="29.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
-                                                <String fx:value="User-button" />
+                                                <String fx:value="table-view" />
                                              </styleClass>
                                           </ComboBox>
                                           <Label layoutX="348.0" layoutY="145.0" text="Visiting Fee:">
