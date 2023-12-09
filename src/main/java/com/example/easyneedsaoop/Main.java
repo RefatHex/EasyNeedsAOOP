@@ -13,15 +13,17 @@ import java.net.Socket;
 
 public class Main extends Application {
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginSignup.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginSignup.fxml"));
         //stage.initStyle(StageStyle.UNDECORATED);
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("EasyNeeds");
-        stage.setScene(scene);
-        stage.show();
+//        Scene scene = new Scene(fxmlLoader.load());
+//        stage.setTitle("EasyNeeds");
+//        stage.setScene(scene);
+//        stage.show();
 //        Client client = new Client(new Socket("localhost", 5555), "username","target_user");
         //username=data.username users username
         //targetName= cards userName. so the two usergets private channel between them
+    OpenUserDetails details=new OpenUserDetails();
+    details.show();
     }
 
     public static void main(String[] args) {

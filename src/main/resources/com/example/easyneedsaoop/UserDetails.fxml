@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,9 +10,9 @@
 
 <AnchorPane prefHeight="164.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserDetails">
    <children>
-      <AnchorPane prefHeight="164.0" prefWidth="312.0">
+      <AnchorPane prefHeight="243.0" prefWidth="328.0">
          <children>
-            <ImageView fitHeight="164.0" fitWidth="338.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="207.0" fitWidth="328.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@BG.jpg" />
                </image>
@@ -30,14 +32,18 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="51.0" layoutY="63.0" prefHeight="17.0" prefWidth="227.0" />
-            <Label layoutX="71.0" layoutY="93.0" prefHeight="17.0" prefWidth="227.0" />
-            <Label layoutX="111.0" layoutY="131.0" prefHeight="17.0" prefWidth="203.0" />
+            <Label fx:id="user_id" layoutX="51.0" layoutY="63.0" prefHeight="17.0" prefWidth="227.0" />
+            <Label fx:id="name" layoutX="71.0" layoutY="93.0" prefHeight="17.0" prefWidth="227.0" />
+            <Label fx:id="username" layoutX="111.0" layoutY="131.0" prefHeight="17.0" prefWidth="203.0" />
             <ImageView fitHeight="58.0" fitWidth="88.0" layoutX="-5.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@EasyNeeds.png" />
                </image>
             </ImageView>
+            <Label layoutX="-2.0" layoutY="164.0" prefHeight="22.0" prefWidth="110.0" text="Change Password:" />
+            <TextField fx:id="old_pass" layoutY="186.0" promptText="Old Password" />
+            <TextField fx:id="new_pass" layoutX="4.0" layoutY="217.0" promptText="New Password" />
+            <Button fx:id="change_btn" layoutX="159.0" layoutY="218.0" mnemonicParsing="false" onAction="#handlePassChange" text="Change" />
          </children>
       </AnchorPane>
    </children>
