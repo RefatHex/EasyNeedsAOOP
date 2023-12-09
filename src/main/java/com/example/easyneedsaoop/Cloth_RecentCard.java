@@ -3,6 +3,7 @@ package com.example.easyneedsaoop;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -72,7 +73,12 @@ public class Cloth_RecentCard implements Initializable {
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        System.out.println("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        Alert alert ;
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Success");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Order placed successfully! Order ID: " + generatedKeys.getInt(1));
+                        alert.showAndWait();
                     } else {
                         System.out.println("Failed to retrieve order ID.");
                     }

@@ -47,7 +47,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fitHeight="288.0" fitWidth="280.0" layoutX="133.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="254.0" fitWidth="260.0" layoutX="146.0" layoutY="-52.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MoneyTransferLogo.png" />
          </image>

@@ -28,12 +28,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="courseName" layoutX="14.0" layoutY="40.0" prefHeight="32.0" prefWidth="87.0" text="House Name:">
+                        <Label fx:id="courseName" layoutX="14.0" layoutY="40.0" prefHeight="32.0" prefWidth="144.0" text="House Name:">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="locationLabel" layoutX="16.0" layoutY="72.0" prefHeight="32.0" prefWidth="61.0" text="Location:">
+                        <Label fx:id="locationLabel" layoutX="16.0" layoutY="72.0" prefHeight="32.0" prefWidth="144.0" text="Location:">
                            <font>
                               <Font size="14.0" />
                            </font>

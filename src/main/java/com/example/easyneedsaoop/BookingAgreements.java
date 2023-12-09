@@ -157,7 +157,7 @@ public class BookingAgreements {
                placeOrder();
            } else {
                alert = new Alert(Alert.AlertType.ERROR);
-               alert.setTitle("Already registered");
+               alert.setTitle("Error");
                alert.setHeaderText(null);
                alert.setContentText("Cannot proceed without agreeing to terms and conditions");
                alert.showAndWait();

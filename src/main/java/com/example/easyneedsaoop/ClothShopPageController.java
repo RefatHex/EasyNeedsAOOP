@@ -200,6 +200,7 @@ public class ClothShopPageController implements Initializable {
         prodCat.getSelectionModel().clearSelection();
         prodType.getSelectionModel().clearSelection();
         prodInfo.clear();
+        clothShop_imageView.setImage(null);
     }
 
     public void clothShopInventoryUpdateBtn(){

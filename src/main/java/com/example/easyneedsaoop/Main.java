@@ -13,8 +13,8 @@ import java.net.Socket;
 
 public class Main extends Application {
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("InstructorPage.fxml"));
-        stage.initStyle(StageStyle.UNDECORATED);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginSignup.fxml"));
+        //stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("EasyNeeds");
         stage.setScene(scene);
