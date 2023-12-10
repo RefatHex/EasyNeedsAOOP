@@ -7,13 +7,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="485.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Consumer_Education_Controller">
@@ -123,26 +121,6 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <HBox layoutX="479.0" layoutY="10.0" prefHeight="25.0" prefWidth="341.0">
-         <children>
-            <TextField fx:id="searchBox" opacity="0.72" prefHeight="25.0" prefWidth="310.0" promptText="Search Instructor" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <ImageView fitHeight="25.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@SearchLogo.png" />
-               </image>
-            </ImageView>
-         </children>
-         <stylesheets>
-            <URL value="@HeadLabel.css" />
-            <URL value="@loginsignup.css" />
-            <URL value="@consumerCss.css" />
-         </stylesheets>
-         <styleClass>
-            <String fx:value="upper-anchore2" />
-            <String fx:value="shadow" />
-            <String fx:value="radius2" />
-         </styleClass>
-      </HBox>
       <Separator layoutX="360.0" layoutY="10.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="6.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
    </children>
 </AnchorPane>
