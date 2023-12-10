@@ -128,7 +128,7 @@
             <Image url="@EasyNeeds.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="sortBtn" layoutX="197.0" layoutY="11.0" onAction="#handleSearchAndSort" prefHeight="21.0" prefWidth="150.0">
+      <ComboBox fx:id="sortBtn" layoutX="197.0" layoutY="11.0" onAction="#handleSearchAndSort" prefHeight="21.0" prefWidth="150.0" promptText="Relevence">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="radius3" />
@@ -143,10 +143,10 @@
       <Separator layoutX="634.0" layoutY="10.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="0.0" styleClass="shadow" stylesheets="@HeadLabel.css" />
       <HBox layoutX="766.0" layoutY="11.0" prefHeight="25.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="shopNameBox" opacity="0.72" prefHeight="25.0" prefWidth="165.0" promptText="Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
-            <Button fx:id="shopNameBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="34.0" prefWidth="38.0">
+            <TextField fx:id="shopNameBox" opacity="0.72" prefHeight="33.0" prefWidth="168.0" promptText="  Search" styleClass="transparent" stylesheets="@HeadLabel.css" />
+            <Button fx:id="shopNameBtn" mnemonicParsing="false" onAction="#handleSearchAndSort" prefHeight="30.0" prefWidth="34.0" styleClass="transparent" stylesheets="@HeadLabel.css">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@SearchLogo.png" />
                      </image>

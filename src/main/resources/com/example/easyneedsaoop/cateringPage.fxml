@@ -97,37 +97,37 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringOwnerID" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter yout ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="cateringOwnerID" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter Your ID" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="18.0" layoutY="50.0" text="Owner Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringOwnerName" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter your full name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="cateringOwnerName" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter Your Full Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="19.0" layoutY="84.0" text="Shop Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringShopName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter shop name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="cateringShopName" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Enter Shop Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="300.0" layoutY="15.0" text="Shop Branch:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringShopBranch" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter branch name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="cateringShopBranch" layoutX="397.0" layoutY="8.0" prefHeight="28.0" prefWidth="150.0" promptText="Enter Branch Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="330.0" layoutY="50.0" prefHeight="22.0" prefWidth="64.0" text="Contact:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="cateringContact" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="enter contact no" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="cateringContact" layoutX="396.0" layoutY="43.0" prefHeight="28.0" prefWidth="153.0" promptText="Enter Contact No" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="320.0" layoutY="85.0" text="Extra info:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="extraInfoText" layoutX="405.0" layoutY="82.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="extraInfoText" layoutX="405.0" layoutY="82.0" prefHeight="28.0" prefWidth="151.0" promptText="Additional Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <ComboBox fx:id="mealType" layoutX="407.0" layoutY="117.0" prefHeight="30.0" prefWidth="123.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
@@ -219,7 +219,7 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="billPay" layoutX="647.0" layoutY="55.0" prefHeight="30.0" prefWidth="108.0" stylesheets="@HeadLabel.css">
+                                          <ComboBox fx:id="billPay" layoutX="647.0" layoutY="55.0" prefHeight="30.0" prefWidth="115.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
                                                 <String fx:value="User-button" />
@@ -230,7 +230,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="mealPrice" layoutX="646.0" layoutY="12.0" prefHeight="28.0" prefWidth="151.0" promptText="price" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="mealPrice" layoutX="646.0" layoutY="12.0" prefHeight="28.0" prefWidth="151.0" promptText="Price" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                        <opaqueInsets>
                                           <Insets top="-6.0" />

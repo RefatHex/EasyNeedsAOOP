@@ -107,7 +107,7 @@
                         <URL value="@HeadLabel.css" />
                      </stylesheets>
                   </Button>
-                  <Button layoutX="11.0" layoutY="352.0" mnemonicParsing="false" onAction="#refreshBtnAction" text="Refresh">
+                  <Button layoutX="11.0" layoutY="352.0" mnemonicParsing="false" onAction="#refreshBtnAction" prefHeight="25.0" prefWidth="60.0" text="Refresh">
                      <styleClass>
                         <String fx:value="User-button2" />
                         <String fx:value="radius3" />

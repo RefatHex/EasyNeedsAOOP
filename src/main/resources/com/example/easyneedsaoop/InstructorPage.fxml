@@ -97,19 +97,19 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="courseID" layoutX="162.0" layoutY="12.0" prefHeight="27.0" prefWidth="146.0" promptText="Your course name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="courseID" layoutX="135.0" layoutY="12.0" prefHeight="27.0" prefWidth="146.0" promptText="Your course name " styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="24.0" layoutY="57.0" text="Course Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="courseName" layoutX="162.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="courseName" layoutX="135.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="28.0" layoutY="96.0" text="Course Price:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="coursePrice" layoutX="162.0" layoutY="94.0" prefHeight="26.0" prefWidth="227.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="coursePrice" layoutX="132.0" layoutY="94.0" prefHeight="26.0" prefWidth="227.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <ComboBox fx:id="courseCategory" layoutX="402.0" layoutY="147.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />

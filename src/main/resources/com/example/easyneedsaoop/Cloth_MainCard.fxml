@@ -18,36 +18,36 @@
          </image>
       </ImageView>
       <ImageView fx:id="image" fitHeight="157.0" fitWidth="222.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <Label layoutX="9.0" layoutY="174.0" text="Price:">
+      <Label layoutX="9.0" layoutY="174.0" text="Price:" AnchorPane.leftAnchor="9.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="9.0" layoutY="247.0" prefHeight="28.0" prefWidth="34.0" text="Size:">
+      <Label layoutX="9.0" layoutY="247.0" prefHeight="28.0" prefWidth="34.0" text="Size:" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="248.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="9.0" layoutY="201.0" prefHeight="20.0" prefWidth="80.0" text="Shop Name:">
+      <Label layoutX="9.0" layoutY="201.0" prefHeight="20.0" prefWidth="80.0" text="Shop Name:" AnchorPane.leftAnchor="9.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="10.0" layoutY="226.0" prefHeight="20.0" prefWidth="56.0" text="Name">
+      <Label layoutX="10.0" layoutY="226.0" prefHeight="20.0" prefWidth="56.0" text="Name" AnchorPane.leftAnchor="9.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="64.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="86.0" layoutX="65.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@4starrating.png" />
          </image>
       </ImageView>
-      <Label layoutX="11.0" layoutY="303.0" prefHeight="20.0" prefWidth="50.0" text="Rating:">
+      <Label layoutX="13.0" layoutY="312.0" prefHeight="20.0" prefWidth="50.0" text="Rating:" AnchorPane.leftAnchor="9.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="9.0" layoutY="274.0" prefHeight="20.0" prefWidth="68.0" text="Quantity:">
+      <Label layoutX="8.0" layoutY="284.0" prefHeight="20.0" prefWidth="68.0" text="Quantity:" AnchorPane.leftAnchor="9.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -55,13 +55,13 @@
       <Label fx:id="price" layoutX="50.0" layoutY="176.0" prefHeight="18.0" prefWidth="138.0" text="Label" />
       <Label fx:id="shopname" layoutX="93.0" layoutY="202.0" prefHeight="18.0" prefWidth="117.0" text="Label" />
       <Label fx:id="prodName" layoutX="75.0" layoutY="227.0" prefHeight="18.0" prefWidth="146.0" text="Label" />
-      <TextField fx:id="quantity" layoutX="73.0" layoutY="281.0" prefHeight="26.0" prefWidth="44.0" />
-      <Button fx:id="orderBtn" layoutX="70.0" layoutY="335.0" mnemonicParsing="false" onAction="#placeOrder" stylesheets="@consumerCss.css" text="Order Now">
+      <TextField fx:id="quantity" layoutX="86.0" layoutY="281.0" prefHeight="26.0" prefWidth="44.0" />
+      <Button fx:id="orderBtn" layoutX="71.0" layoutY="347.0" mnemonicParsing="false" onAction="#placeOrder" stylesheets="@consumerCss.css" text="Order Now">
          <styleClass>
             <String fx:value="User-button2" />
             <String fx:value="radius3" />
          </styleClass></Button>
-      <TextField fx:id="size" layoutX="48.0" layoutY="248.0" prefHeight="26.0" prefWidth="56.0" />
+      <TextField fx:id="size" layoutX="48.0" layoutY="248.0" prefHeight="26.0" prefWidth="80.0" AnchorPane.topAnchor="248.0" />
       <Label fx:id="id" layoutX="188.0" layoutY="179.0" text="Label" />
    </children>
    <stylesheets>

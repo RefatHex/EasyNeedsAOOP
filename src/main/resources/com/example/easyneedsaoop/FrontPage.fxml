@@ -80,7 +80,7 @@
                   <String fx:value="radius3" />
                </styleClass>
             </Button>
-            <AnchorPane fx:id="command_form" layoutX="418.0" layoutY="326.0" prefHeight="77.0" prefWidth="153.0" stylesheets="@HeadLabel.css">
+            <AnchorPane fx:id="command_form" layoutX="333.0" layoutY="325.0" prefHeight="77.0" prefWidth="322.0" stylesheets="@HeadLabel.css">
                <styleClass>
                   <String fx:value="radius" />
                   <String fx:value="radius2" />
@@ -93,6 +93,23 @@
                         <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@HOMEbtn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="User-button2" />
+                        <String fx:value="radius2" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="donateBtn" layoutX="169.0" layoutY="9.0" mnemonicParsing="false" onAction="#donateBtnAction" prefHeight="61.0" prefWidth="137.0" stylesheets="@loginsignup.css" text="Donate">
+                     <graphic>
+                        <ImageView fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Donatelogo.png" />
                            </image>
                         </ImageView>
                      </graphic>

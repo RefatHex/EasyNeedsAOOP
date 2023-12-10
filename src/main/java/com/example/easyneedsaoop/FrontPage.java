@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class FrontPage {
+    @FXML
+    private Button donateBtn;
 
     @FXML
     private ImageView user_image;
@@ -189,6 +191,15 @@ public class FrontPage {
     public void handleUserBtnAction() throws IOException {
         OpenUserDetails details=new OpenUserDetails();
         details.show();
+    }
+    public void donateBtnAction() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Donate.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("EasyNeeds");
+        //stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

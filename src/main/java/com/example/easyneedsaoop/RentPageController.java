@@ -32,7 +32,6 @@ public class RentPageController implements Initializable {
     @FXML
     private AnchorPane adminAnchorPane;
 
-
     @FXML
     private AnchorPane order_form;
 
@@ -44,6 +43,7 @@ public class RentPageController implements Initializable {
 
     @FXML
     private Button logoutBtn;
+
     @FXML
     private AnchorPane chat_form;
 
@@ -56,11 +56,8 @@ public class RentPageController implements Initializable {
     @FXML
     private AnchorPane menuAnchorPane;
 
-
     @FXML
     private AnchorPane rentAnchor;
-
-
 
     @FXML
     private TableView<rentData> rentInTable;
@@ -70,11 +67,11 @@ public class RentPageController implements Initializable {
 
     @FXML
     private TextField rentIn_Rent;
+
     @FXML
     private GridPane gridPane;
     @FXML
     private Button orders_btn;
-
 
     @FXML
     private TextField rentIn_address;

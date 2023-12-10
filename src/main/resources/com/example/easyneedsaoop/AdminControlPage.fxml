@@ -448,47 +448,47 @@
                               </TableView>
                               <AnchorPane fx:id="rentAnchor1" layoutX="6.0" layoutY="307.0" prefHeight="288.0" prefWidth="843.0" styleClass="gradient" stylesheets="@loginsignup.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0">
                                  <children>
-                                    <Label layoutX="34.0" layoutY="15.0" text="Product ID:">
+                                    <Label layoutX="33.0" layoutY="27.0" text="Product ID:">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="prodID" layoutX="122.0" layoutY="8.0" prefHeight="27.0" prefWidth="146.0" promptText=" update and delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutY="50.0" text="Product Name:">
+                                    <TextField fx:id="prodID" layoutX="122.0" layoutY="23.0" prefHeight="27.0" prefWidth="146.0" promptText=" Update and Delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="14.0" layoutY="71.0" text="Product Name:">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="prodName" layoutX="122.0" layoutY="43.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter Product Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <Label layoutX="61.0" layoutY="84.0" text="Price:">
+                                    <TextField fx:id="prodName" layoutX="122.0" layoutY="68.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter Product Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <Label layoutX="390.0" layoutY="71.0" text="Price:" AnchorPane.leftAnchor="390.0">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="prodPrice" layoutX="122.0" layoutY="81.0" prefHeight="26.0" prefWidth="146.0" promptText="Price  in BDT" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                    <ComboBox fx:id="prodCat" layoutX="365.0" layoutY="10.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
+                                    <TextField fx:id="prodPrice" layoutX="431.0" layoutY="68.0" prefHeight="26.0" prefWidth="146.0" promptText="Price  in BDT" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <ComboBox fx:id="prodCat" layoutX="727.0" layoutY="22.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
                                        <styleClass>
                                           <String fx:value="table-view" />
                                           <String fx:value="User-button" />
                                        </styleClass>
                                     </ComboBox>
-                                    <Label layoutX="287.0" layoutY="16.0" text="Category">
+                                    <Label layoutX="661.0" layoutY="27.0" text="Category:">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="prodType" layoutX="359.0" layoutY="67.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
+                                    <ComboBox fx:id="prodType" layoutX="729.0" layoutY="67.0" prefHeight="28.0" prefWidth="83.0" stylesheets="@HeadLabel.css">
                                        <styleClass>
                                           <String fx:value="table-view" />
                                           <String fx:value="User-button" />
                                        </styleClass>
                                     </ComboBox>
-                                    <Label layoutX="287.0" layoutY="71.0" text="Prod Type">
+                                    <Label layoutX="658.0" layoutY="72.0" text="Prod Type:">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="629.0" layoutY="144.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
+                                    <Button layoutX="181.0" layoutY="185.0" mnemonicParsing="false" onAction="#InventoryImportBtn" prefHeight="38.0" prefWidth="74.0" stylesheets="@HeadLabel.css" text="Import">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -497,7 +497,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="356.0" layoutY="207.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="353.0" layoutY="185.0" mnemonicParsing="false" onAction="#clothShopInventoryAddBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Add" AnchorPane.bottomAnchor="67.0">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -506,7 +506,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="470.0" layoutY="185.0" mnemonicParsing="false" onAction="#rentInventoryUpdateBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Update" AnchorPane.bottomAnchor="67.0">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -515,7 +515,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="577.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="577.0" layoutY="185.0" mnemonicParsing="false" onAction="#rentInventoryClearBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Clear" AnchorPane.bottomAnchor="67.0">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -524,7 +524,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <Button layoutX="692.0" layoutY="207.0" mnemonicParsing="false" onAction="#rentInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="27.399999999999977">
+                                    <Button layoutX="691.0" layoutY="185.0" mnemonicParsing="false" onAction="#rentInventoryDeleteBtn" prefHeight="36.0" prefWidth="89.0" stylesheets="@HeadLabel.css" text="Delete" AnchorPane.bottomAnchor="67.0">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -533,7 +533,7 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </Button>
-                                    <AnchorPane layoutX="603.0" layoutY="12.0" prefHeight="119.0" prefWidth="126.0" stylesheets="@adminPageStyle.css">
+                                    <AnchorPane layoutX="18.0" layoutY="144.0" prefHeight="119.0" prefWidth="126.0" stylesheets="@adminPageStyle.css">
                                        <children>
                                           <ImageView fx:id="rentIn_imageView" fitHeight="120.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" styleClass="Lightwhite-bg" />
                                           <Label fx:id="imgLbl12" layoutX="32.0" layoutY="31.0" text="Add  your">
@@ -552,12 +552,12 @@
                                           <String fx:value="radius" />
                                        </styleClass>
                                     </AnchorPane>
-                                    <Label layoutX="40.0" layoutY="123.0" text="Extra info">
+                                    <Label layoutX="353.0" layoutY="26.0" text="Extra info:">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="prodInfo" layoutX="122.0" layoutY="121.0" prefHeight="26.0" prefWidth="146.0" promptText="Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                    <TextField fx:id="prodInfo" layoutX="431.0" layoutY="24.0" prefHeight="26.0" prefWidth="146.0" promptText="Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                  </children>
                               </AnchorPane>
                            </children>

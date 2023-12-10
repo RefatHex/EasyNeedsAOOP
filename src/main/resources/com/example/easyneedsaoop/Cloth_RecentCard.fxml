@@ -18,18 +18,18 @@
          </image>
       </ImageView>
       <ImageView fx:id="image" fitHeight="191.0" fitWidth="135.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <Label layoutX="143.0" layoutY="4.0" text="Price:">
+      <Label layoutX="143.0" layoutY="4.0" text="Price:" AnchorPane.leftAnchor="143.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="143.0" layoutY="30.0" prefHeight="20.0" prefWidth="50.0" text="Size:">
+      <Label layoutX="143.0" layoutY="30.0" prefHeight="20.0" prefWidth="50.0" text="Size:" AnchorPane.leftAnchor="143.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="144.0" layoutY="57.0" prefHeight="17.0" prefWidth="65.0" text="Shop Name:" />
-      <Label layoutX="143.0" layoutY="82.0" prefHeight="20.0" prefWidth="59.0" text="Name">
+      <Label layoutX="144.0" layoutY="57.0" prefHeight="17.0" prefWidth="65.0" text="Shop Name:" AnchorPane.leftAnchor="143.0" />
+      <Label layoutX="143.0" layoutY="82.0" prefHeight="20.0" prefWidth="59.0" text="Name" AnchorPane.leftAnchor="143.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -39,12 +39,12 @@
             <Image url="@4starrating.png" />
          </image>
       </ImageView>
-      <Label layoutX="142.0" layoutY="137.0" prefHeight="20.0" prefWidth="50.0" text="Rating:">
+      <Label layoutX="142.0" layoutY="137.0" prefHeight="20.0" prefWidth="50.0" text="Rating:" AnchorPane.leftAnchor="143.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="140.0" layoutY="108.0" prefHeight="20.0" prefWidth="65.0" text="Quantity:">
+      <Label layoutX="140.0" layoutY="108.0" prefHeight="20.0" prefWidth="65.0" text="Quantity:" AnchorPane.leftAnchor="143.0">
          <font>
             <Font size="14.0" />
          </font>

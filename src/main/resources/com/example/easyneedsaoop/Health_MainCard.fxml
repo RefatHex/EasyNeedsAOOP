@@ -36,7 +36,7 @@
             <Image url="@4starrating.png" />
          </image>
       </ImageView>
-      <Label layoutX="6.0" layoutY="285.0" prefHeight="20.0" prefWidth="57.0" text="Rating:">
+      <Label layoutX="6.0" layoutY="285.0" prefHeight="20.0" prefWidth="57.0" text="Rating:" AnchorPane.leftAnchor="6.0">
          <font>
             <Font size="14.0" />
          </font>

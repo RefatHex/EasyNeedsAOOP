@@ -99,7 +99,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="doctorID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText=" update or delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="doctorID" layoutX="151.0" layoutY="12.0" prefHeight="27.0" prefWidth="150.0" promptText="Update or Delete" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="25.0" layoutY="50.0" text="Doctor's Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -193,7 +193,7 @@
                                              </font>
                                           </Label>
                                           <TextField fx:id="extraInfo" layoutX="445.0" layoutY="83.0" prefHeight="26.0" prefWidth="134.0" promptText="Chamber Location" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
-                                          <TextField fx:id="startingHour" layoutX="445.0" layoutY="13.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter starting hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="startingHour" layoutX="445.0" layoutY="13.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Starting Hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="335.0" layoutY="15.0" text="Starting hour:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -204,7 +204,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="endingHour" layoutX="445.0" layoutY="48.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter ending hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="endingHour" layoutX="445.0" layoutY="48.0" prefHeight="26.0" prefWidth="131.0" promptText="Enter Ending Hour" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="595.0" layoutY="16.0" text="Available Day">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -221,7 +221,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter amount" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="visitingFee" layoutX="444.0" layoutY="143.0" prefHeight="26.0" prefWidth="110.0" promptText="Enter Amount" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="579.0" layoutY="144.0" text="Hospital Name">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
