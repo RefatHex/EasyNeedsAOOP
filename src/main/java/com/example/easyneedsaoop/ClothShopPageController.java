@@ -410,6 +410,8 @@ public void InventoryImportBtn(){
         ObservableList prodTypeData=FXCollections.observableArrayList(prodTyp);
         prodType.setItems(prodTypeData);
         prodCat.setItems(categoryData);
+        prodType.setEditable(true);
+        prodCat.setEditable(true);
     }
 
     public void handleEvent(ActionEvent e){

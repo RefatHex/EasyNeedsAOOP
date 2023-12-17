@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="347.0" styleClass="radius3" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserTypeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="347.0" styleClass="radius3" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.UserTypeController">
    <children>
       <ImageView fitHeight="756.0" fitWidth="347.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -28,7 +28,7 @@
          </stylesheets>
       </Label>
       <Label layoutX="6.0" layoutY="734.0" text="© 2023 EasyNeeds" AnchorPane.leftAnchor="6.0" />
-      <Button fx:id="firstBtn" alignment="CENTER" layoutX="104.0" layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" stylesheets="@HeadLabel.css" text="Consumer" textFill="WHITE" AnchorPane.leftAnchor="104.0" AnchorPane.topAnchor="252.0">
+      <Button fx:id="firstBtn" alignment="CENTER" layoutX="24.8" layoutY="252.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="235.0" stylesheets="@HeadLabel.css" text="Consumer" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="252.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -37,7 +37,7 @@
             <String fx:value="radius3" />
             <String fx:value="transparent" />
          </styleClass></Button>
-      <Button fx:id="fifthBtn" alignment="CENTER" layoutX="143.0" layoutY="579.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="111.0" stylesheets="@HeadLabel.css" text="Instructor" textFill="WHITE" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="579.0">
+      <Button fx:id="fifthBtn" alignment="CENTER" layoutX="62.4" layoutY="579.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="176.0" stylesheets="@HeadLabel.css" text="Instructor" textFill="WHITE" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="579.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -46,7 +46,7 @@
             <String fx:value="radius3" />
             <String fx:value="User-button2" />
          </styleClass></Button>
-      <Button fx:id="thirdBtn" alignment="CENTER" layoutX="109.0" layoutY="417.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="145.0" stylesheets="@HeadLabel.css" text="Home owner" textFill="WHITE" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="417.0">
+      <Button fx:id="thirdBtn" alignment="CENTER" layoutX="50.4" layoutY="417.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="204.0" stylesheets="@HeadLabel.css" text="Home owner" textFill="WHITE" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="417.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -55,7 +55,7 @@
             <String fx:value="User-button2" />
             <String fx:value="radius3" />
          </styleClass></Button>
-      <Button fx:id="sixthBtn" alignment="CENTER" layoutX="96.0" layoutY="668.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" stylesheets="@HeadLabel.css" text="Clothing Shops" textFill="WHITE" AnchorPane.leftAnchor="96.0">
+      <Button fx:id="sixthBtn" alignment="CENTER" layoutX="69.0" layoutY="669.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="216.0" stylesheets="@HeadLabel.css" text="Clothing Shops" textFill="WHITE" AnchorPane.leftAnchor="69.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -64,7 +64,7 @@
             <String fx:value="User-button2" />
             <String fx:value="radius3" />
          </styleClass></Button>
-      <Button fx:id="secondBtn" alignment="CENTER" layoutX="116.0" layoutY="338.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="164.0" stylesheets="@HeadLabel.css" text="Health Assistant" textFill="WHITE" AnchorPane.leftAnchor="116.0">
+      <Button fx:id="secondBtn" alignment="CENTER" layoutX="83.0" layoutY="335.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="235.0" stylesheets="@HeadLabel.css" text="Health Assistant" textFill="WHITE" AnchorPane.leftAnchor="83.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -73,7 +73,7 @@
             <String fx:value="User-button2" />
             <String fx:value="radius3" />
          </styleClass></Button>
-      <Button fx:id="fourthBtn" alignment="CENTER" layoutX="120.0" layoutY="497.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" stylesheets="@HeadLabel.css" text="Catering owner" textFill="WHITE" AnchorPane.leftAnchor="120.0">
+      <Button fx:id="fourthBtn" alignment="CENTER" layoutX="77.0" layoutY="501.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="204.0" stylesheets="@HeadLabel.css" text="Catering owner" textFill="WHITE" AnchorPane.leftAnchor="77.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Slider" prefHeight="528.0" prefWidth="303.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_booking_cart">
+<AnchorPane fx:id="Slider" prefHeight="528.0" prefWidth="303.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_booking_cart">
    <stylesheets>
       <URL value="@adminPageStyle.css" />
       <URL value="@consumerCss.css" />
@@ -32,7 +32,7 @@
             <Image url="@Shape.png" />
          </image>
       </ImageView>
-      <Label layoutX="70.0" layoutY="14.0" prefHeight="55.0" prefWidth="167.0" stylesheets="@HeadLabel.css" text="  Appointment">
+      <Label layoutX="70.0" layoutY="14.0" prefHeight="55.0" prefWidth="167.0" stylesheets="@HeadLabel.css" text="   Appointment">
          <font>
             <Font name="Arial" size="23.0" />
          </font>
@@ -76,7 +76,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="start" layoutX="12.0" layoutY="242.0" prefHeight="27.0" prefWidth="41.0" text="start" AnchorPane.bottomAnchor="158.0">
+            <Label fx:id="start" layoutX="12.0" layoutY="241.0" prefHeight="27.0" prefWidth="6.0" text="3" AnchorPane.bottomAnchor="159.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -118,17 +118,19 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="241.0" prefHeight="27.0" prefWidth="13.0" text="-">
+            <Label layoutX="41.0" layoutY="240.0" prefHeight="27.0" prefWidth="9.0" text="-">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="finish" layoutX="65.0" layoutY="241.0" prefHeight="27.0" prefWidth="41.0" text="finish">
+            <Label fx:id="finish" layoutX="65.0" layoutY="241.0" prefHeight="27.0" prefWidth="20.0" text="3">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <Button fx:id="backBtn" layoutX="20.0" layoutY="373.0" mnemonicParsing="false" onAction="#backBtnAction" prefHeight="42.0" prefWidth="93.0" styleClass="radius3" stylesheets="@HeadLabel.css" text="Back" />
+            <Label layoutX="21.0" layoutY="246.0" text="am" AnchorPane.leftAnchor="22.0" />
+            <Label layoutX="77.0" layoutY="246.0" text="pm" AnchorPane.leftAnchor="76.0" />
          </children>
       </AnchorPane>
    </children>

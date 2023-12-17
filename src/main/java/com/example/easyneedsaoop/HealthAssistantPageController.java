@@ -308,7 +308,7 @@ public class HealthAssistantPageController implements Initializable {
             return;
         }
 
-        String checkExistingData = "SELECT * FROM hassisanceinfo WHERE id=? AND userName=?";
+        String checkExistingData = "SELECT * FROM hassisanceinfo WHERE cardId=? AND userName=?";
         String updateData = "UPDATE hassisanceinfo " +
                 "SET cardID=?, docName=?, docMajor=?, start=?, end=?, fee=?, day=?, service=?, location=? " +
                 "WHERE cardID=? AND userName=?";
@@ -329,7 +329,7 @@ public class HealthAssistantPageController implements Initializable {
             }
 
             prepare = connect.prepareStatement(updateData);
-            prepare.setString(1, data.username);
+            prepare.setString(1, doctorID.getText());
             prepare.setString(2, doctorName.getText());
             prepare.setString(3, specialtyIn.getText());
             prepare.setString(4, startingHour.getText());

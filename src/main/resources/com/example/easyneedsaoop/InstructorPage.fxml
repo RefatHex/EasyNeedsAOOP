@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.InstructorPageController">
    <children>
       <StackPane layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0">
          <children>
@@ -58,7 +58,7 @@
                                     </Button>
                                     <Button fx:id="inventory_btn" layoutX="15.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="214.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Inventory" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" />
                                     <Button fx:id="payment_btn" layoutX="13.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Payment" />
-                                    <Label layoutX="61.0" layoutY="587.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
+                                    <Label layoutX="70.0" layoutY="586.0" styleClass="create-btn" stylesheets="@loginsignup.css" text="© 2023 EasyNeeds" />
                                     <Button fx:id="chat_btn" layoutX="12.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="225.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Chat" />
                                     <Button fx:id="order_btn" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="42.0" prefWidth="222.0" styleClass="nav-btn" stylesheets="@adminPageStyle.css" text="Orders" />
                                  </children>
@@ -103,13 +103,13 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="courseName" layoutX="135.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="courseName" layoutX="135.0" layoutY="54.0" prefHeight="27.0" prefWidth="146.0" promptText="Enter Your Course Name" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="28.0" layoutY="96.0" text="Course Price:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="coursePrice" layoutX="132.0" layoutY="94.0" prefHeight="26.0" prefWidth="227.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="coursePrice" layoutX="132.0" layoutY="94.0" prefHeight="26.0" prefWidth="151.0" promptText="Enter Price" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <ComboBox fx:id="courseCategory" layoutX="402.0" layoutY="147.0" prefHeight="28.0" prefWidth="87.0" stylesheets="@HeadLabel.css">
                                              <styleClass>
                                                 <String fx:value="table-view" />
@@ -201,7 +201,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="courseExtraInfo" layoutX="601.0" layoutY="94.0" prefHeight="26.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="courseExtraInfo" layoutX="601.0" layoutY="94.0" prefHeight="26.0" prefWidth="151.0" promptText="Enter Info" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                           <Label layoutX="459.0" layoutY="15.0" text="Instructor Name:">
                                              <font>
                                                 <Font name="System Bold" size="15.0" />
@@ -213,7 +213,7 @@
                                                 <Font name="System Bold" size="15.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="courseDescription" layoutX="598.0" layoutY="54.0" prefHeight="27.0" prefWidth="151.0" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
+                                          <TextField fx:id="courseDescription" layoutX="598.0" layoutY="54.0" prefHeight="27.0" prefWidth="151.0" promptText="Write Your Description" styleClass="textfield-design" stylesheets="@HeadLabel.css" />
                                        </children>
                                     </AnchorPane>
                                  </children>

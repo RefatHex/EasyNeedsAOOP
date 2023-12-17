@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="252.0" styleClass="radius" stylesheets="@adminPageStyle.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.RentCardDesign">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="252.0" styleClass="radius" stylesheets="@adminPageStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.RentCardDesign">
    <children>
       <ImageView fx:id="houseImage" fitHeight="152.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutX="-3.0" layoutY="160.0" prefHeight="152.0" prefWidth="256.0">
@@ -16,16 +16,19 @@
                   <Image url="@Frame.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="17.0" fitWidth="117.0" layoutX="148.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="17.0" fitWidth="117.0" layoutX="88.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@4starrating.png" />
                </image>
             </ImageView>
-            <Label fx:id="location" layoutX="29.0" layoutY="27.0" text="Location:" />
-            <Label fx:id="room" layoutX="29.0" layoutY="44.0" text="Room:" />
-            <Label fx:id="rent" layoutX="29.0" layoutY="61.0" text="Rent:" />
-            <Label layoutX="128.0" layoutY="53.0" text="Bachelor:" />
-            <Label fx:id="bachelor" layoutX="179.0" layoutY="53.0" prefHeight="18.0" prefWidth="49.0" text="Label" />
+            <Label fx:id="location" layoutX="82.0" layoutY="29.0" text="Location" />
+            <Label fx:id="room" layoutX="80.0" layoutY="48.0" text="Room" AnchorPane.topAnchor="48.0" />
+            <Label fx:id="rent" layoutX="84.0" layoutY="68.0" text="Rent" />
+            <Label layoutX="26.0" layoutY="84.0" text="Bachelor:" AnchorPane.leftAnchor="28.0" />
+            <Label fx:id="bachelor" layoutX="84.0" layoutY="83.0" prefHeight="18.0" prefWidth="49.0" text="true" />
+            <Label layoutX="28.0" layoutY="29.0" text="Location:" />
+            <Label layoutX="28.0" layoutY="48.0" text="Room:" AnchorPane.leftAnchor="28.0" />
+            <Label fx:id="rent1" layoutX="26.0" layoutY="67.0" text="Rent:" AnchorPane.leftAnchor="28.0" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="49.0" fitWidth="46.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">

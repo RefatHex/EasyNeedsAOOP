@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="218.0" styleClass="shadow" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Catering_card">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="212.0" styleClass="shadow" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Catering_card">
    <children>
       <ImageView fx:id="imageview" fitHeight="151.0" fitWidth="204.0" layoutX="6.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="97.0" prefWidth="218.0">
+      <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="98.0" prefWidth="211.0">
          <children>
-            <ImageView fitHeight="145.0" fitWidth="235.0" layoutX="4.0" layoutY="-2.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="211.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@ShapeFive.png" />
+                  <Image url="@CTERINGBg.jpg" />
                </image>
             </ImageView>
             <Label fx:id="price" layoutX="14.0" layoutY="41.0" text="Price">

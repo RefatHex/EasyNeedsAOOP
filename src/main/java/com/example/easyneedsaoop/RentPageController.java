@@ -244,9 +244,9 @@ public class RentPageController implements Initializable {
                 String path = data.path;
                 path = path.replace("\\", "\\\\");
                 prepare.setString(10,path);
-                prepare.setString(11, String.valueOf(rentIn_bachelorBox.getSelectionModel().getSelectedItem()));
-                prepare.setString(12,String.valueOf( rentIn_subletOption.getSelectionModel().getSelectedItem()));
-                prepare.setString(13,String.valueOf( rentIn_dinning.getSelectionModel().getSelectedItem()));
+                prepare.setBoolean(11, (boolean) rentIn_bachelorBox.getSelectionModel().getSelectedItem());
+                prepare.setBoolean(12, (boolean) rentIn_subletOption.getSelectionModel().getSelectedItem());
+                prepare.setBoolean(13, (boolean) rentIn_dinning.getSelectionModel().getSelectedItem());
                 java.util.Date date = new java.util.Date();
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
@@ -353,6 +353,52 @@ public class RentPageController implements Initializable {
             alert.setContentText("Please fill all blank fields");
             alert.showAndWait();
             return;
+        }else{
+            int idToUpdate = Integer.parseInt(rentIn_id.getText());
+
+            // Update query
+            String updateData = "UPDATE rentinfo SET " +
+                    "ownerName=?, houseName=?, userName=?, room=?, flatNo=?, contact=?, rent=?, " +
+                    "address=?, einfo=?, image=?, bachelor=?, sublet=?, dn_draw=?, date=? " +
+                    "WHERE id=?";
+
+            try {
+                prepare = connect.prepareStatement(updateData);
+                prepare.setString(1, rentIn_owner.getText());
+                prepare.setString(2, rentIn_houseName.getText());
+                prepare.setString(3, data.username);
+                prepare.setString(4, rentIn_rooms.getText());
+                prepare.setString(5, rentIn_flatNo.getText());
+                prepare.setString(6, rentIn_contact.getText());
+                prepare.setString(7, rentIn_Rent.getText());
+                prepare.setString(8, rentIn_address.getText());
+                prepare.setString(9, rentIn_einfo.getText());
+                String path = data.path;
+                path = path.replace("\\", "\\\\");
+                prepare.setString(10, path);
+                prepare.setBoolean(11, (boolean) rentIn_bachelorBox.getSelectionModel().getSelectedItem());
+                prepare.setBoolean(12, (boolean) rentIn_subletOption.getSelectionModel().getSelectedItem());
+                prepare.setBoolean(13, (boolean) rentIn_dinning.getSelectionModel().getSelectedItem());
+                java.util.Date date = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                prepare.setString(14, String.valueOf(sqlDate));
+
+                // Set the ID parameter in the WHERE clause
+                prepare.setInt(15, idToUpdate);
+
+                prepare.executeUpdate();
+
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Successfully Updated!");
+                alert.showAndWait();
+
+                rentInventoryShowData();
+                rentInventoryClearBtn();
+        } catch (Exception e) {
+
+            }
         }
     }
     private ObservableList<rentData> rentInventoryList;

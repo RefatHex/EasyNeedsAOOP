@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="199.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
+<AnchorPane prefHeight="199.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.Cloth_RecentCard">
    <children>
-      <ImageView fitHeight="246.0" fitWidth="165.0" layoutX="141.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="246.0" fitWidth="162.0" layoutX="144.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@BlueShape.png" />
+            <Image url="@Up.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="image" fitHeight="191.0" fitWidth="135.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />

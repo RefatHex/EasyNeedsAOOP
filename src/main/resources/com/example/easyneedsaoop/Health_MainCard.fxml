@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="317.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_card">
+<AnchorPane prefHeight="290.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.easyneedsaoop.health_card">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="260.0" layoutX="4.0" layoutY="162.0" nodeOrientation="INHERIT" opacity="0.26" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="167.0" fitWidth="252.0" layoutX="2.0" layoutY="162.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@ShapeFive.png" />
+            <Image url="@BgDesign.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image" fitHeight="157.0" fitWidth="216.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
-      <Label fx:id="name" layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="101.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
+      <ImageView fx:id="image" fitHeight="157.0" fitWidth="252.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" styleClass="radius2" />
+      <Label fx:id="name" layoutX="6.0" layoutY="174.0" prefHeight="20.0" prefWidth="150.0" text="Doctor's Name:" AnchorPane.leftAnchor="6.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -26,7 +26,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="hsopital" layoutX="6.0" layoutY="227.0" prefHeight="20.0" prefWidth="101.0" text="Hospital Name:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="116.0">
+      <Label fx:id="hsopital" layoutX="6.0" layoutY="227.0" prefHeight="20.0" prefWidth="238.0" text="Hospital Name:" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="12.0">
          <font>
             <Font size="14.0" />
          </font>
